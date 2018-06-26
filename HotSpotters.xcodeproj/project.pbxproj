@@ -11,10 +11,13 @@
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
 		161BC15220E2B22800F88745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15120E2B22800F88745 /* Assets.xcassets */; };
 		161BC15520E2B22800F88745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
-		69DC9F3920E2BCB400EB03E8 /* twitterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F3820E2BCB400EB03E8 /* twitterPost.swift */; };
 		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
+		69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */; };
+		69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4820E2C08B00EB03E8 /* TestView.swift */; };
+		69DC9F4B20E2C09A00EB03E8 /* TweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */; };
+		69DC9F4D20E2C0A600EB03E8 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +27,13 @@
 		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69DC9F3820E2BCB400EB03E8 /* twitterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twitterPost.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
+		69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		69DC9F4820E2C08B00EB03E8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetController.swift; sourceTree = "<group>"; };
+		69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,7 @@
 		69DC9F4220E2BD5D00EB03E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				69DC9F3820E2BCB400EB03E8 /* twitterPost.swift */,
+				69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +109,7 @@
 		69DC9F4320E2BD6200EB03E8 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		69DC9F4420E2BD6900EB03E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 		69DC9F4520E2BD7600EB03E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				69DC9F4820E2C08B00EB03E8 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,9 +203,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69DC9F3920E2BCB400EB03E8 /* twitterPost.swift in Sources */,
+				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
+				69DC9F4D20E2C0A600EB03E8 /* Tweet.swift in Sources */,
+				69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */,
+				69DC9F4B20E2C09A00EB03E8 /* TweetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  twitterPost.swift
+//  TweetController.swift
 //  HotSpotters
 //
 //  Created by Trevor Adcock on 6/26/18.
@@ -7,7 +7,3 @@
 //
 
 import Foundation
-
-class tweet{
-    
-}
