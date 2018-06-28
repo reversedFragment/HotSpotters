@@ -19,6 +19,18 @@
 		69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4820E2C08B00EB03E8 /* TestView.swift */; };
 		69DC9F4B20E2C09A00EB03E8 /* TweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */; };
 		69DC9F4D20E2C0A600EB03E8 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */; };
+		6D13BA4120E549C200658EAF /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
+		6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4220E550EC00658EAF /* MapTabBar.swift */; };
+		6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4420E5513F00658EAF /* MapViewController.swift */; };
+		6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4620E55A5E00658EAF /* SearchBar.swift */; };
+		6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4820E55F3B00658EAF /* GraphView.swift */; };
+		6D13BA4B20E5600200658EAF /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4A20E5600200658EAF /* Graph.storyboard */; };
+		6D13BA4D20E5629500658EAF /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4C20E5629500658EAF /* Graph.swift */; };
+		6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4E20E562BE00658EAF /* GraphViewController.swift */; };
+		6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */; };
+		6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */; };
+		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
+		6D381C0520E426DE0075D7F9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0320E426DE0075D7F9 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +48,18 @@
 		69DC9F4820E2C08B00EB03E8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetController.swift; sourceTree = "<group>"; };
 		69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		6D13BA4220E550EC00658EAF /* MapTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTabBar.swift; path = HotSpotters/Views/MapTabBar.swift; sourceTree = SOURCE_ROOT; };
+		6D13BA4420E5513F00658EAF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = HotSpotters/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
+		6D13BA4620E55A5E00658EAF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = HotSpotters/Views/SearchBar.swift; sourceTree = "<group>"; };
+		6D13BA4820E55F3B00658EAF /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = HotSpotters/Views/GraphView.swift; sourceTree = SOURCE_ROOT; };
+		6D13BA4A20E5600200658EAF /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
+		6D13BA4C20E5629500658EAF /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = HotSpotters/ViewControllers/Graph.swift; sourceTree = SOURCE_ROOT; };
+		6D13BA4E20E562BE00658EAF /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = HotSpotters/ViewControllers/GraphViewController.swift; sourceTree = SOURCE_ROOT; };
+		6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-Model.swift"; sourceTree = "<group>"; };
+		6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-ModelController.swift"; sourceTree = "<group>"; };
+		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6D381C0320E426DE0075D7F9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +76,7 @@
 		161BC13B20E2B22700F88745 = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4620E55A5E00658EAF /* SearchBar.swift */,
 				161BC14620E2B22700F88745 /* HotSpotters */,
 				161BC14520E2B22700F88745 /* Products */,
 			);
@@ -81,6 +106,10 @@
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4A20E5600200658EAF /* Graph.storyboard */,
+				6D13BA4020E549C200658EAF /* Map.storyboard */,
+				6D13BA4E20E562BE00658EAF /* GraphViewController.swift */,
+				6D13BA4C20E5629500658EAF /* Graph.swift */,
 				69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */,
 				69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */,
 				69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */,
@@ -103,8 +132,14 @@
 		69DC9F4220E2BD5D00EB03E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
 				69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */,
+<<<<<<< Updated upstream
 				6980B84C20E54B20005C395D /* TwitterUser.swift */,
+=======
+				6D381C0320E426DE0075D7F9 /* Event.swift */,
+				6D381C0220E426DE0075D7F9 /* Post.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +147,7 @@
 		69DC9F4320E2BD6200EB03E8 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
 				69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */,
 			);
 			path = ModelControllers;
@@ -120,6 +156,7 @@
 		69DC9F4420E2BD6900EB03E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4420E5513F00658EAF /* MapViewController.swift */,
 				69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -128,6 +165,8 @@
 		69DC9F4520E2BD7600EB03E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4820E55F3B00658EAF /* GraphView.swift */,
+				6D13BA4220E550EC00658EAF /* MapTabBar.swift */,
 				69DC9F4820E2C08B00EB03E8 /* TestView.swift */,
 			);
 			path = Views;
@@ -194,8 +233,10 @@
 				161BC15520E2B22800F88745 /* LaunchScreen.storyboard in Resources */,
 				69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */,
 				69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */,
+				6D13BA4B20E5600200658EAF /* Graph.storyboard in Resources */,
 				161BC15220E2B22800F88745 /* Assets.xcassets in Resources */,
 				69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */,
+				6D13BA4120E549C200658EAF /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,13 +247,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */,
 				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
+				6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */,
+				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
+				6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
+<<<<<<< Updated upstream
 				6980B84D20E54B20005C395D /* TwitterUser.swift in Sources */,
+=======
+				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
+>>>>>>> Stashed changes
 				69DC9F4D20E2C0A600EB03E8 /* Tweet.swift in Sources */,
+				6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */,
+				6D13BA4D20E5629500658EAF /* Graph.swift in Sources */,
+				6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */,
 				69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */,
+				6D381C0420E426DE0075D7F9 /* Post.swift in Sources */,
 				69DC9F4B20E2C09A00EB03E8 /* TweetController.swift in Sources */,
+				6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

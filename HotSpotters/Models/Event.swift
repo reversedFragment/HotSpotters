@@ -18,7 +18,6 @@ struct Events {
     let posts: [Post]
     let category: CategoryType
     
-    
 }
 
 
