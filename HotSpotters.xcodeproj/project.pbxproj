@@ -11,6 +11,7 @@
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
 		161BC15220E2B22800F88745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15120E2B22800F88745 /* Assets.xcassets */; };
 		161BC15520E2B22800F88745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
+		6980B84D20E54B20005C395D /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6980B84C20E54B20005C395D /* TwitterUser.swift */; };
 		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
@@ -27,6 +28,7 @@
 		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6980B84C20E54B20005C395D /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */,
+				6980B84C20E54B20005C395D /* TwitterUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
+				6980B84D20E54B20005C395D /* TwitterUser.swift in Sources */,
 				69DC9F4D20E2C0A600EB03E8 /* Tweet.swift in Sources */,
 				69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */,
 				69DC9F4B20E2C09A00EB03E8 /* TweetController.swift in Sources */,
