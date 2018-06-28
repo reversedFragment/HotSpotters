@@ -20,9 +20,9 @@ struct Post {
 
 enum Platform: String {
     
-    case Twitter
-    case EventBrite
-    case FourSquare
+    case twitter
+    case eventBrite
+    case fourSquare
     
 }
 

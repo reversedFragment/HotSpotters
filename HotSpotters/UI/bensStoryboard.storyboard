@@ -23,7 +23,7 @@
                 <viewControllerPlaceholder storyboardName="trevorsStoryboard" id="Ztt-Jt-3Bu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7m-hR-7Fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="277"/>
+            <point key="canvasLocation" x="130" y="274"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="2vg-NL-57r">
