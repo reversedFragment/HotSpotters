@@ -11,6 +11,12 @@
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
 		161BC15220E2B22800F88745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15120E2B22800F88745 /* Assets.xcassets */; };
 		161BC15520E2B22800F88745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
+		16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */; };
+		16C77BB220E69E660061A3DA /* VenueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAE20E69E650061A3DA /* VenueDetails.swift */; };
+		16C77BB320E69E660061A3DA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAF20E69E650061A3DA /* Venue.swift */; };
+		16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */; };
+		16C77BB720E69EB10061A3DA /* FoursquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */; };
+		16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB620E69EB10061A3DA /* VenueController.swift */; };
 		6980B84D20E54B20005C395D /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6980B84C20E54B20005C395D /* TwitterUser.swift */; };
 		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
@@ -40,6 +46,12 @@
 		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTopLevelJSON.swift; sourceTree = "<group>"; };
+		16C77BAE20E69E650061A3DA /* VenueDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetails.swift; sourceTree = "<group>"; };
+		16C77BAF20E69E650061A3DA /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoriesMasterList.swift; sourceTree = "<group>"; };
+		16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareAPIClient.swift; sourceTree = "<group>"; };
+		16C77BB620E69EB10061A3DA /* VenueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueController.swift; sourceTree = "<group>"; };
 		6980B84C20E54B20005C395D /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
@@ -103,6 +115,26 @@
 			path = HotSpotters;
 			sourceTree = "<group>";
 		};
+		16C77BB920E69F550061A3DA /* FourSquareModels */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */,
+				16C77BAF20E69E650061A3DA /* Venue.swift */,
+				16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */,
+				16C77BAE20E69E650061A3DA /* VenueDetails.swift */,
+			);
+			path = FourSquareModels;
+			sourceTree = "<group>";
+		};
+		16C77BBA20E69F700061A3DA /* FourSquareControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */,
+				16C77BB620E69EB10061A3DA /* VenueController.swift */,
+			);
+			path = FourSquareControllers;
+			sourceTree = "<group>";
+		};
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +164,12 @@
 		69DC9F4220E2BD5D00EB03E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				16C77BB920E69F550061A3DA /* FourSquareModels */,
 				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
 				69DC9F4C20E2C0A600EB03E8 /* Tweet.swift */,
-
 				6980B84C20E54B20005C395D /* TwitterUser.swift */,
-
 				6D381C0320E426DE0075D7F9 /* Event.swift */,
 				6D381C0220E426DE0075D7F9 /* Post.swift */,
-
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +177,7 @@
 		69DC9F4320E2BD6200EB03E8 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				16C77BBA20E69F700061A3DA /* FourSquareControllers */,
 				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
 				69DC9F4A20E2C09A00EB03E8 /* TweetController.swift */,
 			);
@@ -248,17 +279,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */,
+				16C77BB320E69E660061A3DA /* Venue.swift in Sources */,
 				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
+				16C77BB720E69EB10061A3DA /* FoursquareAPIClient.swift in Sources */,
 				6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */,
 				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
+				16C77BB220E69E660061A3DA /* VenueDetails.swift in Sources */,
 				6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
-
 				6980B84D20E54B20005C395D /* TwitterUser.swift in Sources */,
-
+				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
-
+				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
+				16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */,
 				69DC9F4D20E2C0A600EB03E8 /* Tweet.swift in Sources */,
 				6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */,
 				6D13BA4D20E5629500658EAF /* Graph.swift in Sources */,
