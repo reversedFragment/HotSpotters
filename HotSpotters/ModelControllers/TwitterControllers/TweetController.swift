@@ -11,7 +11,7 @@ import Foundation
 class TweetController{
     
     static let shared = TweetController()
-    let baseUrlString = "https://api.twitter.com/1.1/search/tweets.json"
+    static let baseSearchTweetsUrl = URL(string: "https://api.twitter.com/1.1/search/tweets.json")
     
     
     private struct ApiKeys{
@@ -41,13 +41,13 @@ class TweetController{
     
     func getTwitterClientBearerToken(completion: @escaping (_ bearerToken: String?) -> Void){
         
-        guard let url = URL(string: baseUrlString) else {return}
+        guard let url = URL(string: ApiKeys.appOnlyAuth) else {return}
         let bearerToken =  getBase64EncodeString()
         print("Basic \(bearerToken)")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.addValue("Basic \(bearerToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Basic bExsRTQ3SjQydVZ6SnJ3bDB1RDhOVXlVcjp0MVpkajdld3RGRVlLMTRwODJNS1U4cGhhNUxQZVEzWjdFTXl2bVVvc01XelFDWGNvMA==", forHTTPHeaderField: "Authorization")
         request.httpBody = "grant_type=client_credentials".data(using: .utf8)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -55,11 +55,19 @@ class TweetController{
                 print("\(error.localizedDescription) \(error) in function: \(#function)")
                 return
             }
-            
+            print(response ?? "No Response")
             if let data = data{
                 do{
-                    guard let results: [String : Any] = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String : Any],
-                        let token = results["access_token"] as? String else {completion(nil) ; return}
+                    guard let resultsDictionary: [String : String] = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String : String] else {
+                        completion(nil)
+                        return
+                    }
+                    print(resultsDictionary)
+                    guard let token = resultsDictionary["access_token"] else {
+                        completion(nil)
+                        return
+                    }
+                    print(token)
                     completion(token)
                 } catch{
                     print("\(error.localizedDescription) \(error) in function: \(#function)")
@@ -70,12 +78,17 @@ class TweetController{
             }.resume()
     }
     
-    func searchTweetsBy(topic: String, resultType: ResultType ,completion: @escaping (Data?) -> Void){
+    func searchTweetsBy(topic: String, geocode: String?, resultType: ResultType? ,completion: @escaping ([Tweet]?) -> Void){
         
         getTwitterClientBearerToken { (token) in
             if let token = token {
                 let bearerToken = "Bearer \(token)"
-                guard let url = URL(string: self.baseUrlString) else {return}
+                
+                guard let baseUrl = TweetController.baseSearchTweetsUrl else {return}
+                var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
+                let queryItems = [URLQueryItem(name: "q", value: topic), URLQueryItem(name: "geocode", value: geocode), URLQueryItem(name: "result_type", value: resultType.map { $0.rawValue })]
+                components?.queryItems = queryItems
+                guard let url = components?.url else {return}
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
                 request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
@@ -89,8 +102,8 @@ class TweetController{
                     if let data = data{
                         let decoder = JSONDecoder()
                         do{
-                            let tweetDictionary = try decoder.decode(TweetsDictionary.self, from: data)
-                            
+                            let tweets = try decoder.decode(TweetsDictionary.self, from: data).tweets
+                            completion(tweets)
                         } catch {
                             print("\(error.localizedDescription) \(error) in function: \(#function)")
                             return
@@ -101,32 +114,4 @@ class TweetController{
         }
     }
     
-    func searchTweetsBy(urlString: String, completion: @escaping (Data?) -> Void){
-        
-        getTwitterClientBearerToken { (token) in
-            if let token = token {
-                let bearerToken = "Bearer \(token)"
-                guard let url = URL(string: urlString) else { return }
-                
-                var request = URLRequest(url: url)
-                request.httpMethod = "GET"
-                request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
-                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                    if let error = error{
-                        print("\(error.localizedDescription) \(error) in function: \(#function)")
-                        return
-                    }
-                    
-                    if let data = data{
-                        let decoder = JSONDecoder()
-                        let tweet = try? decoder.decode(Tweet.self, from: data) as? Tweet
-                        print(tweet)
-                        completion(data)
-                    }
-                }).resume()
-            }
-            
-            
-        }
-    }
 }
