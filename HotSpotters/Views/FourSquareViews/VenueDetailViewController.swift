@@ -17,8 +17,10 @@ class VenueDetailViewController: UIViewController {
     
     var fetchedVenueDetail: VenueDetails? {
         didSet{
-            if viewIfLoaded {
-                updateViews()
+            if isViewLoaded {
+                DispatchQueue.main.async {
+                    self.updateViews()
+                }
             }
         }
     }
@@ -81,10 +83,10 @@ class VenueDetailViewController: UIViewController {
     
     private func updateViews() {
         guard let fetchedVenueDetail = fetchedVenueDetail else { return }
-        categoryLabel.text = fetchedVenueDetail.categories?.first?.name
+//        categoryLabel.text = fetchedVenueDetail.categories?.first?.name
         descriptionLabel.text = fetchedVenueDetail.page?.pageInfo?.description
         priceLabel.text = "\(fetchedVenueDetail.price?.tier)"
-        isOpen.text = "Open Now: \(fetchedVenueDetail.hours?.isOpen)"
+//        isOpen.text = "Open Now: \(fetchedVenueDetail.hours?.isOpen)"
         verifiedLabel.text = "\(fetchedVenueDetail.verified)"
         addressLabel.text = fetchedVenueDetail.locationDetails?.address
         cityLabel.text = fetchedVenueDetail.locationDetails?.city

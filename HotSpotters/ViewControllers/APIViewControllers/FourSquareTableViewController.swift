@@ -1,4 +1,4 @@
-    //
+//
 //  FourSquareTableViewController.swift
 //  HotSpotters
 //
@@ -41,9 +41,9 @@ class FourSquareTableViewController: UIViewController {
                 VenueControllerUpdate.fetchVenueDetails(with: venueDetailID) { (venuedetails) in
                     
                     guard let venueDetails = venuedetails else { return }
-                    VenueDetailViewController().fetchedVenueDetail = venueDetails
                     DispatchQueue.main.async {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        venueDetailVC.fetchedVenueDetail = venueDetails
+                        
                     }
                     
                     }
