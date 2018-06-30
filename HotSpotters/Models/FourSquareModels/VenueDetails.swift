@@ -26,9 +26,7 @@ struct VenueDetails: Codable {
     let rating: Double?
     let ratingSignals: Int?
     let page: Page?
-    let createdAt: Int?
     let tips: VenueTips?
-    let shortURL: String?
     let listed: Listed?
     let hours: Hours?
     let bestPhoto: BestPhoto?
