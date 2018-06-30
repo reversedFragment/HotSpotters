@@ -1,4 +1,4 @@
-//
+    //
 //  FourSquareTableViewController.swift
 //  HotSpotters
 //
@@ -31,16 +31,26 @@ class FourSquareTableViewController: UIViewController {
 
         if segue.identifier == "toVenueDetailVC" {
 
-            if let detailViewController = segue.destination as? VenueDetailViewController,
+            if let venueDetailVC = segue.destination as? VenueDetailViewController,
                 let selectedRow = FourSquareTableView.indexPathForSelectedRow?.row {
-
-                let venueDetail = self.fetchedVenues[selectedRow]
-                detailViewController.venueDetail = venueDetail
+                
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                
+                let venueDetailID = self.fetchedVenues[selectedRow].venueID
+                
+                VenueControllerUpdate.fetchVenueDetails(with: venueDetailID) { (venuedetails) in
+                    
+                    guard let venueDetails = venuedetails else { return }
+                    VenueDetailViewController().fetchedVenueDetail = venueDetails
+                    DispatchQueue.main.async {
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    }
+                    
+                    }
+                }
             }
         }
     }
-
-}
 
 //MARK: UITableViewDataSource
 
@@ -88,6 +98,6 @@ extension FourSquareTableViewController: UISearchBarDelegate {
         }
     }
     
-    
-}
 
+
+}

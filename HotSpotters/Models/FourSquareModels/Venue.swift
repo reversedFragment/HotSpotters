@@ -13,7 +13,7 @@ import Foundation
 ////////////////////////////////////////////////////////////////
 
 struct Venue: Codable {
-    let venueID: String?
+    let venueID: String
     let name: String?
     let contact: Contact?
     let location: Location?
@@ -82,10 +82,6 @@ struct LabeledLatLng: Codable {
 struct Category: Codable {
     let id: String?
     let name: String?
-    let pluralName: String?
-    let shortName: String?
-    let icon: CategoryIcon?
-    let primary: Bool?
 }
 
 struct CategoryIcon: Codable {

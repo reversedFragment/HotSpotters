@@ -26,7 +26,7 @@ struct TopLevelData: Codable {
 
 // Mark: - Results of Query
 struct Response: Codable {
-    let venues: [Venue]
+    let venues: [Venue]?
     let geocode: Geocode?
     let confident: Bool?
     let hours: Hours?

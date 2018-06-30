@@ -11,8 +11,10 @@ import UIKit
 
 class VenueControllerUpdate {
     
+    
     struct Constants {
         static let baseUrl = URL(string: "https://api.foursquare.com/v2/")
+        
         
     }
     
@@ -179,7 +181,7 @@ class VenueControllerUpdate {
     // URL
         guard var url = VenueControllerUpdate.Constants.baseUrl else { completion(nil) ; return }
         url.appendPathComponent("venues")
-        url.appendPathComponent("VENUE_ID")
+        url.appendPathComponent(VENUE_ID)
     
         
     /// QUERIES
@@ -226,9 +228,11 @@ class VenueControllerUpdate {
                 completion(nil)
                 return
             }
-        }.resume()
+        } .resume()
         
     }
+    
+    
 
     
     
