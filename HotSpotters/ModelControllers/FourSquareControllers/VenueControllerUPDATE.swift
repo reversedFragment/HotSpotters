@@ -25,10 +25,11 @@ class VenueControllerUpdate {
                             near: String?,
                             radius: Int?,
                             limit: Int?,
-                            categories: String?,
+//                            categories: String?,
                             completion: @escaping (([Venue]?)->Void)) {
         
-    // Nil Checks
+        
+    // Conversion of Ints to Strings
         
         var stringLocation = String()
         
@@ -36,25 +37,26 @@ class VenueControllerUpdate {
             return print("You need to allow access to Location Services or you can enter the name of an area to search!")
         }
         
-        if near == nil {
-        guard let unwrappedLocation = location else {
-            return print("Something went wrong, please try again")
+        else if near == nil  {
+            guard let unwrappedLocation = location else {
+                return print("Something went wrong, please try again")
             }
-            stringLocation = String(unwrappedLocation.0) + "," + String(unwrappedLocation.1)
+            stringLocation = "\(unwrappedLocation.0)" + "," + "\(unwrappedLocation.1)"
         }
-
-    
-    // Conversion of Ints to Strings
+        
         
         guard let limit = limit else {
             print("limit failed to be converted to String in: \(#function)")
+            return
         }
-        let stringLimit =  String
+        let stringLimit = "\(limit)"
+        
         
         guard let radius = radius else {
             print("radius failed to be converted to String in: \(#function)")
+            return
         }
-        let stringRadiug = radius as String
+        let stringRadius = "\(radius)"
         
         
     // My Personal, Userless Authorization Keys
@@ -73,13 +75,14 @@ class VenueControllerUpdate {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
 
     /// Parameters and their Descriptions
+    
+        
+    // "ll": Latitude and longitude of the user’s location.
+        let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required unless "near" is provied.
         
     //"near": A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error.
         // Otherwise, searches within the bounds of the geocode and adds a geocode object to the response.
         let nearQuery = URLQueryItem.init(name: "near", value: near)  /// Required unless "ll" is provided.
-        
-    // "ll": Latitude and longitude of the user’s location.
-        let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required unless "near" is provied.
         
     // "query": A term to be searched against a venue’s tips, category, etc.
         let searchTermQuery = URLQueryItem.init(name: "query", value: searchTerm) /// Has no effect when a section is specified.
@@ -92,21 +95,28 @@ class VenueControllerUpdate {
         let limitQuery = URLQueryItem.init(name: "limit", value: stringLimit)
         
     // Array of categories applied to venue. One category will have a primary field to mark it as the primary category.
-        let category = URLQueryItem.init(name: "categoryId", value: categories) /// Possibly an empty array
+//        let category = URLQueryItem.init(name: "categoryId", value: categories) /// Possibly an empty array
         
     // My Personal, Userless Authorization Keys, they can be used to get all the data that matters
         let clientID = URLQueryItem.init(name: "client_id", value: myClientID) /// Be aware of limitations
         let clientSecret = URLQueryItem.init(name: "client_secret", value: myClientSecret) /// Check for restrictions
         let FSversionNumber = URLQueryItem.init(name: "v", value: version) /// Version of FourSquare Systems
         
+    
         
-        var queryArray = [nearQuery, locationQuery, searchTermQuery, radiusQuery, limitQuery, category, clientID, clientSecret, FSversionNumber]
         
-    // If "near" is nil, ignore nearQuery and only use locationQuery
-        if near == nil {
-            queryArray.removeFirst()
-            
-        }
+        var queryArray = [searchTermQuery, radiusQuery, limitQuery, clientID, clientSecret, FSversionNumber, nearQuery]
+        
+//    // If "near" is nil, ignore nearQuery and only use locationQuery
+//        if near == nil {
+//            queryArray.removeLast()
+//            
+//        }
+//        
+//        if location == nil {
+//            queryArray.removeFirst()
+//            
+//        }
         
         components?.queryItems = queryArray
         

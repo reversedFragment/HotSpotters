@@ -14,6 +14,10 @@ import Foundation
 
 struct TopLevelData: Codable {
     let response: Response
+    
+    enum CodingKeys: String, CodingKey {
+        case response = "response"
+    }
 }
 
 ////////////////////////////////////////////////////////////////
@@ -27,14 +31,14 @@ struct Response: Codable {
     let confident: Bool?
     let hours: Hours?
     let categories: [MainCategories]?
-    let venueDetails: VenueDetails
+    let venueDetails: VenueDetails? 
     
     enum CodingKeys: String, CodingKey {
-        case venues
-        case geocode
-        case confident
-        case hours
-        case categories
+        case venues = "venues"
+        case geocode = "geocode"
+        case confident = "confident"
+        case hours = "hours"
+        case categories = "categories"
         case venueDetails = "venue"
     }
 }
@@ -46,9 +50,9 @@ struct Response: Codable {
 ////////////////////////////////////////////////////////////////
 
 struct Geocode: Codable {
-    let what: String
-    let geocodeWhere: String
-    let feature: Feature
+    let what: String?
+    let geocodeWhere: String?
+    let feature: Feature?
 
     enum CodingKeys: String, CodingKey {
         case what = "what"
@@ -59,16 +63,16 @@ struct Geocode: Codable {
 }
 
 struct Feature: Codable {
-    let cc: String
-    let name: String
-    let displayName: String
-    let matchedName: String
-    let highlightedName: String
-    let woeType: Int
-    let slug: String
-    let id: String
-    let longID: String
-    let geometry: Geometry
+    let cc: String?
+    let name: String?
+    let displayName: String?
+    let matchedName: String?
+    let highlightedName: String?
+    let woeType: Int?
+    let slug: String?
+    let id: String?
+    let longID: String?
+    let geometry: Geometry?
 
     enum CodingKeys: String, CodingKey {
         case cc = "cc"
@@ -85,8 +89,8 @@ struct Feature: Codable {
 }
 
 struct Geometry: Codable {
-    let center: Center
-    let bounds: Bounds
+    let center: Center?
+    let bounds: Bounds?
 
     enum CodingKeys: String, CodingKey {
         case center = "center"

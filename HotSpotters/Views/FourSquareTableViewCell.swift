@@ -17,20 +17,16 @@ class FourSquareTableViewCell: UITableViewCell {
     }
 
 
-    @IBOutlet weak var venueNameLabel: UILabel!
-    @IBOutlet weak var venueCategoryLabel: UILabel!
-    @IBOutlet weak var venueAddressLabel: UILabel!
-    @IBOutlet weak var venueDistanceLabel: UILabel!
-    @IBOutlet weak var venueVerifiedLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
 
     func updateViews() {
         guard let fetchedVenue = fetchedVenue else { return }
-        venueNameLabel.text = fetchedVenue.name
-        venueCategoryLabel.text = fetchedVenue.venueCategories?.first?.name
-        venueAddressLabel.text = fetchedVenue.location.address
-        venueDistanceLabel.text = "It's \(String(describing: fetchedVenue.location.distance)) far away"
-        venueVerifiedLabel.text = String(describing: fetchedVenue.verified)
+        nameLabel.text = fetchedVenue.name ?? "haha"
+//        venueCategoryLabel.text = fetchedVenue.venueCategories?.first?.name ?? "haha"
+//        venueAddressLabel.text = fetchedVenue.location?.address ?? "haha"
+//        venueDistanceLabel.text = "It's \(fetchedVenue.contact?.phone ?? "haha")"
+//        venueVerifiedLabel.text = String(describing: fetchedVenue.verified)
         
     }
 }

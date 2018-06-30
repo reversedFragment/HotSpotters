@@ -11,23 +11,23 @@ import UIKit
 
 class FourSquareTableViewController: UIViewController {
     
-    @IBOutlet var fourSquareTableView: UITableView!
-    @IBOutlet weak var fourSquareSearchBar: UISearchBar!
 
+
+    
+    
+
+    @IBOutlet weak var FourSquareTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     /// Mark: - Source of Truth
     var fetchedVenues: [Venue] = []
-    
-    /// Shared Instance
-    static let shared = FourSquareTableViewController()
-
-    
 
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fourSquareTableView.delegate = self
-        fourSquareTableView.dataSource = self
-        fourSquareSearchBar.delegate = self
+        FourSquareTableView.delegate = self
+        FourSquareTableView.dataSource = self
+        searchBar.delegate = self
     
 //    // MARK: Navigation
 //
@@ -56,8 +56,9 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "venueCell", for: indexPath) as! FourSquareTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "venueCellID", for: indexPath) as! FourSquareTableViewCell
         let fetchedVenue = fetchedVenues[indexPath.row]
+        print(fetchedVenue.venueID)
         cell.fetchedVenue = fetchedVenue
         return cell
     }
@@ -75,23 +76,18 @@ extension FourSquareTableViewController: UISearchBarDelegate {
 
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let searchTerm = searchBar.text?.lowercased() else { return }
-        if searchTerm == "", searchTerm == " " {
-            searchBar.text = nil
-            return
-        }
         
-        VenueControllerUpdate.fetchVenues(searchTerm: "taco",
+        VenueControllerUpdate.fetchVenues(searchTerm: searchTerm ,
                                           location: nil,
                                           near: "Salt Lake City",
                                           radius: 10000,
-                                          limit: 30,
-                                          categories: nil) { (venues) in
+                                          limit: 30) { (venues) in
                                             
             guard let venueList = venues else { return }
             self.fetchedVenues = venueList
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.fourSquareTableView.reloadData()
+                self.FourSquareTableView.reloadData()
             }
         }
     }

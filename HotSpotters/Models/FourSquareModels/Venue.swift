@@ -13,10 +13,10 @@ import Foundation
 ////////////////////////////////////////////////////////////////
 
 struct Venue: Codable {
-    let venueID: String
-    let name: String
+    let venueID: String?
+    let name: String?
     let contact: Contact?
-    let location: Location
+    let location: Location?
     let venueCategories: [Category]?
     let verified: Bool?
     let stats: Stats?
