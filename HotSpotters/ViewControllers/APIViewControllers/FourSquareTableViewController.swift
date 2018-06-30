@@ -63,7 +63,6 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "venueCellID", for: indexPath) as! FourSquareTableViewCell
         let fetchedVenue = fetchedVenues[indexPath.row]
-        print("\(fetchedVenue.location?.address)")
         cell.fetchedVenue = fetchedVenue
         return cell
     }
@@ -84,8 +83,8 @@ extension FourSquareTableViewController: UISearchBarDelegate {
         
         VenueControllerUpdate.fetchVenues(searchTerm: searchTerm ,
                                           location: nil,
-                                          near: "Salt Lake City",
-                                          radius: 10000,
+                                          near: "Los Angeles",
+                                          radius: 100000,
                                           limit: 30,
                                           categories: nil) { (venues) in
                                             

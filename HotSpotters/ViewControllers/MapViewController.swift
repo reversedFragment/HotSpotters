@@ -26,7 +26,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        guard var currentLocation = locationManager.location?.coordinate else { return }
+        guard let currentLocation = locationManager.location?.coordinate else { return }
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region = MKCoordinateRegion(center: currentLocation, span: span)
         mapView.setRegion(region, animated: true)

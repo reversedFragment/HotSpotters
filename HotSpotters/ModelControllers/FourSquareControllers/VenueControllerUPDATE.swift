@@ -336,8 +336,9 @@ class VenueControllerUpdate {
     // Auth Keys
         let clientID = URLQueryItem.init(name: "client_id", value: myClientID)
         let clientSecret = URLQueryItem.init(name: "client_secret", value: myClientSecret)
+        let FSversionNumber = URLQueryItem.init(name: "v", value: version) /// Version of FourSquare Systems
         
-        var queryArray = [nearQuery, locationQuery, searchTermQuery, radiusQuery, sectionQuery, limitQuery, offSetQuery, openNowQuery, sortByDistanceQuery, categoryQuery, clientID, clientSecret]
+        var queryArray = [nearQuery, locationQuery, searchTermQuery, radiusQuery, sectionQuery, limitQuery, offSetQuery, openNowQuery, sortByDistanceQuery, categoryQuery, clientID, clientSecret, FSversionNumber]
         
     // If 'near' nil, use 'll' location instead
         if near == nil {
