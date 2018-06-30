@@ -17,8 +17,6 @@
 		16C77BB220E69E660061A3DA /* VenueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAE20E69E650061A3DA /* VenueDetails.swift */; };
 		16C77BB320E69E660061A3DA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAF20E69E650061A3DA /* Venue.swift */; };
 		16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */; };
-		16C77BB720E69EB10061A3DA /* FoursquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */; };
-		16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB620E69EB10061A3DA /* VenueController.swift */; };
 		16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBB20E6A6210061A3DA /* TrendController.swift */; };
 		16C77BC420E6A6220061A3DA /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBD20E6A6210061A3DA /* Trend.swift */; };
 		16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */; };
@@ -26,6 +24,7 @@
 		16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */; };
 		16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCB20E6A65F0061A3DA /* Tweet.swift */; };
 		16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCD20E6A6880061A3DA /* TwitterUser.swift */; };
+		16E48D9B20E748AB00ABFC4F /* VenueControllerUPDATE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* VenueControllerUPDATE.swift */; };
 		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
@@ -58,8 +57,6 @@
 		16C77BAE20E69E650061A3DA /* VenueDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetails.swift; sourceTree = "<group>"; };
 		16C77BAF20E69E650061A3DA /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoriesMasterList.swift; sourceTree = "<group>"; };
-		16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareAPIClient.swift; sourceTree = "<group>"; };
-		16C77BB620E69EB10061A3DA /* VenueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueController.swift; sourceTree = "<group>"; };
 		16C77BBB20E6A6210061A3DA /* TrendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendController.swift; sourceTree = "<group>"; };
 		16C77BBD20E6A6210061A3DA /* Trend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocation.swift; sourceTree = "<group>"; };
@@ -67,6 +64,7 @@
 		16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocationController.swift; sourceTree = "<group>"; };
 		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tweet.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/Tweet.swift; sourceTree = "<group>"; };
 		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwitterUser.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/TwitterUser.swift; sourceTree = "<group>"; };
+		16E48D9A20E748AB00ABFC4F /* VenueControllerUPDATE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueControllerUPDATE.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -149,8 +147,7 @@
 		16C77BBA20E69F700061A3DA /* FourSquareControllers */ = {
 			isa = PBXGroup;
 			children = (
-				16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */,
-				16C77BB620E69EB10061A3DA /* VenueController.swift */,
+				16E48D9A20E748AB00ABFC4F /* VenueControllerUPDATE.swift */,
 			);
 			path = FourSquareControllers;
 			sourceTree = "<group>";
@@ -324,11 +321,11 @@
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
 				16C77BB320E69E660061A3DA /* Venue.swift in Sources */,
 				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
+				16E48D9B20E748AB00ABFC4F /* VenueControllerUPDATE.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
 				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
-				16C77BB720E69EB10061A3DA /* FoursquareAPIClient.swift in Sources */,
 				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
 				16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */,
 				16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */,
@@ -340,7 +337,6 @@
 				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
-				16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */,
 				6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */,
 				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,
 				6D13BA4D20E5629500658EAF /* Graph.swift in Sources */,

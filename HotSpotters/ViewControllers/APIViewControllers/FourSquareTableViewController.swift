@@ -14,23 +14,13 @@ class FourSquareTableViewController: UIViewController {
     @IBOutlet var fourSquareTableView: UITableView!
     @IBOutlet weak var fourSquareSearchBar: UISearchBar!
 
+    /// Mark: - Source of Truth
+    var fetchedVenues: [Venue] = []
     
     /// Shared Instance
     static let shared = FourSquareTableViewController()
+
     
-    /// Mark: - Source of Truth
-    var fetchedVenueList: [Venue] = []
-    
-    /// Mark: - Search Parameters
-    
-    var generalVenueSearchParameters: [String: String] = [
-        // Can also take geocoordinates of user location or selected location as query
-        // parameter instead of "near", but not both.
-        "near": "Los Angeles",
-        "limit": "30",
-        //    "radius": "10000",
-        //    "query": "DevMountain"
-    ];
 
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
@@ -62,14 +52,18 @@ class FourSquareTableViewController: UIViewController {
 extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedVenueList.count
+        return fetchedVenues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "venueCell", for: indexPath) as! FourSquareTableViewCell
-        let venue = fetchedVenueList[indexPath.row]
-        cell.venueListing = venue
+        let fetchedVenue = fetchedVenues[indexPath.row]
+        cell.fetchedVenue = fetchedVenue
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
 }
@@ -81,12 +75,27 @@ extension FourSquareTableViewController: UISearchBarDelegate {
 
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let searchTerm = searchBar.text?.lowercased() else { return }
-        self.generalVenueSearchParameters["query"] = searchTerm
-        VenueController.fetchVenues(parameter: generalVenueSearchParameters)
+        if searchTerm == "", searchTerm == " " {
+            searchBar.text = nil
+            return
+        }
+        
+        VenueControllerUpdate.fetchVenues(searchTerm: "taco",
+                                          location: nil,
+                                          near: "Salt Lake City",
+                                          radius: 10000,
+                                          limit: 30,
+                                          categories: nil) { (venues) in
+                                            
+            guard let venueList = venues else { return }
+            self.fetchedVenues = venueList
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.fourSquareTableView.reloadData()
             }
         }
     }
+    
+    
+}
 

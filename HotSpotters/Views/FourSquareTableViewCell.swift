@@ -1,16 +1,16 @@
-//
+
 //  FourSquareTableViewCell.swift
 //  HotSpotters
 //
 //  Created by Ben Adams on 6/29/18.
 //  Copyright © 2018 Ben Adams. All rights reserved.
-//
+
 
 import UIKit
 
 class FourSquareTableViewCell: UITableViewCell {
     
-    var venueListing: Venue? {
+    var fetchedVenue: Venue? {
         didSet {
             updateViews()
         }
@@ -25,12 +25,12 @@ class FourSquareTableViewCell: UITableViewCell {
     
 
     func updateViews() {
-        guard let venueListing = venueListing else { return }
-        venueNameLabel.text = venueListing.name
-        venueCategoryLabel.text = venueListing.venueCategories.first?.name
-        venueAddressLabel.text = venueListing.location.address
-        venueDistanceLabel.text = "It's \(String(describing: venueListing.location.distance)) far away"
-        venueVerifiedLabel.text = String(venueListing.verified)
+        guard let fetchedVenue = fetchedVenue else { return }
+        venueNameLabel.text = fetchedVenue.name
+        venueCategoryLabel.text = fetchedVenue.venueCategories?.first?.name
+        venueAddressLabel.text = fetchedVenue.location.address
+        venueDistanceLabel.text = "It's \(String(describing: fetchedVenue.location.distance)) far away"
+        venueVerifiedLabel.text = String(describing: fetchedVenue.verified)
         
     }
 }

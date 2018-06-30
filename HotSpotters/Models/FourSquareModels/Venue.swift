@@ -15,22 +15,22 @@ import Foundation
 struct Venue: Codable {
     let venueID: String
     let name: String
-//    let contact: Contact
+    let contact: Contact?
     let location: Location
-    let venueCategories: [Category]
-    let verified: Bool
-//    let stats: Stats
-//    let url: String?
+    let venueCategories: [Category]?
+    let verified: Bool?
+    let stats: Stats?
+    let url: String?
     
     enum CodingKeys: String, CodingKey {
         case venueID = "id"
         case name = "name"
-//        case contact = "contact"
+        case contact = "contact"
         case location = "location"
         case venueCategories = "categories"
         case verified = "verified"
-//        case stats = "stats"
-//        case url = "url"
+        case stats = "stats"
+        case url = "url"
     }
 }
 
@@ -80,17 +80,17 @@ struct LabeledLatLng: Codable {
 ////////////////////////////////////////////////////////////////
 
 struct Category: Codable {
-    let id: String
-    let name: String
-    let pluralName: String
-    let shortName: String
-    let icon: CategoryIcon
+    let id: String?
+    let name: String?
+    let pluralName: String?
+    let shortName: String?
+    let icon: CategoryIcon?
     let primary: Bool?
 }
 
 struct CategoryIcon: Codable {
-    let prefix: String
-    let suffix: String
+    let prefix: String?
+    let suffix: String?
 }
 
 // image extension enum
@@ -118,8 +118,8 @@ struct Contact: Codable {
 
 // Queries number of people currently at venue
 struct HereNow: Codable {
-    let count: Int
-    let summary: Summary
+    let count: Int?
+    let summary: Summary?
 }
 
 enum Summary: String, Codable {
@@ -140,14 +140,6 @@ struct Stats: Codable {
     let visitsCount: Int?
 }
 
-
-struct VenuePageID: Codable {
-    let id: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-    }
-}
 
 ////////////////////////////////////////////////////////////////
 /// Mark: - Venue Hours

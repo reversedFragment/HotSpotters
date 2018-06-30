@@ -13,9 +13,9 @@ import Foundation
 ////////////////////////////////////////////////////////////////
 
 struct VenueDetails: Codable {
-    let id: String?
-    let name: String?
-    let contact: VenueContact?
+    let id: String
+    let name: String
+    let contact: VenueContact
     let locationDetails: Location?
     let canonicalURL: String?
     let categories: [Category]?
