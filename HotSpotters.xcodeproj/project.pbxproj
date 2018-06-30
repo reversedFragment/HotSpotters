@@ -162,7 +162,7 @@
 			path = FourSquareControllers;
 			sourceTree = "<group>";
 		};
-		16C77BC920E6A6410061A3DA /* Twitter Models */ = {
+		16C77BC920E6A6410061A3DA /* TwitterModels */ = {
 			isa = PBXGroup;
 			children = (
 				16C77BCB20E6A65F0061A3DA /* Tweet.swift */,
@@ -170,7 +170,7 @@
 				16C77BBD20E6A6210061A3DA /* Trend.swift */,
 				16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */,
 			);
-			name = "Twitter Models";
+			name = TwitterModels;
 			sourceTree = "<group>";
 		};
 		16C77BCA20E6A6590061A3DA /* TwitterControllers */ = {
@@ -189,6 +189,32 @@
 				16E48D9F20E7A1D000ABFC4F /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16E48DAC20E7A8C500ABFC4F /* FourSquareViews */ = {
+			isa = PBXGroup;
+			children = (
+				169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */,
+			);
+			path = FourSquareViews;
+			sourceTree = "<group>";
+		};
+		16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
+			);
+			path = EventBriteControllers;
+			sourceTree = "<group>";
+		};
+		16E48DAE20E7A92600ABFC4F /* EventbriteModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
+				6D381C0320E426DE0075D7F9 /* Event.swift */,
+				6D381C0220E426DE0075D7F9 /* Post.swift */,
+			);
+			path = EventbriteModels;
 			sourceTree = "<group>";
 		};
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
@@ -220,11 +246,9 @@
 		69DC9F4220E2BD5D00EB03E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				16C77BC920E6A6410061A3DA /* Twitter Models */,
+				16C77BC920E6A6410061A3DA /* TwitterModels */,
 				16C77BB920E69F550061A3DA /* FourSquareModels */,
-				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
-				6D381C0320E426DE0075D7F9 /* Event.swift */,
-				6D381C0220E426DE0075D7F9 /* Post.swift */,
+				16E48DAE20E7A92600ABFC4F /* EventbriteModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,7 +258,7 @@
 			children = (
 				16C77BCA20E6A6590061A3DA /* TwitterControllers */,
 				16C77BBA20E69F700061A3DA /* FourSquareControllers */,
-				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
+				16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -252,8 +276,8 @@
 		69DC9F4520E2BD7600EB03E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				16E48DAC20E7A8C500ABFC4F /* FourSquareViews */,
 				6D13BA4820E55F3B00658EAF /* GraphView.swift */,
-				169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */,
 				6D13BA4220E550EC00658EAF /* MapTabBar.swift */,
 				69DC9F4820E2C08B00EB03E8 /* TestView.swift */,
 			);

@@ -18,11 +18,15 @@ class FourSquareTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var categoriesName: UILabel!
     
 
     func updateViews() {
         guard let fetchedVenue = fetchedVenue else { return }
         nameLabel.text = fetchedVenue.name ?? "haha"
+        addressLabel.text = fetchedVenue.location?.address ?? "No data"
+        categoriesName.text = fetchedVenue.venueCategories?.first?.name ?? "No Data"
 //        venueCategoryLabel.text = fetchedVenue.venueCategories?.first?.name ?? "haha"
 //        venueAddressLabel.text = fetchedVenue.location?.address ?? "haha"
 //        venueDistanceLabel.text = "It's \(fetchedVenue.contact?.phone ?? "haha")"
