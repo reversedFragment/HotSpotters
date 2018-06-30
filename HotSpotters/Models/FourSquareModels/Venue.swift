@@ -15,22 +15,22 @@ import Foundation
 struct Venue: Codable {
     let venueID: String
     let name: String
-    let contact: Contact
+//    let contact: Contact
     let location: Location
     let venueCategories: [Category]
     let verified: Bool
-    let stats: Stats
-    let url: String?
+//    let stats: Stats
+//    let url: String?
     
     enum CodingKeys: String, CodingKey {
         case venueID = "id"
         case name = "name"
-        case contact = "contact"
+//        case contact = "contact"
         case location = "location"
         case venueCategories = "categories"
         case verified = "verified"
-        case stats = "stats"
-        case url = "url"
+//        case stats = "stats"
+//        case url = "url"
     }
 }
 

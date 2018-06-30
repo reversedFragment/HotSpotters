@@ -9,12 +9,11 @@
 import Foundation
 
 class VenueController {
-    
-    static var venueList: [Venue] = []
+
     static var trendingVenueList: [Venue] = []
 //    static var venueDetailsList
     static var venueHoursList: [HoursTimeframe] = []
-    static let sharedController = VenueController()
+    
 
     // Client Auth ID (Specific to our App)
     static let client = FoursquareAPIClient(clientId: "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW",
@@ -29,7 +28,7 @@ class VenueController {
     "near": "SLC",
     "limit": "50",
 //    "radius": "10000",
-    "query": "DevMountain"
+//    "query": "DevMountain"
         ];
 
     
@@ -39,8 +38,8 @@ class VenueController {
     
     /// Mark: - General Venue Fetch
 
-    static func fetchVenues() {
-        client.request(path: "venues/search", parameter: basicLocationParameter) { result in
+    static func fetchVenues(parameter: [String : String]) {
+        client.request(path: "venues/search", parameter: parameter ) { result in
             switch result {
             case let .success(data):
                 do {
@@ -52,8 +51,9 @@ class VenueController {
                         print("VenueList returned Nil in fetchVenues() function")
                         return
                     }
-                self.venueList = venueList
-                print(self.venueList.map{$0.name})
+                FourSquareTableViewController.shared.fetchedVenueList = venueList
+//                print(self.venueList.map{$0.name})
+            
             } catch {
                 print("Error decoding venueList: \(error.localizedDescription)")
             }
@@ -168,7 +168,7 @@ class VenueController {
                     print(venueDetails.name as Any)
                     
                 } catch {
-                    print("Error decoding venueList: \(error.localizedDescription)")
+                    print("Error decoding venue Details: \(error.localizedDescription)")
                 }
 
             case let .failure(error):
