@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 
 class FourSquareTableViewController: UIViewController {
-    
-
-
-    
-    
 
     @IBOutlet weak var FourSquareTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -58,13 +53,13 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "venueCellID", for: indexPath) as! FourSquareTableViewCell
         let fetchedVenue = fetchedVenues[indexPath.row]
-        print(fetchedVenue.venueID)
+        print("\(fetchedVenue.location?.address)")
         cell.fetchedVenue = fetchedVenue
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 75
     }
     
 }
@@ -81,7 +76,8 @@ extension FourSquareTableViewController: UISearchBarDelegate {
                                           location: nil,
                                           near: "Salt Lake City",
                                           radius: 10000,
-                                          limit: 30) { (venues) in
+                                          limit: 30,
+                                          categories: nil) { (venues) in
                                             
             guard let venueList = venues else { return }
             self.fetchedVenues = venueList

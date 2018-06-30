@@ -25,7 +25,7 @@ class VenueControllerUpdate {
                             near: String?,
                             radius: Int?,
                             limit: Int?,
-//                            categories: String?,
+                            categories: String?,
                             completion: @escaping (([Venue]?)->Void)) {
         
         
@@ -105,17 +105,17 @@ class VenueControllerUpdate {
     
         
         
-        var queryArray = [searchTermQuery, radiusQuery, limitQuery, clientID, clientSecret, FSversionNumber, nearQuery]
+        let queryArray = [searchTermQuery, radiusQuery, limitQuery, clientID, clientSecret, FSversionNumber, nearQuery]
         
 //    // If "near" is nil, ignore nearQuery and only use locationQuery
 //        if near == nil {
 //            queryArray.removeLast()
-//            
+//
 //        }
-//        
+//
 //        if location == nil {
 //            queryArray.removeFirst()
-//            
+//
 //        }
         
         components?.queryItems = queryArray
@@ -145,7 +145,6 @@ class VenueControllerUpdate {
                 let topLevelData = try jsonDecoder.decode(TopLevelData.self, from: data)
                 let venueTopLevelData = topLevelData.response
                 let fetchedVenues = venueTopLevelData.venues
-                fetchedVenues.forEach{$0.name}
                 completion(fetchedVenues)
                 return
                 
@@ -366,7 +365,6 @@ class VenueControllerUpdate {
                 let topLevelData = try jsonDecoder.decode(TopLevelData.self, from: data)
                 let venueTopLevelData = topLevelData.response
                 let recommendedVenues = venueTopLevelData.venues
-                recommendedVenues.forEach{$0.name}
                 completion(recommendedVenues)
                 return
                 

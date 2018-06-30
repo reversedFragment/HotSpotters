@@ -35,7 +35,7 @@
                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="36"/>
                                                     <state key="normal" title="Twitter"/>
                                                     <connections>
-                                                        <segue destination="Kk9-Dr-O4y" kind="show" identifier="toTwitterEntry" id="XDi-7A-rae"/>
+                                                        <segue destination="Kk9-Dr-O4y" kind="show" identifier="" id="XDi-7A-rae"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -61,7 +61,7 @@
                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="36"/>
                                                     <state key="normal" title="FourSquare"/>
                                                     <connections>
-                                                        <segue destination="D4B-XX-pM1" kind="show" identifier="toShowEntry" id="0Tf-Vq-O64"/>
+                                                        <segue destination="D4B-XX-pM1" kind="show" identifier="" id="0Tf-Vq-O64"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -86,7 +86,7 @@
                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="36"/>
                                                     <state key="normal" title="Eventbrite"/>
                                                     <connections>
-                                                        <segue destination="KKE-cT-SEK" kind="show" identifier="toEventEntry" id="4O7-2C-dZP"/>
+                                                        <segue destination="KKE-cT-SEK" kind="show" identifier="" id="4O7-2C-dZP"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -124,11 +124,11 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="venueCellID" rowHeight="200" id="135-WC-IyX" customClass="FourSquareTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="venueCellID" rowHeight="75" id="135-WC-IyX" customClass="FourSquareTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="135-WC-IyX" id="Bg4-78-ppp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvw-BP-FZC">
@@ -173,6 +173,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHQ-8s-pTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yFN-60-PDP">
+                    <rect key="frame" x="0.0" y="0.0" width="347" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="1973.5999999999999" y="-342.27886056971516"/>
         </scene>
