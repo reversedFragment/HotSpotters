@@ -23,23 +23,23 @@ class FourSquareTableViewController: UIViewController {
         FourSquareTableView.delegate = self
         FourSquareTableView.dataSource = self
         searchBar.delegate = self
-    
-//    // MARK: Navigation
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "toShowEntry" {
-//
-//            if let detailViewController = segue.destination as? EntryDetailViewController,
-//                let selectedRow = tableView.indexPathForSelectedRow?.row {
-//
-//                let entry = EntryController.shared.entries[selectedRow]
-//                detailViewController.entry = entry
-//            }
-//        }
-//    }
-//
     }
+    
+    // MARK: Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "toVenueDetailVC" {
+
+            if let detailViewController = segue.destination as? VenueDetailViewController,
+                let selectedRow = FourSquareTableView.indexPathForSelectedRow?.row {
+
+                let venueDetail = self.fetchedVenues[selectedRow]
+                detailViewController.venueDetail = venueDetail
+            }
+        }
+    }
+
 }
 
 //MARK: UITableViewDataSource

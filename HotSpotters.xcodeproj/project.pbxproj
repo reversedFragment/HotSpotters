@@ -33,11 +33,11 @@
 		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		16E48DAA20E7A41200ABFC4F /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
+		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
 		69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */; };
 		69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4820E2C08B00EB03E8 /* TestView.swift */; };
 		6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4220E550EC00658EAF /* MapTabBar.swift */; };
 		6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4420E5513F00658EAF /* MapViewController.swift */; };
-		6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4620E55A5E00658EAF /* SearchBar.swift */; };
 		6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4820E55F3B00658EAF /* GraphView.swift */; };
 		6D13BA4D20E5629500658EAF /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4C20E5629500658EAF /* Graph.swift */; };
 		6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4E20E562BE00658EAF /* GraphViewController.swift */; };
@@ -71,6 +71,7 @@
 		16E48D9C20E79F3200ABFC4F /* PromoAppHomeScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoAppHomeScreenTableViewController.swift; sourceTree = "<group>"; };
 		16E48D9F20E7A1D000ABFC4F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
+		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6D13BA4220E550EC00658EAF /* MapTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTabBar.swift; path = HotSpotters/Views/MapTabBar.swift; sourceTree = SOURCE_ROOT; };
 		6D13BA4420E5513F00658EAF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = HotSpotters/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4620E55A5E00658EAF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = HotSpotters/Views/SearchBar.swift; sourceTree = "<group>"; };
 		6D13BA4820E55F3B00658EAF /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = HotSpotters/Views/GraphView.swift; sourceTree = SOURCE_ROOT; };
 		6D13BA4A20E5600200658EAF /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
 		6D13BA4C20E5629500658EAF /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = HotSpotters/ViewControllers/Graph.swift; sourceTree = SOURCE_ROOT; };
@@ -105,7 +105,6 @@
 		161BC13B20E2B22700F88745 = {
 			isa = PBXGroup;
 			children = (
-				6D13BA4620E55A5E00658EAF /* SearchBar.swift */,
 				161BC14620E2B22700F88745 /* HotSpotters */,
 				161BC14520E2B22700F88745 /* Products */,
 				16E48D9E20E7A1D000ABFC4F /* Frameworks */,
@@ -195,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */,
+				16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */,
 			);
 			path = FourSquareViews;
 			sourceTree = "<group>";
@@ -371,12 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */,
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
 				16C77BB320E69E660061A3DA /* Venue.swift in Sources */,
 				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
 				16E48D9B20E748AB00ABFC4F /* VenueControllerUPDATE.swift in Sources */,
 				16E48D9D20E79F3200ABFC4F /* PromoAppHomeScreenTableViewController.swift in Sources */,
+				16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
 				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
