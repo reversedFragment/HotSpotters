@@ -6,6 +6,11 @@
 //  Copyright © 2018 Ben Adams. All rights reserved.
 //
 
+
+////////////////////////////////////////////////////////////////
+/// Mark: - Call for all categories so users could have an option to sort by Cat
+////////////////////////////////////////////////////////////////
+
 import Foundation
 
 struct MainCategories: Codable {

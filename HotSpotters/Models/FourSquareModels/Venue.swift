@@ -12,6 +12,8 @@ import Foundation
 /// Mark: - Venue Struct
 ////////////////////////////////////////////////////////////////
 
+// MARK: - This is a singular instance of 'venue' from the 'fetchVenues' call
+    // do not confuse this with the json 'venue' which refers to venueDetails
 struct Venue: Codable {
     let venueID: String
     let name: String?
@@ -64,7 +66,7 @@ struct LabeledLatLng: Codable {
 
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Events
+/// Mark: - Venue Events -- Specific to fetchEvents()
 ////////////////////////////////////////////////////////////////
 
 //struct Event {
@@ -75,6 +77,7 @@ struct LabeledLatLng: Codable {
 //    let hereNow: Int
 //
 //}
+
 ////////////////////////////////////////////////////////////////
 /// Mark: - Venue Categories
 ////////////////////////////////////////////////////////////////
@@ -89,7 +92,8 @@ struct CategoryIcon: Codable {
     let suffix: String?
 }
 
-// image extension enum
+// image extension enum. All files are .png, as far as I can tell
+    // different from the 'suffix' above
 enum Suffix: String, Codable {
     case png = ".png"
 }
@@ -111,6 +115,8 @@ struct Contact: Codable {
 ////////////////////////////////////////////////////////////////
 /// Mark: - Venue Current Visitor Count
 ////////////////////////////////////////////////////////////////
+
+//MARK: - "THIS MODEL WILL LIKELY NOT BE AVAILABLE, IF AT ALL DUE TO OUR METHOD OF AUTH"
 
 // Queries number of people currently at venue
 struct HereNow: Codable {

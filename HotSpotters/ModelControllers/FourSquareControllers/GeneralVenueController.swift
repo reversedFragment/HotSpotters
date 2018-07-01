@@ -1,5 +1,5 @@
 //
-//  VenueControllerUPDATE.swift
+//  GeneralVenueController.swift
 //  HotSpotters
 //
 //  Created by Ben Adams on 6/29/18.
@@ -9,17 +9,18 @@
 import Foundation
 import UIKit
 
-class VenueControllerUpdate {
+class GeneralVenueController {
     
+    static let baseUrl = URL(string: "https://api.foursquare.com/v2/")
     
-    struct Constants {
-        static let baseUrl = URL(string: "https://api.foursquare.com/v2/")
-        
-        
-    }
+    // My Personal, Userless Authorization Keys
+    static let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
+    static let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
+    static let version = "20171010" /// Version of FourSquare Systems
+    
     
 ////////////////////////////////////////////////////////////////
-/// Mark: - fetchVenues() by geolocation or by 'near' search.
+// Mark: - fetchVenues() by geolocation or by 'near' search.
 ////////////////////////////////////////////////////////////////
     
     static func fetchVenues(searchTerm: String?,
@@ -31,8 +32,9 @@ class VenueControllerUpdate {
                             completion: @escaping (([Venue]?)->Void)) {
         
         
-    // Conversion of Ints to Strings
+    /// Mark: - Conversion of Ints to Strings and logic to parse 'll' and 'near'
         
+        // 'll'
         var stringLocation = String()
         
         if location == nil && near == nil {
@@ -46,28 +48,12 @@ class VenueControllerUpdate {
             stringLocation = "\(unwrappedLocation.0)" + "," + "\(unwrappedLocation.1)"
         }
         
+        let stringLimit = "\(String(describing: limit))"
+        let stringRadius = "\(String(describing: radius))"
         
-        guard let limit = limit else {
-            print("limit failed to be converted to String in: \(#function)")
-            return
-        }
-        let stringLimit = "\(limit)"
-        
-        
-        guard let radius = radius else {
-            print("radius failed to be converted to String in: \(#function)")
-            return
-        }
-        let stringRadius = "\(radius)"
-        
-        
-    // My Personal, Userless Authorization Keys
-        let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
-        let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
-        let version = "20171010" /// Version of FourSquare Systems
         
     // URL Creation
-        guard var url = VenueControllerUpdate.Constants.baseUrl else { completion(nil) ; return }
+        guard var url = baseUrl else { completion(nil) ; return }
         url.appendPathComponent("venues")
         url.appendPathComponent("search")
         
@@ -76,14 +62,17 @@ class VenueControllerUpdate {
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
 
-    /// Parameters and their Descriptions
-    
         
+    ////////////////////////////////////////////////////////////////
+    // Mark: - Parameters and their Descriptions
+    ////////////////////////////////////////////////////////////////
+    
     // "ll": Latitude and longitude of the user’s location.
         let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required unless "near" is provied.
         
-    //"near": A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error.
-        // Otherwise, searches within the bounds of the geocode and adds a geocode object to the response.
+    // "near": A string naming a place in the world.
+        // If the near string is not geocodable, returns a failed_geocode error.
+            // Otherwise, searches within the bounds of the geocode and adds a geocode object to the response.
         let nearQuery = URLQueryItem.init(name: "near", value: near)  /// Required unless "ll" is provided.
         
     // "query": A term to be searched against a venue’s tips, category, etc.
@@ -99,15 +88,14 @@ class VenueControllerUpdate {
     // Array of categories applied to venue. One category will have a primary field to mark it as the primary category.
 //        let category = URLQueryItem.init(name: "categoryId", value: categories) /// Possibly an empty array
         
-    // My Personal, Userless Authorization Keys, they can be used to get all the data that matters
+    // Auth Keys and Version query formats
         let clientID = URLQueryItem.init(name: "client_id", value: myClientID) /// Be aware of limitations
         let clientSecret = URLQueryItem.init(name: "client_secret", value: myClientSecret) /// Check for restrictions
         let FSversionNumber = URLQueryItem.init(name: "v", value: version) /// Version of FourSquare Systems
         
-    
-        
-        
         let queryArray = [searchTermQuery, radiusQuery, limitQuery, clientID, clientSecret, FSversionNumber, nearQuery]
+      
+    /// Logic to filter 'll' and 'near', but this should be filtered in UI
         
 //    // If "near" is nil, ignore nearQuery and only use locationQuery
 //        if near == nil {
@@ -120,8 +108,8 @@ class VenueControllerUpdate {
 //
 //        }
         
+    // Final Components Summing
         components?.queryItems = queryArray
-        
         
     // Fully constructed URL
         guard let finalUrl = components?.url else { completion(nil) ; return }
@@ -144,14 +132,17 @@ class VenueControllerUpdate {
             guard let data = data else { completion(nil) ; return }
             do {
                 let jsonDecoder = JSONDecoder()
+                
                 let topLevelData = try jsonDecoder.decode(TopLevelData.self, from: data)
                 let venueTopLevelData = topLevelData.response
                 let fetchedVenues = venueTopLevelData.venues
+                
                 completion(fetchedVenues)
                 return
                 
             } catch {
                 print("Error decoding fetched Venues: \(error.localizedDescription) \(error)")
+                
                 completion(nil)
                 return
             }
@@ -160,31 +151,26 @@ class VenueControllerUpdate {
     }
     
     
-    
-    
-    
-    
-    
-    
 ////////////////////////////////////////////////////////////////
 /// Mark: - fetchVenueDetails()
 ////////////////////////////////////////////////////////////////
     
 // Userless authenticators, (THAT MEANS US) will not receive hereNow information
-    static func fetchVenueDetails(with VENUE_ID: String, completion: @escaping ((VenueDetails?)->Void)) {
+    static func fetchVenueDetails(with VENUE_ID: String,
+                                     completion: @escaping ((VenueDetails?)->Void)) {
         
-    // My Personal, Userless Authorization Keys
+    // Auth Keys
         let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
         let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
         let version = "20171010" /// Version of FourSquare Systems
         
     // URL
-        guard var url = VenueControllerUpdate.Constants.baseUrl else { completion(nil) ; return }
+        guard var url = baseUrl else { completion(nil) ; return }
         url.appendPathComponent("venues")
         url.appendPathComponent(VENUE_ID)
     
         
-    /// QUERIES
+    // QUERIES
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
@@ -233,21 +219,12 @@ class VenueControllerUpdate {
     }
     
     
-
-    
-    
-
-    
-    
-    
-    
-    
-    
     
 ////////////////////////////////////////////////////////////////
-/// Mark: - exploreRecommendedVenues()
+/// Mark: - exploreVenues()
 ////////////////////////////////////////////////////////////////
 
+    // Users can use this enum to filter by 'section'
     enum venueSectionMarker: String {
         case food = "food"
         case drinks = "drinks"
@@ -260,6 +237,7 @@ class VenueControllerUpdate {
         case nextVenues = "nextVenues"
     }
     
+    // Users can use this to filter by price point
     enum pricePoint: String {
         case price1 = "1"
         case price2 = "2"
@@ -267,16 +245,17 @@ class VenueControllerUpdate {
         case price4 = "4"
     }
     
-    static func exploreRecommendedVenues(searchTerm: String?,
+    static func exploreVenues(searchTerm: String?,
                                        location: (Int, Int)?,
                                        near: String?,
-                                       radius: String?,
+                                       radius: Int?,
                                        section: venueSectionMarker?,
                                        limit: Int?,
-                                       sortByDistance: Int?,
-                                       price: pricePoint?, // price items can be comma separated to find venues in range of prices
+                                       sortByDistance: Int?, // Boolean flag of 0 or 1
+                                       price: pricePoint?, // separate digits by commas to get a range of prices
                                        category: String?,
                                        completion: @escaping (([Venue]?)->Void)) {
+        
     // Nil Checks on required params
         if location == nil && near == nil {
             return print("You need to allow access to Location Services or you can enter the name of an area to search!")
@@ -285,13 +264,11 @@ class VenueControllerUpdate {
             return
         }
         
-        
         // Conversion of Ints to Strings
         let stringLocation = String(unwrappedLocation.0) + "," + String(unwrappedLocation.1)
         let stringLimit = "\(String(describing: limit))"
         let stringRadius = "\(String(describing: radius))"
         let stringSection = "\(String(describing: section))"
-        
         
     // My Personal, Userless Authorization Keys
         let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
@@ -300,7 +277,7 @@ class VenueControllerUpdate {
         
         
     // URL
-        guard var url = VenueControllerUpdate.Constants.baseUrl else { completion(nil) ; return }
+        guard var url = baseUrl else { completion(nil) ; return }
         url.appendPathComponent("venues")
         url.appendPathComponent("explore")
         
@@ -323,11 +300,11 @@ class VenueControllerUpdate {
         let offSetQuery = URLQueryItem.init(name: "offset", value: "20") // Used to page through results, up to 50.
         
     // Boolean flag to only include venues that are open now.
-        //This prefers official provider hours but falls back to popular check-in hours.
+        // This prefers official provider hours but falls back to popular check-in hours.
         let openNowQuery = URLQueryItem.init(name: "openNow", value: "1") /// Only show open venues
         
     // Boolean flag to only include venues that are open now.
-        //This prefers official provider hours but falls back to popular check-in hours.
+        // This prefers official provider hours but falls back to popular check-in hours.
         let sortByDistanceQuery = URLQueryItem.init(name: "sortByDistance", value: "1") // Sort by distance
         
     // For the complete category tree, see categories: https://developer.foursquare.com/docs/resources/categories
@@ -340,7 +317,7 @@ class VenueControllerUpdate {
         
         var queryArray = [nearQuery, locationQuery, searchTermQuery, radiusQuery, sectionQuery, limitQuery, offSetQuery, openNowQuery, sortByDistanceQuery, categoryQuery, clientID, clientSecret, FSversionNumber]
         
-    // If 'near' nil, use 'll' location instead
+    // logic check: If 'near' nil, use 'll' location instead
         if near == nil {
             queryArray.removeFirst()
         }

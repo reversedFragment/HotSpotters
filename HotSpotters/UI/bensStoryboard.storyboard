@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Promo App Home Screen Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="d66-60-gH3">
             <objects>
-                <tableViewController id="fmj-bP-iZC" customClass="PromoAppHomeScreenTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="fmj-bP-iZC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j93-dv-yIP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

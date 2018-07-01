@@ -9,7 +9,7 @@
 import Foundation
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - TopLevelData
+// Mark: - TopLevelData
 ////////////////////////////////////////////////////////////////
 
 struct TopLevelData: Codable {
@@ -21,17 +21,27 @@ struct TopLevelData: Codable {
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Response Layer
+// Mark: - Response Layer
 ////////////////////////////////////////////////////////////////
 
-// Mark: - Results of Query
+
+/// Mark: - All possible fields for Response depending on fetch func called
+
 struct Response: Codable {
+  // Specific to calls made 'fetchTrendingVenues' and 'fetchVenues'
     let venues: [Venue]?
+    
+  // Specific to calls made using 'near' as a parameter instead of 'll'
     let geocode: Geocode?
     let confident: Bool?
+    
+  // Specific to hours that are pulled by the fetchHours request
     let hours: Hours?
+  // Specfic to categories pulled in the 'VenueCategoriesMasterList' file
     let categories: [MainCategories]?
-    let venueDetails: VenueDetails? 
+  // Specific to 'venue' pulled by 'fetchVenueDetails()', not 'venues' for general
+    let venueDetails: VenueDetails?
+    
     
     enum CodingKeys: String, CodingKey {
         case venues = "venues"
@@ -45,8 +55,8 @@ struct Response: Codable {
 
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Geocode data from general venue search function when
-///         passed in 'near' query instead of coordinates
+// Mark: - Geocode data from general venue search function when
+//        passed in 'near' query instead of coordinates
 ////////////////////////////////////////////////////////////////
 
 struct Geocode: Codable {
