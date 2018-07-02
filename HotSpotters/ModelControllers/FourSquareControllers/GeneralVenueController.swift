@@ -16,7 +16,7 @@ class GeneralVenueController {
     // My Personal, Userless Authorization Keys
     static let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
     static let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
-    static let version = "20171010" /// Version of FourSquare Systems
+    static let version = "20180702" /// Version of FourSquare Systems
     
     
 ////////////////////////////////////////////////////////////////
@@ -26,8 +26,8 @@ class GeneralVenueController {
     static func fetchVenues(searchTerm: String?,
                             location: (Int, Int)?,
                             near: String?,
-                            radius: Int?,
-                            limit: Int?,
+                            radius: Int = 10000,
+                            limit: Int = 10,
                             categories: String?,
                             completion: @escaping (([Venue]?)->Void)) {
         
@@ -70,25 +70,25 @@ class GeneralVenueController {
     // "ll": Latitude and longitude of the user’s location.
         let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required unless "near" is provied.
         
-    // "near": A string naming a place in the world.
+    /// "near": A string naming a place in the world.
         // If the near string is not geocodable, returns a failed_geocode error.
             // Otherwise, searches within the bounds of the geocode and adds a geocode object to the response.
         let nearQuery = URLQueryItem.init(name: "near", value: near)  /// Required unless "ll" is provided.
         
-    // "query": A term to be searched against a venue’s tips, category, etc.
+    /// "query": A term to be searched against a venue’s tips, category, etc.
         let searchTermQuery = URLQueryItem.init(name: "query", value: searchTerm) /// Has no effect when a section is specified.
         
-    // "radius": Radius to search within, in meters.
+    /// "radius": Radius to search within, in meters.
         // If not specified, a suggested radius will be used based on the density of venues in the area.
         let radiusQuery = URLQueryItem.init(name: "radius", value: stringRadius) /// The maximum radius is 100,000 meters.
         
-    // "limit": Number of results to return, up to 50.
+    /// "limit": Number of results to return, up to 50.
         let limitQuery = URLQueryItem.init(name: "limit", value: stringLimit)
         
-    // Array of categories applied to venue. One category will have a primary field to mark it as the primary category.
+    /// Array of categories applied to venue. One category will have a primary field to mark it as the primary category.
 //        let category = URLQueryItem.init(name: "categoryId", value: categories) /// Possibly an empty array
         
-    // Auth Keys and Version query formats
+    /// Auth Keys and Version query formats
         let clientID = URLQueryItem.init(name: "client_id", value: myClientID) /// Be aware of limitations
         let clientSecret = URLQueryItem.init(name: "client_secret", value: myClientSecret) /// Check for restrictions
         let FSversionNumber = URLQueryItem.init(name: "v", value: version) /// Version of FourSquare Systems
@@ -152,17 +152,17 @@ class GeneralVenueController {
     
     
 ////////////////////////////////////////////////////////////////
-/// Mark: - fetchVenueDetails()
+// Mark: - fetchVenueDetails()
 ////////////////////////////////////////////////////////////////
     
-// Userless authenticators, (THAT MEANS US) will not receive hereNow information
+// Userless authenticators (THAT MEANS US), will not receive hereNow information
     static func fetchVenueDetails(with VENUE_ID: String,
                                      completion: @escaping ((VenueDetails?)->Void)) {
         
     // Auth Keys
         let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
         let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
-        let version = "20171010" /// Version of FourSquare Systems
+        let version = "20180702" /// Version of FourSquare Systems
         
     // URL
         guard var url = baseUrl else { completion(nil) ; return }
@@ -221,7 +221,7 @@ class GeneralVenueController {
     
     
 ////////////////////////////////////////////////////////////////
-/// Mark: - exploreVenues()
+// Mark: - exploreVenues()
 ////////////////////////////////////////////////////////////////
 
     // Users can use this enum to filter by 'section'
@@ -273,7 +273,7 @@ class GeneralVenueController {
     // My Personal, Userless Authorization Keys
         let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
         let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
-        let version = "20171010" /// Version of FourSquare Systems
+        let version = "20180702" /// Version of FourSquare Systems
         
         
     // URL

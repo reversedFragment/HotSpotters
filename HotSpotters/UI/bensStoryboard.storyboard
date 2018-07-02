@@ -225,42 +225,15 @@
                                 <rect key="frame" x="196" y="300" width="162" height="164"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Popularity" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4p-Df-YwM">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="111"/>
                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="CheckinsCount" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rM-MO-2WL">
-                                        <rect key="frame" x="0.0" y="40" width="162" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="IrJ-j1-aKn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="visits count" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJM-If-cSx">
-                                        <rect key="frame" x="0.0" y="68" width="162" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="kOT-Ru-1cB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Venue LIkes" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4s2-nW-Qvf">
-                                        <rect key="frame" x="0.0" y="96" width="162" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="jFJ-9G-WpA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Venue Dislikes" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFT-j4-GxK">
                                         <rect key="frame" x="0.0" y="124" width="162" height="15"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="B2B-fl-zAY"/>
+                                            <constraint firstAttribute="height" constant="15" id="jFJ-9G-WpA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -340,13 +313,13 @@
                                 <rect key="frame" x="16" y="483" width="162" height="164"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="As8-11-GJB">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="108"/>
                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos Count" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq6-ek-NnK">
-                                        <rect key="frame" x="0.0" y="40" width="162" height="15"/>
+                                        <rect key="frame" x="0.0" y="121" width="162" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="sB4-cy-iKl"/>
                                         </constraints>
@@ -355,36 +328,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Photo Source" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r27-Pe-agN">
-                                        <rect key="frame" x="0.0" y="68" width="162" height="15"/>
+                                        <rect key="frame" x="0.0" y="149" width="162" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="gwV-Cb-qxK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Photo " lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1Z-Qo-hbM">
-                                        <rect key="frame" x="0.0" y="96" width="162" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="MrS-mD-31I"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Photo" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0h-Gp-NMY">
-                                        <rect key="frame" x="0.0" y="124" width="162" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="2yL-nq-WD0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Photo" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1h-Ln-J84">
-                                        <rect key="frame" x="0.0" y="152" width="162" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="0uM-az-PuT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -597,9 +543,8 @@
                         <outlet property="addressLabel" destination="9y3-34-cca" id="UCJ-KB-HJQ"/>
                         <outlet property="bestPhotoLabel" destination="r27-Pe-agN" id="EQk-rY-6zh"/>
                         <outlet property="categoryLabel" destination="7yT-CX-nhE" id="io1-a8-NDL"/>
-                        <outlet property="checkinsCount" destination="0rM-MO-2WL" id="fjC-dY-XTr"/>
                         <outlet property="cityLabel" destination="7PD-GO-1rN" id="82P-co-Z1I"/>
-                        <outlet property="descriptionLabel" destination="U1l-Wg-E12" id="KVe-zu-cgd"/>
+                        <outlet property="descriptionLabel" destination="nE9-jM-EDF" id="6Cx-NE-KMh"/>
                         <outlet property="facebookUsername" destination="1B2-1c-vXm" id="OwD-ke-z69"/>
                         <outlet property="instagramLabel" destination="nwo-oF-Zjs" id="bZb-RZ-Fxw"/>
                         <outlet property="isOpen" destination="b0q-nr-IuD" id="0eN-fE-Hcd"/>
@@ -616,15 +561,10 @@
                         <outlet property="tipCount" destination="GjT-Tb-bWq" id="Axp-du-EdB"/>
                         <outlet property="topList1" destination="Num-E6-IpL" id="8L6-5y-eAI"/>
                         <outlet property="topList2" destination="bUg-IS-Gh7" id="c9l-de-T9l"/>
-                        <outlet property="topPhoto1" destination="l1Z-Qo-hbM" id="A7U-rJ-SKO"/>
-                        <outlet property="topPhoto2" destination="F0h-Gp-NMY" id="z7W-7R-rxC"/>
-                        <outlet property="topPhoto3" destination="j1h-Ln-J84" id="YGO-MZ-oQ3"/>
                         <outlet property="twitterLabel" destination="nwo-oF-Zjs" id="SaO-YH-lu0"/>
                         <outlet property="urlLabel" destination="PIM-Up-WKk" id="X0e-DU-kgg"/>
-                        <outlet property="venueDislikes" destination="eFT-j4-GxK" id="v8N-zN-3uu"/>
                         <outlet property="venueLikes" destination="4s2-nW-Qvf" id="KrT-Nd-5R8"/>
                         <outlet property="verifiedLabel" destination="LJr-G3-9mu" id="vEx-BH-0sl"/>
-                        <outlet property="visitsCount" destination="LJM-If-cSx" id="KD2-gg-tvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PbS-jM-vFN" userLabel="First Responder" sceneMemberID="firstResponder"/>

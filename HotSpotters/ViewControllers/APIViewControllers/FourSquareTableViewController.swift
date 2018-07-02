@@ -89,7 +89,7 @@ extension FourSquareTableViewController: UISearchBarDelegate {
         GeneralVenueController.fetchVenues(searchTerm: searchTerm ,
                                           location: nil,
                                           near: "Los Angeles",
-                                          radius: 100000,
+                                          radius: 10000,
                                           limit: 10,
                                           categories: nil)
         { (venues) in
@@ -105,35 +105,35 @@ extension FourSquareTableViewController: UISearchBarDelegate {
     }
     
     
-// Search bar and function for exploreVenues()
-    func exploreBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        searchBar.resignFirstResponder()
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        guard let searchTerm = searchBar.text?.lowercased() else { return }
-        
-        GeneralVenueController.exploreVenues(searchTerm: searchTerm,
-                                               location: nil,
-                                                   near: "Los Angeles",
-                                                 radius: 10000,
-                                                section: GeneralVenueController.venueSectionMarker.arts,
-                                                  limit: 10,
-                                         sortByDistance: 1,
-                                                  price: GeneralVenueController.pricePoint.price2 ,
-                                                  category: nil)
-        { (recommendedVenues) in
-                                                    
-            guard let fetchedRecommends = recommendedVenues else { return }
-            self.fetchedVenues = fetchedRecommends
-            
-            DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.FourSquareTableView.reloadData()
-            }
-        }
-    }
+//// Search bar and function for exploreVenues()
+//    func exploreBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//
+//        searchBar.resignFirstResponder()
+//
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//        guard let searchTerm = searchBar.text?.lowercased() else { return }
+//
+//        GeneralVenueController.exploreVenues(searchTerm: searchTerm,
+//                                               location: nil,
+//                                                   near: "Los Angeles",
+//                                                 radius: 10000,
+//                                                section: GeneralVenueController.venueSectionMarker.arts,
+//                                                  limit: 10,
+//                                         sortByDistance: 1,
+//                                                  price: GeneralVenueController.pricePoint.price2 ,
+//                                                  category: nil)
+//        { (recommendedVenues) in
+//
+//            guard let fetchedRecommends = recommendedVenues else { return }
+//            self.fetchedVenues = fetchedRecommends
+//
+//            DispatchQueue.main.async {
+//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//                self.FourSquareTableView.reloadData()
+//            }
+//        }
+//    }
 }
-
-    
-
+//
+//
+//

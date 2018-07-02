@@ -29,13 +29,14 @@ class VenueDetailViewController: UIViewController {
     
     
     ////////////////////////////////////////////////////////////////
-    /// Mark: - Properties
+    // Mark: - Properties
     ////////////////////////////////////////////////////////////////
     
     
 // Overview
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var isOpen: UILabel!
@@ -65,9 +66,7 @@ class VenueDetailViewController: UIViewController {
     //Media
     @IBOutlet weak var photosCountLabel: UILabel!
     @IBOutlet weak var bestPhotoLabel: UILabel!
-    @IBOutlet weak var topPhoto1: UILabel!
-    @IBOutlet weak var topPhoto2: UILabel!
-    @IBOutlet weak var topPhoto3: UILabel!
+
     
     //Contact
     @IBOutlet weak var phoneLabel: UILabel!
@@ -78,16 +77,14 @@ class VenueDetailViewController: UIViewController {
     
     
 
-    
-    // MARK: Private
+    /// MARK: Private
     
     private func updateViews() {
         guard let fetchedVenueDetail = fetchedVenueDetail else { return }
-//        categoryLabel.text = fetchedVenueDetail.categories?.first?.name
+        categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
         descriptionLabel.text = fetchedVenueDetail.page?.pageInfo?.description
         priceLabel.text = "\(fetchedVenueDetail.price?.tier ?? 1)"
-//        isOpen.text = "Open Now: \(fetchedVenueDetail.hours?.isOpen)"
-        verifiedLabel.text = "\(fetchedVenueDetail.verified ?? false)"
+        isOpen.text = "\(fetchedVenueDetail.hours?.isOpen)"
         addressLabel.text = fetchedVenueDetail.locationDetails?.address
         cityLabel.text = fetchedVenueDetail.locationDetails?.city
         stateLabel.text = fetchedVenueDetail.locationDetails?.state
@@ -96,35 +93,16 @@ class VenueDetailViewController: UIViewController {
         ratingsLabel.text = "\(fetchedVenueDetail.rating ?? 0)"
         ratingSignalsLabel.text = "\(fetchedVenueDetail.ratingSignals ?? 0)"
         listedCount.text = "\(fetchedVenueDetail.listed?.count ?? 0)"
-//        topList1.text = fetchedVenueDetail.listed.groups.map{$0.items?.index(before: 2)} ?? "This venue is not on any trending lists"
-//        topList2.text = fetchedVenueDetail.listed.groups.map{$0.} ?? "This venue is not on any trending lists"
-        checkinsCount.text = "\(String(describing: fetchedVenueDetail.stats?.checkinsCount))"
-        visitsCount.text = "\(fetchedVenueDetail.stats?.visitsCount ?? 0)"
         venueLikes.text = "\(fetchedVenueDetail.likes?.count ?? 0)"
-//        venueDislikes.text = fetchedVenueDetail.
         tipCount.text = "\(fetchedVenueDetail.tips?.count ?? 0)"
         photosCountLabel.text = "\(fetchedVenueDetail.photos?.count ?? 0)"
         bestPhotoLabel.text = fetchedVenueDetail.bestPhoto?.source?.url ?? "This venue doesn't have a good photo yet"
-//        topPhoto1.text = fetchedVenueDetail.
-//        topPhoto2.text = fetchedVenueDetail
-//        topPhoto3.text = fetchedVenueDetail
         phoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
         twitterLabel.text = fetchedVenueDetail.contact?.twitter
         instagramLabel.text = fetchedVenueDetail.contact?.instagram
         facebookUsername.text = fetchedVenueDetail.contact?.facebookUsername
-        urlLabel.text = fetchedVenueDetail.canonicalURL
+        urlLabel.text = fetchedVenueDetail.url
     }
-  
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

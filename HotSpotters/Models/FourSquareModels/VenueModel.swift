@@ -12,27 +12,19 @@ import Foundation
 /// Mark: - Venue Struct
 ////////////////////////////////////////////////////////////////
 
-// MARK: - This is a singular instance of 'venue' from the 'fetchVenues' call
+// MARK: - A singular instance of a Venue from 'venues' in the 'fetchVenues' JSON
     // do not confuse this with the json 'venue' which refers to venueDetails
 struct Venue: Codable {
-    let venueID: String
-    let name: String?
-    let contact: Contact?
+    let venueID: String /// A unique string identifier for this venue.
+    let name: String? /// The best known name for this venue.
     let location: Location?
-    let venueCategories: [Category]?
-    let verified: Bool?
-    let stats: Stats?
-    let url: String?
+    let venueCategories: [venueCategory]?
     
     enum CodingKeys: String, CodingKey {
         case venueID = "id"
         case name = "name"
-        case contact = "contact"
         case location = "location"
         case venueCategories = "categories"
-        case verified = "verified"
-        case stats = "stats"
-        case url = "url"
     }
 }
 
@@ -41,11 +33,11 @@ struct Venue: Codable {
 ////////////////////////////////////////////////////////////////
 
 struct Location: Codable {
+    /// An object containing none, some, or all of address (street address), crossStreet, city, state, postalCode, country, lat, lng, and distance. All fields are strings, except for lat, lng, and distance. Distance is measured in meters.
     let address: String?
     let crossStreet: String?
     let lat: Double?
     let lng: Double?
-    let labeledLatLngs: [LabeledLatLng]?
     let distance: Int?
     let postalCode: String?
     let cc: String?
@@ -53,16 +45,9 @@ struct Location: Codable {
     let state: String?
     let country: String?
     let formattedAddress: [String]?
-    let neighborhood: String?
+    
 }
 
-
-// Venue Coordinates
-struct LabeledLatLng: Codable {
-    let label: String
-    let lat: Double
-    let lng: Double
-}
 
 
 ////////////////////////////////////////////////////////////////
@@ -79,11 +64,12 @@ struct LabeledLatLng: Codable {
 //}
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Categories
+// Mark: - Venue Categories
 ////////////////////////////////////////////////////////////////
 
-struct Category: Codable {
-    let id: String?
+struct venueCategory: Codable {
+    /// An array, possibly empty, of categories that have been applied to this venue. One of the categories will have a primary field indicating that it is the primary category for the venue.
+    let id: String? /// A unique identifier for this category.
     let name: String?
 }
 
@@ -112,55 +98,15 @@ struct Contact: Codable {
     let facebookName: String?
 }
 
-////////////////////////////////////////////////////////////////
-/// Mark: - Venue Current Visitor Count
-////////////////////////////////////////////////////////////////
-
-//MARK: - "THIS MODEL WILL LIKELY NOT BE AVAILABLE, IF AT ALL DUE TO OUR METHOD OF AUTH"
-
-// Queries number of people currently at venue
-struct HereNow: Codable {
-    let count: Int?
-    let summary: Summary?
-}
-
-enum Summary: String, Codable {
-    case nobodyHere = "Nobody here"
-    case oneOtherPersonIsHere = "One other person is here"
-    case the2PeopleAreHere = "2 people are here"
-}
-
 
 ////////////////////////////////////////////////////////////////
 /// Mark: - Venue User Stats
 ////////////////////////////////////////////////////////////////
 
 struct Stats: Codable {
+    /// Contains checkinsCount (total checkins ever here), usersCount (total users who have ever checked in here), and tipCount (number of tips here).
     let tipCount: Int?
-    let usersCount: Int?
-    let checkinsCount: Int?
-    let visitsCount: Int?
 }
 
 
-////////////////////////////////////////////////////////////////
-/// Mark: - Venue Hours
-////////////////////////////////////////////////////////////////
 
-struct Hours: Codable {
-    let timeframes: [HoursTimeframe]?
-    let status: String?
-    let isOpen: Bool?
-    let isLocalHoliday: Bool?
-}
-
-struct HoursTimeframe: Codable {
-    let includesToday: Bool?
-    let timeframeOpen: [Open]?
-}
-
-struct Open: Codable {
-    let start: String?
-    let end: String?
-    let renderedTime: String?
-}

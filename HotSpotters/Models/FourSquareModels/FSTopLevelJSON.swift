@@ -14,10 +14,8 @@ import Foundation
 
 struct TopLevelData: Codable {
     let response: Response
+    let warning: Warning?
     
-    enum CodingKeys: String, CodingKey {
-        case response = "response"
-    }
 }
 
 ////////////////////////////////////////////////////////////////
@@ -25,32 +23,38 @@ struct TopLevelData: Codable {
 ////////////////////////////////////////////////////////////////
 
 
-/// Mark: - All possible fields for Response depending on fetch func called
+// Mark: - All possible fields for Response depending on fetch func called
 
+// All fetches have a response struct
 struct Response: Codable {
-  // Specific to calls made 'fetchTrendingVenues' and 'fetchVenues'
-    let venues: [Venue]?
-    
-  // Specific to calls made using 'near' as a parameter instead of 'll'
-    let geocode: Geocode?
-    let confident: Bool?
-    
-  // Specific to hours that are pulled by the fetchHours request
+ 
+    let venues: [Venue]? /// Specific to calls made with 'fetchVenues' and 'exploreVenues()
+    let geocode: Geocode? /// Specific to calls made using 'near' as a parameter instead of 'll'
     let hours: Hours?
-  // Specfic to categories pulled in the 'VenueCategoriesMasterList' file
-    let categories: [MainCategories]?
-  // Specific to 'venue' pulled by 'fetchVenueDetails()', not 'venues' for general
-    let venueDetails: VenueDetails?
-    
+    let categories: [MainCategories]? /// Specfic to categories pulled in the 'VenueCategoriesMasterList' file
+    let venueDetails: VenueDetails? /// Specific to 'venue' pulled by 'fetchVenueDetails()', not 'venues' for general
+    let headerLocation: String? /// Text name for location the user searched, e.g. “SoHo”.
+    let headerFullLocation: String? /// Full name for the location the user searched, e.g. “SoHo, New York”.
+    let totalResults: Int?
+    let groups: [ResponseGroup]? /// An array of objects representing groups of recommendations. Each group contains a type such as “recommended” a human-readable (eventually localized) name such as “Recommended Places,” and an array items of recommendation objects.
+
     
     enum CodingKeys: String, CodingKey {
         case venues = "venues"
         case geocode = "geocode"
-        case confident = "confident"
         case hours = "hours"
         case categories = "categories"
         case venueDetails = "venue"
+        case headerLocation = "headerLocation"
+        case headerFullLocation = "headerFullLocation"
+        case totalResults = "totalResults"
+        case groups = "groups"
     }
+}
+
+/// Specific to exploreVenues() fetches lacking venues given filter criteria
+struct Warning: Codable {
+    let text: String
 }
 
 
@@ -63,13 +67,13 @@ struct Geocode: Codable {
     let what: String?
     let geocodeWhere: String?
     let feature: Feature?
-
-    enum CodingKeys: String, CodingKey {
-        case what = "what"
-        case geocodeWhere = "where"
-        case feature = "feature"
-
-    }
+    let center: Center?
+    let displayString: String?
+    let cc: String?
+    let geometry: Geometry?
+    let slug: String?
+    let longID: String?
+    
 }
 
 struct Feature: Codable {
@@ -126,4 +130,47 @@ struct Center: Codable {
         case lat = "lat"
         case lng = "lng"
     }
+}
+
+////////////////////////////////////////////////////////////////
+/// Mark: - exploreVenues() data that comes back inside 'response' JSON
+////////////////////////////////////////////////////////////////
+
+struct ResponseGroup: Codable {
+    let type: String?
+    let name: String?
+    let items: [GroupItem]?
+    
+    enum CodingKeys: String, CodingKey {
+        case type = "type"
+        case name = "name"
+        case items = "items"
+    }
+}
+
+struct GroupItem: Codable {
+    let venue: RecommendedVenue?
+    
+}
+
+////////////////////////////////////////////////////////////////
+/// Mark: - Venue Hours
+////////////////////////////////////////////////////////////////
+
+struct Hours: Codable {
+    let timeframes: [HoursTimeframe]?
+    let status: String?
+    let isOpen: Bool?
+    let isLocalHoliday: Bool?
+}
+
+struct HoursTimeframe: Codable {
+    let includesToday: Bool?
+    let timeframeOpen: [Open]?
+}
+
+struct Open: Codable {
+    let start: String?
+    let end: String?
+    let renderedTime: String?
 }
