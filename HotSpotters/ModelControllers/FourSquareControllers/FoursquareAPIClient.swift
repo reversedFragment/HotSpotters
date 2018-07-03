@@ -127,7 +127,7 @@ public class FoursquareAPIClient {
             request = NSMutableURLRequest(url: url)
             request.httpMethod = method.rawValue
             request.httpBody = buildQueryString(fromDictionary: parameter).data(using: String.Encoding.utf8)
-            
+
         // Mark: - Get Method
         } else {
             let urlString = kAPIBaseURLString + path + "?" + buildQueryString(fromDictionary: parameter)
@@ -159,7 +159,7 @@ public class FoursquareAPIClient {
                 fatalError("invalid response combination \(data.debugDescription), \(response.debugDescription), \(error.debugDescription).")
             }
         })
-        
+
         task.resume()
     }
 

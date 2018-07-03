@@ -8,30 +8,33 @@
 
 import Foundation
 
+
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Details
+// Mark: - Venue Details
 ////////////////////////////////////////////////////////////////
 
 struct VenueDetails: Codable {
     let id: String?
     let name: String?
     let contact: VenueContact?
-    let locationDetails: Location?
-    let canonicalURL: String?
-    let categories: [Category]?
-    let stats: Stats?
-    let url: String?
-    let price: Price?
+    let canonicalURL: String? /// FourSquare URL for Venue Listing
+    let url: String? /// URL of the venue’s website, typically provided by the venue manager.
+    let price: Price? /// Price rating of 1, 2, 3, or 4
     let likes: VenueLikes?
     let rating: Double?
-    let ratingSignals: Int?
-    let page: Page?
-    let createdAt: Int?
-    let tips: VenueTips?
-    let shortURL: String?
-    let listed: Listed?
-    let hours: Hours?
+    let ratingSignals: Int? /// Number of ratings given by users
+    let page: Page? /// Page owner's information about their venue
+    let tips: VenueTips? /// Tips left by users about venue
+    let listed: Listed? /// Specification of curated lists that a venue is on
+    let photos: Photos?
     let bestPhoto: BestPhoto?
+    
+    /// Structs shared with Venue Model, all others are VenueDetails specific
+    let locationDetails: Location?
+    let stats: Stats
+    let venueCategories: [venueCategory]?
+    let hours: Hours?
+
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -39,7 +42,7 @@ struct VenueDetails: Codable {
         case contact = "contact"
         case locationDetails = "location"
         case canonicalURL = "canonicalUrl"
-        case categories = "categories"
+        case venueCategories = "categories"
         case stats = "stats"
         case url = "url"
         case price = "price"
@@ -47,17 +50,50 @@ struct VenueDetails: Codable {
         case rating = "rating"
         case ratingSignals = "ratingSignals"
         case page = "page"
-        case createdAt = "createdAt"
         case tips = "tips"
-        case shortURL = "shortUrl"
         case listed = "listed"
         case hours = "hours"
         case bestPhoto = "bestPhoto"
+        case photos = "photos"
     }
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue's best photo
+// Mark: - Venue Contact Detail
+////////////////////////////////////////////////////////////////
+
+struct VenueContact: Codable {
+    let phone: String?
+    let formattedPhone: String?
+    let twitter: String?
+    let instagram: String?
+    let facebook: String?
+    let facebookUsername: String?
+    let facebookName: String?
+    
+}
+
+
+////////////////////////////////////////////////////////////////
+// Mark: - Venue Likes Data
+////////////////////////////////////////////////////////////////
+
+struct VenueLikes: Codable {
+    let count: Int?
+    let groups: [LikesGroup]?
+    let summary: String?
+    
+}
+
+struct LikesGroup: Codable {
+    let type: String?
+    let count: Int?
+    
+}
+
+
+////////////////////////////////////////////////////////////////
+// Mark: - Venue's best photo
 ////////////////////////////////////////////////////////////////
 
 struct BestPhoto: Codable {
@@ -93,66 +129,58 @@ struct Source: Codable {
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Contact Detail
+// Mark: - Photos of venue from users and owners
 ////////////////////////////////////////////////////////////////
 
-struct VenueContact: Codable {
-    let phone: String?
-    let formattedPhone: String?
-    let twitter: String?
-    let facebook: String?
-    let facebookUsername: String?
-    let facebookName: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case phone = "phone"
-        case formattedPhone = "formattedPhone"
-        case twitter = "twitter"
-        case facebook = "facebook"
-        case facebookUsername = "facebookUsername"
-        case facebookName = "facebookName"
-    }
-}
-
-
-////////////////////////////////////////////////////////////////
-/// Mark: - Venue Likes Data
-////////////////////////////////////////////////////////////////
-
-struct VenueLikes: Codable {
+struct Photos: Codable {
     let count: Int?
-    let groups: [LikesGroup]?
-    let summary: String?
+    let groups: [PhotosGroup]?
     
     enum CodingKeys: String, CodingKey {
         case count = "count"
         case groups = "groups"
-        case summary = "summary"
     }
 }
 
-struct LikesGroup: Codable {
+struct PhotosGroup: Codable {
     let type: String?
+    let name: String?
     let count: Int?
+    let items: [photoListItem]?
+    
+}
+
+struct photoListItem: Codable {
+    let id: String?
+    let createdAt: Int?
+    let source: Source?
+    let itemPrefix: String?
+    let suffix: String?
+    let width: Int?
+    let height: Int?
+    let visibility: String?
     
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case count = "count"
+        case id = "id"
+        case createdAt = "createdAt"
+        case source = "source"
+        case itemPrefix = "prefix"
+        case suffix = "suffix"
+        case width = "width"
+        case height = "height"
+        case visibility = "visibility"
     }
 }
 
+
 ////////////////////////////////////////////////////////////////
-/// Mark: - Curated lists that the venue is included in
+// Mark: - Curated lists that the venue is included in by users or other sites
 ////////////////////////////////////////////////////////////////
 
 struct Listed: Codable {
-    let count: Int?
-    let groups: [ListedGroup]?
+    let count: Int
+    let groups: [ListedGroup]
     
-    enum CodingKeys: String, CodingKey {
-        case count = "count"
-        case groups = "groups"
-    }
 }
 
 struct ListedGroup: Codable {
@@ -161,12 +189,6 @@ struct ListedGroup: Codable {
     let count: Int?
     let items: [VenueListMembership]?
     
-    enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case name = "name"
-        case count = "count"
-        case items = "items"
-    }
 }
 
 struct VenueListMembership: Codable {
@@ -175,7 +197,6 @@ struct VenueListMembership: Codable {
     let description: String?
     let type: String?
     let url: String?
-    let photo: ListDetailPhoto
     let canonicalURL: String?
     let followers: FollowersCount?
     
@@ -186,7 +207,6 @@ struct VenueListMembership: Codable {
         case type = "type"
         case url = "url"
         case canonicalURL = "canonicalUrl"
-        case photo = "photo"
         case followers = "followers"
     }
 }
@@ -194,9 +214,6 @@ struct VenueListMembership: Codable {
 struct FollowersCount: Codable {
     let count: Int?
     
-    enum CodingKeys: String, CodingKey {
-        case count = "count"
-    }
 }
 
 struct ListDetailPhoto: Codable {
@@ -208,19 +225,10 @@ struct ListDetailPhoto: Codable {
     let height: Int?
     let visibility: String?
     
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case createdAt = "createdAt"
-        case prefix = "prefix"
-        case suffix = "suffix"
-        case width = "width"
-        case height = "height"
-        case visibility = "visibility"
-    }
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Page Info
+// Mark: - Venue Page Info
 ////////////////////////////////////////////////////////////////
 
 struct Page: Codable {
@@ -236,60 +244,39 @@ struct PageInfo: Codable {
     let banner: String?
     let links: Links?
     
-    enum CodingKeys: String, CodingKey {
-        case description = "description"
-        case banner = "banner"
-        case links = "links"
-    }
 }
 
 struct Links: Codable {
     let count: Int?
     let items: [LinksItem]?
     
-    enum CodingKeys: String, CodingKey {
-        case count = "count"
-        case items = "items"
-    }
 }
 
 struct LinksItem: Codable {
     let url: String?
     
-    enum CodingKeys: String, CodingKey {
-        case url = "url"
-    }
 }
 
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Pricing
+// Mark: - Venue Pricing on scale of 1,2,3,4. Users can sort by these in func call
 ////////////////////////////////////////////////////////////////
 
 struct Price: Codable {
     let tier: Int?
     let message: String?
-    let currency: String?
+    let currency: String
     
-    enum CodingKeys: String, CodingKey {
-        case tier = "tier"
-        case message = "message"
-        case currency = "currency"
-    }
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Tips and Tip Likes
+// Mark: - Venue Tips and Tip Likes
 ////////////////////////////////////////////////////////////////
 
 struct VenueTips: Codable {
     let count: Int?
     let groups: [TipsGroup]?
     
-    enum CodingKeys: String, CodingKey {
-        case count = "count"
-        case groups = "groups"
-    }
 }
 
 struct TipsGroup: Codable {
@@ -312,13 +299,6 @@ struct TipItem: Codable {
     let canonicalURL: String?
     let likes: ItemLikes?
 
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case text = "text"
-        case canonicalURL = "canonicalUrl"
-        case likes = "likes"
-    }
 }
 
 struct ItemLikes: Codable {

@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14720E2B22700F88745 /* AppDelegate.swift */; };
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
-		163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */; };
-		16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16717D7920EAEAA200DA1599 /* Mapbox.framework */; };
-		169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */; };
-		16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */; };
+		161BC15220E2B22800F88745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15120E2B22800F88745 /* Assets.xcassets */; };
+		161BC15520E2B22800F88745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
 		16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */; };
-		16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */; };
-		16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAF20E69E650061A3DA /* VenueModel.swift */; };
+		16C77BB220E69E660061A3DA /* VenueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAE20E69E650061A3DA /* VenueDetails.swift */; };
+		16C77BB320E69E660061A3DA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAF20E69E650061A3DA /* Venue.swift */; };
 		16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */; };
+		16C77BB720E69EB10061A3DA /* FoursquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */; };
+		16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB620E69EB10061A3DA /* VenueController.swift */; };
 		16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBB20E6A6210061A3DA /* TrendController.swift */; };
 		16C77BC420E6A6220061A3DA /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBD20E6A6210061A3DA /* Trend.swift */; };
 		16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */; };
@@ -25,12 +25,18 @@
 		16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCB20E6A65F0061A3DA /* Tweet.swift */; };
 		16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCD20E6A6880061A3DA /* TwitterUser.swift */; };
 		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
-		16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
-		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
+		69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
-		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
-		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
-		16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */; };
+		69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */; };
+		69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC9F4820E2C08B00EB03E8 /* TestView.swift */; };
+		6D13BA4120E549C200658EAF /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
+		6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4220E550EC00658EAF /* MapTabBar.swift */; };
+		6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4420E5513F00658EAF /* MapViewController.swift */; };
+		6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4620E55A5E00658EAF /* SearchBar.swift */; };
+		6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4820E55F3B00658EAF /* GraphView.swift */; };
+		6D13BA4B20E5600200658EAF /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4A20E5600200658EAF /* Graph.storyboard */; };
+		6D13BA4D20E5629500658EAF /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4C20E5629500658EAF /* Graph.swift */; };
+		6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4E20E562BE00658EAF /* GraphViewController.swift */; };
 		6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */; };
 		6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */; };
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
@@ -44,27 +50,24 @@
 		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewController.swift; sourceTree = "<group>"; };
-		16717D7920EAEAA200DA1599 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
-		169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewCell.swift; sourceTree = "<group>"; };
-		16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRecommendedVenuesModel.swift; sourceTree = "<group>"; };
 		16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTopLevelJSON.swift; sourceTree = "<group>"; };
-		16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsModel.swift; sourceTree = "<group>"; };
-		16C77BAF20E69E650061A3DA /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
+		16C77BAE20E69E650061A3DA /* VenueDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetails.swift; sourceTree = "<group>"; };
+		16C77BAF20E69E650061A3DA /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoriesMasterList.swift; sourceTree = "<group>"; };
+		16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareAPIClient.swift; sourceTree = "<group>"; };
+		16C77BB620E69EB10061A3DA /* VenueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueController.swift; sourceTree = "<group>"; };
 		16C77BBB20E6A6210061A3DA /* TrendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendController.swift; sourceTree = "<group>"; };
 		16C77BBD20E6A6210061A3DA /* Trend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocation.swift; sourceTree = "<group>"; };
 		16C77BC020E6A6220061A3DA /* TweetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetController.swift; sourceTree = "<group>"; };
 		16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocationController.swift; sourceTree = "<group>"; };
-		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
-		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
-		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
-		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
-		16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVenueController.swift; sourceTree = "<group>"; };
+		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tweet.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/Tweet.swift; sourceTree = "<group>"; };
+		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwitterUser.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/TwitterUser.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
+		69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		69DC9F4820E2C08B00EB03E8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6D13BA4220E550EC00658EAF /* MapTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTabBar.swift; path = HotSpotters/Views/MapTabBar.swift; sourceTree = SOURCE_ROOT; };
 		6D13BA4420E5513F00658EAF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = HotSpotters/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -84,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +96,9 @@
 		161BC13B20E2B22700F88745 = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4620E55A5E00658EAF /* SearchBar.swift */,
 				161BC14620E2B22700F88745 /* HotSpotters */,
 				161BC14520E2B22700F88745 /* Products */,
-				16E48D9E20E7A1D000ABFC4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,33 +113,23 @@
 		161BC14620E2B22700F88745 /* HotSpotters */ = {
 			isa = PBXGroup;
 			children = (
-				16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */,
-				69DC9F4220E2BD5D00EB03E8 /* Models */,
-				69DC9F4320E2BD6200EB03E8 /* ModelControllers */,
-				69DC9F4420E2BD6900EB03E8 /* ViewControllers */,
-				69DC9F4520E2BD7600EB03E8 /* Views */,
 				69DC9F4020E2BD3E00EB03E8 /* UI */,
+				69DC9F4520E2BD7600EB03E8 /* Views */,
+				69DC9F4420E2BD6900EB03E8 /* ViewControllers */,
+				69DC9F4320E2BD6200EB03E8 /* ModelControllers */,
+				69DC9F4220E2BD5D00EB03E8 /* Models */,
 				69DC9F4120E2BD4E00EB03E8 /* Resources */,
 			);
 			path = HotSpotters;
-			sourceTree = "<group>";
-		};
-		163B6F5D20E6DE6100982A59 /* APIViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */,
-			);
-			path = APIViewControllers;
 			sourceTree = "<group>";
 		};
 		16C77BB920E69F550061A3DA /* FourSquareModels */ = {
 			isa = PBXGroup;
 			children = (
 				16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */,
-				16C77BAF20E69E650061A3DA /* VenueModel.swift */,
-				16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */,
-				16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */,
+				16C77BAF20E69E650061A3DA /* Venue.swift */,
 				16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */,
+				16C77BAE20E69E650061A3DA /* VenueDetails.swift */,
 			);
 			path = FourSquareModels;
 			sourceTree = "<group>";
@@ -145,12 +137,13 @@
 		16C77BBA20E69F700061A3DA /* FourSquareControllers */ = {
 			isa = PBXGroup;
 			children = (
-				16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */,
+				16C77BB520E69EB10061A3DA /* FoursquareAPIClient.swift */,
+				16C77BB620E69EB10061A3DA /* VenueController.swift */,
 			);
 			path = FourSquareControllers;
 			sourceTree = "<group>";
 		};
-		16C77BC920E6A6410061A3DA /* TwitterModels */ = {
+		16C77BC920E6A6410061A3DA /* Twitter Models */ = {
 			isa = PBXGroup;
 			children = (
 				16C77BCB20E6A65F0061A3DA /* Tweet.swift */,
@@ -158,7 +151,7 @@
 				16C77BBD20E6A6210061A3DA /* Trend.swift */,
 				16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */,
 			);
-			name = TwitterModels;
+			name = "Twitter Models";
 			sourceTree = "<group>";
 		};
 		16C77BCA20E6A6590061A3DA /* TwitterControllers */ = {
@@ -171,45 +164,13 @@
 			path = TwitterControllers;
 			sourceTree = "<group>";
 		};
-		16E48D9E20E7A1D000ABFC4F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				16717D7920EAEAA200DA1599 /* Mapbox.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		16E48DAC20E7A8C500ABFC4F /* FourSquareViews */ = {
-			isa = PBXGroup;
-			children = (
-				169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */,
-				16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */,
-			);
-			path = FourSquareViews;
-			sourceTree = "<group>";
-		};
-		16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */ = {
-			isa = PBXGroup;
-			children = (
-				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
-			);
-			path = EventBriteControllers;
-			sourceTree = "<group>";
-		};
-		16E48DAE20E7A92600ABFC4F /* EventbriteModels */ = {
-			isa = PBXGroup;
-			children = (
-				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
-				6D381C0320E426DE0075D7F9 /* Event.swift */,
-				6D381C0220E426DE0075D7F9 /* Post.swift */,
-			);
-			path = EventbriteModels;
-			sourceTree = "<group>";
-		};
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4A20E5600200658EAF /* Graph.storyboard */,
 				6D13BA4020E549C200658EAF /* Map.storyboard */,
+				6D13BA4E20E562BE00658EAF /* GraphViewController.swift */,
+				6D13BA4C20E5629500658EAF /* Graph.swift */,
 				69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */,
 				69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */,
 				69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */,
@@ -225,8 +186,6 @@
 				161BC15120E2B22800F88745 /* Assets.xcassets */,
 				161BC15620E2B22800F88745 /* Info.plist */,
 				161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */,
-				696872F520E7366F00662B18 /* LargeValueFormatter.swift */,
-				6951D86920E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -234,9 +193,11 @@
 		69DC9F4220E2BD5D00EB03E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				16C77BC920E6A6410061A3DA /* TwitterModels */,
+				16C77BC920E6A6410061A3DA /* Twitter Models */,
 				16C77BB920E69F550061A3DA /* FourSquareModels */,
-				16E48DAE20E7A92600ABFC4F /* EventbriteModels */,
+				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
+				6D381C0320E426DE0075D7F9 /* Event.swift */,
+				6D381C0220E426DE0075D7F9 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,7 +207,7 @@
 			children = (
 				16C77BCA20E6A6590061A3DA /* TwitterControllers */,
 				16C77BBA20E69F700061A3DA /* FourSquareControllers */,
-				16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */,
+				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -254,7 +215,8 @@
 		69DC9F4420E2BD6900EB03E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				163B6F5D20E6DE6100982A59 /* APIViewControllers */,
+				6D13BA4420E5513F00658EAF /* MapViewController.swift */,
+				69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,7 +224,9 @@
 		69DC9F4520E2BD7600EB03E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				16E48DAC20E7A8C500ABFC4F /* FourSquareViews */,
+				6D13BA4820E55F3B00658EAF /* GraphView.swift */,
+				6D13BA4220E550EC00658EAF /* MapTabBar.swift */,
+				69DC9F4820E2C08B00EB03E8 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,11 +238,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 161BC15920E2B22800F88745 /* Build configuration list for PBXNativeTarget "HotSpotters" */;
 			buildPhases = (
-				128222B25C0E1EC9B92939E8 /* [CP] Check Pods Manifest.lock */,
 				161BC14020E2B22700F88745 /* Sources */,
 				161BC14120E2B22700F88745 /* Frameworks */,
 				161BC14220E2B22700F88745 /* Resources */,
-				16717D7B20EAEAB700DA1599 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,17 +263,6 @@
 				TargetAttributes = {
 					161BC14320E2B22700F88745 = {
 						CreatedOnToolsVersion = 9.4.1;
-						SystemCapabilities = {
-							com.apple.Maps.iOS = {
-								enabled = 1;
-							};
-							com.apple.NetworkExtensions.iOS = {
-								enabled = 0;
-							};
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
 					};
 				};
 			};
@@ -338,57 +289,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */,
-				16E48DA820E7A41200ABFC4F /* mattsStoryboard.storyboard in Resources */,
-				16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */,
-				16E48DAA20E7A41200ABFC4F /* trevorsStoryboard.storyboard in Resources */,
-				16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */,
+				161BC15520E2B22800F88745 /* LaunchScreen.storyboard in Resources */,
+				69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */,
+				69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */,
+				6D13BA4B20E5600200658EAF /* Graph.storyboard in Resources */,
+				161BC15220E2B22800F88745 /* Assets.xcassets in Resources */,
+				69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */,
+				6D13BA4120E549C200658EAF /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		16717D7B20EAEAB700DA1599 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		161BC14020E2B22700F88745 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */,
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
-				16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */,
+				16C77BB320E69E660061A3DA /* Venue.swift in Sources */,
 				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
-				16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */,
-				16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
+				69DC9F4920E2C08B00EB03E8 /* TestView.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
-				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
+				16C77BB720E69EB10061A3DA /* FoursquareAPIClient.swift in Sources */,
 				16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */,
 				16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */,
+				6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */,
 				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
-				16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */,
+				16C77BB220E69E660061A3DA /* VenueDetails.swift in Sources */,
+				6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
 				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
-				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,
-				16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */,
+				16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */,
+				6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */,
+				6D13BA4D20E5629500658EAF /* Graph.swift in Sources */,
+				6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */,
+				69DC9F4720E2C07A00EB03E8 /* TestTableViewController.swift in Sources */,
 				6D381C0420E426DE0075D7F9 /* Post.swift in Sources */,
 				6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */,
 				16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */,
@@ -527,13 +468,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CCUMQ33UK;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -550,13 +486,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CCUMQ33UK;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
