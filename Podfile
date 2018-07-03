@@ -6,6 +6,5 @@ target 'HotSpotters' do
   use_frameworks!
 
   # Pods for HotSpotters
-pod 'Charts', '~> 3.1.1'
 
 end
