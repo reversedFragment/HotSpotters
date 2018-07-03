@@ -44,11 +44,11 @@ class FourSquareTableViewController: UIViewController {
                     guard let venueDetails = venuedetails else { return }
                     
                     venueDetailVC.fetchedVenueDetail = venueDetails
-                    }
                 }
             }
         }
     }
+}
 
 
 // MARK: - UITableViewDataSource
@@ -104,8 +104,10 @@ extension FourSquareTableViewController: UISearchBarDelegate {
     }
     
     
-//// Search bar and function for exploreVenues()
-//    func exploreBarSearchButtonClicked(_ searchBar: UISearchBar) {
+/// Search bar and function for exploreVenues()
+    /// Need separate search bar or a way to toggle which func is called by searchBar Text
+    
+    //    func exploreBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //
 //        searchBar.resignFirstResponder()
 //

@@ -23,7 +23,7 @@ struct TopLevelData: Codable {
 ////////////////////////////////////////////////////////////////
 
 
-// Mark: - All possible fields for Response depending on fetch func called
+// Mark: - All possible fields for Response regardless of fetch func
 
 // All fetches have a response struct
 struct Response: Codable {
@@ -38,7 +38,6 @@ struct Response: Codable {
     let totalResults: Int?
     let groups: [ResponseGroup]? /// An array of objects representing groups of recommendations. Each group contains a type such as “recommended” a human-readable (eventually localized) name such as “Recommended Places,” and an array items of recommendation objects.
 
-    
     enum CodingKeys: String, CodingKey {
         case venues = "venues"
         case geocode = "geocode"
@@ -51,6 +50,7 @@ struct Response: Codable {
         case groups = "groups"
     }
 }
+
 
 /// Specific to exploreVenues() fetches lacking venues given filter criteria
 struct Warning: Codable {
@@ -99,6 +99,7 @@ struct Feature: Codable {
         case id = "id"
         case longID = "longId"
         case geometry = "geometry"
+        
     }
 }
 
@@ -133,7 +134,7 @@ struct Center: Codable {
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - exploreVenues() data that comes back inside 'response' JSON
+// Mark: - exploreVenues() data that comes back inside 'response' JSON
 ////////////////////////////////////////////////////////////////
 
 struct ResponseGroup: Codable {
@@ -154,7 +155,7 @@ struct GroupItem: Codable {
 }
 
 ////////////////////////////////////////////////////////////////
-/// Mark: - Venue Hours
+// Mark: - Venue Hours
 ////////////////////////////////////////////////////////////////
 
 struct Hours: Codable {
