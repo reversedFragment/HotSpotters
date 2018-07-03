@@ -20,7 +20,7 @@ class GeneralVenueController {
     
     
 ////////////////////////////////////////////////////////////////
-// Mark: - fetchVenues() by geolocation or by 'near' search.
+// Mark: - fetchVenues() by 'll' geolocation or by 'near' search.
 ////////////////////////////////////////////////////////////////
     
     static func fetchVenues(searchTerm: String?,
@@ -30,7 +30,6 @@ class GeneralVenueController {
                             limit: Int = 10,
                             categories: String?,
                             completion: @escaping (([Venue]?)->Void)) {
-        
         
     /// Mark: - Conversion of Ints to Strings and logic to parse 'll' and 'near'
         
@@ -156,6 +155,7 @@ class GeneralVenueController {
 ////////////////////////////////////////////////////////////////
     
 // Userless authenticators (THAT MEANS US), will not receive hereNow information
+    // Only parameter is 'VENUE_ID' from venueID at indexpath for selected row
     static func fetchVenueDetails(with VENUE_ID: String,
                                      completion: @escaping ((VenueDetails?)->Void)) {
         
@@ -270,7 +270,7 @@ class GeneralVenueController {
         let stringRadius = "\(String(describing: radius))"
         let stringSection = "\(String(describing: section))"
         
-    // My Personal, Userless Authorization Keys
+    // My Personal, Userless Authorization Keys for testing
         let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
         let myClientSecret = "KULKA0VOZFYP4NIXKQZ2CHWFRMZRG03J1J3N0X4HTVXG3QPZ"
         let version = "20180702" /// Version of FourSquare Systems
@@ -303,8 +303,8 @@ class GeneralVenueController {
         // This prefers official provider hours but falls back to popular check-in hours.
         let openNowQuery = URLQueryItem.init(name: "openNow", value: "1") /// Only show open venues
         
-    // Boolean flag to only include venues that are open now.
-        // This prefers official provider hours but falls back to popular check-in hours.
+    // Boolean flag to sort venues by those closest to user as the dominant filter.
+        
         let sortByDistanceQuery = URLQueryItem.init(name: "sortByDistance", value: "1") // Sort by distance
         
     // For the complete category tree, see categories: https://developer.foursquare.com/docs/resources/categories

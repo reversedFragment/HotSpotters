@@ -13,6 +13,7 @@ class VenueDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     var fetchedVenueDetail: VenueDetails? {
@@ -20,6 +21,7 @@ class VenueDetailViewController: UIViewController {
             if isViewLoaded {
                 DispatchQueue.main.async {
                     self.updateViews()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             }
         }

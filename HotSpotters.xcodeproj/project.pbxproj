@@ -10,6 +10,9 @@
 		161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14720E2B22700F88745 /* AppDelegate.swift */; };
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
 		163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */; };
+		1666209720EB1E2500089F03 /* BSAMapViewDynamicDataPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666209620EB1E2500089F03 /* BSAMapViewDynamicDataPractice.swift */; };
+		16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16717D7920EAEAA200DA1599 /* Mapbox.framework */; };
+		16717D7D20EB033400DA1599 /* BSAMapBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16717D7C20EB033400DA1599 /* BSAMapBoxViewController.swift */; };
 		169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */; };
 		16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */; };
 		16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */; };
@@ -55,6 +58,9 @@
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewController.swift; sourceTree = "<group>"; };
+		1666209620EB1E2500089F03 /* BSAMapViewDynamicDataPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAMapViewDynamicDataPractice.swift; sourceTree = "<group>"; };
+		16717D7920EAEAA200DA1599 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
+		16717D7C20EB033400DA1599 /* BSAMapBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAMapBoxViewController.swift; sourceTree = "<group>"; };
 		169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewCell.swift; sourceTree = "<group>"; };
 		16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRecommendedVenuesModel.swift; sourceTree = "<group>"; };
 		16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTopLevelJSON.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E48DA020E7A1D000ABFC4F /* MapKit.framework in Frameworks */,
+				16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,7 @@
 		16E48D9E20E7A1D000ABFC4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16717D7920EAEAA200DA1599 /* Mapbox.framework */,
 				16E48D9F20E7A1D000ABFC4F /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -269,6 +277,8 @@
 				163B6F5D20E6DE6100982A59 /* APIViewControllers */,
 				6D13BA4420E5513F00658EAF /* MapViewController.swift */,
 				69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */,
+				16717D7C20EB033400DA1599 /* BSAMapBoxViewController.swift */,
+				1666209620EB1E2500089F03 /* BSAMapViewDynamicDataPractice.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -294,6 +304,7 @@
 				161BC14020E2B22700F88745 /* Sources */,
 				161BC14120E2B22700F88745 /* Frameworks */,
 				161BC14220E2B22700F88745 /* Resources */,
+				16717D7B20EAEAB700DA1599 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -366,6 +377,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16717D7B20EAEAB700DA1599 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		161BC14020E2B22700F88745 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -381,7 +409,9 @@
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
 				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
+				16717D7D20EB033400DA1599 /* BSAMapBoxViewController.swift in Sources */,
 				16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */,
+				1666209720EB1E2500089F03 /* BSAMapViewDynamicDataPractice.swift in Sources */,
 				16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */,
 				6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */,
 				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
@@ -538,6 +568,10 @@
 				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CCUMQ33UK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,6 +591,10 @@
 				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CCUMQ33UK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

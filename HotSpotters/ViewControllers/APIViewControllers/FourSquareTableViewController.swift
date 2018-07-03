@@ -35,7 +35,7 @@ class FourSquareTableViewController: UIViewController {
             if let venueDetailVC = segue.destination as? VenueDetailViewController,
                 let selectedRow = FourSquareTableView.indexPathForSelectedRow?.row {
                 
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                
                 
                 let venueDetailID = self.fetchedVenues[selectedRow].venueID
                 
@@ -43,14 +43,13 @@ class FourSquareTableViewController: UIViewController {
                     
                     guard let venueDetails = venuedetails else { return }
                     
-                    DispatchQueue.main.async {
-                        venueDetailVC.fetchedVenueDetail = venueDetails
+                    venueDetailVC.fetchedVenueDetail = venueDetails
                     }
                 }
             }
         }
     }
-}
+
 
 // MARK: - UITableViewDataSource
 
