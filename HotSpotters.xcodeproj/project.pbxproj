@@ -24,6 +24,8 @@
 		16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */; };
 		16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCB20E6A65F0061A3DA /* Tweet.swift */; };
 		16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCD20E6A6880061A3DA /* TwitterUser.swift */; };
+		6951D86A20E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951D86920E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift */; };
+		696872F620E7366F00662B18 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696872F520E7366F00662B18 /* LargeValueFormatter.swift */; };
 		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		69DC9F3D20E2BD0800EB03E8 /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
@@ -36,11 +38,12 @@
 		6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4820E55F3B00658EAF /* GraphView.swift */; };
 		6D13BA4B20E5600200658EAF /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4A20E5600200658EAF /* Graph.storyboard */; };
 		6D13BA4D20E5629500658EAF /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4C20E5629500658EAF /* Graph.swift */; };
-		6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4E20E562BE00658EAF /* GraphViewController.swift */; };
+		6D13BA4F20E562BE00658EAF /* GraphTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D13BA4E20E562BE00658EAF /* GraphTableViewController.swift */; };
 		6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */; };
 		6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */; };
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
 		6D381C0520E426DE0075D7F9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0320E426DE0075D7F9 /* Event.swift */; };
+		7BFFFF633DF2CFD4D24A3A2A /* Pods_HotSpotters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8691B77FD055DA75C2B98C1 /* Pods_HotSpotters.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +64,10 @@
 		16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocation.swift; sourceTree = "<group>"; };
 		16C77BC020E6A6220061A3DA /* TweetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetController.swift; sourceTree = "<group>"; };
 		16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocationController.swift; sourceTree = "<group>"; };
-		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tweet.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/Tweet.swift; sourceTree = "<group>"; };
-		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwitterUser.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/TwitterUser.swift; sourceTree = "<group>"; };
+		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		6951D86920E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsAxisValueFormatter.swift; sourceTree = "<group>"; };
+		696872F520E7366F00662B18 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -75,11 +80,14 @@
 		6D13BA4820E55F3B00658EAF /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = HotSpotters/Views/GraphView.swift; sourceTree = SOURCE_ROOT; };
 		6D13BA4A20E5600200658EAF /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
 		6D13BA4C20E5629500658EAF /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = HotSpotters/ViewControllers/Graph.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4E20E562BE00658EAF /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = HotSpotters/ViewControllers/GraphViewController.swift; sourceTree = SOURCE_ROOT; };
+		6D13BA4E20E562BE00658EAF /* GraphTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphTableViewController.swift; path = HotSpotters/ViewControllers/GraphTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-Model.swift"; sourceTree = "<group>"; };
 		6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-ModelController.swift"; sourceTree = "<group>"; };
 		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6D381C0320E426DE0075D7F9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		C8691B77FD055DA75C2B98C1 /* Pods_HotSpotters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotSpotters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8E0CA44A56715EE72380CD /* Pods-HotSpotters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotSpotters.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters.release.xcconfig"; sourceTree = "<group>"; };
+		E97B66F50C4B51BBA0FB0B06 /* Pods-HotSpotters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotSpotters.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,18 +95,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFFFF633DF2CFD4D24A3A2A /* Pods_HotSpotters.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A2022E822E147FDDCA126C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8691B77FD055DA75C2B98C1 /* Pods_HotSpotters.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		161BC13B20E2B22700F88745 = {
 			isa = PBXGroup;
 			children = (
 				6D13BA4620E55A5E00658EAF /* SearchBar.swift */,
 				161BC14620E2B22700F88745 /* HotSpotters */,
 				161BC14520E2B22700F88745 /* Products */,
+				54F0BFF3EA319E12169F3ACB /* Pods */,
+				0A2022E822E147FDDCA126C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,13 +183,20 @@
 			path = TwitterControllers;
 			sourceTree = "<group>";
 		};
+		54F0BFF3EA319E12169F3ACB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E97B66F50C4B51BBA0FB0B06 /* Pods-HotSpotters.debug.xcconfig */,
+				CF8E0CA44A56715EE72380CD /* Pods-HotSpotters.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				6D13BA4A20E5600200658EAF /* Graph.storyboard */,
 				6D13BA4020E549C200658EAF /* Map.storyboard */,
-				6D13BA4E20E562BE00658EAF /* GraphViewController.swift */,
-				6D13BA4C20E5629500658EAF /* Graph.swift */,
 				69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */,
 				69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */,
 				69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */,
@@ -186,6 +212,8 @@
 				161BC15120E2B22800F88745 /* Assets.xcassets */,
 				161BC15620E2B22800F88745 /* Info.plist */,
 				161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */,
+				696872F520E7366F00662B18 /* LargeValueFormatter.swift */,
+				6951D86920E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -215,6 +243,8 @@
 		69DC9F4420E2BD6900EB03E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D13BA4E20E562BE00658EAF /* GraphTableViewController.swift */,
+				6D13BA4C20E5629500658EAF /* Graph.swift */,
 				6D13BA4420E5513F00658EAF /* MapViewController.swift */,
 				69DC9F4620E2C07A00EB03E8 /* TestTableViewController.swift */,
 			);
@@ -238,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 161BC15920E2B22800F88745 /* Build configuration list for PBXNativeTarget "HotSpotters" */;
 			buildPhases = (
+				D21C4A77576F8B303E41B0ED /* [CP] Check Pods Manifest.lock */,
 				161BC14020E2B22700F88745 /* Sources */,
 				161BC14120E2B22700F88745 /* Frameworks */,
 				161BC14220E2B22700F88745 /* Resources */,
+				23F52093F666FEBEBB8A0766 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,6 +333,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23F52093F666FEBEBB8A0766 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D21C4A77576F8B303E41B0ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotSpotters-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		161BC14020E2B22700F88745 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -308,6 +379,7 @@
 			files = (
 				6D13BA4720E55A5E00658EAF /* SearchBar.swift in Sources */,
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
+				6951D86A20E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift in Sources */,
 				16C77BB320E69E660061A3DA /* Venue.swift in Sources */,
 				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
@@ -320,12 +392,13 @@
 				6D13BA4320E550EC00658EAF /* MapTabBar.swift in Sources */,
 				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
 				16C77BB220E69E660061A3DA /* VenueDetails.swift in Sources */,
-				6D13BA4F20E562BE00658EAF /* GraphViewController.swift in Sources */,
+				6D13BA4F20E562BE00658EAF /* GraphTableViewController.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
 				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
 				16C77BB820E69EB10061A3DA /* VenueController.swift in Sources */,
+				696872F620E7366F00662B18 /* LargeValueFormatter.swift in Sources */,
 				6D13BA4520E5513F00658EAF /* MapViewController.swift in Sources */,
 				6D13BA4D20E5629500658EAF /* Graph.swift in Sources */,
 				6D13BA4920E55F3B00658EAF /* GraphView.swift in Sources */,
@@ -466,6 +539,7 @@
 		};
 		161BC15A20E2B22800F88745 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E97B66F50C4B51BBA0FB0B06 /* Pods-HotSpotters.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +558,7 @@
 		};
 		161BC15B20E2B22800F88745 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8E0CA44A56715EE72380CD /* Pods-HotSpotters.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

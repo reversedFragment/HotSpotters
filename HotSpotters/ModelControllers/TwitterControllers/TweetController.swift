@@ -55,14 +55,12 @@ class TweetController{
                 print("\(error.localizedDescription) \(error) in function: \(#function)")
                 return
             }
-            print(response ?? "No Response")
             if let data = data{
                 do{
                     guard let resultsDictionary: [String : String] = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String : String] else {
                         completion(nil)
                         return
                     }
-                    print(resultsDictionary)
                     guard let token = resultsDictionary["access_token"] else {
                         completion(nil)
                         return

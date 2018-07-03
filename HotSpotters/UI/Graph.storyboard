@@ -1,11 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZw-Lw-Dpz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Graph Table View Controller-->
+        <scene sceneID="f5M-Ji-T5Z">
+            <objects>
+                <tableViewController id="qZw-Lw-Dpz" customClass="GraphTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="svw-hj-tXK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection headerTitle="Popular Topics" id="eiw-8e-aYy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="506" id="yvR-Qd-Gwf">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="506"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yvR-Qd-Gwf" id="rO8-5l-g2c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="505.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yva-C9-QLO" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="24" y="19" width="343" height="484"/>
+                                                    <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yva-C9-QLO" firstAttribute="bottom" secondItem="rO8-5l-g2c" secondAttribute="bottomMargin" constant="8" id="D8w-Dh-G0q"/>
+                                                <constraint firstItem="yva-C9-QLO" firstAttribute="top" secondItem="rO8-5l-g2c" secondAttribute="topMargin" constant="8" id="Maq-36-P1D"/>
+                                                <constraint firstItem="yva-C9-QLO" firstAttribute="trailing" secondItem="rO8-5l-g2c" secondAttribute="trailingMargin" constant="8" id="Zde-D1-eg6"/>
+                                                <constraint firstItem="yva-C9-QLO" firstAttribute="leading" secondItem="rO8-5l-g2c" secondAttribute="leadingMargin" constant="8" id="fhG-Oz-2q7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Popular Venues" id="Cgb-jZ-OZd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="620" id="W89-qj-jEy">
+                                        <rect key="frame" x="0.0" y="562" width="375" height="620"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W89-qj-jEy" id="N20-lk-Nts">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="619.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whR-Qo-RaU" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="24" y="19" width="343" height="582"/>
+                                                    <color key="backgroundColor" red="0.48627450979999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="whR-Qo-RaU" secondAttribute="bottom" constant="8" id="1F1-q2-H4c"/>
+                                                <constraint firstItem="whR-Qo-RaU" firstAttribute="top" secondItem="N20-lk-Nts" secondAttribute="topMargin" constant="8" id="8Jf-xy-LfL"/>
+                                                <constraint firstItem="whR-Qo-RaU" firstAttribute="trailing" secondItem="N20-lk-Nts" secondAttribute="trailingMargin" constant="8" id="Dau-Wx-khf"/>
+                                                <constraint firstItem="whR-Qo-RaU" firstAttribute="leading" secondItem="N20-lk-Nts" secondAttribute="leadingMargin" constant="8" id="se7-z0-ntM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Upcoming Events" id="Umv-z8-PJD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="449" id="f7a-LZ-RAP">
+                                        <rect key="frame" x="0.0" y="1210" width="375" height="449"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f7a-LZ-RAP" id="XuH-bT-r4t">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="448.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIy-Lh-vuh" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="16" y="16" width="343" height="416.5"/>
+                                                    <color key="backgroundColor" red="0.54117647059999996" green="0.78823529410000004" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CIy-Lh-vuh" firstAttribute="leading" secondItem="XuH-bT-r4t" secondAttribute="leadingMargin" constant="8" id="13U-Hx-qMm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CIy-Lh-vuh" secondAttribute="trailing" constant="8" id="Dou-zU-pr8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CIy-Lh-vuh" secondAttribute="bottom" constant="8" id="XEp-Tr-VYo"/>
+                                                <constraint firstItem="CIy-Lh-vuh" firstAttribute="top" secondItem="XuH-bT-r4t" secondAttribute="topMargin" constant="8" id="bb3-vK-2bW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="qZw-Lw-Dpz" id="4Bp-4M-cPa"/>
+                            <outlet property="delegate" destination="qZw-Lw-Dpz" id="9an-Ar-M0A"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="popularTopicsBarChart" destination="yva-C9-QLO" id="mer-Wg-DKG"/>
+                        <outlet property="popularVenuesBarChart" destination="whR-Qo-RaU" id="nd1-Nu-AzK"/>
+                        <outlet property="upcomingEventsBarChart" destination="CIy-Lh-vuh" id="ZMf-Ob-t8n"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veH-q2-ATd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394.39999999999998" y="1.3493253373313345"/>
+        </scene>
+    </scenes>
 </document>

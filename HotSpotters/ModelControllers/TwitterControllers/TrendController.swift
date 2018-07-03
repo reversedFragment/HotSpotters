@@ -13,6 +13,8 @@ class TrendController{
     static let shared = TrendController()
     static let baseTrendUrl = URL(string: "https://api.twitter.com/1.1/trends/place.json")
     
+    var currentTrends: [Trend] = []
+    
     func getTrendingTopicsFor(location: TwitterLocation, completion: @escaping ([Trend]?) -> Void){
         
         TweetController.shared.getTwitterClientBearerToken { (token) in
@@ -54,6 +56,7 @@ class TrendController{
             if let location = location{
                 self.getTrendingTopicsFor(location: location, completion: { (trends) in
                     if let trends = trends {
+                        self.currentTrends = trends
                         completion(trends)
                         return
                     }

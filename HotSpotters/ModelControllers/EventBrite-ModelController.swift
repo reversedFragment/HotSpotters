@@ -55,6 +55,44 @@ class EventBriteController {
             }.resume()
     }
     
+    static func fetchEventsAround(longitude: Double, latitude: Double, completion: @escaping(([EventElement]?) -> Void)) {
+        
+        guard var url = baseURL else { completion(nil) ; return }
+        url.appendPathComponent("events")
+        url.appendPathComponent("search/")
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let queryItems = [URLQueryItem(name: "token", value: apiToken), URLQueryItem(name: "location.longitude", value: "\(longitude)"), URLQueryItem(name: "location.latitude", value: "\(latitude)")]
+        components?.queryItems = queryItems
+        guard let urlWithQuery = components?.url else { completion(nil) ; return }
+        
+        print("\(urlWithQuery.absoluteString)")
+        
+        var request = URLRequest(url: urlWithQuery)
+        request.httpMethod = "GET"
+        request.httpBody = nil
+        
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("Error decoding Data with dataTask: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            guard let data = data else { completion(nil) ; return }
+            
+            let jsonDecoder = JSONDecoder()
+            do {
+                let events = try jsonDecoder.decode(Event.self, from: data)
+                let eventsArray = events.events
+                completion(eventsArray)
+            } catch let error {
+                print("There was an error decoding Events: \(#function) \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            }.resume()
+    }
+    
     static func fetchImage(withUrlString: String, completion: @escaping((UIImage?) -> Void)) {
         guard let url = URL(string: withUrlString) else { completion(nil); return }
         print("\(url.absoluteString)")

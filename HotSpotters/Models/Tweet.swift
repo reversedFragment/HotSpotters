@@ -337,3 +337,6 @@ enum ResultType: String, Codable {
 //        case type, sizes
 //    }
 //}
+
+
+
