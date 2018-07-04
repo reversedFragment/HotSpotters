@@ -17,8 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        TweetController.shared.searchTweetsBy(topic: "coffee", geocode: nil, resultType: .popular) { (tweets) in
-            print(tweets?.compactMap{$0.body} as Any)
+        CollegeController.shared.search(by: 84112, distance: 20) { (collegeService) in
+            if let collegeService = collegeService {
+               let stateSchools = collegeService.results.filter{ $0.size > 1000}
+                CollegeController.shared.fetchImageFor(college: stateSchools[0], completion: { (image) in
+                    if let image = image {
+                        print(image)
+                    }
+                })
+            }
+            
         }
         // Override point for customization after application launch.
         return true

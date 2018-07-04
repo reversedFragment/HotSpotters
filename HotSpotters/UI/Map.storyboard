@@ -23,14 +23,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="991-5g-SD3">
                                 <rect key="frame" x="0.0" y="20" width="375" height="596"/>
                             </mapView>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sF4-mH-DaK" customClass="MapTabBar" customModule="HotSpotters" customModuleProvider="target">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sF4-mH-DaK" customClass="MapTabBar" customModule="HotSpotters" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="615" width="375" height="52"/>
                                 <connections>
                                     <segue destination="82k-Y5-IAU" kind="embed" id="bwR-dE-xXy"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4H-Io-lS3" customClass="SearchBar" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="37" width="375" height="56"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4H-Io-lS3" customClass="SearchBar" customModule="HotSpotters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="21" width="375" height="72"/>
                                 <connections>
                                     <segue destination="3Ny-sV-cDY" kind="embed" id="dG8-YP-pvp"/>
                                 </connections>
@@ -44,9 +44,8 @@
                                     <segue destination="43I-Hz-RgM" kind="embed" id="jrj-7b-98D"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tU-eY-goh">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tU-eY-goh">
                                 <rect key="frame" x="0.0" y="330" width="375" height="286"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="YaF-If-hYG" kind="embed" id="P1P-sU-6SR"/>
                                 </connections>
@@ -54,7 +53,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="sF4-mH-DaK" firstAttribute="leading" secondItem="9tU-eY-goh" secondAttribute="leading" id="4lO-7Q-e5x"/>
                             <constraint firstItem="991-5g-SD3" firstAttribute="leading" secondItem="2XT-Ha-hEn" secondAttribute="leading" id="5SQ-PS-mc4"/>
+                            <constraint firstAttribute="bottom" secondItem="i4H-Io-lS3" secondAttribute="bottom" constant="574" id="Bjp-tf-zli"/>
                             <constraint firstItem="sF4-mH-DaK" firstAttribute="centerX" secondItem="991-5g-SD3" secondAttribute="centerX" id="Bkg-te-2z7"/>
                             <constraint firstItem="i4H-Io-lS3" firstAttribute="trailing" secondItem="lYn-6g-90X" secondAttribute="trailing" id="CVK-Ig-U7p"/>
                             <constraint firstItem="uq2-Gi-PZ6" firstAttribute="width" secondItem="2XT-Ha-hEn" secondAttribute="width" multiplier="0.8" id="Ce1-A9-b9k"/>
@@ -62,12 +63,16 @@
                             <constraint firstItem="i4H-Io-lS3" firstAttribute="leading" secondItem="lYn-6g-90X" secondAttribute="leading" id="SWz-B2-Y5z"/>
                             <constraint firstItem="991-5g-SD3" firstAttribute="top" secondItem="lYn-6g-90X" secondAttribute="top" id="W6J-32-otu"/>
                             <constraint firstItem="sF4-mH-DaK" firstAttribute="top" secondItem="991-5g-SD3" secondAttribute="bottom" constant="-1" id="XrA-Bi-axw"/>
+                            <constraint firstItem="9tU-eY-goh" firstAttribute="top" secondItem="uq2-Gi-PZ6" secondAttribute="bottom" constant="25" id="fcc-4H-uvj"/>
                             <constraint firstItem="uq2-Gi-PZ6" firstAttribute="centerX" secondItem="lYn-6g-90X" secondAttribute="centerX" id="gxO-g5-otK"/>
+                            <constraint firstItem="9tU-eY-goh" firstAttribute="bottom" secondItem="991-5g-SD3" secondAttribute="bottom" id="hAe-Ga-AoY"/>
                             <constraint firstAttribute="trailing" secondItem="991-5g-SD3" secondAttribute="trailing" id="jlp-4G-ra5"/>
+                            <constraint firstItem="sF4-mH-DaK" firstAttribute="trailing" secondItem="9tU-eY-goh" secondAttribute="trailing" id="lDf-Hh-2KR"/>
                             <constraint firstItem="991-5g-SD3" firstAttribute="trailing" secondItem="sF4-mH-DaK" secondAttribute="trailing" id="nVc-Mk-CPz"/>
                             <constraint firstItem="991-5g-SD3" firstAttribute="leading" secondItem="sF4-mH-DaK" secondAttribute="leading" id="oKn-K8-c3j"/>
                             <constraint firstItem="i4H-Io-lS3" firstAttribute="top" secondItem="lYn-6g-90X" secondAttribute="top" constant="1" id="ovn-93-tUg"/>
                             <constraint firstItem="uq2-Gi-PZ6" firstAttribute="top" secondItem="lYn-6g-90X" secondAttribute="top" constant="70" id="u4n-u2-oLd"/>
+                            <constraint firstItem="sF4-mH-DaK" firstAttribute="bottom" secondItem="lYn-6g-90X" secondAttribute="bottom" id="v2t-wH-HcM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lYn-6g-90X"/>
                     </view>
@@ -157,7 +162,7 @@
             <objects>
                 <viewController id="3Ny-sV-cDY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bFb-rV-08N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="64I-uD-aYF">
