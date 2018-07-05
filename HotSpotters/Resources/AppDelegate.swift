@@ -17,10 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        TweetController.shared.searchTweetsBy(topic: "coffee", geocode: nil, resultType: .popular) { (tweets) in
-            print(tweets?.compactMap{$0.body} as Any)
+//        TweetController.shared.searchTweetsBy(topic: "coffee", geocode: nil, resultType: .popular) { (tweets) in
+//            print(tweets?.compactMap{$0.body} as Any)
+//        }
+//        // Override point for customization after application launch.
+        
+        GeneralVenueController.exploreVenues(searchTerm: "tacos", location: (40.7484,-73.9857), near: "New York City", radius: 1000, section: GeneralVenueController.venueSectionMarker.food, limit: 20, sortByDistance: 1, price: GeneralVenueController.pricePoint.price2) { (recommendedvenues) in
+            
+            guard let recommendedVenues = recommendedvenues else {
+                print("there was an error fetching recommended venues")
+                return
+            }
         }
-        // Override point for customization after application launch.
+        
+    
         return true
     }
 

@@ -36,7 +36,7 @@ struct Response: Codable {
     let headerLocation: String? /// Text name for location the user searched, e.g. “SoHo”.
     let headerFullLocation: String? /// Full name for the location the user searched, e.g. “SoHo, New York”.
     let totalResults: Int?
-    let groups: [ResponseGroup]? /// An array of objects representing groups of recommendations. Each group contains a type such as “recommended” a human-readable (eventually localized) name such as “Recommended Places,” and an array items of recommendation objects.
+    let groups: [Group]? /// An array of objects representing groups of recommendations. Each group contains a type such as “recommended” a human-readable (eventually localized) name such as “Recommended Places,” and an array items of recommendation objects.
 
     enum CodingKeys: String, CodingKey {
         case venues = "venues"
@@ -137,14 +137,10 @@ struct Center: Codable {
 // Mark: - exploreVenues() data that comes back inside 'response' JSON
 ////////////////////////////////////////////////////////////////
 
-struct ResponseGroup: Codable {
-    let type: String?
-    let name: String?
+struct Group: Codable {
     let items: [GroupItem]?
     
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case name = "name"
         case items = "items"
     }
 }
