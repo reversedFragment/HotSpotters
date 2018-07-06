@@ -134,9 +134,13 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                             return
                         } else {
                             CollegeController.shared.visibleColleges.append(college)
-                            self.addAnnotation(college: college)
-                            let location = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-                            self.drawShape(schoolCoordinates: location)
+                            for college in colleges {
+                                CollegeController.shared.fetchImageFor(college: college, completion: { (success) in
+                                    self.addAnnotation(college: college)
+                                    let location = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
+                                    self.drawShape(schoolCoordinates: location)
+                                })
+                            }
                         }
                     }
                 })
@@ -160,12 +164,13 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     @objc func flyToSelectedCollege(){
         guard let college = CollegeController.shared.selectedCollege else {return}
         let center = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-        let camera = MGLMapCamera(lookingAtCenter: center, fromDistance: 3000, pitch: 0, heading: 0)
+        let camera = MGLMapCamera(lookingAtCenter: center, fromDistance: 10000, pitch: 0, heading: 0)
         searchBar.text = ""
         dropDownContainerView.isHidden = true
-        self.addAnnotation(college: college)
-        self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
-        self.collegeMap.fly(to: camera, completionHandler: nil)
+        self.collegeMap.fly(to: camera) {
+            self.mapView(self.collegeMap, regionDidChangeAnimated: true)
+        }
+        
     }
 }
 

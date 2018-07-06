@@ -6,12 +6,13 @@
 //  Copyright © 2018 Ben Adams. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class TweetController{
     
     static let shared = TweetController()
     static let baseSearchTweetsUrl = URL(string: "https://api.twitter.com/1.1/search/tweets.json")
+    var fetchedTweets: [Tweet]?
     
     
     private struct ApiKeys{
@@ -110,6 +111,25 @@ class TweetController{
                 }).resume()
             }
         }
+    }
+    
+    func fetchProfilePictureFor(user: TwitterUser, completion: @escaping (UIImage?) -> Void){
+        guard let url = URL(string: user.profileImageURL) else {completion(nil) ; return}
+        
+        print(url)
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error{
+                print("\(error.localizedDescription) \(error) in function: \(#function)")
+                completion(nil)
+                return
+            }
+            guard let data = data else {completion(nil) ; return}
+            do{
+                let image = UIImage(data: data)
+                completion(image)
+            }
+        }.resume()
     }
     
 }

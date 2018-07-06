@@ -82,11 +82,7 @@ class CollegeController{
                 let decoder = JSONDecoder()
                 let collegeService = try decoder.decode(CollegeService.self, from: data)
                 let colleges = collegeService.results.filter{ $0.size >= self.minimumStudentCount }
-                for college in colleges {
-                    self.fetchImageFor(college: college, completion: { (success) in
-                        completion(colleges)
-                    })
-                }
+                completion(colleges)
             }catch{
                     print("\(error.localizedDescription) \(error) in function: \(#function)")
                     completion(nil)

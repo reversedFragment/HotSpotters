@@ -21,7 +21,7 @@ class CollegeAnnotation: NSObject, MGLAnnotation{
         let coordinate = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
         let size = "\(college.size) Students"
         if let image = college.logo {
-           let logo = ImageHelper.resizeImage(image, targetSize: CGSize(width: 35, height: 35))
+           let logo = ImageHelper.resizeImage(image, targetSize: CGSize(width: 45, height: 45))
             self.image = logo
         }
         

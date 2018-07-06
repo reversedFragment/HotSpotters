@@ -21,9 +21,9 @@ struct Tweet: Codable {
     let tweetID: Int
     let body: String
     let truncated: Bool
-    //    let entities: StatusEntities
+    let entities: StatusEntities
     //    let metadata: Metadata
-    //    let user: User
+    let user: TwitterUser
     //    let coordinates: Coordinates?
     //    let place: Place?
     //    let retweetedStatus: RetweetedStatus?
@@ -36,7 +36,7 @@ struct Tweet: Codable {
         case createdAt = "created_at"
         case tweetID = "id"
         case body = "text"
-        case truncated //, entities, metadata, user, coordinates, place
+        case truncated, entities, user // metadata, coordinates, place
         //        case retweetedStatus = "retweeted_status"
         case isQuoteStatus = "is_quote_status"
         case retweetCount = "retweet_count"
@@ -45,37 +45,37 @@ struct Tweet: Codable {
         case quotedStatusID = "quoted_status_id"
     }
 }
-//
-//struct StatusEntities: Codable {
-//    let hashtags: [Hashtag]
-//    let userMentions: [UserMention]
-//    let urls: [URL]
-//    let media: [EntitiesMedia]?
-//
-//    struct Hashtag: Codable {
-//        let text: String
-//    }
-//
-//    struct UserMention: Codable {
-//        let screenName, name: String
-//        let id: Int
-//        let idStr: String
-//        let indices: [Int]
-//
-//        enum CodingKeys: String, CodingKey {
-//            case screenName = "screen_name"
-//            case name, id
-//            case idStr = "id_str"
-//            case indices
-//        }
-//    }
-//
-//    enum CodingKeys: String, CodingKey {
-//        case hashtags
-//        case userMentions = "user_mentions"
-//        case urls, media
-//    }
-//}
+
+struct StatusEntities: Codable {
+    let hashtags: [Hashtag]
+    let userMentions: [UserMention]
+//    let urls: [String]
+    let media: [EntitiesMedia]?
+
+    struct Hashtag: Codable {
+        let text: String
+    }
+
+    struct UserMention: Codable {
+        let screenName, name: String
+        let id: Int
+        let idStr: String
+        let indices: [Int]
+
+        enum CodingKeys: String, CodingKey {
+            case screenName = "screen_name"
+            case name, id
+            case idStr = "id_str"
+            case indices
+        }
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case hashtags
+        case userMentions = "user_mentions"
+        case media
+    }
+}
 //
 //struct Coordinates: Codable {
 //    let coordinates: [Double]
@@ -101,43 +101,47 @@ struct Tweet: Codable {
 //    }
 //}
 //
-//struct EntitiesMedia: Codable {
-//    let id: Int
-//    let idStr: String
-//    let indices: [Int]
-//    let mediaURL, mediaURLHTTPS, url, displayURL: String
-//    let expandedURL, type: String
-//    let sizes: Sizes
-//    let sourceStatusID: Int?
-//    let sourceStatusIDStr: String?
-//    let sourceUserID: Int?
-//    let sourceUserIDStr: String?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case idStr = "id_str"
-//        case indices
-//        case mediaURL = "media_url"
-//        case mediaURLHTTPS = "media_url_https"
-//        case url
-//        case displayURL = "display_url"
-//        case expandedURL = "expanded_url"
-//        case type, sizes
-//        case sourceStatusID = "source_status_id"
-//        case sourceStatusIDStr = "source_status_id_str"
-//        case sourceUserID = "source_user_id"
-//        case sourceUserIDStr = "source_user_id_str"
-//    }
-//}
-//
-//struct Sizes: Codable {
-//    let thumb, medium, small, large: Large
-//}
-//
-//struct Large: Codable {
-//    let w, h: Int
+
+struct EntitiesMedia: Codable {
+    let id: Int
+    let idStr: String
+    let indices: [Int]
+    let mediaURL, mediaURLHTTPS, url, displayURL: String
+    let expandedURL, type: String
+    let sizes: Sizes
+    let sourceStatusID: Int?
+    let sourceStatusIDStr: String?
+    let sourceUserID: Int?
+    let sourceUserIDStr: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case idStr = "id_str"
+        case indices
+        case mediaURL = "media_url"
+        case mediaURLHTTPS = "media_url_https"
+        case url
+        case displayURL = "display_url"
+        case expandedURL = "expanded_url"
+        case type, sizes
+        case sourceStatusID = "source_status_id"
+        case sourceStatusIDStr = "source_status_id_str"
+        case sourceUserID = "source_user_id"
+        case sourceUserIDStr = "source_user_id_str"
+    }
+}
+
+
+struct Sizes: Codable {
+    let thumb, medium, small, large: Large
+}
+
+
+struct Large: Codable {
+    let w, h: Int
 //    let resize: Resize
-//}
+}
+
 //
 //enum Resize: String, Codable {
 //    case crop = "crop"
