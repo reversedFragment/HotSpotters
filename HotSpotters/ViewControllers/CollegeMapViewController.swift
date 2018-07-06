@@ -12,7 +12,6 @@ import Mapbox
 class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     var collegeMap: MGLMapView!
-    var collegeAnnotation: MGLPointAnnotation!
     var searchBar = UISearchBar()
     
     @IBOutlet weak var dropDownContainerView: UIView!
@@ -69,12 +68,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     func addAnnotation(college: College){
         DispatchQueue.main.async {
-            self.collegeAnnotation = MGLPointAnnotation()
-            let coordinates = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-            self.collegeAnnotation.coordinate = coordinates
-            self.collegeAnnotation.title = college.schoolName
-            self.collegeAnnotation.subtitle = "\(college.size)"
-            self.collegeMap.addAnnotation(self.collegeAnnotation)
+            let collegeAnnotation = CollegeAnnotation(college: college)
+            self.collegeMap.addAnnotation(collegeAnnotation)
         }
     }
     
@@ -131,12 +126,12 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             }
             if let placemark = placemark{
                 guard let zipCode =  placemark[0].postalCode else {return}
-                CollegeController.shared.search(by: zipCode, distance: 100, completion: { (colleges) in
+                CollegeController.shared.search(by: zipCode, distance: 20, completion: { (colleges) in
                     guard var colleges = colleges?.results else {return}
                     colleges = colleges.filter{ $0.size >= 2000 }
                     for college in colleges {
                         if CollegeController.shared.visibleColleges.contains(college) {
- 
+                            return
                         } else {
                             CollegeController.shared.visibleColleges.append(college)
                             self.addAnnotation(college: college)
@@ -150,54 +145,26 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
 
     
-//    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
-//        guard let currentCollege = currentCollege else {return nil}
-//        var annotationImage = collegeMap.dequeueReusableAnnotationImage(withIdentifier: "\(currentCollege.schoolName)Logo")
-//
-//        if annotationImage == nil{
-//
-//            CollegeController.shared.fetchImageFor(college: currentCollege) { (image) in
-//                guard let image = image else {return}
-//                guard var collegeImage = self.resizeImage(image, targetSize: CGSize(width: 100, height: 100)) else {return}
-//                collegeImage = collegeImage.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: image.size.height/2, right: 0))
-//                annotationImage = MGLAnnotationImage(image: collegeImage, reuseIdentifier: "\(currentCollege.schoolName)Logo")
-//            }
-//        }
-//        return annotationImage
-//    }
-    
-    func resizeImage(_ image: UIImage, targetSize: CGSize) -> UIImage? {
-        let size = image.size
+    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        guard let point = annotation as? CollegeAnnotation,
+        let reuseIdentifier = point.reuseIdentifier,
+        let image = point.image else {return nil}
         
-        let widthRatio  = targetSize.width  / image.size.width
-        let heightRatio = targetSize.height / image.size.height
-        
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
+            return annotationImage
         } else {
-            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+            return MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifier)
         }
-        
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
     }
     
     @objc func flyToSelectedCollege(){
         guard let college = CollegeController.shared.selectedCollege else {return}
         let center = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-        let camera = MGLMapCamera(lookingAtCenter: center, fromDistance: 1000, pitch: 0, heading: 0)
+        let camera = MGLMapCamera(lookingAtCenter: center, fromDistance: 3000, pitch: 0, heading: 0)
         searchBar.text = ""
         dropDownContainerView.isHidden = true
+        self.addAnnotation(college: college)
+        self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
         self.collegeMap.fly(to: camera, completionHandler: nil)
     }
 }

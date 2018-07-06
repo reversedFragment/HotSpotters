@@ -9,13 +9,25 @@
 import Foundation
 import Mapbox
 
-//class CollegeAnnotation: MGLAnnotation {
-//    
-//    var coordinate: CLLocationCoordinate2D
-//    
-//    init(college: College){
-//        self.coordinate = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-//    }
-//    
-//    
-//}
+class CollegeAnnotation: NSObject, MGLAnnotation{
+    
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    var image: UIImage?
+    var reuseIdentifier: String?
+    
+    init(college: College){
+        let coordinate = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
+        let size = "\(college.size) Students"
+        if let image = college.logo {
+           let logo = ImageHelper.resizeImage(image, targetSize: CGSize(width: 35, height: 35))
+            self.image = logo
+        }
+        
+        self.coordinate = coordinate
+        self.title = college.schoolName
+        self.subtitle = size
+        self.reuseIdentifier = "\(college.id)"
+    }
+}
