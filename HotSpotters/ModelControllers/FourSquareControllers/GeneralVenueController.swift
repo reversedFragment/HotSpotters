@@ -234,7 +234,7 @@ class GeneralVenueController {
         case outdoors = "outdoors"
         case sights = "sights"
         case trending = "trending"
-        case nextVenues = "nextVenues"
+        case topPicks = "topPicks"
     }
 
     // Users can use this to filter by price point
@@ -245,26 +245,15 @@ class GeneralVenueController {
         case price4 = "4"
     }
 
-    static func exploreVenues(searchTerm: String,
-                                       location: (Double, Double),
-                                       near: String,
-                                       radius: Int,
-                                       section: venueSectionMarker,
-                                       limit: Int,
-                                       sortByDistance: Int, // Boolean flag of 0 or 1
-                                       price: pricePoint, // separate digits by commas to get a range of prices
-                                       completion: @escaping (([GroupItem]?)->Void)) {
-
-    // Nil Checks on required params
-//        if location == nil && near == nil {
-//            return print("You need to allow access to Location Services or you can enter the name of an area to search!")
-//        }
-//        guard let unwrappedLocation = location else {
-//            return
-//        }
+    static func exploreVenues(location: (Double, Double),
+                                radius: Int,
+                               section: venueSectionMarker,
+                                 limit: Int,
+                                 price: pricePoint, // separate digits by commas to get a range of prices
+                            completion: @escaping (([GroupItem]?)->Void)) {
 
         // Conversion of Ints to Strings
-//        let stringLocation = String(unwrappedLocation.0) + "," + String(unwrappedLocation.1)
+        let stringLocation = "\(location.0)" + "," + "\(location.1)"
         let stringLimit = "\(limit) "
         let stringRadius = "\(radius)"
         let stringSection = "\(section)"
@@ -280,16 +269,13 @@ class GeneralVenueController {
         url.appendPathComponent("venues")
         url.appendPathComponent("explore")
 
-
-    /// QUERIES
-
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-
-    // Location and main filter
-//        let nearQuery = URLQueryItem.init(name: "near", value: near)  /// Required unless "ll" is provided.
-        let locationQuery = URLQueryItem.init(name: "ll", value: "40.7484,-73.9857") /// Required unless "near" is provied.
-        let searchTermQuery = URLQueryItem.init(name: "query", value: searchTerm) // Has no effect when a section is specified.
-        let radiusQuery = URLQueryItem.init(name: "radius", value: stringRadius) // Geo Radius in meters
+        
+    /// QUERIES
+        
+        let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required from pinned location coordinates
+        
+        let radiusQuery = URLQueryItem.init(name: "radius", value: stringRadius) /// Geo Radius in meters
 
     // One of the venueSectionMarker enum cases
         let sectionQuery = URLQueryItem.init(name: "section", value: stringSection) /// limits results to specified category or property.
@@ -300,11 +286,10 @@ class GeneralVenueController {
 
     // Boolean flag to only include venues that are open now.
         // This prefers official provider hours but falls back to popular check-in hours.
-        let openNowQuery = URLQueryItem.init(name: "openNow", value: "1") /// Only show open venues
+        let openNowQuery = URLQueryItem.init(name: "openNow", value: "1") /// "1" Only shows open venues
 
     // Boolean flag to sort venues by those closest to user as the dominant filter.
-
-        let sortByDistanceQuery = URLQueryItem.init(name: "sortByDistance", value: "1") // Sort by distance
+        let sortByDistanceQuery = URLQueryItem.init(name: "sortByDistance", value: "1") /// Sort by distance
 
 //    // For the complete category tree, see categories: https://developer.foursquare.com/docs/resources/categories
 //        let categoryQuery = URLQueryItem.init(name: "categoryId", value: category)
@@ -314,13 +299,8 @@ class GeneralVenueController {
         let clientSecret = URLQueryItem.init(name: "client_secret", value: myClientSecret)
         let FSversionNumber = URLQueryItem.init(name: "v", value: version) /// Version of FourSquare Systems
 
-        var queryArray = [locationQuery, searchTermQuery, radiusQuery, sectionQuery, limitQuery, offSetQuery, openNowQuery, sortByDistanceQuery, clientID, clientSecret, FSversionNumber]
-
-//    // logic check: If 'near' nil, use 'll' location instead
-//        if near == nil {
-//            queryArray.removeFirst()
-//        }
-//
+        let queryArray = [locationQuery, radiusQuery, sectionQuery, limitQuery, offSetQuery, openNowQuery, sortByDistanceQuery, clientID, clientSecret, FSversionNumber]
+        
         components?.queryItems = queryArray
 
     // Fully constructed URL

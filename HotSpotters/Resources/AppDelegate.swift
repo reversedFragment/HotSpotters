@@ -22,13 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 //        // Override point for customization after application launch.
         
-        GeneralVenueController.exploreVenues(searchTerm: "tacos", location: (40.7484,-73.9857), near: "New York City", radius: 1000, section: GeneralVenueController.venueSectionMarker.food, limit: 20, sortByDistance: 1, price: GeneralVenueController.pricePoint.price2) { (recommendedvenues) in
-            
-            guard let recommendedVenues = recommendedvenues else {
-                print("there was an error fetching recommended venues")
-                return
-            }
-        }
         
     
         return true

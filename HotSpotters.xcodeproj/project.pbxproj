@@ -16,7 +16,6 @@
 		16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */; };
 		16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */; };
 		16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAF20E69E650061A3DA /* VenueModel.swift */; };
-		16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */; };
 		16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBB20E6A6210061A3DA /* TrendController.swift */; };
 		16C77BC420E6A6220061A3DA /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBD20E6A6210061A3DA /* Trend.swift */; };
 		16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */; };
@@ -24,13 +23,11 @@
 		16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */; };
 		16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCB20E6A65F0061A3DA /* Tweet.swift */; };
 		16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCD20E6A6880061A3DA /* TwitterUser.swift */; };
-		69DC9F3B20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
+		16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */; };
 		16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
 		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
-		69DC9F3F20E2BD1700EB03E8 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
-		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
 		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
-		16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */; };
+		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
 		6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */; };
 		6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */; };
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
@@ -51,7 +48,6 @@
 		16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTopLevelJSON.swift; sourceTree = "<group>"; };
 		16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsModel.swift; sourceTree = "<group>"; };
 		16C77BAF20E69E650061A3DA /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
-		16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoriesMasterList.swift; sourceTree = "<group>"; };
 		16C77BBB20E6A6210061A3DA /* TrendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendController.swift; sourceTree = "<group>"; };
 		16C77BBD20E6A6210061A3DA /* Trend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocation.swift; sourceTree = "<group>"; };
@@ -59,20 +55,13 @@
 		16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocationController.swift; sourceTree = "<group>"; };
 		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
-		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
-		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
 		16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVenueController.swift; sourceTree = "<group>"; };
+		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
+		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
 		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		6D13BA4220E550EC00658EAF /* MapTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTabBar.swift; path = HotSpotters/Views/MapTabBar.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4420E5513F00658EAF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = HotSpotters/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4620E55A5E00658EAF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = HotSpotters/Views/SearchBar.swift; sourceTree = "<group>"; };
-		6D13BA4820E55F3B00658EAF /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = HotSpotters/Views/GraphView.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4A20E5600200658EAF /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
-		6D13BA4C20E5629500658EAF /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = HotSpotters/ViewControllers/Graph.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4E20E562BE00658EAF /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = HotSpotters/ViewControllers/GraphViewController.swift; sourceTree = SOURCE_ROOT; };
 		6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-Model.swift"; sourceTree = "<group>"; };
 		6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-ModelController.swift"; sourceTree = "<group>"; };
 		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -134,10 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */,
-				16C77BAF20E69E650061A3DA /* VenueModel.swift */,
-				16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */,
 				16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */,
-				16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */,
+				16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */,
+				16C77BAF20E69E650061A3DA /* VenueModel.swift */,
 			);
 			path = FourSquareModels;
 			sourceTree = "<group>";
@@ -225,8 +213,6 @@
 				161BC15120E2B22800F88745 /* Assets.xcassets */,
 				161BC15620E2B22800F88745 /* Info.plist */,
 				161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */,
-				696872F520E7366F00662B18 /* LargeValueFormatter.swift */,
-				6951D86920E9E5A20097FFD3 /* ChartsAxisValueFormatter.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -274,7 +260,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 161BC15920E2B22800F88745 /* Build configuration list for PBXNativeTarget "HotSpotters" */;
 			buildPhases = (
-				128222B25C0E1EC9B92939E8 /* [CP] Check Pods Manifest.lock */,
 				161BC14020E2B22700F88745 /* Sources */,
 				161BC14120E2B22700F88745 /* Frameworks */,
 				161BC14220E2B22700F88745 /* Resources */,
@@ -339,9 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */,
-				16E48DA820E7A41200ABFC4F /* mattsStoryboard.storyboard in Resources */,
 				16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */,
-				16E48DAA20E7A41200ABFC4F /* trevorsStoryboard.storyboard in Resources */,
 				16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +367,6 @@
 				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
 				16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
-				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
 				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,
