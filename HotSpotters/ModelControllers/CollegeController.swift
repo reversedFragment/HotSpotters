@@ -11,22 +11,24 @@ import UIKit
 class CollegeController{
     
     static let shared = CollegeController()
+    var visibleColleges: [College] = []
+    var filteredColleges: [College] = []
+    var selectedCollege: College?
+    let minimumStudentCount = 1000
     
     let baseURL = URL(string: "https://api.data.gov/ed/collegescorecard/v1/schools?")
     let apiToken = "HFVcWfJM6FxkueG2OzSz3ztoH48nm9BcVuyU5EMl"
     
-    func search(by zipcode: Int, distance: Int, completion: @escaping (CollegeService?) -> Void) {
+    func search(by zipcode: String, distance: Int, completion: @escaping (CollegeService?) -> Void) {
         guard let url = baseURL else { completion(nil) ; return }
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         let fieldsQuery = URLQueryItem(name: "_fields", value: "id,school.name,school.state,location.lat,location.lon,2015.student.size,school.degrees_awarded.predominant,school.school_url")
+        let predominantDegreeQuery = URLQueryItem(name: "school.degrees_awarded.predominant", value: "3")
         let zipcodeQuery = URLQueryItem(name: "_zip", value: "\(zipcode)")
         let distanceQuery = URLQueryItem(name: "distance", value: "\(distance)mi")
         let apiTokenQuery = URLQueryItem(name: "api_key", value: "\(apiToken)")
-        components?.queryItems = [fieldsQuery, zipcodeQuery, distanceQuery, apiTokenQuery]
+        components?.queryItems = [fieldsQuery, zipcodeQuery, distanceQuery, apiTokenQuery, predominantDegreeQuery]
         guard let urlWithQuery = components?.url else { completion(nil) ; return }
-        
-        print(urlWithQuery.absoluteString)
-        
         
         var request = URLRequest(url: urlWithQuery)
         request.httpMethod = "GET"
@@ -43,6 +45,11 @@ class CollegeController{
             let jsonDecoder = JSONDecoder()
             do {
                 let collegeService = try jsonDecoder.decode(CollegeService.self, from: data)
+                let colleges = collegeService.results.filter{ $0.size >= self.minimumStudentCount}
+                for college in colleges{
+                    self.fetchImageFor(college: college, completion: { (success) in
+                    })
+                }
                 completion(collegeService)
                 return
             } catch let error {
@@ -53,21 +60,54 @@ class CollegeController{
             }.resume()
     }
     
-    func fetchImageFor(college: College, completion: @escaping (UIImage?) -> Void){
+    func fetchCollegesBy(schoolName: String, completion: @escaping ([College]?) -> Void){
+        guard let url = baseURL else { completion(nil) ; return }
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let fieldsQuery = URLQueryItem(name: "_fields", value: "id,school.name,school.state,location.lat,location.lon,2015.student.size,school.degrees_awarded.predominant,school.school_url")
+        let predominantDegreeQuery = URLQueryItem(name: "school.degrees_awarded.predominant", value: "3")
+        let nameQuery = URLQueryItem(name: "school.name", value: schoolName)
+        let apiTokenQuery = URLQueryItem(name: "api_key", value: "\(apiToken)")
         
-        guard let logoURL = URL(string: "https://logo.clearbit.com/\(college.urlString)") else {return}
+        components?.queryItems = [fieldsQuery, nameQuery, predominantDegreeQuery, apiTokenQuery]
+        guard let urlWithQuery = components?.url else { completion(nil) ; return }
         
-        print(logoURL)
-        
-        URLSession.shared.dataTask(with: logoURL) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlWithQuery) { (data, _, error) in
             if let error = error{
                 print("\(error.localizedDescription) \(error) in function: \(#function)")
                 completion(nil)
                 return
             }
+            guard let data = data else { completion(nil) ; return }
+            do{
+                let decoder = JSONDecoder()
+                let collegeService = try decoder.decode(CollegeService.self, from: data)
+                let colleges = collegeService.results.filter{ $0.size >= self.minimumStudentCount }
+                for college in colleges {
+                    self.fetchImageFor(college: college, completion: { (success) in
+                        completion(colleges)
+                    })
+                }
+            }catch{
+                    print("\(error.localizedDescription) \(error) in function: \(#function)")
+                    completion(nil)
+            }
+        }.resume()
+    }
+    
+    func fetchImageFor(college: College, completion: @escaping (Bool) -> Void){
+        
+        guard let logoURL = URL(string: "https://logo.clearbit.com/\(college.urlString)") else {return}
+        
+        URLSession.shared.dataTask(with: logoURL) { (data, response, error) in
+            if let error = error{
+                print("\(error.localizedDescription) \(error) in function: \(#function)")
+                completion(false)
+                return
+            }
             guard let data = data,
-                let logo = UIImage(data: data) else {completion(nil) ; return}
-            completion(logo)
+                let logo = UIImage(data: data) else {completion(false) ; return}
+                college.logo = logo
+                completion(true)
         }.resume()
     }
 }

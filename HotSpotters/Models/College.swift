@@ -6,7 +6,7 @@
 //  Copyright © 2018 Ben Adams. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct CollegeService: Codable {
     let metadata: Metadata
@@ -22,7 +22,7 @@ struct Metadata: Codable {
     }
 }
 
-struct College: Codable {
+class College: Codable, Equatable {
     let locationLat: Double
     let locationLon: Double
     let schoolName: String
@@ -31,6 +31,7 @@ struct College: Codable {
     let size: Int
     let id: Int
     let urlString: String
+    var logo: UIImage? = UIImage()
     
     enum CodingKeys: String, CodingKey {
         case locationLat = "location.lat"
@@ -41,5 +42,11 @@ struct College: Codable {
         case size = "2015.student.size"
         case id
         case urlString = "school.school_url"
+
     }
+}
+
+
+func ==(lhs: College, rhs: College) -> Bool{
+    return lhs.id == rhs.id
 }
