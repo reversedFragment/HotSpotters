@@ -31,7 +31,6 @@ struct Response: Codable {
     let venues: [Venue]? /// Specific to calls made with 'fetchVenues' and 'exploreVenues()
     let geocode: Geocode? /// Specific to calls made using 'near' as a parameter instead of 'll'
     let hours: Hours?
-    let categories: [MainCategories]? /// Specfic to categories pulled in the 'VenueCategoriesMasterList' file
     let venueDetails: VenueDetails? /// Specific to 'venue' pulled by 'fetchVenueDetails()', not 'venues' for general
     let headerLocation: String? /// Text name for location the user searched, e.g. “SoHo”.
     let headerFullLocation: String? /// Full name for the location the user searched, e.g. “SoHo, New York”.
@@ -42,7 +41,6 @@ struct Response: Codable {
         case venues = "venues"
         case geocode = "geocode"
         case hours = "hours"
-        case categories = "categories"
         case venueDetails = "venue"
         case headerLocation = "headerLocation"
         case headerFullLocation = "headerFullLocation"
