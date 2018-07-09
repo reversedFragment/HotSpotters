@@ -17,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        TweetController.shared.searchTweetsBy(topic: "World Cup", geocode: nil, resultType: .popular) { (tweets) in
-            guard let tweets = tweets else {return}
-            TweetController.shared.fetchedTweets = tweets
-            TweetController.shared.fetchProfilePictureFor(user: tweets[0].user, completion: { (image) in
-                print(image)
-            })
-        }
+//        TweetController.shared.searchTweetsBy(topic: "World Cup", geocode: nil, resultType: .popular) { (tweets) in
+//            guard let tweets = tweets else {return}
+//            TweetController.shared.fetchedTweets = tweets
+//            TweetController.shared.fetchProfilePictureFor(user: tweets[0].user, completion: { (image) in
+//                print(image)
+//            })
+//        }
         
         return true
     }

@@ -144,7 +144,11 @@ struct Group: Codable {
 }
 
 struct GroupItem: Codable {
-    let venue: RecommendedVenue?
+    let fetchedRecommendedVenue: RecommendedVenue?
+    
+    enum CodingKeys: String, CodingKey {
+        case fetchedRecommendedVenue = "venue"
+    }
     
 }
 

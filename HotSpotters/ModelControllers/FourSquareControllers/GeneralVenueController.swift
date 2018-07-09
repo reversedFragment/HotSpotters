@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Mapbox
 
 class GeneralVenueController {
 
@@ -223,6 +224,7 @@ class GeneralVenueController {
 ////////////////////////////////////////////////////////////////
 // Mark: - exploreVenues()
 ////////////////////////////////////////////////////////////////
+    
 
     // Users can use this enum to filter by 'section'
     enum venueSectionMarker: String {
@@ -247,9 +249,9 @@ class GeneralVenueController {
 
     static func exploreVenues(location: (Double, Double),
                                 radius: Int,
-                               section: venueSectionMarker,
+                               section: String,
                                  limit: Int,
-                                 price: pricePoint, // separate digits by commas to get a range of prices
+                                 price: String, // separate digits by commas to get a range of prices
                             completion: @escaping (([GroupItem]?)->Void)) {
 
         // Conversion of Ints to Strings
@@ -339,5 +341,27 @@ class GeneralVenueController {
             }
         }.resume()
 
+    }
+    
+    static func searchSelectedSection(section: String) {
+        GeneralVenueController.exploreVenues( location: (40.7618705,-111.89046960000002),
+                                              radius: 500,
+                                              section: section,
+                                              limit: 20,
+                                              price: "1,2,3,4")
+        { (recommendedVenues) in
+            
+            guard let fetchedRecommends = recommendedVenues else { return }
+            FourSquareTableViewController.shared.fetchedVenues = fetchedRecommends
+            for venue in FourSquareTableViewController.shared.fetchedVenues {
+                let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
+                guard let subtitle = subtitleArray?.first else { return }
+                DispatchQueue.main.async {
+                    let annotation = (CustomVenueAnnotation.init(coordinate: CLLocationCoordinate2D(latitude: (venue.fetchedRecommendedVenue?.location?.lat)!, longitude: (venue.fetchedRecommendedVenue?.location?.lng)!), title: venue.fetchedRecommendedVenue?.name, subtitle: subtitle, address: venue.fetchedRecommendedVenue?.location?.address))
+//                    self.mapView.addAnnotation(annotation)
+//                    self.annotationList.append(annotation)
+                }
+            }
+        }
     }
 }

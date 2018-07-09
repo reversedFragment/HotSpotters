@@ -10,7 +10,7 @@ import UIKit
 
 class FourSquareTableViewCell: UITableViewCell {
     
-    var fetchedVenue: Venue? {
+    var fetchedVenue: RecommendedVenue? {
         didSet {
             updateViews()
         }
@@ -26,7 +26,7 @@ class FourSquareTableViewCell: UITableViewCell {
         guard let fetchedVenue = fetchedVenue else { return }
         nameLabel.text = fetchedVenue.name ?? "haha"
         addressLabel.text = fetchedVenue.location?.address ?? "No Address Listed"
-        categoriesName.text = fetchedVenue.venueCategories?.first?.name ?? "No Category Listed"
+        categoriesName.text = fetchedVenue.categories?.first?.name ?? "No Category Listed"
 //        venueCategoryLabel.text = fetchedVenue.venueCategories?.first?.name ?? "haha"
 //        venueAddressLabel.text = fetchedVenue.location?.address ?? "haha"
 //        venueDistanceLabel.text = "It's \(fetchedVenue.contact?.phone ?? "haha")"
