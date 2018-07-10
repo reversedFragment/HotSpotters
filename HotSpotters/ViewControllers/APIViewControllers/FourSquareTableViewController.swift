@@ -15,17 +15,28 @@ class FourSquareTableViewController: UIViewController {
 
     @IBOutlet weak var FourSquareTableView: UITableView!
     
-    /// Mark: - Source of Truth
-    var sectionSelected: String = ""
-    var fetchedVenues: [GroupItem] = []
-
-
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         FourSquareTableView.delegate = self
         FourSquareTableView.dataSource = self
+        DispatchQueue.main.async {
+            self.FourSquareTableView.reloadData()
+        }
     }
+    
+    /// Mark: - Source of Truth
+    var sectionSelected: String = ""
+    var fetchedVenues: [GroupItem] = []{
+        didSet {
+            print("item was added")
+           
+        }
+}
+
+
+    
     
     // MARK: Navigation to VenueDetailViewController
 
@@ -35,8 +46,6 @@ class FourSquareTableViewController: UIViewController {
 
             if let venueDetailVC = segue.destination as? VenueDetailViewController,
                 let selectedRow = FourSquareTableView.indexPathForSelectedRow?.row {
-                
-                
                 
                 let venueDetailID = self.fetchedVenues[selectedRow].fetchedRecommendedVenue?.venueId
                 
@@ -63,8 +72,8 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "venueCellID",
                                                  for: indexPath) as! FourSquareTableViewCell
-        let fetchedVenue = fetchedVenues[indexPath.row]
-        cell.fetchedVenue = fetchedVenue.fetchedRecommendedVenue
+        let recommendedVenues = fetchedVenues[indexPath.row]
+        cell.fetchedVenue = recommendedVenues.fetchedRecommendedVenue
         return cell
     }
     
@@ -73,43 +82,3 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     }
     
 }
-
-// MARK: - UISearchBarDelegate
-
-//extension FourSquareTableViewController
-
-    
-    
-/// Search bar and function for exploreVenues()
-    /// Need separate search bar or a way to toggle which func is called by searchBar Text
-    
-    //    func exploreBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-//        searchBar.resignFirstResponder()
-//
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//        guard let searchTerm = searchBar.text?.lowercased() else { return }
-//
-//        GeneralVenueController.exploreVenues(searchTerm: searchTerm,
-//                                               location: nil,
-//                                                   near: "Los Angeles",
-//                                                 radius: 10000,
-//                                                section: GeneralVenueController.venueSectionMarker.arts,
-//                                                  limit: 10,
-//                                         sortByDistance: 1,
-//                                                  price: GeneralVenueController.pricePoint.price2 ,
-//                                                  category: nil)
-//        { (recommendedVenues) in
-//
-//            guard let fetchedRecommends = recommendedVenues else { return }
-//            self.fetchedVenues = fetchedRecommends
-//
-//            DispatchQueue.main.async {
-//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                self.FourSquareTableView.reloadData()
-//            }
-//        }
-//    }
-//
-//
-//

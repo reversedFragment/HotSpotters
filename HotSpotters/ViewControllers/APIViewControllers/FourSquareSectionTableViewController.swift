@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Foundation
 
 class FourSquareSectionTableViewController: UITableViewController {
+    
+    var selectedSection: String = ""
 
     // Users can use this enum to filter by 'section'
     enum venueSectionMarker {
@@ -71,24 +74,24 @@ class FourSquareSectionTableViewController: UITableViewController {
             break
         }
         
-  
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "venueTableView", sender: indexPath)
+        
+            GeneralVenueController.searchSelectedSection(section: sectionSelected)
+//            self.performSegue(withIdentifier: "FourSquareTableView", sender: indexPath)
+    }
+    
+
+
+
+
+// MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FourSquareTableView" {
+            if let fourSquareTableVC = segue.destination as? FourSquareTableViewController {
+                fourSquareTableVC.sectionSelected = self.selectedSection
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
         }
     }
     
 }
-
-    
-
-    // MARK: - Navigation
-
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destinationVC = segue.destination as? FourSquareTableViewController, let indexPath = tableView.indexPathForSelectedRow?.row {
-//            let section = venueSectionMarker.all[indexPath]
-//
-//        }
-//    }
-
-

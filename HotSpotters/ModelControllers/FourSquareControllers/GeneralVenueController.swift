@@ -352,16 +352,19 @@ class GeneralVenueController {
         { (recommendedVenues) in
             
             guard let fetchedRecommends = recommendedVenues else { return }
+            
             FourSquareTableViewController.shared.fetchedVenues = fetchedRecommends
-            for venue in FourSquareTableViewController.shared.fetchedVenues {
-                let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
-                guard let subtitle = subtitleArray?.first else { return }
-                DispatchQueue.main.async {
-                    let annotation = (CustomVenueAnnotation.init(coordinate: CLLocationCoordinate2D(latitude: (venue.fetchedRecommendedVenue?.location?.lat)!, longitude: (venue.fetchedRecommendedVenue?.location?.lng)!), title: venue.fetchedRecommendedVenue?.name, subtitle: subtitle, address: venue.fetchedRecommendedVenue?.location?.address))
-//                    self.mapView.addAnnotation(annotation)
-//                    self.annotationList.append(annotation)
+            
+//            DispatchQueue.main.async {
+            
+//            for venue in FourSquareTableViewController.shared.fetchedVenues {
+//                let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
+//                guard let subtitle = subtitleArray?.first else { return }
+//                
+//                let annotation = (CustomVenueAnnotation.init(coordinate: CLLocationCoordinate2D(latitude: (venue.fetchedRecommendedVenue?.location?.lat)!, longitude: (venue.fetchedRecommendedVenue?.location?.lng)!), title: venue.fetchedRecommendedVenue?.name, subtitle: subtitle, address: venue.fetchedRecommendedVenue?.location?.address))
+//    //                    self.mapView.addAnnotation(annotation)
+//    //                    self.annotationList.append(annotation)
                 }
             }
         }
-    }
-}
+
