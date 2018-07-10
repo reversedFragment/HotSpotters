@@ -10,6 +10,7 @@ import UIKit
 
 class FourSquareSectionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var sectionImage: CustomCellImageView!
     @IBOutlet weak var sectionLabel: UILabel!
     
     override func prepareForReuse() {

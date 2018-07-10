@@ -45,12 +45,15 @@ class FourSquareSectionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as! FourSquareSectionTableViewCell
         
         let sectionLabel = venueSectionMarker.all[indexPath.row]
-        let backgroundViewImage = venueSectionMarker.all2[indexPath.row].image
+        let sectionImage = venueSectionMarker.all2[indexPath.row].image
         cell.sectionLabel.text = sectionLabel
-        cell.imageView?.image = backgroundViewImage
+        cell.sectionImage.image = sectionImage
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
     
     // MARK: - Navigation
     

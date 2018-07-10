@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14720E2B22700F88745 /* AppDelegate.swift */; };
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
+		162B82C820F57874000DCFC5 /* CustomCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B82C720F57874000DCFC5 /* CustomCellImageView.swift */; };
 		163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */; };
 		16406E2820F40DB10058E499 /* FourSquareSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16406E2720F40DB10058E499 /* FourSquareSectionTableViewController.swift */; };
 		16406E2A20F410FB0058E499 /* FourSquareSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16406E2920F410FB0058E499 /* FourSquareSectionTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162B82C720F57874000DCFC5 /* CustomCellImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellImageView.swift; sourceTree = "<group>"; };
 		163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewController.swift; sourceTree = "<group>"; };
 		16406E2720F40DB10058E499 /* FourSquareSectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareSectionTableViewController.swift; sourceTree = "<group>"; };
 		16406E2920F410FB0058E499 /* FourSquareSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareSectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				16E48DAC20E7A8C500ABFC4F /* FourSquareViews */,
 				69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */,
 				69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */,
+				162B82C720F57874000DCFC5 /* CustomCellImageView.swift */,
 				69B0696020F01F4900915CC0 /* ProfileImageView.swift */,
 			);
 			path = Views;
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69B0696120F01F4900915CC0 /* ProfileImageView.swift in Sources */,
+				162B82C820F57874000DCFC5 /* CustomCellImageView.swift in Sources */,
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
 				16406E2A20F410FB0058E499 /* FourSquareSectionTableViewCell.swift in Sources */,
 				16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */,
