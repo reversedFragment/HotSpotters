@@ -124,3 +124,19 @@ class EventBriteController {
         case reverseBest
     }
 }
+
+
+extension EventBriteController{
+    
+    static var categories: [Category] {
+        let music = Category(name: "Music", image: #imageLiteral(resourceName: "malte-wingen-381988-unsplash"))
+        let business = Category(name: "Business and Productivity", image: #imageLiteral(resourceName: "rawpixel-594848-unsplash"))
+        let community = Category(name: "Community & Culture", image: #imageLiteral(resourceName: "toa-heftiba-195458-unsplash"))
+        let entertainment = Category(name: "Film, Performing Arts & Entertainment", image: #imageLiteral(resourceName: "peter-lewicki-411606-unsplash"))
+        let tech = Category(name: "Technology & Science", image: #imageLiteral(resourceName: "nasa-53884-unsplash"))
+        let food = Category(name: "Food & Drink", image: #imageLiteral(resourceName: "eaters-collective-132772-unsplash"))
+        let health = Category(name: "Health & Wellness", image: #imageLiteral(resourceName: "curtis-macnewton-12711-unsplash"))
+        return [music, business, community, entertainment, tech, food, health]
+    }
+    
+}

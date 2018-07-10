@@ -175,6 +175,7 @@ struct Large: Codable {
 enum ResultType: String, Codable {
     case recent = "recent"
     case popular = "popular"
+    case mixed = "mixed"
 }
 //
 //struct RetweetedStatus: Codable {

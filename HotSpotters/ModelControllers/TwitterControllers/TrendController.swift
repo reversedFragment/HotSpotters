@@ -6,7 +6,7 @@
 //  Copyright © 2018 Ben Adams. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class TrendController{
     
@@ -66,4 +66,28 @@ class TrendController{
             return
         }
     }
+    
+    func fetchTrendImage(trend: Trend, completion: @escaping (UIImage?) -> Void){
+        var image: UIImage?
+        TweetController.shared.searchTweetsBy(topic: trend.name, geocode: nil, resultType: .mixed, count: 3) { (tweets) in
+            guard let tweets = tweets else {completion(nil) ; return}
+            for tweet in tweets{
+                if image != nil {break}
+                if let medias = tweet.entities.media{
+                    for media in medias{
+                        if media.type == "photo" {
+                            TweetController.shared.fetchImageForTweet(imageURLString: media.mediaURLHTTPS, completion: { (trendPhoto) in
+                                if let trendPhoto = trendPhoto {
+                                    image = trendPhoto
+                                    completion(image)
+                                    return
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

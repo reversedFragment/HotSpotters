@@ -6,17 +6,18 @@
 //  Copyright © 2018 Ben Adams. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct TrendDictionary: Codable{
     let trends: [Trend]
 }
 
-struct Trend: Codable{
+class Trend: Codable{
     let name: String
     let url: String
     let query: String
     let tweetVolumeInLastTwentyFourHours: Int?
+    var photo: UIImage? = UIImage(named: "twitterBackDrop")
     
     enum CodingKeys: String, CodingKey{
         case name, url, query

@@ -16,6 +16,7 @@ class CollegeAnnotation: NSObject, MGLAnnotation{
     var subtitle: String?
     var image: UIImage?
     var reuseIdentifier: String?
+    var college: College?
     
     init(college: College){
         let coordinate = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
@@ -29,5 +30,6 @@ class CollegeAnnotation: NSObject, MGLAnnotation{
         self.title = college.schoolName
         self.subtitle = size
         self.reuseIdentifier = "\(college.id)"
+        self.college = college
     }
 }

@@ -110,10 +110,16 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         
-        // Pop-up the callout view.
-        collegeMap.selectAnnotation(annotation, animated: true)
-        // Center the map on the annotation.
-        collegeMap.setCenter(annotation.coordinate, zoomLevel: 12.5, animated: true)
+        if let collegeAnnotation = annotation as? CollegeAnnotation {
+            CollegeController.shared.selectedCollege = collegeAnnotation.college
+            let storyBoard: UIStoryboard = UIStoryboard(name: "trevorsStoryboard", bundle: nil)
+            guard let toggleViewController = storyBoard.instantiateViewController(withIdentifier: "toggleViewController") as? TogglerViewController else {return}
+            self.navigationController?.present(toggleViewController, animated: true, completion: nil)
+        }
+//        // Pop-up the callout view.
+//        collegeMap.selectAnnotation(annotation, animated: true)
+//        // Center the map on the annotation.
+//        collegeMap.setCenter(annotation.coordinate, zoomLevel: 12.5, animated: true)
     }
  
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {

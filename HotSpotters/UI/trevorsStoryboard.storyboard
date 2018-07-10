@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nC7-in-BkW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBm-p0-W6W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,7 +54,7 @@
                 <viewControllerPlaceholder storyboardName="bensStoryboard" id="8Ly-un-Dpl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jhb-zP-Vmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.8" y="161.91904047976013"/>
+            <point key="canvasLocation" x="438" y="-215"/>
         </scene>
         <!--mattsStoryboard-->
         <scene sceneID="oEh-cY-r4k">
@@ -62,7 +62,271 @@
                 <viewControllerPlaceholder storyboardName="mattsStoryboard" id="yWe-Ey-J0E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igi-Og-7fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="290.55472263868069"/>
+            <point key="canvasLocation" x="797" y="-216"/>
+        </scene>
+        <!--Trending Topics Table View Controller-->
+        <scene sceneID="Mhl-GQ-CEB">
+            <objects>
+                <tableViewController id="LxR-oq-erC" customClass="TrendingTopicsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FBu-Mx-DOV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trendCell" rowHeight="147" id="eYa-dr-Bgk" customClass="TrendTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="147"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eYa-dr-Bgk" id="uK0-T2-fQ2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="146.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterBackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="JYH-kR-58k" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="16" width="343" height="112"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="112" id="bv3-og-jCM"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="1" height="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-21-STj" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="16" width="343" height="112"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-aI-6dg">
+                                            <rect key="frame" x="32" y="53.5" width="78.5" height="37"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fjb-21-STj" firstAttribute="height" secondItem="JYH-kR-58k" secondAttribute="height" id="1nV-qL-4Ec"/>
+                                        <constraint firstItem="eWP-aI-6dg" firstAttribute="leading" secondItem="uK0-T2-fQ2" secondAttribute="leadingMargin" constant="16" id="3UN-1c-tdh"/>
+                                        <constraint firstItem="fjb-21-STj" firstAttribute="centerX" secondItem="JYH-kR-58k" secondAttribute="centerX" id="6M1-T6-8VT"/>
+                                        <constraint firstItem="fjb-21-STj" firstAttribute="centerY" secondItem="JYH-kR-58k" secondAttribute="centerY" id="B2y-qu-uTZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="JYH-kR-58k" secondAttribute="bottom" constant="16" id="FTX-7P-7ja"/>
+                                        <constraint firstAttribute="trailing" secondItem="JYH-kR-58k" secondAttribute="trailing" constant="16" id="MLn-Je-F4m"/>
+                                        <constraint firstItem="fjb-21-STj" firstAttribute="width" secondItem="JYH-kR-58k" secondAttribute="width" id="PK8-Rd-FpX"/>
+                                        <constraint firstItem="eWP-aI-6dg" firstAttribute="centerY" secondItem="uK0-T2-fQ2" secondAttribute="centerY" id="Rd8-AC-7I7"/>
+                                        <constraint firstItem="JYH-kR-58k" firstAttribute="centerY" secondItem="uK0-T2-fQ2" secondAttribute="centerY" id="WXA-OK-FSM"/>
+                                        <constraint firstItem="JYH-kR-58k" firstAttribute="leading" secondItem="uK0-T2-fQ2" secondAttribute="leading" constant="16" id="YMD-kO-d3A"/>
+                                        <constraint firstItem="JYH-kR-58k" firstAttribute="top" secondItem="uK0-T2-fQ2" secondAttribute="top" constant="16" id="vjL-5K-AIW"/>
+                                        <constraint firstItem="JYH-kR-58k" firstAttribute="centerX" secondItem="uK0-T2-fQ2" secondAttribute="centerX" id="xpA-uJ-l68"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="trendImageView" destination="JYH-kR-58k" id="Fsk-CB-alh"/>
+                                    <outlet property="trendLabel" destination="eWP-aI-6dg" id="zcG-YO-ubs"/>
+                                    <segue destination="MYF-S8-TiX" kind="show" identifier="toTweetsTBVC" id="BFz-ss-ncZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LxR-oq-erC" id="Ug4-Qv-gM4"/>
+                            <outlet property="delegate" destination="LxR-oq-erC" id="WDM-bn-rOl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1XP-et-gOZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLy-4V-b1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="1598"/>
+        </scene>
+        <!--Toggler View Controller-->
+        <scene sceneID="sSP-j3-GK9">
+            <objects>
+                <viewController storyboardIdentifier="toggleViewController" id="5lO-tk-fcf" customClass="TogglerViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJL-5e-uWa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-xS-jm8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="59"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vul-YT-Cia">
+                                        <rect key="frame" x="8" y="16" width="359" height="29"/>
+                                        <segments>
+                                            <segment title="Topics"/>
+                                            <segment title="Events"/>
+                                            <segment title="Places"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Vul-YT-Cia" secondAttribute="trailing" constant="8" id="6KF-76-E4P"/>
+                                    <constraint firstItem="Vul-YT-Cia" firstAttribute="leading" secondItem="CWO-xS-jm8" secondAttribute="leading" constant="8" id="jRY-RH-qd3"/>
+                                    <constraint firstItem="Vul-YT-Cia" firstAttribute="centerY" secondItem="CWO-xS-jm8" secondAttribute="centerY" id="vEK-Pt-Yv3"/>
+                                    <constraint firstItem="Vul-YT-Cia" firstAttribute="centerX" secondItem="CWO-xS-jm8" secondAttribute="centerX" id="xlQ-Na-6Qw"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-GV-jCb">
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="SzC-w2-qwi" kind="embed" id="bQf-LP-2jw"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LGF-Xn-NUJ" firstAttribute="bottom" secondItem="CWO-xS-jm8" secondAttribute="bottom" constant="588" id="2jj-b4-G1g"/>
+                            <constraint firstItem="CWO-xS-jm8" firstAttribute="trailing" secondItem="LGF-Xn-NUJ" secondAttribute="trailing" id="UBJ-Vz-eT4"/>
+                            <constraint firstItem="CWO-xS-jm8" firstAttribute="centerX" secondItem="bJL-5e-uWa" secondAttribute="centerX" id="UM0-bD-mHI"/>
+                            <constraint firstItem="CWO-xS-jm8" firstAttribute="leading" secondItem="LGF-Xn-NUJ" secondAttribute="leading" id="sXA-uy-4SA"/>
+                            <constraint firstItem="CWO-xS-jm8" firstAttribute="top" secondItem="LGF-Xn-NUJ" secondAttribute="top" id="sYh-7A-2qZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LGF-Xn-NUJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFs-UM-HYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293.5999999999999" y="-6.746626686656672"/>
+        </scene>
+        <!--Event Categories Table View Controller-->
+        <scene sceneID="Fg2-DA-jdx">
+            <objects>
+                <tableViewController id="SzC-w2-qwi" customClass="EventCategoriesTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f5m-ne-5KW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="586"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="143" id="cyV-JE-Bwj" customClass="CategoryTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="143"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyV-JE-Bwj" id="o54-xq-fMN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lebron" translatesAutoresizingMaskIntoConstraints="NO" id="TNW-7V-Peq" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="16" width="343" height="110.5"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="3" height="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-je-ZaR" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="15.5" y="16" width="343" height="110.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-09-GLw">
+                                            <rect key="frame" x="32" y="53" width="75" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ttk-je-ZaR" firstAttribute="centerY" secondItem="TNW-7V-Peq" secondAttribute="centerY" id="6DN-XI-MRD"/>
+                                        <constraint firstItem="l7T-09-GLw" firstAttribute="leading" secondItem="o54-xq-fMN" secondAttribute="leadingMargin" constant="16" id="IIJ-T7-4cL"/>
+                                        <constraint firstItem="TNW-7V-Peq" firstAttribute="leading" secondItem="o54-xq-fMN" secondAttribute="leading" constant="16" id="SIc-xv-uw5"/>
+                                        <constraint firstItem="l7T-09-GLw" firstAttribute="centerY" secondItem="o54-xq-fMN" secondAttribute="centerY" id="Z8y-xF-g1b"/>
+                                        <constraint firstAttribute="bottom" secondItem="TNW-7V-Peq" secondAttribute="bottom" constant="16" id="agA-os-Kon"/>
+                                        <constraint firstItem="TNW-7V-Peq" firstAttribute="top" secondItem="o54-xq-fMN" secondAttribute="top" constant="16" id="eHq-xI-lkM"/>
+                                        <constraint firstItem="ttk-je-ZaR" firstAttribute="width" secondItem="TNW-7V-Peq" secondAttribute="width" id="gcx-Sl-sMt"/>
+                                        <constraint firstAttribute="trailing" secondItem="TNW-7V-Peq" secondAttribute="trailing" constant="16" id="hrJ-eN-T3G"/>
+                                        <constraint firstItem="ttk-je-ZaR" firstAttribute="height" secondItem="TNW-7V-Peq" secondAttribute="height" id="sJ2-OD-xPz"/>
+                                        <constraint firstItem="ttk-je-ZaR" firstAttribute="centerX" secondItem="o54-xq-fMN" secondAttribute="centerX" id="sof-fz-MNo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryImageView" destination="TNW-7V-Peq" id="Qz9-Vm-5gs"/>
+                                    <outlet property="categoryLabel" destination="l7T-09-GLw" id="34c-9e-OOC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SzC-w2-qwi" id="QbT-gZ-Qvn"/>
+                            <outlet property="delegate" destination="SzC-w2-qwi" id="LSd-5A-XV7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLg-f6-VxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="845"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="r23-15-Gl2">
+            <objects>
+                <tableViewController id="d75-Oh-d71" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dyn-L8-n2X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="133" id="SsM-IW-wM5">
+                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SsM-IW-wM5" id="mVd-Ah-asT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-mu-619">
+                                            <rect key="frame" x="67" y="2" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d75-Oh-d71" id="kLC-5S-mjf"/>
+                            <outlet property="delegate" destination="d75-Oh-d71" id="e9f-qb-R30"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38l-0b-zff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3380" y="881"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mJ3-gH-Mnw">
@@ -130,9 +394,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterBackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-x9-0iU" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="343" height="118"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="2" height="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-Kc-Cj4" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="343" height="118"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets For Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-A5-8u8">
+                                    <rect key="frame" x="32" y="57" width="233" height="37"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="MqX-A5-8u8" firstAttribute="leading" secondItem="DRj-Kc-Cj4" secondAttribute="leading" constant="16" id="2Sw-ZW-rQs"/>
+                                <constraint firstAttribute="bottom" secondItem="Hkh-x9-0iU" secondAttribute="bottom" constant="16" id="9IK-Fc-auU"/>
+                                <constraint firstItem="DRj-Kc-Cj4" firstAttribute="height" secondItem="Hkh-x9-0iU" secondAttribute="height" id="Dxd-Zy-Izg"/>
+                                <constraint firstItem="Hkh-x9-0iU" firstAttribute="leading" secondItem="Et0-xO-dlT" secondAttribute="leading" constant="16" id="Hns-ec-oe9"/>
+                                <constraint firstItem="DRj-Kc-Cj4" firstAttribute="centerY" secondItem="Hkh-x9-0iU" secondAttribute="centerY" id="JWi-Cm-4Vg"/>
+                                <constraint firstItem="MqX-A5-8u8" firstAttribute="centerY" secondItem="DRj-Kc-Cj4" secondAttribute="centerY" id="Lsp-8w-73t"/>
+                                <constraint firstItem="DRj-Kc-Cj4" firstAttribute="centerX" secondItem="Hkh-x9-0iU" secondAttribute="centerX" id="SzA-kO-1eW"/>
+                                <constraint firstItem="DRj-Kc-Cj4" firstAttribute="width" secondItem="Hkh-x9-0iU" secondAttribute="width" id="XAi-gi-QDb"/>
+                                <constraint firstItem="Hkh-x9-0iU" firstAttribute="top" secondItem="Et0-xO-dlT" secondAttribute="top" constant="16" id="ayK-FV-Pey"/>
+                                <constraint firstAttribute="trailing" secondItem="Hkh-x9-0iU" secondAttribute="trailing" constant="16" id="ne2-Xs-fuT"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="135" id="5WF-94-1FH" customClass="TopicDetailTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="135"/>
+                                <rect key="frame" x="0.0" y="178" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5WF-94-1FH" id="mRy-ue-I3H">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
@@ -275,40 +601,40 @@
                             <outlet property="delegate" destination="MYF-S8-TiX" id="6go-ZC-RK4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tweets" id="AUS-qu-YtQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="gwc-9m-BFU">
-                            <connections>
-                                <action selector="refeshButtonTapped:" destination="MYF-S8-TiX" id="n06-BB-fHp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Tweets" id="AUS-qu-YtQ"/>
+                    <connections>
+                        <outlet property="trendImageView" destination="Hkh-x9-0iU" id="6cE-ro-L9p"/>
+                        <outlet property="trendLabel" destination="MqX-A5-8u8" id="Jxm-5q-2NJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXa-PU-218" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="1563.8680659670167"/>
+            <point key="canvasLocation" x="1374" y="2373"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="zwP-ZV-Eh8">
+        <scene sceneID="Y4P-Vy-XIu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nC7-in-BkW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NY4-tr-mno" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c0N-IR-odq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jdt-CU-dyP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MYF-S8-TiX" kind="relationship" relationship="rootViewController" id="kGZ-iK-4gS"/>
+                        <segue destination="LxR-oq-erC" kind="relationship" relationship="rootViewController" id="U9M-dT-rSf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tAy-H2-o6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epS-7R-YLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-879.20000000000005" y="1563.8680659670167"/>
+            <point key="canvasLocation" x="1374" y="882"/>
         </scene>
     </scenes>
     <resources>
         <image name="DevMountainSimpleSwift" width="325" height="325"/>
+        <image name="lebron" width="1890" height="1063"/>
         <image name="retweetIcon" width="200" height="200"/>
+        <image name="twitterBackDrop" width="800" height="418"/>
         <image name="upVoteIcon" width="512" height="507"/>
     </resources>
 </document>

@@ -9,9 +9,28 @@
 import UIKit
 
 class TopicDetailTableViewController: UITableViewController {
+    
+    @IBOutlet weak var trendLabel: UILabel!
+    @IBOutlet weak var trendImageView: CustomCellImageView!
+    
+    var trend: Trend?{
+        didSet{
+            guard let trend = trend else {return}
+            TweetController.shared.searchTweetsBy(topic: trend.name, geocode: nil, resultType: ResultType.mixed, count: 25) { (tweets) in
+                guard let tweets = tweets else {return}
+                TweetController.shared.fetchedTweets = tweets
+                DispatchQueue.main.async {
+                    self.updateView()
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 
-    @IBAction func refeshButtonTapped(_ sender: UIBarButtonItem) {
-        tableView.reloadData()
+    var trendImage: UIImage?{
+        didSet{
+            self.updateView()
+        }
     }
     
     override func viewDidLoad() {
@@ -33,7 +52,8 @@ class TopicDetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell", for: indexPath) as? TopicDetailTableViewCell
-            guard let tweet = TweetController.shared.fetchedTweets?[indexPath.row] else {return UITableViewCell()}
+            guard let fetchedTweets = TweetController.shared.fetchedTweets else {return UITableViewCell()}
+            let tweet = fetchedTweets[indexPath.row]
             TweetController.shared.fetchProfilePictureFor(user: tweet.user) { (image) in
                 if let image = image{
                     print(image)
@@ -43,16 +63,13 @@ class TopicDetailTableViewController: UITableViewController {
             cell?.tweet = tweet
             return cell ?? UITableViewCell()
     }
- 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateView(){
+        guard let trend = trend else {return}
+        trendLabel.text = trend.name
+        if let trendImage = trendImage {
+            trendImageView.image = trendImage
+        }
     }
-    */
 
 }

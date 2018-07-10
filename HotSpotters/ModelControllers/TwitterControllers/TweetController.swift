@@ -77,7 +77,7 @@ class TweetController{
             }.resume()
     }
     
-    func searchTweetsBy(topic: String, geocode: String?, resultType: ResultType? ,completion: @escaping ([Tweet]?) -> Void){
+    func searchTweetsBy(topic: String, geocode: String?, resultType: ResultType?, count: Int? ,completion: @escaping ([Tweet]?) -> Void){
         
         getTwitterClientBearerToken { (token) in
             if let token = token {
@@ -85,9 +85,12 @@ class TweetController{
                 
                 guard let baseUrl = TweetController.baseSearchTweetsUrl else {return}
                 var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
-                let queryItems = [URLQueryItem(name: "q", value: topic), URLQueryItem(name: "geocode", value: geocode), URLQueryItem(name: "result_type", value: resultType.map { $0.rawValue })]
+                let queryItems = [URLQueryItem(name: "q", value: topic), URLQueryItem(name: "geocode", value: geocode), URLQueryItem(name: "result_type", value: resultType.map { $0.rawValue }), URLQueryItem(name: "count", value: "\(count ?? 25)")]
                 components?.queryItems = queryItems
                 guard let url = components?.url else {return}
+                
+                print(url)
+                
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
                 request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
@@ -130,6 +133,25 @@ class TweetController{
                 completion(image)
             }
         }.resume()
+    }
+    
+    func fetchImageForTweet(imageURLString: String, completion: @escaping (UIImage?) -> Void){
+        guard let url = URL(string: imageURLString) else {completion(nil) ; return}
+        
+        print(url)
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error{
+                print("\(error.localizedDescription) \(error) in function: \(#function)")
+                completion(nil)
+                return
+            }
+            guard let data = data else {completion(nil) ; return}
+            do{
+                let image = UIImage(data: data)
+                completion(image)
+            }
+            }.resume()
     }
     
 }

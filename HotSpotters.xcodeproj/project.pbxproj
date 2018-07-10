@@ -29,6 +29,10 @@
 		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
 		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
+		693D3E7420F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */; };
+		693D3E7620F3DA14004BBED5 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */; };
+		693D3E7820F3DE7F004BBED5 /* TogglerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */; };
+		693D3E7A20F3FD3E004BBED5 /* CustomCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */; };
 		69B0695520EEA32700915CC0 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */; };
 		69B0695720EEB84E00915CC0 /* CollegeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */; };
 		69B0695920EFC82F00915CC0 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695820EFC82F00915CC0 /* ImageHelper.swift */; };
@@ -36,6 +40,10 @@
 		69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */; };
 		69B0695F20F00E6100915CC0 /* TopicCellBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */; };
 		69B0696120F01F4900915CC0 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0696020F01F4900915CC0 /* ProfileImageView.swift */; };
+		69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574120F52D17006F79A2 /* EventsTableViewController.swift */; };
+		69BF574420F530EA006F79A2 /* EventCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */; };
+		69BF574620F531A2006F79A2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574520F531A2006F79A2 /* Category.swift */; };
+		69BF574A20F55EFC006F79A2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */; };
 		69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */; };
 		69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
 		69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
@@ -73,6 +81,10 @@
 		16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVenueController.swift; sourceTree = "<group>"; };
 		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
 		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTopicsTableViewController.swift; sourceTree = "<group>"; };
+		693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
+		693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglerViewController.swift; sourceTree = "<group>"; };
+		693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellImageView.swift; sourceTree = "<group>"; };
 		69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeAnnotation.swift; sourceTree = "<group>"; };
 		69B0695820EFC82F00915CC0 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
@@ -80,6 +92,10 @@
 		69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailTableViewCell.swift; sourceTree = "<group>"; };
 		69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCellBackgroundView.swift; sourceTree = "<group>"; };
 		69B0696020F01F4900915CC0 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		69BF574120F52D17006F79A2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCategoriesTableViewController.swift; sourceTree = "<group>"; };
+		69BF574520F531A2006F79A2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -216,6 +232,7 @@
 				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
 				6D381C0320E426DE0075D7F9 /* Event.swift */,
 				6D381C0220E426DE0075D7F9 /* Post.swift */,
+				69BF574520F531A2006F79A2 /* Category.swift */,
 			);
 			path = EventbriteModels;
 			sourceTree = "<group>";
@@ -274,6 +291,10 @@
 				69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */,
 				69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */,
 				69B0695A20EFE37900915CC0 /* TopicDetailTableViewController.swift */,
+				693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */,
+				693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */,
+				69BF574120F52D17006F79A2 /* EventsTableViewController.swift */,
+				69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +306,9 @@
 				69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */,
 				69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */,
 				69B0696020F01F4900915CC0 /* ProfileImageView.swift */,
+				693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */,
+				693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */,
+				69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BF574420F530EA006F79A2 /* EventCategoriesTableViewController.swift in Sources */,
 				69B0696120F01F4900915CC0 /* ProfileImageView.swift in Sources */,
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
 				16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */,
@@ -401,10 +426,13 @@
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
+				69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */,
 				69B0695F20F00E6100915CC0 /* TopicCellBackgroundView.swift in Sources */,
 				69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */,
 				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
 				69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */,
+				69BF574A20F55EFC006F79A2 /* CategoryTableViewCell.swift in Sources */,
+				693D3E7620F3DA14004BBED5 /* TrendTableViewCell.swift in Sources */,
 				16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */,
 				69B0695B20EFE37900915CC0 /* TopicDetailTableViewController.swift in Sources */,
 				69F8CB5C20EC3401009256F4 /* College.swift in Sources */,
@@ -414,13 +442,17 @@
 				69F8CB5E20EC340D009256F4 /* CollegeController.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
 				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
+				693D3E7420F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
+				693D3E7A20F3FD3E004BBED5 /* CustomCellImageView.swift in Sources */,
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
 				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,
 				16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */,
 				6D381C0420E426DE0075D7F9 /* Post.swift in Sources */,
+				693D3E7820F3DE7F004BBED5 /* TogglerViewController.swift in Sources */,
 				69B0695720EEB84E00915CC0 /* CollegeAnnotation.swift in Sources */,
 				6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */,
+				69BF574620F531A2006F79A2 /* Category.swift in Sources */,
 				69B0695520EEA32700915CC0 /* SearchResultsTableViewController.swift in Sources */,
 				16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */,
 				69B0695920EFC82F00915CC0 /* ImageHelper.swift in Sources */,
@@ -561,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4CCUMQ33UK;
+				DEVELOPMENT_TEAM = 77U2457882;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -584,7 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4CCUMQ33UK;
+				DEVELOPMENT_TEAM = 77U2457882;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
