@@ -20,7 +20,7 @@ class FourSquareSectionTableViewController: UITableViewController {
     enum venueSectionMarker {
         static var all = ["Trending", "TopPicks", "Food", "Drinks", "Coffee",
                           "Shops", "Arts", "Outdoors", "Sights"]
-        static var all2: [section] = [("Trending", UIImage())]
+        static var all2: [section] = [("Trending", #imageLiteral(resourceName: "trending")), ("TopPicks", #imageLiteral(resourceName: "topPicks")), ("Food", #imageLiteral(resourceName: "food")), ("Drinks", #imageLiteral(resourceName: "drinks")), ("Coffee", #imageLiteral(resourceName: "coffee")), ("Shops", #imageLiteral(resourceName: "shops")), ("Arts", #imageLiteral(resourceName: "arts")), ("Outdoors", #imageLiteral(resourceName: "outdoors")), ("Sights", #imageLiteral(resourceName: "sights"))]
     }
     
     override func viewDidLoad() {
@@ -44,9 +44,10 @@ class FourSquareSectionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as! FourSquareSectionTableViewCell
         
-        let section = venueSectionMarker.all[indexPath.row]
-        cell.sectionLabel.text = section
-        
+        let sectionLabel = venueSectionMarker.all[indexPath.row]
+        let backgroundViewImage = venueSectionMarker.all2[indexPath.row].image
+        cell.sectionLabel.text = sectionLabel
+        cell.imageView?.image = backgroundViewImage
         return cell
     }
     
