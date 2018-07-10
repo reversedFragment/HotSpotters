@@ -11,46 +11,58 @@ import Foundation
 
 class FourSquareSectionTableViewController: UITableViewController {
     
-    var selectedSection: String = ""
-
+    // Fetch parameter selected by user
+    var sectionSelected = ""
+    
     // Users can use this enum to filter by 'section'
     enum venueSectionMarker {
-        static var all = ["Trending", "TopPicks", "Food", "Drinks", "Coffee", "Shops", "Arts", "Outdoors", "Sights"]
+        static var all = ["Trending", "TopPicks", "Food", "Drinks", "Coffee",
+                          "Shops", "Arts", "Outdoors", "Sights"]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 9
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as! FourSquareSectionTableViewCell
-
+        
         let section = venueSectionMarker.all[indexPath.row]
         cell.sectionLabel.text = section
-
+        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
-        var sectionSelected = ""
-        
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FourSquareTableView" {
+            if let fourSquareTableVC = segue.destination as? FourSquareTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    selectedItem(indexPath: indexPath)
+                    fourSquareTableVC.sectionSelected = sectionSelected
+                }
+            }
+            
+        }
+    }
+    
+    func selectedItem(indexPath: IndexPath) {
         switch indexPath.item {
         case 0:
             sectionSelected = "trending"
@@ -73,25 +85,7 @@ class FourSquareSectionTableViewController: UITableViewController {
         default:
             break
         }
-        
-        
-            GeneralVenueController.searchSelectedSection(section: sectionSelected)
-//            self.performSegue(withIdentifier: "FourSquareTableView", sender: indexPath)
     }
     
-
-
-
-
-// MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "FourSquareTableView" {
-            if let fourSquareTableVC = segue.destination as? FourSquareTableViewController {
-                fourSquareTableVC.sectionSelected = self.selectedSection
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
-        }
-    }
     
 }

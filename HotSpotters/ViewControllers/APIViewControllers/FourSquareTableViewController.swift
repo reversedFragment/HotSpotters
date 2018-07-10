@@ -13,27 +13,32 @@ class FourSquareTableViewController: UIViewController {
     
     static let shared = FourSquareTableViewController()
 
-    @IBOutlet weak var FourSquareTableView: UITableView!
+    @IBOutlet weak var fourSquareTableView: UITableView!
     
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        FourSquareTableView.delegate = self
-        FourSquareTableView.dataSource = self
-        DispatchQueue.main.async {
-            self.FourSquareTableView.reloadData()
+        fourSquareTableView.delegate = self
+        fourSquareTableView.dataSource = self
+        fetchWithSearchTerm()
+    }
+    
+    func fetchWithSearchTerm() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        GeneralVenueController.exploreVenues(location: (40.761834,-111.89049069999999), radius: 1000, section: self.sectionSelected, limit: 20, price: "1,2,3,4") { (groupItems) in
+            guard let groupItems = groupItems else { return }
+            self.fetchedVenues = groupItems
+            DispatchQueue.main.async {
+                self.fourSquareTableView.reloadData()
+            }
         }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     /// Mark: - Source of Truth
     var sectionSelected: String = ""
-    var fetchedVenues: [GroupItem] = []{
-        didSet {
-            print("item was added")
-           
-        }
-}
+    var fetchedVenues: [GroupItem] = []
 
 
     
@@ -45,7 +50,7 @@ class FourSquareTableViewController: UIViewController {
         if segue.identifier == "toVenueDetailVC" {
 
             if let venueDetailVC = segue.destination as? VenueDetailViewController,
-                let selectedRow = FourSquareTableView.indexPathForSelectedRow?.row {
+                let selectedRow = fourSquareTableView.indexPathForSelectedRow?.row {
                 
                 let venueDetailID = self.fetchedVenues[selectedRow].fetchedRecommendedVenue?.venueId
                 
