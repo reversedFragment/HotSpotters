@@ -83,21 +83,22 @@ class VenueDetailViewController: UIViewController {
     
     private func updateViews() {
         guard let fetchedVenueDetail = fetchedVenueDetail else { return }
+        nameLabel.text = fetchedVenueDetail.name
         categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
         descriptionLabel.text = fetchedVenueDetail.page?.pageInfo?.description
-        priceLabel.text = "\(fetchedVenueDetail.price?.tier ?? 1)"
-        isOpen.text = "\(fetchedVenueDetail.hours?.isOpen)"
+        priceLabel.text = "Price Tier: \(fetchedVenueDetail.price?.tier ?? 1)"
+        isOpen.text = "Open Now: \(fetchedVenueDetail.hours?.isOpen ?? true)"
         addressLabel.text = fetchedVenueDetail.locationDetails?.address
         cityLabel.text = fetchedVenueDetail.locationDetails?.city
         stateLabel.text = fetchedVenueDetail.locationDetails?.state
         postalLabel.text = fetchedVenueDetail.locationDetails?.postalCode
-        latlngLabel.text = "\(String(describing: fetchedVenueDetail.locationDetails?.lat))" + ", " + "\(fetchedVenueDetail.locationDetails?.lng ?? 0,0)"
-        ratingsLabel.text = "\(fetchedVenueDetail.rating ?? 0)"
-        ratingSignalsLabel.text = "\(fetchedVenueDetail.ratingSignals ?? 0)"
-        listedCount.text = "\(fetchedVenueDetail.listed?.count ?? 0)"
-        venueLikes.text = "\(fetchedVenueDetail.likes?.count ?? 0)"
-        tipCount.text = "\(fetchedVenueDetail.tips?.count ?? 0)"
-        photosCountLabel.text = "\(fetchedVenueDetail.photos?.count ?? 0)"
+        latlngLabel.text = "\(fetchedVenueDetail.locationDetails?.lat ?? 0))" + ", " + "\(fetchedVenueDetail.locationDetails?.lng ?? 0)"
+        ratingsLabel.text = "Rating: \(fetchedVenueDetail.rating ?? 0)"
+        ratingSignalsLabel.text = "# of Ratings: \(fetchedVenueDetail.ratingSignals ?? 0)"
+        listedCount.text = "# of Times Listed: \(fetchedVenueDetail.listed?.count ?? 0)"
+        venueLikes.text = "Venue Likes: \(fetchedVenueDetail.likes?.count ?? 0)"
+        tipCount.text = "# of Tips: \(fetchedVenueDetail.tips?.count ?? 0)"
+        photosCountLabel.text = "# of Photos: \(fetchedVenueDetail.photos?.count ?? 0)"
         bestPhotoLabel.text = fetchedVenueDetail.bestPhoto?.source?.url ?? "This venue doesn't have a good photo yet"
         phoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
         twitterLabel.text = fetchedVenueDetail.contact?.twitter

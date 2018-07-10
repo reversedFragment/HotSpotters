@@ -11,6 +11,8 @@ import Foundation
 
 class FourSquareSectionTableViewController: UITableViewController {
     
+    
+    typealias section = (title: String, image: UIImage)
     // Fetch parameter selected by user
     var sectionSelected = ""
     
@@ -18,6 +20,7 @@ class FourSquareSectionTableViewController: UITableViewController {
     enum venueSectionMarker {
         static var all = ["Trending", "TopPicks", "Food", "Drinks", "Coffee",
                           "Shops", "Arts", "Outdoors", "Sights"]
+        static var all2: [section] = [("Trending", UIImage())]
     }
     
     override func viewDidLoad() {
