@@ -10,6 +10,9 @@ import UIKit
 
 class EventBriteController {
     
+    static let shared = EventBriteController()
+    var myEvents: [EventElement] = []
+    
     static let baseURL = URL(string: "https://www.eventbriteapi.com/v3/")
     static let apiToken = "ATPVKSO23CXMDQ5GYZWB"
     
