@@ -68,11 +68,11 @@ class EventsTableViewController: UITableViewController {
         for event in events{
             var event = event
             if event.logo?.url == nil {
-                let nilLogo = event.logo?.url
-                let logoURL = EventBriteController.nullToNil(value: nilLogo)
+//                let nilLogo = event.logo?.url
+//                let logoURL = EventBriteController.nullToNil(value: nilLogo)
             } else {
                 let nilLogo = event.logo?.url
-                let logoURL = EventBriteController.nullToNil(value: nilLogo)
+                let logoURL = EventBriteController.nullToNil(value: nilLogo) as! String
                 EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
                     guard let image = image else {return}
                     event.setImage(image)

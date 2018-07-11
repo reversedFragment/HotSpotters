@@ -68,7 +68,7 @@ class GeneralVenueController {
     ////////////////////////////////////////////////////////////////
 
     /// "ll": Latitude and longitude of the user’s location.
-        let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required unless "near" is provied.
+//        let locationQuery = URLQueryItem.init(name: "ll", value: stringLocation) /// Required unless "near" is provied.
 
     /// "near": A string naming a place in the world.
         // If the near string is not geocodable, returns a failed_geocode error.

@@ -112,9 +112,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         
         if let collegeAnnotation = annotation as? CollegeAnnotation {
             CollegeController.shared.selectedCollege = collegeAnnotation.college
-            let storyBoard: UIStoryboard = UIStoryboard(name: "trevorsStoryboard", bundle: nil)
-            guard let toggleViewController = storyBoard.instantiateViewController(withIdentifier: "toggleViewController") as? TogglerViewController else {return}
-            self.navigationController?.present(toggleViewController, animated: true, completion: nil)
+            guard let toggleViewController = UIHelper.storyBoard.instantiateViewController(withIdentifier: "toggleViewController") as? TogglerViewController else {return}
+            self.navigationController?.pushViewController(toggleViewController, animated: true)
         }
 //        // Pop-up the callout view.
 //        collegeMap.selectAnnotation(annotation, animated: true)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14720E2B22700F88745 /* AppDelegate.swift */; };
 		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
-		162B82C820F57874000DCFC5 /* CustomCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B82C720F57874000DCFC5 /* CustomCellImageView.swift */; };
 		163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */; };
 		16406E2820F40DB10058E499 /* FourSquareSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16406E2720F40DB10058E499 /* FourSquareSectionTableViewController.swift */; };
 		16406E2A20F410FB0058E499 /* FourSquareSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16406E2920F410FB0058E499 /* FourSquareSectionTableViewCell.swift */; };
@@ -48,6 +47,7 @@
 		69BF574620F531A2006F79A2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574520F531A2006F79A2 /* Category.swift */; };
 		69BF574A20F55EFC006F79A2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */; };
 		69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */; };
+		69BF575020F5CDBD006F79A2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574F20F5CDBD006F79A2 /* UIHelper.swift */; };
 		69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */; };
 		69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
 		69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
@@ -67,7 +67,6 @@
 		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		162B82C720F57874000DCFC5 /* CustomCellImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellImageView.swift; sourceTree = "<group>"; };
 		163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewController.swift; sourceTree = "<group>"; };
 		16406E2720F40DB10058E499 /* FourSquareSectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareSectionTableViewController.swift; sourceTree = "<group>"; };
 		16406E2920F410FB0058E499 /* FourSquareSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareSectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,7 +85,6 @@
 		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVenueController.swift; sourceTree = "<group>"; };
-		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
 		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
 		693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTopicsTableViewController.swift; sourceTree = "<group>"; };
 		693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +102,7 @@
 		69BF574520F531A2006F79A2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		69BF574F20F5CDBD006F79A2 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -283,6 +282,7 @@
 				161BC15620E2B22800F88745 /* Info.plist */,
 				161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */,
 				69B0695820EFC82F00915CC0 /* ImageHelper.swift */,
+				69BF574F20F5CDBD006F79A2 /* UIHelper.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -330,7 +330,6 @@
 				16E48DAC20E7A8C500ABFC4F /* FourSquareViews */,
 				69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */,
 				69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */,
-				162B82C720F57874000DCFC5 /* CustomCellImageView.swift */,
 				69B0696020F01F4900915CC0 /* ProfileImageView.swift */,
 				693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */,
 				693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */,
@@ -375,13 +374,13 @@
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.NetworkExtensions.iOS = {
 								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -445,7 +444,6 @@
 			files = (
 				69BF574420F530EA006F79A2 /* EventCategoriesTableViewController.swift in Sources */,
 				69B0696120F01F4900915CC0 /* ProfileImageView.swift in Sources */,
-				162B82C820F57874000DCFC5 /* CustomCellImageView.swift in Sources */,
 				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
 				16406E2A20F410FB0058E499 /* FourSquareSectionTableViewCell.swift in Sources */,
 				16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */,
@@ -479,6 +477,7 @@
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
 				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,
 				16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */,
+				69BF575020F5CDBD006F79A2 /* UIHelper.swift in Sources */,
 				6D381C0420E426DE0075D7F9 /* Post.swift in Sources */,
 				693D3E7820F3DE7F004BBED5 /* TogglerViewController.swift in Sources */,
 				69B0695720EEB84E00915CC0 /* CollegeAnnotation.swift in Sources */,
@@ -622,7 +621,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77U2457882;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -634,7 +632,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BenAdams.HotSpotters;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorAdcock.HotSpotters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -645,7 +643,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77U2457882;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -657,7 +654,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BenAdams.HotSpotters;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorAdcock.HotSpotters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

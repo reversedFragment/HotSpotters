@@ -123,7 +123,7 @@ class EventBriteController {
         case reverseBest
     }
     
-    static func nullToNil(value: String?) -> String? {
+    static func nullToNil(value: Any?) -> Any? {
         if value is NSNull {
             return nil
         } else { return value }

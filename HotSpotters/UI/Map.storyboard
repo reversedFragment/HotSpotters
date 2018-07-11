@@ -36,7 +36,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-Gi-PZ6" customClass="GraphView" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="38" y="90" width="300" height="215"/>
+                                <rect key="frame" x="37.5" y="90" width="300" height="215"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uq2-Gi-PZ6" secondAttribute="height" multiplier="343:246" id="jaE-BT-PTg"/>
                                 </constraints>
