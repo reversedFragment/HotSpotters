@@ -1,6 +1,6 @@
 
 
-import Foundation
+import UIKit
     
     struct Event: Codable {
         let events: [EventElement]
@@ -16,6 +16,7 @@ import Foundation
         let logo: Logo?
         let resourceURI: String?
         let categoryID, subcategoryID: String?
+        var image: UIImage? = UIImage()
         
         enum CodingKeys: String, CodingKey {
             case name, description, id, url
@@ -30,10 +31,14 @@ import Foundation
             case categoryID = "category_id"
             case subcategoryID = "subcategory_id"
         }
+        
+        mutating func setImage(_ image: UIImage){
+            self.image = image
+        }
     }
 
     struct Description: Codable {
-        let text, html: String
+        let text, html: String?
     }
     
     struct End: Codable {

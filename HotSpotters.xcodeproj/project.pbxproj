@@ -26,8 +26,8 @@
 		16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */; };
 		16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
 		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
-		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
 		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
+		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
 		693D3E7420F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */; };
 		693D3E7620F3DA14004BBED5 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */; };
 		693D3E7820F3DE7F004BBED5 /* TogglerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */; };
@@ -43,6 +43,7 @@
 		69BF574420F530EA006F79A2 /* EventCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */; };
 		69BF574620F531A2006F79A2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574520F531A2006F79A2 /* Category.swift */; };
 		69BF574A20F55EFC006F79A2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */; };
+		69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */; };
 		69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */; };
 		69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
 		69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
@@ -93,6 +94,7 @@
 		69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		69BF574520F531A2006F79A2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -138,7 +140,6 @@
 		161BC14620E2B22700F88745 /* HotSpotters */ = {
 			isa = PBXGroup;
 			children = (
-				16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */,
 				69DC9F4220E2BD5D00EB03E8 /* Models */,
 				69DC9F4320E2BD6200EB03E8 /* ModelControllers */,
 				69DC9F4420E2BD6900EB03E8 /* ViewControllers */,
@@ -233,6 +234,23 @@
 			path = EventbriteModels;
 			sourceTree = "<group>";
 		};
+		69BF574B20F577E0006F79A2 /* CollegeModels */ = {
+			isa = PBXGroup;
+			children = (
+				69F8CB5B20EC3401009256F4 /* College.swift */,
+				69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */,
+			);
+			path = CollegeModels;
+			sourceTree = "<group>";
+		};
+		69BF574C20F577F0006F79A2 /* CollegeControllers */ = {
+			isa = PBXGroup;
+			children = (
+				69F8CB5D20EC340D009256F4 /* CollegeController.swift */,
+			);
+			path = CollegeControllers;
+			sourceTree = "<group>";
+		};
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,8 +281,7 @@
 				16C77BC920E6A6410061A3DA /* TwitterModels */,
 				16C77BB920E69F550061A3DA /* FourSquareModels */,
 				16E48DAE20E7A92600ABFC4F /* EventbriteModels */,
-				69F8CB5B20EC3401009256F4 /* College.swift */,
-				69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */,
+				69BF574B20F577E0006F79A2 /* CollegeModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,7 +292,7 @@
 				16C77BCA20E6A6590061A3DA /* TwitterControllers */,
 				16C77BBA20E69F700061A3DA /* FourSquareControllers */,
 				16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */,
-				69F8CB5D20EC340D009256F4 /* CollegeController.swift */,
+				69BF574C20F577F0006F79A2 /* CollegeControllers */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -305,6 +322,7 @@
 				693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */,
 				693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */,
 				69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */,
+				69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +438,7 @@
 				16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */,
 				16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
+				69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
 				69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */,
@@ -437,7 +456,6 @@
 				16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */,
 				69F8CB5E20EC340D009256F4 /* CollegeController.swift in Sources */,
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
-				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
 				693D3E7420F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
 				693D3E7A20F3FD3E004BBED5 /* CustomCellImageView.swift in Sources */,

@@ -13,13 +13,13 @@ class EventBriteController {
     static let baseURL = URL(string: "https://www.eventbriteapi.com/v3/")
     static let apiToken = "ATPVKSO23CXMDQ5GYZWB"
     
-    static func search(term: String, sortDescriptor: SortDescriptors, radius: Int, location: String, completion: @escaping(([EventElement]?) -> Void)) {
+    static func search(term: String?, sortDescriptor: SortDescriptors, radius: Int, location: String, completion: @escaping(([EventElement]?) -> Void)) {
         
         guard var url = baseURL else { completion(nil) ; return }
         url.appendPathComponent("events")
         url.appendPathComponent("search/")
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        let searchQuery = URLQueryItem(name: "q", value: "\(term)")
+        let searchQuery = URLQueryItem(name: "q", value: "\(term ?? "")")
         let sortQuery = URLQueryItem(name: "sort_by", value: "\(sortDescriptor)")
         let locationQuery = URLQueryItem(name: "location.address", value: "\(location)")
         let distanceQuery = URLQueryItem(name: "location.within", value: "\(radius)mi")
@@ -44,11 +44,10 @@ class EventBriteController {
             
             let jsonDecoder = JSONDecoder()
             do {
-                let events = try jsonDecoder.decode(Event.self, from: data)
-                let eventsArray = events.events
-                completion(eventsArray)
+                let events = try jsonDecoder.decode(Event.self, from: data).events
+                completion(events)
             } catch let error {
-                print("There was an error decoding Events: \(#function) \(error.localizedDescription)")
+                print("There was an error decoding Events: \(#function) \(error) \(error.localizedDescription)")
                 completion(nil)
                 return
             }
@@ -122,6 +121,12 @@ class EventBriteController {
         case reverseDate
         case reverseDistance
         case reverseBest
+    }
+    
+    static func nullToNil(value: String?) -> String? {
+        if value is NSNull {
+            return nil
+        } else { return value }
     }
 }
 

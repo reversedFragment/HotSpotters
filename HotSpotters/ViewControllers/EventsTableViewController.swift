@@ -7,29 +7,93 @@
 //
 
 import UIKit
+import Mapbox
 
 class EventsTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var categoryImageView: CustomCellImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    var category: Category?
+    
+    var nearbyEvents: [EventElement] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        updateView()
+        setNearbyEvents()
     }
-
+    
     // MARK: - Table view data source
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return nearbyEvents.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell
+        let event = nearbyEvents[indexPath.row]
+        cell?.event = event
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 240
+    }
+    
+    func setNearbyEvents(){
+        guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
+        getAddressForCollege(selectedCollege) { (address) in
+            guard let address = address else {return}
+            EventBriteController.search(term: nil, sortDescriptor: .best, radius: 10, location: address, completion: { (events) in
+                guard let events = events else {return}
+                self.nearbyEvents = events
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func updateView(){
+        guard let category = category else {return}
+        categoryLabel.text = category.name
+        categoryImageView.image = category.image
+    }
+    
+    func fetchImagesForEvents(_ events: [EventElement], completion: @escaping () -> Void){
+        for event in events{
+            var event = event
+            if event.logo?.url == nil {
+                let nilLogo = event.logo?.url
+                let logoURL = EventBriteController.nullToNil(value: nilLogo)
+            } else {
+                let nilLogo = event.logo?.url
+                let logoURL = EventBriteController.nullToNil(value: nilLogo)
+                EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
+                    guard let image = image else {return}
+                    event.setImage(image)
+                }
+            }
+        }
+    }
+    
+    func getAddressForCollege(_ college: College, completion: @escaping (String?) -> Void){
+        let location = CLLocation(latitude: college.locationLat, longitude: college.locationLon)
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error{
+                print("\(error.localizedDescription) \(error) in function: \(#function)")
+                return
+            }
+            guard let placemark = placemarks?.first else {completion(nil) ; return}
+            let address = "\(placemark.name ?? ""), \(placemark.subThoroughfare ?? "") \(placemark.thoroughfare ?? ""), \(placemark.locality ?? ""), \(placemark.administrativeArea ?? "") \(placemark.postalCode ?? "")"
+            print(address)
+            completion(address)
+        }
     }
     
 }
