@@ -10,21 +10,38 @@ import Foundation
 import UIKit
 
 class FourSquareTableViewController: UIViewController {
-
-    @IBOutlet weak var FourSquareTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
-    /// Mark: - Source of Truth
-    var fetchedVenues: [Venue] = []
-//    var fetchedRecommends: [Venue] = []
+    static let shared = FourSquareTableViewController()
 
+    @IBOutlet weak var fourSquareTableView: UITableView!
+    
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        FourSquareTableView.delegate = self
-        FourSquareTableView.dataSource = self
-        searchBar.delegate = self
+        fourSquareTableView.delegate = self
+        fourSquareTableView.dataSource = self
+        fetchWithSearchTerm()
     }
+    
+    func fetchWithSearchTerm() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        GeneralVenueController.exploreVenues(location: (40.761834,-111.89049069999999), radius: 1000, section: self.sectionSelected, limit: 20, price: "1,2,3,4") { (groupItems) in
+            guard let groupItems = groupItems else { return }
+            self.fetchedVenues = groupItems
+            DispatchQueue.main.async {
+                self.fourSquareTableView.reloadData()
+            }
+        }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    /// Mark: - Source of Truth
+    var sectionSelected: String = ""
+    var fetchedVenues: [GroupItem] = []
+
+
+    
     
     // MARK: Navigation to VenueDetailViewController
 
@@ -33,13 +50,11 @@ class FourSquareTableViewController: UIViewController {
         if segue.identifier == "toVenueDetailVC" {
 
             if let venueDetailVC = segue.destination as? VenueDetailViewController,
-                let selectedRow = FourSquareTableView.indexPathForSelectedRow?.row {
+                let selectedRow = fourSquareTableView.indexPathForSelectedRow?.row {
                 
+                let venueDetailID = self.fetchedVenues[selectedRow].fetchedRecommendedVenue?.venueId
                 
-                
-                let venueDetailID = self.fetchedVenues[selectedRow].venueID
-                
-                GeneralVenueController.fetchVenueDetails(with: venueDetailID) { (venuedetails) in
+                GeneralVenueController.fetchVenueDetails(with: venueDetailID!) { (venuedetails) in
                     
                     guard let venueDetails = venuedetails else { return }
                     
@@ -62,79 +77,13 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "venueCellID",
                                                  for: indexPath) as! FourSquareTableViewCell
-        let fetchedVenue = fetchedVenues[indexPath.row]
-        cell.fetchedVenue = fetchedVenue
+        let recommendedVenues = fetchedVenues[indexPath.row]
+        cell.fetchedVenue = recommendedVenues.fetchedRecommendedVenue
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 135
     }
     
 }
-
-// MARK: - UISearchBarDelegate
-
-extension FourSquareTableViewController: UISearchBarDelegate {
-    
-// Search bar and function for fetchVenues()
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        searchBar.resignFirstResponder()
-
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        guard let searchTerm = searchBar.text?.lowercased() else { return }
-        
-        GeneralVenueController.fetchVenues(searchTerm: searchTerm ,
-                                          location: nil,
-                                          near: "Los Angeles",
-                                          radius: 10000,
-                                          limit: 10,
-                                          categories: nil)
-        { (venues) in
-                                            
-            guard let fetchedVenues = venues else { return }
-            self.fetchedVenues = fetchedVenues
-            
-            DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.FourSquareTableView.reloadData()
-            }
-        }
-    }
-    
-    
-/// Search bar and function for exploreVenues()
-    /// Need separate search bar or a way to toggle which func is called by searchBar Text
-    
-    //    func exploreBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-//        searchBar.resignFirstResponder()
-//
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//        guard let searchTerm = searchBar.text?.lowercased() else { return }
-//
-//        GeneralVenueController.exploreVenues(searchTerm: searchTerm,
-//                                               location: nil,
-//                                                   near: "Los Angeles",
-//                                                 radius: 10000,
-//                                                section: GeneralVenueController.venueSectionMarker.arts,
-//                                                  limit: 10,
-//                                         sortByDistance: 1,
-//                                                  price: GeneralVenueController.pricePoint.price2 ,
-//                                                  category: nil)
-//        { (recommendedVenues) in
-//
-//            guard let fetchedRecommends = recommendedVenues else { return }
-//            self.fetchedVenues = fetchedRecommends
-//
-//            DispatchQueue.main.async {
-//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                self.FourSquareTableView.reloadData()
-//            }
-//        }
-//    }
-}
-//
-//
-//

@@ -9,7 +9,7 @@
 import Foundation
 
 struct RecommendedVenue: Codable {
-    let venueId: String?
+    let venueId: String
     let name: String?
     let location: Location?
     let categories: [venueCategory]?
