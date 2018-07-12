@@ -22,6 +22,7 @@ struct VenueDetails: Codable {
     let price: Price? /// Price rating of 1, 2, 3, or 4
     let likes: VenueLikes?
     let rating: Double?
+    let ratingColor: String?
     let ratingSignals: Int? /// Number of ratings given by users
     let page: Page? /// Page owner's information about their venue
     let tips: VenueTips? /// Tips left by users about venue
@@ -48,6 +49,7 @@ struct VenueDetails: Codable {
         case price = "price"
         case likes = "likes"
         case rating = "rating"
+        case ratingColor = "ratingColor"
         case ratingSignals = "ratingSignals"
         case page = "page"
         case tips = "tips"
