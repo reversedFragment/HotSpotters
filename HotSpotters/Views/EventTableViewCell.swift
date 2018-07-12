@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Foundation
 
 class EventTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var eventImageView: CustomCellImageView!
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var ticketPriceLabel: UILabel!
+    
+    var websiteURL: String = ""
     
     var event: EventElement?{
         didSet{
@@ -45,8 +49,13 @@ class EventTableViewCell: UITableViewCell {
         eventTitleLabel.text = event.name.text
         
         if let eventDate = event.start{
-            dateLabel.text = eventDate.utc
-            timeLabel.text = eventDate.utc
+            
+             let startTime = eventDate.utc.fromUTCToLocalTime()
+            guard let endTime = event.end?.utc.fromUTCToLocalTime() else { return }
+            let date = eventDate.utc.fromUTCToLocalDate()
+           
+            dateLabel.text = date
+            timeLabel.text = "\(startTime) - \(endTime)"
         } else {
             dateLabel.text = ""
             timeLabel.text = ""
@@ -54,14 +63,32 @@ class EventTableViewCell: UITableViewCell {
         
         if let isFree = event.isFree{
             if isFree{
-                ticketPriceLabel.text = "Free"
+                ticketPriceLabel.text = "FREE"
             } else {
-                ticketPriceLabel.text = "💸 💸 💸"
+                ticketPriceLabel.text = "PAID"
             }
         }
         
         if let image = eventImage{
             eventImageView.image = image
         }
+        
+        if let website = event.vanityURL{
+            eventButton.backgroundColor = .orange
+            eventButton.titleLabel?.text = "Register"
+            websiteURL = website
+            
+        } else {
+            eventButton.backgroundColor = .gray
+            eventButton.titleLabel?.text = "Registration Unavailable"
+        }
     }
+    
+    @IBAction func goToWebsite(_ sender: Any) {
+        if let url = NSURL(string: "\(websiteURL)") {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+    
+    
 }
