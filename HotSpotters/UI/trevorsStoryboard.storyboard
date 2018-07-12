@@ -450,15 +450,6 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <view alpha="0.29999999999999999" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-IR-W7K" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="32" y="27" width="311" height="185"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="15"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYK-Rb-B9C">
                                             <rect key="frame" x="56" y="51" width="263" height="60"/>
                                             <constraints>
@@ -505,6 +496,29 @@
                                                 <constraint firstItem="sch-Xp-7x1" firstAttribute="centerY" secondItem="whI-jM-XvM" secondAttribute="centerY" id="Cv3-jJ-Gd7"/>
                                             </constraints>
                                         </stackView>
+                                        <view alpha="0.29999999999999999" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-IR-W7K" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="32" y="27" width="311" height="185"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="311" id="OmQ-fQ-prq"/>
+                                                <constraint firstAttribute="height" constant="185" id="zRL-uM-2Ew"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuO-Cn-kia">
+                                            <rect key="frame" x="164" y="194" width="46" height="2"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="goToWebsite:" destination="B92-Qo-1j3" eventType="touchUpInside" id="bF6-Kw-uZt"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VYK-Rb-B9C" firstAttribute="leading" secondItem="J86-aW-GkO" secondAttribute="leadingMargin" constant="16" id="06T-My-hJ5"/>
@@ -526,6 +540,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="R1h-m0-xhm" id="k0M-uT-DjI"/>
+                                    <outlet property="eventButton" destination="VuO-Cn-kia" id="da1-tz-lVY"/>
                                     <outlet property="eventImageView" destination="J86-aW-GkO" id="Qan-dj-2GG"/>
                                     <outlet property="eventTitleLabel" destination="VYK-Rb-B9C" id="BY7-Z8-XRz"/>
                                     <outlet property="ticketPriceLabel" destination="8DL-LK-1Vo" id="RFs-qX-edu"/>
