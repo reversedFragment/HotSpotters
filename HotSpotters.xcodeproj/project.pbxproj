@@ -62,6 +62,7 @@
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
 		6D381C0520E426DE0075D7F9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0320E426DE0075D7F9 /* Event.swift */; };
 		6D97C74A20EEB66200F72972 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97C74920EEB66200F72972 /* ContentViewController.swift */; };
+		D53500D726527984289ACC70 /* Pods_HotSpotters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F36B1B7CA13D25580C929B4 /* Pods_HotSpotters.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVenueController.swift; sourceTree = "<group>"; };
 		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		5F36B1B7CA13D25580C929B4 /* Pods_HotSpotters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotSpotters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTopicsTableViewController.swift; sourceTree = "<group>"; };
 		693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglerViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,8 @@
 		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6D381C0320E426DE0075D7F9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6D97C74920EEB66200F72972 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		774A402A5BAC2C7E2776C1CF /* Pods-HotSpotters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotSpotters.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters.debug.xcconfig"; sourceTree = "<group>"; };
+		96CA1008FAFF67DDEACCE0B2 /* Pods-HotSpotters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotSpotters.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */,
+				D53500D726527984289ACC70 /* Pods_HotSpotters.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,7 @@
 				168C4D8620F6B8DD00F0CC03 /* Extensions */,
 				161BC14520E2B22700F88745 /* Products */,
 				16E48D9E20E7A1D000ABFC4F /* Frameworks */,
+				804D4F97CCFE282A89A1F639 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				16717D7920EAEAA200DA1599 /* Mapbox.framework */,
+				5F36B1B7CA13D25580C929B4 /* Pods_HotSpotters.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,6 +366,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		804D4F97CCFE282A89A1F639 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				774A402A5BAC2C7E2776C1CF /* Pods-HotSpotters.debug.xcconfig */,
+				96CA1008FAFF67DDEACCE0B2 /* Pods-HotSpotters.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,10 +382,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 161BC15920E2B22800F88745 /* Build configuration list for PBXNativeTarget "HotSpotters" */;
 			buildPhases = (
+				AF828BB134C3009DCAC6E54F /* [CP] Check Pods Manifest.lock */,
 				161BC14020E2B22700F88745 /* Sources */,
 				161BC14120E2B22700F88745 /* Frameworks */,
 				161BC14220E2B22700F88745 /* Resources */,
 				16717D7B20EAEAB700DA1599 /* ShellScript */,
+				528BE08E0C1BBE360884A72B /* [CP] Embed Pods Frameworks */,
+				90ECA8463E3CD1EB158FD7B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -454,6 +473,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		528BE08E0C1BBE360884A72B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90ECA8463E3CD1EB158FD7B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotSpotters/Pods-HotSpotters-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF828BB134C3009DCAC6E54F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotSpotters-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -643,6 +710,7 @@
 		};
 		161BC15A20E2B22800F88745 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774A402A5BAC2C7E2776C1CF /* Pods-HotSpotters.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -652,10 +720,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorAdcock.HotSpotters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -665,6 +730,7 @@
 		};
 		161BC15B20E2B22800F88745 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96CA1008FAFF67DDEACCE0B2 /* Pods-HotSpotters.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -674,10 +740,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorAdcock.HotSpotters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
