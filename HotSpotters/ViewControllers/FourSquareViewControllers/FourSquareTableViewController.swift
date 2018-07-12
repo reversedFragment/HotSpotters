@@ -11,9 +11,19 @@ import UIKit
 
 class FourSquareTableViewController: UIViewController {
     
-    static let shared = FourSquareTableViewController()
+    ////////////////////////////////////////////////////////////////
+    /// Mark: - Properties
+    ////////////////////////////////////////////////////////////////
 
+    // Outlets
     @IBOutlet weak var fourSquareTableView: UITableView!
+    
+    // (Proper) Shared Instance
+    static let shared = FourSquareTableViewController()
+    
+    // Mark: - Sources of Truth
+    var sectionSelected: String = ""
+    var fetchedVenues: [GroupItem] = []
     
     // MARK: - ViewLifecycle
     override func viewDidLoad() {
@@ -21,24 +31,27 @@ class FourSquareTableViewController: UIViewController {
         super.viewDidLoad()
         fourSquareTableView.delegate = self
         fourSquareTableView.dataSource = self
-        fetchWithSearchTerm()
+        fetchWithSectionSelected()
     }
     
-    func fetchWithSearchTerm() {
+    // Fetch Venues by sectionSelected by user on previous menu
+    func fetchWithSectionSelected() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        GeneralVenueController.exploreVenues(location: (40.761834,-111.89049069999999), radius: 1000, section: self.sectionSelected, limit: 20, price: "1,2,3,4") { (groupItems) in
+        GeneralVenueController.exploreVenues(location: (40.761834,-111.89049069999999),
+                                             radius: 1000,
+                                             section: self.sectionSelected,
+                                             limit: 20, price: "1,2,3,4")
+        { (groupItems) in
             guard let groupItems = groupItems else { return }
             self.fetchedVenues = groupItems
+            
             DispatchQueue.main.async {
                 self.fourSquareTableView.reloadData()
             }
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-    
-    /// Mark: - Source of Truth
-    var sectionSelected: String = ""
-    var fetchedVenues: [GroupItem] = []
+
 
 
     
