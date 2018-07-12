@@ -54,6 +54,7 @@
 		69F8CB5C20EC3401009256F4 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5B20EC3401009256F4 /* College.swift */; };
 		69F8CB5E20EC340D009256F4 /* CollegeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5D20EC340D009256F4 /* CollegeController.swift */; };
 		69F8CB5F20EC39C4009256F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15120E2B22800F88745 /* Assets.xcassets */; };
+		69FBC1D520F6A7D70003C410 /* CollegeRadiusAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FBC1D420F6A7D70003C410 /* CollegeRadiusAnnotationView.swift */; };
 		6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */; };
 		6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */; };
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
@@ -109,6 +110,7 @@
 		69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
 		69F8CB5B20EC3401009256F4 /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		69F8CB5D20EC340D009256F4 /* CollegeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeController.swift; sourceTree = "<group>"; };
+		69FBC1D420F6A7D70003C410 /* CollegeRadiusAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeRadiusAnnotationView.swift; sourceTree = "<group>"; };
 		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-Model.swift"; sourceTree = "<group>"; };
 		6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-ModelController.swift"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				69F8CB5B20EC3401009256F4 /* College.swift */,
 				69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */,
+				69FBC1D420F6A7D70003C410 /* CollegeRadiusAnnotationView.swift */,
 			);
 			path = CollegeModels;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
+				69FBC1D520F6A7D70003C410 /* CollegeRadiusAnnotationView.swift in Sources */,
 				69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */,
 				69B0695F20F00E6100915CC0 /* TopicCellBackgroundView.swift in Sources */,
 				69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */,

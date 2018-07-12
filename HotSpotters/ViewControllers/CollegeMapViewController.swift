@@ -52,19 +52,19 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         navigationItem.titleView = searchBar
     }
     
-    func drawShape(schoolCoordinates: CLLocationCoordinate2D) {
-        // Create a coordinates array to hold all of the coordinates for our shape.
-        let coordinates = [
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude - 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude + 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude + 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015)
-        ]
-        
-        
-        let shape = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
-        collegeMap.add(shape)
-    }
+//    func drawShape(schoolCoordinates: CLLocationCoordinate2D) {
+//        // Create a coordinates array to hold all of the coordinates for our shape.
+//        let coordinates = [
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude - 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude + 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude + 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015)
+//        ]
+//
+//
+//        let shape = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
+//        collegeMap.add(shape)
+//    }
     
     func addAnnotation(college: College){
         DispatchQueue.main.async {
@@ -82,11 +82,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor {
         return UIColor.black
-    }
-    
-    // Use the default marker. See also: our view annotation or custom marker examples.
-    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        return nil
     }
     
     // Allow callout view to appear when an annotation is tapped.
@@ -143,7 +138,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                                 CollegeController.shared.fetchImageFor(college: college, completion: { (success) in
                                     self.addAnnotation(college: college)
                                     let location = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-                                    self.drawShape(schoolCoordinates: location)
+//                                    self.drawShape(schoolCoordinates: location)
                                 })
                             }
                         }
@@ -162,9 +157,24 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
             return annotationImage
         } else {
-            return MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifier)
+            let collegeAnnotation = MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifier)
+            return collegeAnnotation
         }
     }
+    
+//     This delegate method is where you tell the map to load a view for a specific annotation. To load a static MGLAnnotationImage, you would use `-mapView:imageForAnnotation:`.
+//    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+//
+//        guard let annotation = annotation as? CollegeAnnotation,
+//        let college = annotation.college else { return nil }
+//
+//        // For better performance, always try to reuse existing annotations. To use multiple different annotation views, change the reuse identifier for each.
+//        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: college.schoolName) {
+//            return annotationView
+//        } else {
+//            return CollegeRadiusAnnotation(reuseIdentifier: college.schoolName, size: CGFloat(college.size/100 + 50))
+//        }
+//    }
     
     @objc func flyToSelectedCollege(){
         guard let college = CollegeController.shared.selectedCollege else {return}
