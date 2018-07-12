@@ -29,10 +29,12 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         dropDownContainerView.superview?.bringSubview(toFront: dropDownContainerView)
         dropDownContainerView.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // Draw the polygon after the map has initialized
+        super.viewDidAppear(animated)
         collegeMap.setCenter(utahCoordinates, zoomLevel: 11, animated: true)
     }
     
@@ -112,8 +114,14 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         
         if let collegeAnnotation = annotation as? CollegeAnnotation {
             CollegeController.shared.selectedCollege = collegeAnnotation.college
+
             guard let toggleViewController = UIHelper.storyBoard.instantiateViewController(withIdentifier: "toggleViewController") as? TogglerViewController else {return}
+            //navigationController?.present(toggleViewController, animated: true, completion: presentView)
+
             self.navigationController?.pushViewController(toggleViewController, animated: true)
+            
+            
+            
         }
 //        // Pop-up the callout view.
 //        collegeMap.selectAnnotation(annotation, animated: true)
@@ -177,6 +185,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         }
         
     }
+
 }
 
 
