@@ -32,6 +32,7 @@ class College: Codable, Equatable {
     let id: Int
     let urlString: String
     var logo: UIImage? = UIImage()
+    var annotation: CollegeAnnotation? = CollegeAnnotation()
     
     enum CodingKeys: String, CodingKey {
         case locationLat = "location.lat"

@@ -48,6 +48,7 @@
 		69BF574A20F55EFC006F79A2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */; };
 		69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */; };
 		69BF575020F5CDBD006F79A2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574F20F5CDBD006F79A2 /* UIHelper.swift */; };
+		69ECA70E20F7025700F0004D /* SelectedCollegeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECA70D20F7025700F0004D /* SelectedCollegeAnnotation.swift */; };
 		69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */; };
 		69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
 		69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
@@ -108,18 +109,12 @@
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
+		69ECA70D20F7025700F0004D /* SelectedCollegeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCollegeAnnotation.swift; sourceTree = "<group>"; };
 		69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
 		69F8CB5B20EC3401009256F4 /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		69F8CB5D20EC340D009256F4 /* CollegeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeController.swift; sourceTree = "<group>"; };
 		69FBC1D420F6A7D70003C410 /* CollegeRadiusAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeRadiusAnnotationView.swift; sourceTree = "<group>"; };
 		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		6D13BA4220E550EC00658EAF /* MapTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapTabBar.swift; path = HotSpotters/Views/MapTabBar.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4420E5513F00658EAF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = HotSpotters/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4620E55A5E00658EAF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = HotSpotters/Views/SearchBar.swift; sourceTree = "<group>"; };
-		6D13BA4820E55F3B00658EAF /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = HotSpotters/Views/GraphView.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4A20E5600200658EAF /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
-		6D13BA4C20E5629500658EAF /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = HotSpotters/ViewControllers/Graph.swift; sourceTree = SOURCE_ROOT; };
-		6D13BA4E20E562BE00658EAF /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = HotSpotters/ViewControllers/GraphViewController.swift; sourceTree = SOURCE_ROOT; };
 		6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-Model.swift"; sourceTree = "<group>"; };
 		6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-ModelController.swift"; sourceTree = "<group>"; };
 		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -143,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				6D97C74920EEB66200F72972 /* ContentViewController.swift */,
-				6D1551F120F001FA00AA9341 /* EventsCollectionViewCell.swift */,
 				161BC14620E2B22700F88745 /* HotSpotters */,
 				161BC14520E2B22700F88745 /* Products */,
 				16E48D9E20E7A1D000ABFC4F /* Frameworks */,
@@ -264,6 +258,7 @@
 				69F8CB5B20EC3401009256F4 /* College.swift */,
 				69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */,
 				69FBC1D420F6A7D70003C410 /* CollegeRadiusAnnotationView.swift */,
+				69ECA70D20F7025700F0004D /* SelectedCollegeAnnotation.swift */,
 			);
 			path = CollegeModels;
 			sourceTree = "<group>";
@@ -464,7 +459,6 @@
 				6D97C74A20EEB66200F72972 /* ContentViewController.swift in Sources */,
 				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
 				16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */,
-				6D1551F220F001FA00AA9341 /* EventsCollectionViewCell.swift in Sources */,
 				16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
 				69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */,
@@ -473,6 +467,7 @@
 				69FBC1D520F6A7D70003C410 /* CollegeRadiusAnnotationView.swift in Sources */,
 				69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */,
 				69B0695F20F00E6100915CC0 /* TopicCellBackgroundView.swift in Sources */,
+				69ECA70E20F7025700F0004D /* SelectedCollegeAnnotation.swift in Sources */,
 				69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */,
 				16406E2C20F41FF80058E499 /* CustomVenueAnnotationModel.swift in Sources */,
 				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
