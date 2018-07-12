@@ -11,9 +11,11 @@ import UIKit
 class Category{
     let name: String
     let image: UIImage
+    let id: String
     
-    init(name: String, image: UIImage){
+    init(name: String, image: UIImage, id: String){
         self.name = name
         self.image = image
+        self.id = id
     }
 }

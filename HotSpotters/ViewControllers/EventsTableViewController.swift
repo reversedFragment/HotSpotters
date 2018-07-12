@@ -32,13 +32,41 @@ class EventsTableViewController: UITableViewController {
         return nearbyEvents.count
     }
     
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell
+//        let event = nearbyEvents[indexPath.row]
+//        cell?.event = event
+//
+//        return cell ?? UITableViewCell()
+//    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
         let event = nearbyEvents[indexPath.row]
-        cell?.event = event
         
-        return cell ?? UITableViewCell()
+        if event.logo?.url == nil {
+            let nilLogo = event.logo?.url
+            let logoURL = nullToNil(value: nilLogo)
+        } else {
+            let nilLogo = event.logo?.url
+            let logoURL = nullToNil(value: nilLogo)
+            EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
+                DispatchQueue.main.async {
+                    cell.event = event
+                    if let currentIndexPath = self.tableView?.indexPath(for: cell),
+                        currentIndexPath == indexPath {
+                        cell.eventImage = image
+                    } else {
+                        print("Didn't get image")
+                        return
+                    }
+                }
+            }
+        }
+        return cell
     }
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 240
@@ -48,7 +76,7 @@ class EventsTableViewController: UITableViewController {
         guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
         getAddressForCollege(selectedCollege) { (address) in
             guard let address = address else {return}
-            EventBriteController.search(term: nil, sortDescriptor: .best, radius: 10, location: address, completion: { (events) in
+            EventBriteController.search(term: nil, sortDescriptor: .best, radius: 10, location: address, categories: self.category!, completion: { (events) in
                 guard let events = events else {return}
                 self.nearbyEvents = events
                 DispatchQueue.main.async {
@@ -64,21 +92,27 @@ class EventsTableViewController: UITableViewController {
         categoryImageView.image = category.image
     }
     
-    func fetchImagesForEvents(_ events: [EventElement], completion: @escaping () -> Void){
-        for event in events{
-            var event = event
-            if event.logo?.url == nil {
+//    func fetchImagesForEvents(_ events: [EventElement], completion: @escaping () -> Void){
+//        for event in events{
+//            var event = event
+//            if event.logo?.url == nil {
+////                let nilLogo = event.logo?.url
+////                let logoURL = EventBriteController.nullToNil(value: nilLogo)
+//            } else {
 //                let nilLogo = event.logo?.url
-//                let logoURL = EventBriteController.nullToNil(value: nilLogo)
-            } else {
-                let nilLogo = event.logo?.url
-                let logoURL = EventBriteController.nullToNil(value: nilLogo) as! String
-                EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
-                    guard let image = image else {return}
-                    event.setImage(image)
-                }
-            }
-        }
+//                let logoURL = EventBriteController.nullToNil(value: nilLogo) as! String
+//                EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
+//                    guard let image = image else {return}
+//                    event.setImage(image)
+//                }
+//            }
+//        }
+//    }
+    
+    func nullToNil(value: String?) -> String? {
+        if value is NSNull {
+            return nil
+        } else { return value }
     }
     
     func getAddressForCollege(_ college: College, completion: @escaping (String?) -> Void){
