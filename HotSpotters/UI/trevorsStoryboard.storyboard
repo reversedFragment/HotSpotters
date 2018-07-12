@@ -31,6 +31,13 @@
                                     <segue destination="a9a-hU-gS7" kind="embed" id="lYC-Ga-6ET"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-GC-673">
+                                <rect key="frame" x="0.0" y="322" width="375" height="345"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="5lO-tk-fcf" kind="embed" id="Jrb-wv-kjD"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -166,7 +173,7 @@
             <objects>
                 <viewController storyboardIdentifier="toggleViewController" definesPresentationContext="YES" modalPresentationStyle="overCurrentContext" id="5lO-tk-fcf" customClass="TogglerViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bJL-5e-uWa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-xS-jm8">
@@ -574,6 +581,7 @@
         <!--Search Results Table View Controller-->
         <scene sceneID="fJw-hZ-QTC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwu-YW-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="a9a-hU-gS7" customClass="SearchResultsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hlU-HL-cLu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -607,7 +615,6 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwu-YW-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="368.80000000000001" y="906.29685157421295"/>
         </scene>

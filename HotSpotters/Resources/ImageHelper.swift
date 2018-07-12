@@ -33,6 +33,8 @@ class ImageHelper{
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        
+        
         return newImage
     }
     
