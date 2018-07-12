@@ -9,18 +9,18 @@
 import Foundation
 import Mapbox
 
-class CollegeRadiusAnnotation: MGLAnnotationView {
+class CollegeRadiusAnnotationView: MGLAnnotationView {
     init(reuseIdentifier: String, size: CGFloat) {
         super.init(reuseIdentifier: reuseIdentifier)
         scalesWithViewingDistance = false
         frame = CGRect(x: 0, y: 0, width: size, height: size)
         
-        self.backgroundColor = UIColor(white: 1.0, alpha: 0.05)
+        self.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         self.layer.cornerRadius = size / 2
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.white.cgColor
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOpacity = 0.1
+        self.layer.borderColor = UIColor.gray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.1
     }
     
     // These two initializers are forced upon us by Swift.

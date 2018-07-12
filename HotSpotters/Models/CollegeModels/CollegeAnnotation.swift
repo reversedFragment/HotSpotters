@@ -32,4 +32,8 @@ class CollegeAnnotation: NSObject, MGLAnnotation{
         self.reuseIdentifier = "\(college.id)"
         self.college = college
     }
+    
+    override init(){
+        self.coordinate = CLLocationCoordinate2D(latitude: 100.0, longitude: 100.0)
+    }
 }

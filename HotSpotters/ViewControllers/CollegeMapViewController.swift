@@ -109,7 +109,9 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         
         if let collegeAnnotation = annotation as? CollegeAnnotation {
             CollegeController.shared.selectedCollege = collegeAnnotation.college
-
+            guard let college = collegeAnnotation.college else {return}
+            let collegeRadiusAnotation = SelectedCollegeAnnotation(college: college)
+            mapView.addAnnotation(collegeRadiusAnotation)
             guard let toggleViewController = UIHelper.storyBoard.instantiateViewController(withIdentifier: "toggleViewController") as? TogglerViewController else {return}
             //navigationController?.present(toggleViewController, animated: true, completion: presentView)
 
@@ -123,8 +125,14 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
 //        // Center the map on the annotation.
 //        collegeMap.setCenter(annotation.coordinate, zoomLevel: 12.5, animated: true)
     }
+    
+    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+        guard let annotation = annotation as? SelectedCollegeAnnotation else { return }
+        mapView.removeAnnotation(annotation)
+    }
  
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        resizeAnnotationView()
         let geocoder = CLGeocoder()
         let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         geocoder.reverseGeocodeLocation(location) { (placemark, error) in
@@ -171,18 +179,22 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
 //     This delegate method is where you tell the map to load a view for a specific annotation. To load a static MGLAnnotationImage, you would use `-mapView:imageForAnnotation:`.
-//    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-//
-//        guard let annotation = annotation as? CollegeAnnotation,
-//        let college = annotation.college else { return nil }
-//
-//        // For better performance, always try to reuse existing annotations. To use multiple different annotation views, change the reuse identifier for each.
-//        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: college.schoolName) {
-//            return annotationView
-//        } else {
-//            return CollegeRadiusAnnotation(reuseIdentifier: college.schoolName, size: CGFloat(college.size/100 + 50))
-//        }
-//    }
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+
+        guard let annotation = annotation as? SelectedCollegeAnnotation,
+        let college = annotation.college else { return nil }
+
+        // For better performance, always try to reuse existing annotations. To use multiple different annotation views, change the reuse identifier for each.
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "\(college.id)RadiusView" ) {
+            return annotationView
+        } else {
+            let size = mapView.zoomLevel/10
+            print("🧐")
+            print(mapView.zoomLevel)
+            return CollegeRadiusAnnotationView(reuseIdentifier: "\(college.id)RadiusView", size: CGFloat(size))
+            
+        }
+    }
     
     @objc func flyToSelectedCollege(){
         guard let college = CollegeController.shared.selectedCollege else {return}
@@ -195,7 +207,14 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         }
         
     }
-
+    
+    func resizeAnnotationView(){
+        let colleges = CollegeController.shared.visibleColleges
+        for college in colleges {
+            guard let annotation = college.annotation else { return }
+            mapView(collegeMap, viewFor: annotation)
+        }
+    }
 }
 
 
