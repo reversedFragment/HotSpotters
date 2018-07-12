@@ -16,6 +16,8 @@ class TrendingTopicsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        
         guard let currentCollege =  CollegeController.shared.selectedCollege else {return}
         
         TrendController.shared.getTrendingTopicsFor(latitude: currentCollege.locationLat, longitude: currentCollege.locationLon) { (trends) in

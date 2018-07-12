@@ -13,10 +13,18 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     var collegeMap: MGLMapView!
     var searchBar = UISearchBar()
+    var collegeBoundry: MGLOverlay?
     
     @IBOutlet weak var dropDownContainerView: UIView!
-
+    @IBOutlet weak var drawerContainerView: UIView!
+    
     static let searchBarUpdated = Notification.Name(rawValue: "SearchBarUpdated")
+    
+    var togglerViewController: TogglerViewController!
+    
+    var drawerFrame: CGRect{
+        return togglerViewController.getDrawerFrameWithPosition(togglerViewController.drawerPosition)
+    }
     
     let utahCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 40.7649, longitude: -111.8421)
     let radius = 1500
@@ -24,10 +32,13 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        togglerViewController = self.childViewControllers[1].childViewControllers[0] as! TogglerViewController
         setUpMap()
         setUpSearchBar()
         dropDownContainerView.superview?.bringSubview(toFront: dropDownContainerView)
+        drawerContainerView.superview?.bringSubview(toFront: drawerContainerView)
         dropDownContainerView.isHidden = true
+        drawerContainerView.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
         
     }
@@ -54,19 +65,23 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         navigationItem.titleView = searchBar
     }
     
-//    func drawShape(schoolCoordinates: CLLocationCoordinate2D) {
-//        // Create a coordinates array to hold all of the coordinates for our shape.
-//        let coordinates = [
-//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude - 0.015),
-//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude + 0.015),
-//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude + 0.015),
-//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015)
-//        ]
-//
-//
-//        let shape = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
-//        collegeMap.add(shape)
-//    }
+    func drawShape(schoolCoordinates: CLLocationCoordinate2D) {
+        // Create a coordinates array to hold all of the coordinates for our shape.
+        let coordinates = [
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude - 0.015),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.02, longitude: schoolCoordinates.longitude),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude + 0.015),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude + 0.02),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude + 0.015),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.02, longitude: schoolCoordinates.longitude),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015),
+            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude - 0.02)
+        ]
+
+
+        collegeBoundry = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
+        collegeMap.add(collegeBoundry!)
+    }
     
     func addAnnotation(college: College){
         DispatchQueue.main.async {
@@ -76,15 +91,16 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
-        return 0.3
+        return 0.5
     }
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
-        return .white
+        return .gray
     }
     
     func mapView(_ mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor {
-        return UIColor.black
+        return UIColor.white
     }
+    
     
     // Allow callout view to appear when an annotation is tapped.
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
@@ -108,17 +124,16 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         
         if let collegeAnnotation = annotation as? CollegeAnnotation {
-            CollegeController.shared.selectedCollege = collegeAnnotation.college
             guard let college = collegeAnnotation.college else {return}
-            let collegeRadiusAnotation = SelectedCollegeAnnotation(college: college)
-            mapView.addAnnotation(collegeRadiusAnotation)
-            guard let toggleViewController = UIHelper.storyBoard.instantiateViewController(withIdentifier: "toggleViewController") as? TogglerViewController else {return}
-            //navigationController?.present(toggleViewController, animated: true, completion: presentView)
-
-            self.navigationController?.pushViewController(toggleViewController, animated: true)
-            
-            
-            
+            CollegeController.shared.selectedCollege = collegeAnnotation.college
+            mapView.zoomLevel = 11.5
+            mapView.setCenter(CLLocationCoordinate2D(latitude: (college.locationLat - 0.03), longitude: college.locationLon), animated: true)
+            self.drawerContainerView.isHidden = false
+            moveDrawer(to: drawerFrame) {
+                self.togglerViewController.drawerPosition = Position.middle
+                self.moveDrawer(to: self.drawerFrame, completion: nil)
+                self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
+            }
         }
 //        // Pop-up the callout view.
 //        collegeMap.selectAnnotation(annotation, animated: true)
@@ -127,8 +142,18 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+        if let collegeAnnotation = annotation as? CollegeAnnotation {
+            collegeMap.remove(collegeBoundry!)
+            collegeBoundry = nil
+            togglerViewController.drawerPosition = Position.bottom
+            moveDrawer(to: drawerFrame) {
+                self.drawerContainerView.isHidden = true
+            }
+        }
+        
         guard let annotation = annotation as? SelectedCollegeAnnotation else { return }
         mapView.removeAnnotation(annotation)
+        
     }
  
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
@@ -153,8 +178,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                             for college in colleges {
                                 CollegeController.shared.fetchImageFor(college: college, completion: { (success) in
                                     self.addAnnotation(college: college)
-                                    let location = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-//                                    self.drawShape(schoolCoordinates: location)
                                 })
                             }
                         }
@@ -238,4 +261,56 @@ extension CollegeMapViewController: UISearchBarDelegate{
     }
     
 }
+
+//Drawer Controlls
+extension CollegeMapViewController: TogglerViewControllerDelegate{
+    
+    func moveDrawer(to frame: CGRect, completion: (() -> Void)?) {
+        UIView.animate(withDuration: 0.3) {
+            self.drawerContainerView.frame = frame
+            self.drawerContainerView.needsUpdateConstraints()
+            self.drawerContainerView.setNeedsLayout()
+            self.drawerContainerView.setNeedsDisplay()
+            if let completion = completion {
+                completion()
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
