@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBm-p0-W6W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3f-DJ-6Wq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKm-nT-tg2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Gfg-zJ-n6O"/>
@@ -32,10 +32,10 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-GC-673">
-                                <rect key="frame" x="0.0" y="322" width="375" height="345"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="389"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="5lO-tk-fcf" kind="embed" id="Jrb-wv-kjD"/>
+                                    <segue destination="Mn3-5h-3yO" kind="embed" id="TP3-Ah-j3E"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -49,12 +49,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="8or-zZ-D9B"/>
                     <connections>
+                        <outlet property="drawerContainerView" destination="QMd-GC-673" id="d58-zE-tPd"/>
                         <outlet property="dropDownContainerView" destination="QKm-nT-tg2" id="BHD-zZ-GVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyg-7Q-82q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368.80000000000001" y="251.42428785607197"/>
+            <point key="canvasLocation" x="440.80000000000001" y="-7.6461769115442282"/>
         </scene>
         <!--bensStoryboard-->
         <scene sceneID="hqo-pp-lNg">
@@ -62,7 +63,7 @@
                 <viewControllerPlaceholder storyboardName="bensStoryboard" id="8Ly-un-Dpl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jhb-zP-Vmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-215"/>
+            <point key="canvasLocation" x="1918" y="-1010"/>
         </scene>
         <!--mattsStoryboard-->
         <scene sceneID="oEh-cY-r4k">
@@ -70,14 +71,14 @@
                 <viewControllerPlaceholder storyboardName="mattsStoryboard" id="yWe-Ey-J0E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igi-Og-7fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="-216"/>
+            <point key="canvasLocation" x="1410" y="-1193"/>
         </scene>
         <!--Trending Topics Table View Controller-->
         <scene sceneID="Mhl-GQ-CEB">
             <objects>
                 <tableViewController storyboardIdentifier="trendingTVC" id="LxR-oq-erC" customClass="TrendingTopicsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FBu-Mx-DOV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -173,11 +174,11 @@
             <objects>
                 <viewController storyboardIdentifier="toggleViewController" definesPresentationContext="YES" modalPresentationStyle="overCurrentContext" id="5lO-tk-fcf" customClass="TogglerViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bJL-5e-uWa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-xS-jm8">
-                                <rect key="frame" x="0.0" y="43" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="56"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vul-YT-Cia">
                                         <rect key="frame" x="8" y="16" width="359" height="24"/>
@@ -198,14 +199,14 @@
                                     <constraint firstItem="Vul-YT-Cia" firstAttribute="centerX" secondItem="CWO-xS-jm8" secondAttribute="centerX" id="xlQ-Na-6Qw"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-GV-jCb" userLabel="Events Container View">
-                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-GV-jCb" userLabel="Events Container View">
+                                <rect key="frame" x="0.0" y="148" width="375" height="241"/>
                                 <connections>
                                     <segue destination="SzC-w2-qwi" kind="embed" id="FUl-xF-4f4"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3N-vO-lay">
-                                <rect key="frame" x="0.0" y="20" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="24"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-hN-4md">
                                         <rect key="frame" x="115" y="8" width="145" height="8"/>
@@ -227,8 +228,8 @@
                                     <outletCollection property="gestureRecognizers" destination="qeM-nx-m4r" appends="YES" id="OUe-q0-djm"/>
                                 </connections>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-5H-z7j" userLabel="Twitter Container View">
-                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-5H-z7j" userLabel="Twitter Container View">
+                                <rect key="frame" x="0.0" y="148" width="375" height="241"/>
                                 <connections>
                                     <segue destination="LxR-oq-erC" kind="embed" id="QwZ-7r-LJK"/>
                                 </connections>
@@ -255,9 +256,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LGF-Xn-NUJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cgH-HK-DMj"/>
                     <connections>
-                        <outlet property="contentViewPosition" destination="qeM-nx-m4r" id="RCP-39-a0l"/>
                         <outlet property="eventsContainerView" destination="MHw-GV-jCb" id="Ka6-we-cGM"/>
+                        <outlet property="panGuestureRecognizer" destination="qeM-nx-m4r" id="RCP-39-a0l"/>
                         <outlet property="twitterContainerView" destination="9nJ-5H-z7j" id="d1g-CR-qFD"/>
                         <outlet property="typeToggle" destination="Vul-YT-Cia" id="5MY-Zh-egd"/>
                     </connections>
@@ -269,14 +271,14 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2293.5999999999999" y="-6.746626686656672"/>
+            <point key="canvasLocation" x="2198" y="304"/>
         </scene>
         <!--Event Categories Table View Controller-->
         <scene sceneID="Fg2-DA-jdx">
             <objects>
                 <tableViewController storyboardIdentifier="categoriesTVC" id="SzC-w2-qwi" customClass="EventCategoriesTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f5m-ne-5KW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -361,15 +363,15 @@
             <objects>
                 <tableViewController id="r47-6Q-y6j" customClass="EventsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vzE-BP-1v9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="jFQ-h2-6qk">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="malte-wingen-381988-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="UsG-eK-Yre" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="128"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="30"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="15"/>
@@ -389,7 +391,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="15.5" y="16" width="343" height="128"/>
+                                    <rect key="frame" x="15.5" y="16" width="343" height="30"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -398,7 +400,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-VE-fAI">
-                                    <rect key="frame" x="32" y="61" width="83" height="38"/>
+                                    <rect key="frame" x="32" y="12" width="83" height="38"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -543,30 +545,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kq3-Ty-Zbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2758" y="1726"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mJ3-gH-Mnw">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fBm-p0-W6W" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OQS-Lq-OIQ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="T3f-DJ-6Wq" kind="relationship" relationship="rootViewController" id="LB8-ev-6UD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Yu-eW-ufv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-570.39999999999998" y="251.42428785607197"/>
+            <point key="canvasLocation" x="2758" y="1245"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="fJw-hZ-QTC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwu-YW-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="a9a-hU-gS7" customClass="SearchResultsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hlU-HL-cLu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -600,23 +583,24 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwu-YW-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368.80000000000001" y="906.29685157421295"/>
+            <point key="canvasLocation" x="1316" y="-195"/>
         </scene>
         <!--Tweets-->
         <scene sceneID="XHN-6k-R9M">
             <objects>
                 <tableViewController id="MYF-S8-TiX" customClass="TopicDetailTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AK5-1n-Cc3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Et0-xO-dlT">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterBackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-x9-0iU" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="118"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="20"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="20"/>
@@ -636,7 +620,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-Kc-Cj4" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="118"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="20"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -651,7 +635,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets For Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-A5-8u8">
-                                    <rect key="frame" x="32" y="57" width="233" height="37"/>
+                                    <rect key="frame" x="32" y="8" width="233" height="37"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -826,7 +810,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXa-PU-218" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="1692"/>
+            <point key="canvasLocation" x="1670" y="1246"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0hN-wS-INP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mn3-5h-3yO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dAe-zm-bgV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5lO-tk-fcf" kind="relationship" relationship="rootViewController" id="M4P-yb-qgE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8s-Ff-tdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="305"/>
         </scene>
     </scenes>
     <resources>
