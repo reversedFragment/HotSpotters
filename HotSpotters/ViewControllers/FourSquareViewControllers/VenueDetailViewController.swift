@@ -63,9 +63,10 @@ class VenueDetailViewController: UIViewController {
             return
         }
         ratingLabel.backgroundColor = UIColor(hexString: "#\(ratingColor.lowercased())FF")
+        ratingLabel.layer.masksToBounds = true
+        ratingLabel.layer.cornerRadius = 5
         
         categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
-        
         priceLabel.text = fetchedVenueDetail.price?.currency
         hoursLabel.text = fetchedVenueDetail.hours?.status ?? "Open"
         hoursLabel.textColor = UIColor.green
