@@ -1,4 +1,4 @@
-//
+    //
 //  VenueDetailViewController.swift
 //  HotSpotters
 //
@@ -12,7 +12,7 @@ class VenueDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
+//        updateViews()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
@@ -35,78 +35,49 @@ class VenueDetailViewController: UIViewController {
     ////////////////////////////////////////////////////////////////
     
     
-// Overview
+
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var isOpen: UILabel!
-    @IBOutlet weak var verifiedLabel: UILabel!
     
-    // Location:
+    @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var postalLabel: UILabel!
-    @IBOutlet weak var latlngLabel: UILabel!
-    
-    //Ratings
-    @IBOutlet weak var ratingsLabel: UILabel!
-    @IBOutlet weak var ratingSignalsLabel: UILabel!
-    @IBOutlet weak var listedCount: UILabel!
-    @IBOutlet weak var topList1: UILabel!
-    @IBOutlet weak var topList2: UILabel!
-    
-    //Popularity
-    @IBOutlet weak var checkinsCount: UILabel!
-    @IBOutlet weak var visitsCount: UILabel!
-    @IBOutlet weak var venueLikes: UILabel!
-    @IBOutlet weak var venueDislikes: UILabel!
-    @IBOutlet weak var tipCount: UILabel!
-    
-    //Media
-    @IBOutlet weak var photosCountLabel: UILabel!
-    @IBOutlet weak var bestPhotoLabel: UILabel!
+    @IBOutlet weak var cityStateLable: UILabel!
 
-    
-    //Contact
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var twitterLabel: UILabel!
-    @IBOutlet weak var instagramLabel: UILabel!
-    @IBOutlet weak var facebookUsername: UILabel!
+    @IBOutlet weak var postalCodeLabel: UILabel!
+    @IBOutlet weak var formattedPhoneLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     
     
-
     /// MARK: Private
     
     private func updateViews() {
         guard let fetchedVenueDetail = fetchedVenueDetail else { return }
+        
         nameLabel.text = fetchedVenueDetail.name
+        ratingLabel.text = "\(fetchedVenueDetail.rating ?? 0.0)"
+        guard let ratingColor = fetchedVenueDetail.ratingColor else {
+            ratingLabel.backgroundColor = UIColor.blue
+            return
+        }
+        ratingLabel.backgroundColor = UIColor(hexString: ratingColor)
         categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
-        descriptionLabel.text = fetchedVenueDetail.page?.pageInfo?.description
-        priceLabel.text = "Price Tier: \(fetchedVenueDetail.price?.tier ?? 1)"
-        isOpen.text = "Open Now: \(fetchedVenueDetail.hours?.isOpen ?? true)"
+        priceLabel.text = fetchedVenueDetail.price?.currency
+        hoursLabel.text = fetchedVenueDetail.hours?.status ?? "Open"
+        hoursLabel.textColor = UIColor.green
         addressLabel.text = fetchedVenueDetail.locationDetails?.address
-        cityLabel.text = fetchedVenueDetail.locationDetails?.city
-        stateLabel.text = fetchedVenueDetail.locationDetails?.state
-        postalLabel.text = fetchedVenueDetail.locationDetails?.postalCode
-        latlngLabel.text = "\(fetchedVenueDetail.locationDetails?.lat ?? 0))" + ", " + "\(fetchedVenueDetail.locationDetails?.lng ?? 0)"
-        ratingsLabel.text = "Rating: \(fetchedVenueDetail.rating ?? 0)"
-        ratingSignalsLabel.text = "# of Ratings: \(fetchedVenueDetail.ratingSignals ?? 0)"
-        listedCount.text = "# of Times Listed: \(fetchedVenueDetail.listed?.count ?? 0)"
-        venueLikes.text = "Venue Likes: \(fetchedVenueDetail.likes?.count ?? 0)"
-        tipCount.text = "# of Tips: \(fetchedVenueDetail.tips?.count ?? 0)"
-        photosCountLabel.text = "# of Photos: \(fetchedVenueDetail.photos?.count ?? 0)"
-        bestPhotoLabel.text = fetchedVenueDetail.bestPhoto?.source?.url ?? "This venue doesn't have a good photo yet"
-        phoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
-        twitterLabel.text = fetchedVenueDetail.contact?.twitter
-        instagramLabel.text = fetchedVenueDetail.contact?.instagram
-        facebookUsername.text = fetchedVenueDetail.contact?.facebookUsername
+        guard let city = fetchedVenueDetail.locationDetails?.city,
+            let state = fetchedVenueDetail.locationDetails?.state else {
+                cityStateLable.text = ""
+                return
+        }
+        cityStateLable.text = city + "," + state
+        postalCodeLabel.text = fetchedVenueDetail.locationDetails?.postalCode
+        formattedPhoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
         urlLabel.text = fetchedVenueDetail.url
+        
+        
+        
     }
-
 }
-
-
