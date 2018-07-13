@@ -17,7 +17,7 @@ class Trend: Codable{
     let url: String
     let query: String
     let tweetVolumeInLastTwentyFourHours: Int?
-    var photo: UIImage? = UIImage(named: "twitterBackDrop")
+    var photo: UIImage? = UIImage(named: "topPicks")
     
     enum CodingKeys: String, CodingKey{
         case name, url, query

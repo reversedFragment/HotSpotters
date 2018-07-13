@@ -35,8 +35,6 @@ class SearchResultsTableViewController: UITableViewController {
             let college = CollegeController.shared.filteredColleges[indexPath.row]
             cell.textLabel?.text = college.schoolName
             cell.imageView?.image = college.logo
-            cell.backgroundView?.backgroundColor = .clear
-            cell.backgroundColor = .clear
         }
         return cell
     }
@@ -52,15 +50,5 @@ class SearchResultsTableViewController: UITableViewController {
             CollegeController.shared.selectedCollege = CollegeController.shared.filteredColleges[indexPath.row]
             NotificationCenter.default.post(name: SearchResultsTableViewController.collegeSelected, object: nil)
         }
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+    }    
 }

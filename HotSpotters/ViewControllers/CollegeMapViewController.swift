@@ -12,13 +12,14 @@ import Mapbox
 class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     var collegeMap: MGLMapView!
-    var searchBar = UISearchBar()
     var collegeBoundry: MGLOverlay?
     
     @IBOutlet weak var dropDownContainerView: UIView!
     @IBOutlet weak var drawerContainerView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     static let searchBarUpdated = Notification.Name(rawValue: "SearchBarUpdated")
+    static let collegeAnnotationSelected = Notification.Name(rawValue: "CollegeSected")
     
     var togglerViewController: TogglerViewController!
     
@@ -32,7 +33,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        togglerViewController = self.childViewControllers[1].childViewControllers[0] as! TogglerViewController
+        togglerViewController = self.childViewControllers[1] as! TogglerViewController
         setUpMap()
         setUpSearchBar()
         dropDownContainerView.superview?.bringSubview(toFront: dropDownContainerView)
@@ -59,10 +60,9 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func setUpSearchBar(){
-        searchBar.searchBarStyle = .minimal
         searchBar.delegate = self
         searchBar.placeholder = "Search a College"
-        navigationItem.titleView = searchBar
+        searchBar.superview?.bringSubview(toFront: searchBar)
     }
     
     func drawShape(schoolCoordinates: CLLocationCoordinate2D) {
@@ -91,10 +91,10 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
-        return 0.5
+        return 0.6
     }
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
-        return .gray
+        return UIColor.darkGray
     }
     
     func mapView(_ mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor {
@@ -129,6 +129,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             mapView.zoomLevel = 11.5
             mapView.setCenter(CLLocationCoordinate2D(latitude: (college.locationLat - 0.03), longitude: college.locationLon), animated: true)
             self.drawerContainerView.isHidden = false
+            searchBar.isHidden = true
+            NotificationCenter.default.post(name: CollegeMapViewController.collegeAnnotationSelected, object: nil)
             moveDrawer(to: drawerFrame) {
                 self.togglerViewController.drawerPosition = Position.middle
                 self.moveDrawer(to: self.drawerFrame, completion: nil)
@@ -143,6 +145,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
         if let collegeAnnotation = annotation as? CollegeAnnotation {
+            searchBar.isHidden = false
             collegeMap.remove(collegeBoundry!)
             collegeBoundry = nil
             togglerViewController.drawerPosition = Position.bottom
@@ -222,7 +225,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     @objc func flyToSelectedCollege(){
         guard let college = CollegeController.shared.selectedCollege else {return}
         let center = CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon)
-        let camera = MGLMapCamera(lookingAtCenter: center, fromDistance: 10000, pitch: 0, heading: 0)
+        let camera = MGLMapCamera(lookingAtCenter: center, fromDistance: 20000, pitch: 0, heading: 0)
         searchBar.text = ""
         dropDownContainerView.isHidden = true
         self.collegeMap.fly(to: camera) {
