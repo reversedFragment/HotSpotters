@@ -59,9 +59,6 @@
                                                     <color key="backgroundColor" red="1" green="0.40093388159999999" blue="0.5332900478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="36"/>
                                                     <state key="normal" title="FourSquare"/>
-                                                    <connections>
-                                                        <segue destination="iRt-x1-3XG" kind="show" id="l2y-lz-66j"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

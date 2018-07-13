@@ -24,6 +24,7 @@ class TogglerViewController: UIViewController {
     @IBOutlet weak var typeToggle: UISegmentedControl!
     @IBOutlet weak var eventsContainerView: UIView!
     @IBOutlet weak var twitterContainerView: UIView!
+    @IBOutlet weak var fourSquareContainerView: UIView!
     @IBOutlet var panGuestureRecognizer: UIPanGestureRecognizer!
     
     weak var delegate: TogglerViewControllerDelegate?
@@ -49,15 +50,19 @@ class TogglerViewController: UIViewController {
         case 0:
             twitterContainerView.isHidden = false
             eventsContainerView.isHidden = true
+            fourSquareContainerView.isHidden = true
         case 1:
             twitterContainerView.isHidden = true
             eventsContainerView.isHidden = false
+            fourSquareContainerView.isHidden = true
         case 2:
-            twitterContainerView.isHidden = false
+            twitterContainerView.isHidden = true
             eventsContainerView.isHidden = true
+            fourSquareContainerView.isHidden = false
         default:
-            twitterContainerView.isHidden = false
-            eventsContainerView.isHidden = true
+            twitterContainerView.isHidden = true
+            eventsContainerView.isHidden = false
+            fourSquareContainerView.isHidden = true
         }
     }
     
