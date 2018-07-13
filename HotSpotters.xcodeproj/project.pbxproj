@@ -50,6 +50,8 @@
 		69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */; };
 		69BF575020F5CDBD006F79A2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574F20F5CDBD006F79A2 /* UIHelper.swift */; };
 		69ECA70E20F7025700F0004D /* SelectedCollegeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECA70D20F7025700F0004D /* SelectedCollegeAnnotation.swift */; };
+		69ECA71020F90C5600F0004D /* DarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */; };
+		69ECA71220F9106A00F0004D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECA71120F9106A00F0004D /* SettingsController.swift */; };
 		69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */; };
 		69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
 		69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
@@ -112,6 +114,8 @@
 		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
 		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
 		69ECA70D20F7025700F0004D /* SelectedCollegeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCollegeAnnotation.swift; sourceTree = "<group>"; };
+		69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewController.swift; sourceTree = "<group>"; };
+		69ECA71120F9106A00F0004D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
 		69F8CB5B20EC3401009256F4 /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		69F8CB5D20EC340D009256F4 /* CollegeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeController.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 				16C77BBA20E69F700061A3DA /* FourSquareControllers */,
 				16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */,
 				69BF574C20F577F0006F79A2 /* CollegeControllers */,
+				69ECA71120F9106A00F0004D /* SettingsController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */,
 				69BF574120F52D17006F79A2 /* EventsTableViewController.swift */,
 				69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */,
+				69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 				16406E2A20F410FB0058E499 /* FourSquareSectionTableViewCell.swift in Sources */,
 				16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */,
 				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
+				69ECA71220F9106A00F0004D /* SettingsController.swift in Sources */,
 				16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */,
 				16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */,
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
@@ -476,6 +483,7 @@
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
 				69FBC1D520F6A7D70003C410 /* CollegeRadiusAnnotationView.swift in Sources */,
 				69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */,
+				69ECA71020F90C5600F0004D /* DarkModeViewController.swift in Sources */,
 				69B0695F20F00E6100915CC0 /* TopicCellBackgroundView.swift in Sources */,
 				69ECA70E20F7025700F0004D /* SelectedCollegeAnnotation.swift in Sources */,
 				69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */,

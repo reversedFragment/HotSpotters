@@ -141,7 +141,7 @@ extension EventBriteController{
         let music = Category(name: "Music", image: #imageLiteral(resourceName: "malte-wingen-381988-unsplash"), id: "103")
         let business = Category(name: "Business and Productivity", image: #imageLiteral(resourceName: "rawpixel-594848-unsplash"),  id: "101")
         let community = Category(name: "Community & Culture", image: #imageLiteral(resourceName: "toa-heftiba-195458-unsplash"), id: "113")
-        let entertainment = Category(name: "Film, Performing Arts & Entertainment", image: #imageLiteral(resourceName: "peter-lewicki-411606-unsplash"), id: "104,105")
+        let entertainment = Category(name: "Arts & Entertainment", image: #imageLiteral(resourceName: "peter-lewicki-411606-unsplash"), id: "104,105")
         let tech = Category(name: "Technology & Science", image: #imageLiteral(resourceName: "nasa-53884-unsplash"), id: "114")
         let food = Category(name: "Food & Drink", image: #imageLiteral(resourceName: "eaters-collective-132772-unsplash"), id: "110")
         let health = Category(name: "Health & Wellness", image: #imageLiteral(resourceName: "curtis-macnewton-12711-unsplash"), id: "103,108")

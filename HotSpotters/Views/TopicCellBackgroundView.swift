@@ -16,6 +16,7 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     @IBInspectable var cornerRadius: CGFloat = 1.0 {
