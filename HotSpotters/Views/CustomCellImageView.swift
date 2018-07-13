@@ -12,10 +12,12 @@ import UIKit
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.layer.masksToBounds = true
     }
     
     @IBInspectable var cornerRadius: CGFloat = 1.0 {

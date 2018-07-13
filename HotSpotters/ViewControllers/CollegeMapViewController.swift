@@ -23,6 +23,14 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     var togglerViewController: TogglerViewController!
     
+    var mapStyleURL: URL {
+        let mode = SettingsController.shared.mode
+        switch mode{
+        case Mode.light: return MGLStyle.streetsStyleURL
+        case Mode.dark: return MGLStyle.darkStyleURL
+        }
+        
+    }
     var drawerFrame: CGRect{
         return togglerViewController.getDrawerFrameWithPosition(togglerViewController.drawerPosition)
     }
@@ -41,7 +49,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         dropDownContainerView.isHidden = true
         drawerContainerView.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,9 +57,15 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         collegeMap.setCenter(utahCoordinates, zoomLevel: 11, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collegeMap.styleURL = mapStyleURL
+    }
+    
     func setUpMap(){
         collegeMap = MGLMapView(frame: view.bounds)
         collegeMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collegeMap.styleURL = mapStyleURL
         view.addSubview(collegeMap)
         collegeMap.delegate = self
         collegeMap.showsUserLocation = true
@@ -160,7 +173,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
  
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
-        resizeAnnotationView()
         let geocoder = CLGeocoder()
         let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         geocoder.reverseGeocodeLocation(location) { (placemark, error) in
@@ -233,14 +245,10 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         }
         
     }
-    
-    func resizeAnnotationView(){
-        let colleges = CollegeController.shared.visibleColleges
-        for college in colleges {
-            guard let annotation = college.annotation else { return }
-            mapView(collegeMap, viewFor: annotation)
-        }
-    }
+//
+//    @objc func changeMode(){
+//        collegeMap.styleURL = mapStyleURL
+//    }
 }
 
 

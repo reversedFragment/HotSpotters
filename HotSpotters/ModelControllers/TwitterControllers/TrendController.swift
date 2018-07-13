@@ -69,7 +69,7 @@ class TrendController{
     
     func fetchTrendImage(trend: Trend, completion: @escaping (UIImage?) -> Void){
         var image: UIImage?
-        TweetController.shared.searchTweetsBy(topic: trend.name, geocode: nil, resultType: .mixed, count: 3) { (tweets) in
+        TweetController.shared.searchTweetsBy(topic: trend.name, geocode: nil, resultType: .mixed, count: 5) { (tweets) in
             guard let tweets = tweets else {completion(nil) ; return}
             for tweet in tweets{
                 if image != nil {break}

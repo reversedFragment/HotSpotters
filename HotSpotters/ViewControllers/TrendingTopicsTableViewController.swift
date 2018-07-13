@@ -10,11 +10,14 @@ import UIKit
 
 class TrendingTopicsTableViewController: UITableViewController {
     
-    var tweetsDictionary: [String : [Tweet]] = [:]
+    var stockPhotoIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(fetchTrends), name: CollegeMapViewController.collegeAnnotationSelected, object: nil)
+        
+        tableView.prefetchDataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,24 +67,23 @@ class TrendingTopicsTableViewController: UITableViewController {
             guard let trends = trends else {return}
             TrendController.shared.currentTrends = trends
             
+            var i = 0
             for trend in trends {
-                if trend.photo == UIImage(named: "topPicks"){
-                    TweetController.shared.searchTweetsBy(topic: trend.name, geocode: nil, resultType: .mixed, count: 3, completion: { (tweets) in
-                        if let tweets = tweets{
-                            self.tweetsDictionary[trend.name] = tweets
-                        }
-                    })
-                    
+                if trend.photo == UIImage(named: "twitterBackDrop"){
                     TrendController.shared.fetchTrendImage(trend: trend, completion: { (image) in
                         if let image = image{
+                            i += 1
                             print("POST FETCHING Image for \(trend.name)")
                             trend.photo = image
-                        } else {
-                            trend.photo = #imageLiteral(resourceName: "twitterBackDrop")
+                            if i == 3 {
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
+                            }
                         }
                     })
-                }
             }
+        }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -92,19 +94,17 @@ class TrendingTopicsTableViewController: UITableViewController {
 extension TrendingTopicsTableViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            let trend = TrendController.shared.currentTrends[indexPath.row]
         
-            print("Prefetching \(trend.name)")
-            guard let tweets = tweetsDictionary[trend.name] else { return }
-            for tweet in tweets {
-                guard let medias = tweet.entities.media else { return }
-                for media in medias {
-                    guard let url = URL(string: media.mediaURLHTTPS) else { return }
-                    URLSession.shared.dataTask(with: url)
-                }
+        for indexPath in indexPaths {
+            if stockPhotoIndex == 8 {
+                stockPhotoIndex = 0
             }
-          
+            let trend = TrendController.shared.currentTrends[indexPath.row]
+            print("Prefetching For \(trend.name)")
+            if trend.photo == UIImage(named: "twitterBackDrop"){
+                trend.photo = UIHelper.stockPhotos[stockPhotoIndex]
+                stockPhotoIndex += 1
+            }
         }
     }
 }
