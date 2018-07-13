@@ -56,13 +56,16 @@ class VenueDetailViewController: UIViewController {
         guard let fetchedVenueDetail = fetchedVenueDetail else { return }
         
         nameLabel.text = fetchedVenueDetail.name
+        
         ratingLabel.text = "\(fetchedVenueDetail.rating ?? 0.0)"
         guard let ratingColor = fetchedVenueDetail.ratingColor else {
             ratingLabel.backgroundColor = UIColor.blue
             return
         }
-        ratingLabel.backgroundColor = UIColor(hexString: ratingColor)
+        ratingLabel.backgroundColor = UIColor(hexString: "#\(ratingColor.lowercased())FF")
+        
         categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
+        
         priceLabel.text = fetchedVenueDetail.price?.currency
         hoursLabel.text = fetchedVenueDetail.hours?.status ?? "Open"
         hoursLabel.textColor = UIColor.green
@@ -72,7 +75,7 @@ class VenueDetailViewController: UIViewController {
                 cityStateLable.text = ""
                 return
         }
-        cityStateLable.text = city + "," + state
+        cityStateLable.text = city + ", " + state
         postalCodeLabel.text = fetchedVenueDetail.locationDetails?.postalCode
         formattedPhoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
         urlLabel.text = fetchedVenueDetail.url
