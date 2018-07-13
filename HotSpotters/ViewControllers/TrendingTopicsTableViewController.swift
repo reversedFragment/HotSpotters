@@ -9,36 +9,17 @@
 import UIKit
 
 class TrendingTopicsTableViewController: UITableViewController {
+    
+    var tweetsDictionary: [String : [Tweet]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchTrends), name: CollegeMapViewController.collegeAnnotationSelected, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        
-        guard let currentCollege =  CollegeController.shared.selectedCollege else {return}
-        
-        TrendController.shared.getTrendingTopicsFor(latitude: currentCollege.locationLat, longitude: currentCollege.locationLon) { (trends) in
-            guard let trends = trends else {return}
-            TrendController.shared.currentTrends = trends
-            
-            for trend in trends {
-                if trend.photo == nil{
-                    TrendController.shared.fetchTrendImage(trend: trend, completion: { (image) in
-                        if let image = image{
-                            trend.photo = image
-                        } else {
-                            trend.photo = UIImage(named: "twitterBackDrop")
-                        }
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    })
-                }
-            }
-        }
     }
 
 
@@ -75,6 +56,56 @@ class TrendingTopicsTableViewController: UITableViewController {
         }
     }
     
-    
-    
+    @objc func fetchTrends(){
+        
+        guard let currentCollege =  CollegeController.shared.selectedCollege else {return}
+        
+        TrendController.shared.getTrendingTopicsFor(latitude: currentCollege.locationLat, longitude: currentCollege.locationLon) { (trends) in
+            guard let trends = trends else {return}
+            TrendController.shared.currentTrends = trends
+            
+            for trend in trends {
+                if trend.photo == UIImage(named: "topPicks"){
+                    TweetController.shared.searchTweetsBy(topic: trend.name, geocode: nil, resultType: .mixed, count: 3, completion: { (tweets) in
+                        if let tweets = tweets{
+                            self.tweetsDictionary[trend.name] = tweets
+                        }
+                    })
+                    
+                    TrendController.shared.fetchTrendImage(trend: trend, completion: { (image) in
+                        if let image = image{
+                            print("POST FETCHING Image for \(trend.name)")
+                            trend.photo = image
+                        } else {
+                            trend.photo = #imageLiteral(resourceName: "twitterBackDrop")
+                        }
+                    })
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
+
+extension TrendingTopicsTableViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let trend = TrendController.shared.currentTrends[indexPath.row]
+        
+            print("Prefetching \(trend.name)")
+            guard let tweets = tweetsDictionary[trend.name] else { return }
+            for tweet in tweets {
+                guard let medias = tweet.entities.media else { return }
+                for media in medias {
+                    guard let url = URL(string: media.mediaURLHTTPS) else { return }
+                    URLSession.shared.dataTask(with: url)
+                }
+            }
+          
+        }
+    }
+}
+

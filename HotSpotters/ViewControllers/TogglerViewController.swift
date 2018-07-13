@@ -31,12 +31,17 @@ class TogglerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapVC = parent?.parent as? CollegeMapViewController
-        self.delegate = mapVC
         
         dataTypeToggled()
         typeToggle.addTarget(self, action: #selector(dataTypeToggled), for: .valueChanged)
          //Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataTypeToggled()
+        mapVC = parent as? CollegeMapViewController
+        self.delegate = mapVC
     }
     
     @objc func dataTypeToggled(){

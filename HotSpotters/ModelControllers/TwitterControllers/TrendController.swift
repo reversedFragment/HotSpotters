@@ -12,7 +12,7 @@ class TrendController{
     
     static let shared = TrendController()
     static let baseTrendUrl = URL(string: "https://api.twitter.com/1.1/trends/place.json")
-    
+    var tweets: [Tweet] = []
     var currentTrends: [Trend] = []
     
     func getTrendingTopicsFor(location: TwitterLocation, completion: @escaping ([Trend]?) -> Void){
@@ -58,12 +58,12 @@ class TrendController{
                     if let trends = trends {
                         self.currentTrends = trends
                         completion(trends)
-                        return
                     }
                 })
+            } else {
+                completion(nil)
+                return
             }
-            completion(nil)
-            return
         }
     }
     
@@ -80,7 +80,6 @@ class TrendController{
                                 if let trendPhoto = trendPhoto {
                                     image = trendPhoto
                                     completion(image)
-                                    return
                                 }
                             })
                         }
