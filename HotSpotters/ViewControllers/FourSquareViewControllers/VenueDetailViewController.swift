@@ -26,6 +26,16 @@ class VenueDetailViewController: UIViewController {
             }
         }
     }
+    
+    var priceStringHolder: String = ""
+    
+    func createPriceString(priceTier: Int) {
+        var priceString = ""
+        for num in 1...priceTier {
+            priceString.append("$")
+        }
+        priceStringHolder = priceString
+    }
         
     
     
@@ -67,7 +77,15 @@ class VenueDetailViewController: UIViewController {
         ratingLabel.layer.cornerRadius = 5
         
         categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
-        priceLabel.text = fetchedVenueDetail.price?.currency
+        guard let priceTier = fetchedVenueDetail.price?.tier else {
+            priceLabel.text = ""
+            return
+        }
+        
+        createPriceString(priceTier: priceTier)
+        priceLabel.text = priceStringHolder
+            
+        
         hoursLabel.text = fetchedVenueDetail.hours?.status ?? "Open"
         hoursLabel.textColor = UIColor.green
         addressLabel.text = fetchedVenueDetail.locationDetails?.address

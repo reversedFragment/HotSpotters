@@ -48,6 +48,8 @@ class FourSquareSectionTableViewController: UITableViewController {
         let sectionImage = venueSectionMarker.all2[indexPath.row].image
         cell.sectionLabel.text = sectionLabel
         cell.sectionImage.image = sectionImage
+        cell.sectionLabel.layer.masksToBounds = true
+        cell.sectionLabel.layer.cornerRadius = 5
         return cell
     }
     
