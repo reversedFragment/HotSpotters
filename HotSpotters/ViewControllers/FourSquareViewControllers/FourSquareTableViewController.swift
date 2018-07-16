@@ -44,6 +44,13 @@ class FourSquareTableViewController: UIViewController {
         { (groupItems) in
             guard let groupItems = groupItems else { return }
             self.fetchedVenues = groupItems
+            if self.fetchedVenues.isEmpty {
+                
+                let alert = UIAlertController(title: "No Results Found", message: "Try Widening Your Search", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return
+            }
             
             DispatchQueue.main.async {
                 self.fourSquareTableView.reloadData()
