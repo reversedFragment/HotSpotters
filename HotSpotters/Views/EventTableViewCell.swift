@@ -74,12 +74,12 @@ class EventTableViewCell: UITableViewCell {
         }
         
         if let website = event.vanityURL{
-            eventButton.backgroundColor = .orange
+            eventButton.backgroundColor = buyButtonColor
             eventButton.titleLabel?.text = "Register"
             websiteURL = website
             
         } else {
-            eventButton.backgroundColor = .gray
+            eventButton.backgroundColor = buyButtonColor
             eventButton.titleLabel?.text = "Registration Unavailable"
         }
     }
