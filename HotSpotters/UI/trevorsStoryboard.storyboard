@@ -87,7 +87,7 @@
             <objects>
                 <tableViewController id="LxR-oq-erC" customClass="TrendingTopicsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FBu-Mx-DOV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -190,7 +190,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-xS-jm8">
                                 <rect key="frame" x="0.0" y="24" width="375" height="30"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vul-YT-Cia">
+                                    <segmentedControl opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vul-YT-Cia">
                                         <rect key="frame" x="8" y="1" width="359" height="29"/>
                                         <segments>
                                             <segment title="Topics"/>
@@ -211,7 +211,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-GV-jCb" userLabel="Events Container View">
-                                <rect key="frame" x="0.0" y="54" width="375" height="335"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="327"/>
                                 <connections>
                                     <segue destination="is1-FJ-iH3" kind="embed" id="Fsp-y9-GHt"/>
                                 </connections>
@@ -219,20 +219,34 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3N-vO-lay">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-hN-4md">
-                                        <rect key="frame" x="115" y="8" width="145" height="8"/>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-hN-4md" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                        <rect key="frame" x="141" y="8" width="93.5" height="8"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="7QR-UT-pWC"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="1" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="y8c-hN-4md" firstAttribute="leading" secondItem="E3N-vO-lay" secondAttribute="leading" constant="115" id="8cZ-pW-hzH"/>
                                     <constraint firstItem="y8c-hN-4md" firstAttribute="centerY" secondItem="E3N-vO-lay" secondAttribute="centerY" id="AHz-vH-Oku"/>
                                     <constraint firstItem="y8c-hN-4md" firstAttribute="centerX" secondItem="E3N-vO-lay" secondAttribute="centerX" id="YYx-oL-51R"/>
+                                    <constraint firstItem="y8c-hN-4md" firstAttribute="width" secondItem="E3N-vO-lay" secondAttribute="width" multiplier="0.25" id="lSu-5m-cEd"/>
                                     <constraint firstItem="y8c-hN-4md" firstAttribute="top" secondItem="E3N-vO-lay" secondAttribute="topMargin" id="xld-Jw-mw6"/>
                                 </constraints>
                                 <connections>
@@ -240,13 +254,13 @@
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-5H-z7j" userLabel="Twitter Container View">
-                                <rect key="frame" x="0.0" y="54" width="375" height="335"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="327"/>
                                 <connections>
                                     <segue destination="KBK-Nz-O1A" kind="embed" id="vIu-gG-LZh"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXx-0f-QLb" userLabel="fourSquare Container View">
-                                <rect key="frame" x="0.0" y="54" width="375" height="335"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="327"/>
                                 <connections>
                                     <segue destination="kJV-7P-Aac" kind="embed" id="m1t-zJ-IZo"/>
                                 </connections>
@@ -263,7 +277,7 @@
                             <constraint firstItem="E3N-vO-lay" firstAttribute="trailing" secondItem="LGF-Xn-NUJ" secondAttribute="trailing" id="HBs-JZ-C2Z"/>
                             <constraint firstItem="MHw-GV-jCb" firstAttribute="centerX" secondItem="bJL-5e-uWa" secondAttribute="centerX" id="JoA-os-KXp"/>
                             <constraint firstItem="9nJ-5H-z7j" firstAttribute="height" secondItem="MHw-GV-jCb" secondAttribute="height" id="O4h-lD-kQA"/>
-                            <constraint firstItem="MHw-GV-jCb" firstAttribute="top" secondItem="CWO-xS-jm8" secondAttribute="bottom" id="S8x-En-DcS"/>
+                            <constraint firstItem="MHw-GV-jCb" firstAttribute="top" secondItem="CWO-xS-jm8" secondAttribute="bottom" constant="8" id="S8x-En-DcS"/>
                             <constraint firstItem="9nJ-5H-z7j" firstAttribute="width" secondItem="MHw-GV-jCb" secondAttribute="width" id="TQu-pp-1F6"/>
                             <constraint firstItem="CWO-xS-jm8" firstAttribute="trailing" secondItem="LGF-Xn-NUJ" secondAttribute="trailing" id="UBJ-Vz-eT4"/>
                             <constraint firstItem="CWO-xS-jm8" firstAttribute="centerX" secondItem="bJL-5e-uWa" secondAttribute="centerX" id="UM0-bD-mHI"/>
@@ -300,7 +314,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="categoriesTVC" id="SzC-w2-qwi" customClass="EventCategoriesTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f5m-ne-5KW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -385,7 +399,7 @@
             <objects>
                 <tableViewController id="r47-6Q-y6j" customClass="EventsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vzE-BP-1v9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
@@ -629,7 +643,7 @@
             <objects>
                 <tableViewController id="MYF-S8-TiX" customClass="TopicDetailTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AK5-1n-Cc3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
@@ -890,7 +904,7 @@
             <objects>
                 <tableViewController id="j7d-i9-0S2" customClass="FourSquareSectionTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRA-dQ-1P3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -971,11 +985,11 @@
             <objects>
                 <viewController id="YQN-FY-M5m" customClass="FourSquareTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dam-YH-Tug">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-yL-qf9">
-                                <rect key="frame" x="0.0" y="44" width="375" height="291"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="283"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="venueCellID" rowHeight="125" id="dmc-tD-OfT" customClass="FourSquareTableViewCell" customModule="HotSpotters" customModuleProvider="target">
@@ -986,7 +1000,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="6.5" width="341" height="109"/>
+                                                    <rect key="frame" x="17" y="7" width="341" height="109"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
                                                             <rect key="frame" x="77" y="7" width="246" height="95"/>
@@ -1109,7 +1123,7 @@
             <objects>
                 <viewController id="iNb-0o-nOt" customClass="VenueDetailViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAQ-su-yKA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkW-ka-VgL">
