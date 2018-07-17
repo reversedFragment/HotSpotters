@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import Mapbox
 
-class GeneralVenueController {
+class VenueController {
     
     static let baseUrl = URL(string: "https://api.foursquare.com/v2/")
-    static let shared = GeneralVenueController()
+    static let shared = VenueController()
     
     // My Personal, Userless Authorization Keys
     static let myClientID = "PF3WA3B11VANKXDEQECTSUAMHUWROKWC2G5HKCMY0PUGRIKW"
@@ -333,7 +333,7 @@ class GeneralVenueController {
                 let recommendedGroups = recommendedTopLevelData.groups
                 let recommendedVenueItems = recommendedGroups?.compactMap({$0.items})
                 let venuesArray = recommendedVenueItems?.reduce([], +)
-                GeneralVenueController.shared.selectedVenues = venuesArray
+                VenueController.shared.selectedVenues = venuesArray
                 completion(venuesArray)
             } catch {
                 print("Error decoding fetched Venues: \(error.localizedDescription) \(error)")

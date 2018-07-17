@@ -86,7 +86,7 @@
             <objects>
                 <tableViewController id="LxR-oq-erC" customClass="TrendingTopicsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FBu-Mx-DOV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -183,7 +183,7 @@
             <objects>
                 <viewController storyboardIdentifier="toggleViewController" definesPresentationContext="YES" modalPresentationStyle="overCurrentContext" id="5lO-tk-fcf" customClass="TogglerViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bJL-5e-uWa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-xS-jm8">
@@ -315,7 +315,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="categoriesTVC" id="SzC-w2-qwi" customClass="EventCategoriesTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f5m-ne-5KW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -400,7 +400,7 @@
             <objects>
                 <tableViewController id="r47-6Q-y6j" customClass="EventsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vzE-BP-1v9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
@@ -639,7 +639,7 @@
             <objects>
                 <tableViewController id="a9a-hU-gS7" customClass="SearchResultsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hlU-HL-cLu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="325" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -679,7 +679,7 @@
             <objects>
                 <tableViewController id="MYF-S8-TiX" customClass="TopicDetailTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AK5-1n-Cc3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
@@ -746,7 +746,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="135" id="5WF-94-1FH" customClass="TopicDetailTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="135" id="5WF-94-1FH" customClass="TopicDetailTableViewCell" customModule="HotSpotters" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="178" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5WF-94-1FH" id="mRy-ue-I3H">
@@ -905,6 +905,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KBK-Nz-O1A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Do-hi-qwO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -922,6 +923,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="is1-FJ-iH3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5cR-Qc-Mu7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -938,7 +940,7 @@
             <objects>
                 <tableViewController id="j7d-i9-0S2" customClass="FourSquareSectionTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRA-dQ-1P3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1019,7 +1021,7 @@
             <objects>
                 <viewController id="YQN-FY-M5m" customClass="FourSquareTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dam-YH-Tug">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-yL-qf9">
@@ -1034,7 +1036,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="7.5" width="341" height="109"/>
+                                                    <rect key="frame" x="17" y="7" width="341" height="109"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
                                                             <rect key="frame" x="77.5" y="7" width="245.5" height="95"/>
@@ -1158,7 +1160,7 @@
             <objects>
                 <viewController id="iNb-0o-nOt" customClass="VenueDetailViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAQ-su-yKA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkW-ka-VgL">
@@ -1168,7 +1170,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNZ-OO-GYk">
-                                <rect key="frame" x="16" y="96" width="201" height="29"/>
+                                <rect key="frame" x="16" y="96" width="264" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1180,7 +1182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(hours)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kan-KT-u6O" userLabel="Hours Label">
-                                <rect key="frame" x="16" y="207.5" width="169" height="24"/>
+                                <rect key="frame" x="16" y="208" width="264" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1255,6 +1257,7 @@
                                 <rect key="frame" x="301" y="75" width="50" height="50"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="08o-FZ-Ts8" secondAttribute="height" multiplier="1:1" id="dV8-Gk-OCH"/>
                                     <constraint firstAttribute="width" constant="50" id="yTI-Pn-vYo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1268,11 +1271,10 @@
                             <constraint firstItem="3uS-Ls-Lbz" firstAttribute="leading" secondItem="oQt-Mw-TMN" secondAttribute="leading" id="30p-2J-i0P"/>
                             <constraint firstItem="MAQ-C0-SRl" firstAttribute="top" secondItem="kan-KT-u6O" secondAttribute="bottom" constant="20" id="43H-Sp-Y62"/>
                             <constraint firstItem="3uS-Ls-Lbz" firstAttribute="top" secondItem="Dlf-d3-T46" secondAttribute="bottom" constant="16" id="8oO-mD-wOT"/>
-                            <constraint firstItem="08o-FZ-Ts8" firstAttribute="leading" secondItem="XNZ-OO-GYk" secondAttribute="trailing" constant="84" id="Be1-m1-ZKq"/>
                             <constraint firstItem="XNZ-OO-GYk" firstAttribute="top" secondItem="CkW-ka-VgL" secondAttribute="bottom" constant="3" id="CAo-r5-o5A"/>
                             <constraint firstItem="jRO-L8-lhI" firstAttribute="top" secondItem="oQt-Mw-TMN" secondAttribute="bottom" constant="16" id="Ca7-KN-oS2"/>
                             <constraint firstItem="oQt-Mw-TMN" firstAttribute="leading" secondItem="jRO-L8-lhI" secondAttribute="leading" id="CzK-6Q-sqi"/>
-                            <constraint firstItem="Wa5-ip-TM6" firstAttribute="trailing" secondItem="kan-KT-u6O" secondAttribute="trailing" constant="190" id="EAq-JW-lvF"/>
+                            <constraint firstItem="Wa5-ip-TM6" firstAttribute="trailing" secondItem="kan-KT-u6O" secondAttribute="trailing" constant="95" id="EAq-JW-lvF"/>
                             <constraint firstItem="62L-RB-Y6P" firstAttribute="baseline" secondItem="Tfu-h8-w55" secondAttribute="baseline" id="Ewq-Gp-Z7n"/>
                             <constraint firstItem="jRO-L8-lhI" firstAttribute="leading" secondItem="w1I-9M-wk2" secondAttribute="leading" id="Hzk-Jq-iuO"/>
                             <constraint firstItem="kan-KT-u6O" firstAttribute="leading" secondItem="MAQ-C0-SRl" secondAttribute="leading" id="J10-Cg-6zY"/>
@@ -1286,6 +1288,7 @@
                             <constraint firstItem="oQt-Mw-TMN" firstAttribute="top" secondItem="3uS-Ls-Lbz" secondAttribute="bottom" constant="1" id="TtP-GF-8Cx"/>
                             <constraint firstItem="Tfu-h8-w55" firstAttribute="top" secondItem="XNZ-OO-GYk" secondAttribute="bottom" constant="3" id="WiO-Ey-GmW"/>
                             <constraint firstItem="CkW-ka-VgL" firstAttribute="leading" secondItem="XNZ-OO-GYk" secondAttribute="leading" id="Z8D-Os-rBP"/>
+                            <constraint firstItem="Wa5-ip-TM6" firstAttribute="trailing" secondItem="XNZ-OO-GYk" secondAttribute="trailing" constant="95" id="aZM-Zj-DOU"/>
                             <constraint firstItem="MAQ-C0-SRl" firstAttribute="leading" secondItem="Dlf-d3-T46" secondAttribute="leading" id="afu-6c-Jxl"/>
                             <constraint firstItem="Wa5-ip-TM6" firstAttribute="trailing" secondItem="oQt-Mw-TMN" secondAttribute="trailing" constant="200" id="d9A-gc-Daw"/>
                             <constraint firstItem="XNZ-OO-GYk" firstAttribute="leading" secondItem="62L-RB-Y6P" secondAttribute="leading" id="eic-NB-AHl"/>
@@ -1298,7 +1301,6 @@
                             <constraint firstItem="w1I-9M-wk2" firstAttribute="top" secondItem="oQt-Mw-TMN" secondAttribute="bottom" constant="36" id="lX0-4r-H4Y"/>
                             <constraint firstItem="CkW-ka-VgL" firstAttribute="leading" secondItem="jAQ-su-yKA" secondAttribute="leadingMargin" id="ob1-ez-SR3"/>
                             <constraint firstItem="w1I-9M-wk2" firstAttribute="trailing" secondItem="jAQ-su-yKA" secondAttribute="trailingMargin" id="paq-IJ-wUE"/>
-                            <constraint firstItem="XNZ-OO-GYk" firstAttribute="bottom" secondItem="08o-FZ-Ts8" secondAttribute="bottom" id="stK-rw-je3"/>
                             <constraint firstItem="CkW-ka-VgL" firstAttribute="top" secondItem="Wa5-ip-TM6" secondAttribute="top" constant="13" id="vEo-14-Brc"/>
                             <constraint firstItem="08o-FZ-Ts8" firstAttribute="leading" secondItem="CkW-ka-VgL" secondAttribute="trailing" constant="8" symbolic="YES" id="vqI-XH-e2x"/>
                             <constraint firstItem="MAQ-C0-SRl" firstAttribute="trailing" secondItem="jRO-L8-lhI" secondAttribute="trailing" id="y0U-9C-mSk"/>
@@ -1320,7 +1322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TuZ-Uo-HQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3145" y="2292"/>
+            <point key="canvasLocation" x="3144.8000000000002" y="2291.6041979010497"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eT0-Kz-mVt">
@@ -1328,6 +1330,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kJV-7P-Aac" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fkb-P9-TQF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

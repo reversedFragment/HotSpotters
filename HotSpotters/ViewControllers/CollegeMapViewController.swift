@@ -153,7 +153,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                 self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
             }
         } else if let venueAnnotation = annotation as? CustomVenueAnnotation{
-            GeneralVenueController.shared.selectedVenue = venueAnnotation.venue
+            VenueController.shared.selectedVenue = venueAnnotation.venue
             NotificationCenter.default.post(name: CollegeMapViewController.venueAnnotationSelected, object: nil)
         }
         
@@ -263,7 +263,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     @objc func dropVenueAnnotaions(){
         collegeMap.removeAnnotations(venueAnnotations)
         venueAnnotations = []
-        guard let selectedVenues = GeneralVenueController.shared.selectedVenues else {return}
+        guard let selectedVenues = VenueController.shared.selectedVenues else {return}
         for venue in selectedVenues {
             let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
             guard let subtitle = subtitleArray?.first else { return }

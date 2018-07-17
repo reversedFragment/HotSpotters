@@ -103,6 +103,16 @@ class VenueDetailViewController: UIViewController {
         
         createPriceString(priceTier: priceTier)
         priceLabel.text = priceStringHolder
+        if priceLabel.text?.count == 1 || priceLabel.text?.count == 2 {
+            priceLabel.textColor = UIColor.green
+        }
+        else if priceLabel.text?.count == 3 {
+            priceLabel.textColor = UIColor.orange
+        }
+        
+        else if priceLabel.text?.count == 4 {
+            priceLabel.textColor = UIColor.red
+        }
         
         
         

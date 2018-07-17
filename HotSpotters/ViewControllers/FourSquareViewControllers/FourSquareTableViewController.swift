@@ -14,20 +14,21 @@ class FourSquareTableViewController: UIViewController {
     static let venueTopicSelectedNotification = Notification.Name("Venue Topic Selected")
     
     ////////////////////////////////////////////////////////////////
-    /// Mark: - Properties
+    // Mark: - Properties
     ////////////////////////////////////////////////////////////////
 
     // Outlets
     @IBOutlet weak var fourSquareTableView: UITableView!
     
-    // (Proper) Shared Instance
-    static let shared = FourSquareTableViewController()
-    
     // Mark: - Sources of Truth
     var sectionSelected: String = ""
     var fetchedVenues: [GroupItem] = []
     
-    // MARK: - ViewLifecycle
+    
+    ////////////////////////////////////////////////////////////////
+    // Mark: - ViewLifecycles
+    ////////////////////////////////////////////////////////////////
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -42,31 +43,34 @@ class FourSquareTableViewController: UIViewController {
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
     }
     
-    // Fetch Venues by sectionSelected by user on previous menu
+    ////////////////////////////////////////////////////////////////
+    // Mark: - Fetch venues by section selected by user
+    ////////////////////////////////////////////////////////////////
     func fetchWithSectionSelected() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
         
-        GeneralVenueController.exploreVenues(location: (selectedCollege.locationLat,selectedCollege.locationLon),
+        VenueController.exploreVenues(location: (selectedCollege.locationLat,selectedCollege.locationLon),
                                              radius: 10000,
                                              section: self.sectionSelected,
                                              limit: 20, price: "1,2,3,4")
-        { (groupItems) in
+        { [unowned self] (groupItems) in
             guard let groupItems = groupItems else { return }
             self.fetchedVenues = groupItems
-            NotificationCenter.default.post(name: FourSquareTableViewController.venueTopicSelectedNotification, object: nil)
+            
             if self.fetchedVenues.isEmpty {
                 
                 let alert = UIAlertController(title: "No Results Found", message: "Try Widening Your Search", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
                 return
+            } else {
+                DispatchQueue.main.async {
+                    self.fourSquareTableView.reloadData()
+                    NotificationCenter.default.post(name: FourSquareTableViewController.venueTopicSelectedNotification, object: nil)
+                }
             }
-            
-            DispatchQueue.main.async {
-                self.fourSquareTableView.reloadData()
-            }
-        }
+                    }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
@@ -76,7 +80,9 @@ class FourSquareTableViewController: UIViewController {
 
     
     
-    // MARK: Navigation to VenueDetailViewController
+    ////////////////////////////////////////////////////////////////
+    // Mark: - Navigation to VenueDetailViewController
+    ////////////////////////////////////////////////////////////////
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -87,7 +93,7 @@ class FourSquareTableViewController: UIViewController {
                 
                 let venueDetailID = self.fetchedVenues[selectedRow].fetchedRecommendedVenue?.venueId
                 
-                GeneralVenueController.fetchVenueDetails(with: venueDetailID!) { (venuedetails) in
+                VenueController.fetchVenueDetails(with: venueDetailID!) { (venuedetails) in
                     
                     guard let venueDetails = venuedetails else { return }
                     
@@ -97,8 +103,8 @@ class FourSquareTableViewController: UIViewController {
         }else if segue.identifier == "mapSegue" {
             
             if let venueDetailVC = segue.destination as? VenueDetailViewController,
-                let venueDetailID = GeneralVenueController.shared.selectedVenue?.fetchedRecommendedVenue?.venueId {
-                GeneralVenueController.fetchVenueDetails(with: venueDetailID) { (venuedetails) in
+                let venueDetailID = VenueController.shared.selectedVenue?.fetchedRecommendedVenue?.venueId {
+                VenueController.fetchVenueDetails(with: venueDetailID) { (venuedetails) in
                     guard let venueDetails = venuedetails else { return }
                     venueDetailVC.fetchedVenueDetail = venueDetails
                 }
@@ -108,7 +114,9 @@ class FourSquareTableViewController: UIViewController {
 }
 
 
-// MARK: - UITableViewDataSource
+////////////////////////////////////////////////////////////////
+// Extension: - UITableViewDataSource
+////////////////////////////////////////////////////////////////
 
 extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSource {
     
