@@ -67,16 +67,35 @@ class VenueDetailViewController: UIViewController {
         
         nameLabel.text = fetchedVenueDetail.name
         
+        
+        ratingLabel.layer.masksToBounds = true
+        ratingLabel.layer.cornerRadius = 5
+        
+        categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
+        
+        hoursLabel.text = fetchedVenueDetail.hours?.status ?? "Open"
+        hoursLabel.textColor = UIColor.green
+        addressLabel.text = fetchedVenueDetail.locationDetails?.address
+        
+        postalCodeLabel.text = fetchedVenueDetail.locationDetails?.postalCode
+        formattedPhoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
+        urlLabel.text = fetchedVenueDetail.url
+        
+        
+        guard let city = fetchedVenueDetail.locationDetails?.city,
+            let state = fetchedVenueDetail.locationDetails?.state else {
+                cityStateLable.text = ""
+                return
+        }
+        cityStateLable.text = city + ", " + state
+        
         ratingLabel.text = "\(fetchedVenueDetail.rating ?? 0.0)"
         guard let ratingColor = fetchedVenueDetail.ratingColor else {
             ratingLabel.backgroundColor = UIColor.blue
             return
         }
         ratingLabel.backgroundColor = UIColor(hexString: "#\(ratingColor.lowercased())FF")
-        ratingLabel.layer.masksToBounds = true
-        ratingLabel.layer.cornerRadius = 5
         
-        categoryLabel.text = fetchedVenueDetail.venueCategories?.first?.name
         guard let priceTier = fetchedVenueDetail.price?.tier else {
             priceLabel.text = ""
             return
@@ -84,20 +103,6 @@ class VenueDetailViewController: UIViewController {
         
         createPriceString(priceTier: priceTier)
         priceLabel.text = priceStringHolder
-            
-        
-        hoursLabel.text = fetchedVenueDetail.hours?.status ?? "Open"
-        hoursLabel.textColor = UIColor.green
-        addressLabel.text = fetchedVenueDetail.locationDetails?.address
-        guard let city = fetchedVenueDetail.locationDetails?.city,
-            let state = fetchedVenueDetail.locationDetails?.state else {
-                cityStateLable.text = ""
-                return
-        }
-        cityStateLable.text = city + ", " + state
-        postalCodeLabel.text = fetchedVenueDetail.locationDetails?.postalCode
-        formattedPhoneLabel.text = fetchedVenueDetail.contact?.formattedPhone
-        urlLabel.text = fetchedVenueDetail.url
         
         
         
