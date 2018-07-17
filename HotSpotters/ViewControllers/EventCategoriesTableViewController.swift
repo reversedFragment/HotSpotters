@@ -18,6 +18,7 @@ class EventCategoriesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        NotificationCenter.default.post(name: TogglerViewController.showTypeTogglerNotification, object: nil)
     }
     
     // MARK: - Table view data source

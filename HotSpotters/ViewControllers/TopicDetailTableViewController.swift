@@ -41,6 +41,7 @@ class TopicDetailTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
     }
     
     // MARK: - Table view data source

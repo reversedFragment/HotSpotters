@@ -22,6 +22,7 @@ enum Position {
 class TogglerViewController: UIViewController {
     
     @IBOutlet weak var typeToggle: UISegmentedControl!
+    @IBOutlet weak var typeTogglerView: UIView!
     @IBOutlet weak var eventsContainerView: UIView!
     @IBOutlet weak var twitterContainerView: UIView!
     @IBOutlet weak var fourSquareContainerView: UIView!
@@ -29,12 +30,16 @@ class TogglerViewController: UIViewController {
     
     weak var delegate: TogglerViewControllerDelegate?
     var mapVC: CollegeMapViewController!
+    static let hideTypeTogglerNotification = Notification.Name(rawValue: "Hide the Type Toggler")
+    static let showTypeTogglerNotification = Notification.Name(rawValue: "Show the Type Toggler")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataTypeToggled()
         typeToggle.addTarget(self, action: #selector(dataTypeToggled), for: .valueChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideTypeToggler), name: TogglerViewController.hideTypeTogglerNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showTypeToggler), name: TogglerViewController.showTypeTogglerNotification, object: nil)
          //Do any additional setup after loading the view.
     }
     
@@ -155,5 +160,18 @@ class TogglerViewController: UIViewController {
             delegate?.moveDrawer(to: drawerFrame, completion: nil)
         }
     }
-
+    
+    @objc func hideTypeToggler(){
+        typeTogglerView.isHidden = true
+        self.twitterContainerView.needsUpdateConstraints()
+        self.twitterContainerView.setNeedsLayout()
+        self.twitterContainerView.setNeedsDisplay()
+    }
+    
+    @objc func showTypeToggler(){
+        typeTogglerView.isHidden = false
+        self.twitterContainerView.needsUpdateConstraints()
+        self.twitterContainerView.setNeedsLayout()
+        self.twitterContainerView.setNeedsDisplay()
+    }
 }

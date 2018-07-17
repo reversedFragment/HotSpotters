@@ -33,7 +33,7 @@ struct VenueDetails: Codable {
     /// Structs shared with Venue Model, all others are VenueDetails specific
     let locationDetails: Location?
     let stats: Stats
-    let venueCategories: [venueCategory]?
+    let venueCategories: [VenueCagtegory]?
     let hours: Hours?
 
     

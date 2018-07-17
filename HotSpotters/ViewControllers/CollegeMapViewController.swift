@@ -13,13 +13,15 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     var collegeMap: MGLMapView!
     var collegeBoundry: MGLOverlay?
+    var venueAnnotations: [CustomVenueAnnotation] = []
     
     @IBOutlet weak var dropDownContainerView: UIView!
     @IBOutlet weak var drawerContainerView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    static let searchBarUpdated = Notification.Name(rawValue: "SearchBarUpdated")
-    static let collegeAnnotationSelected = Notification.Name(rawValue: "CollegeSected")
+    static let searchBarUpdated = Notification.Name(rawValue: "Search Bar Updated")
+    static let collegeAnnotationSelected = Notification.Name(rawValue: "College Sected")
+    static let venueAnnotationSelected = Notification.Name(rawValue: "Venue Selected")
     
     var togglerViewController: TogglerViewController!
     
@@ -49,6 +51,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         dropDownContainerView.isHidden = true
         drawerContainerView.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueTopicSelectedNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,8 +93,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015),
             CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude - 0.02)
         ]
-
-
+        
+        
         collegeBoundry = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
         collegeMap.add(collegeBoundry!)
     }
@@ -149,11 +152,15 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                 self.moveDrawer(to: self.drawerFrame, completion: nil)
                 self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
             }
+        } else if let venueAnnotation = annotation as? CustomVenueAnnotation{
+            GeneralVenueController.shared.selectedVenue = venueAnnotation.venue
+            NotificationCenter.default.post(name: CollegeMapViewController.venueAnnotationSelected, object: nil)
         }
-//        // Pop-up the callout view.
-//        collegeMap.selectAnnotation(annotation, animated: true)
-//        // Center the map on the annotation.
-//        collegeMap.setCenter(annotation.coordinate, zoomLevel: 12.5, animated: true)
+        
+        //        // Pop-up the callout view.
+        //        collegeMap.selectAnnotation(annotation, animated: true)
+        //        // Center the map on the annotation.
+        //        collegeMap.setCenter(annotation.coordinate, zoomLevel: 12.5, animated: true)
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
@@ -161,17 +168,9 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             searchBar.isHidden = false
             collegeMap.remove(collegeBoundry!)
             collegeBoundry = nil
-            togglerViewController.drawerPosition = Position.bottom
-            moveDrawer(to: drawerFrame) {
-                self.drawerContainerView.isHidden = true
-            }
         }
-        
-        guard let annotation = annotation as? SelectedCollegeAnnotation else { return }
-        mapView.removeAnnotation(annotation)
-        
     }
- 
+    
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
         let geocoder = CLGeocoder()
         let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
@@ -201,27 +200,43 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             }
         }
     }
-
+    
     
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
-        guard let point = annotation as? CollegeAnnotation,
-        let reuseIdentifier = point.reuseIdentifier,
-        let image = point.image else {return nil}
-        
-        if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
-            return annotationImage
-        } else {
-            let collegeAnnotation = MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifier)
-            return collegeAnnotation
+        if let point = annotation as? CollegeAnnotation,
+            let reuseIdentifier = point.reuseIdentifier,
+            let image = point.image {
+            
+            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
+                return annotationImage
+            } else {
+                let collegeAnnotationImage = MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifier)
+                return collegeAnnotationImage
+            }
+            
         }
+        
+        if let venueAnnotation = annotation as? CustomVenueAnnotation,
+            let category = venueAnnotation.venue?.fetchedRecommendedVenue?.categories?[0],
+            let reuseIdentifier =  category.name {
+            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
+                return annotationImage
+            } else {
+                let image = UIImage(named: "\(category.name ?? "default")")
+                let venueAnnotationImage = MGLAnnotationImage(image: image!, reuseIdentifier: category.name ?? "default")
+                return venueAnnotationImage
+            }
+        }
+        
+        return nil
     }
     
-//     This delegate method is where you tell the map to load a view for a specific annotation. To load a static MGLAnnotationImage, you would use `-mapView:imageForAnnotation:`.
+    //     This delegate method is where you tell the map to load a view for a specific annotation. To load a static MGLAnnotationImage, you would use `-mapView:imageForAnnotation:`.
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-
+        
         guard let annotation = annotation as? SelectedCollegeAnnotation,
-        let college = annotation.college else { return nil }
-
+            let college = annotation.college else { return nil }
+        
         // For better performance, always try to reuse existing annotations. To use multiple different annotation views, change the reuse identifier for each.
         if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "\(college.id)RadiusView" ) {
             return annotationView
@@ -243,12 +258,19 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         self.collegeMap.fly(to: camera) {
             self.mapView(self.collegeMap, regionDidChangeAnimated: true)
         }
-        
     }
-//
-//    @objc func changeMode(){
-//        collegeMap.styleURL = mapStyleURL
-//    }
+    
+    @objc func dropVenueAnnotaions(){
+        guard let selectedVenues = GeneralVenueController.shared.selectedVenues else {return}
+        for venue in selectedVenues {
+            let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
+            guard let subtitle = subtitleArray?.first else { return }
+            let annotation = (CustomVenueAnnotation.init(coordinate: CLLocationCoordinate2D(latitude: (venue.fetchedRecommendedVenue?.location.lat)!, longitude: (venue.fetchedRecommendedVenue?.location.lng)!), title: venue.fetchedRecommendedVenue?.name, subtitle: subtitle, address: venue.fetchedRecommendedVenue?.location.address, venue: venue))
+            venueAnnotations.append(annotation)
+            collegeMap.addAnnotation(annotation)
+        }
+    }
+    
 }
 
 
@@ -287,7 +309,6 @@ extension CollegeMapViewController: TogglerViewControllerDelegate{
             }
         }
     }
-    
 }
 
 

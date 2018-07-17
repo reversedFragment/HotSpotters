@@ -19,11 +19,13 @@ class CustomVenueAnnotation: NSObject, MGLAnnotation {
     // Custom properties that we will use to customize the annotation's image.
     var image: UIImage?
     var reuseIdentifier: String?
+    var venue: GroupItem?
     
-    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, address: String?) {
+    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, address: String?, venue: GroupItem) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
         self.address = address
+        self.venue = venue
     }
 }

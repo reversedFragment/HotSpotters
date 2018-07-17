@@ -11,6 +11,8 @@ import UIKit
 
 class FourSquareTableViewController: UIViewController {
     
+    static let venueTopicSelectedNotification = Notification.Name("Venue Topic Selected")
+    
     ////////////////////////////////////////////////////////////////
     /// Mark: - Properties
     ////////////////////////////////////////////////////////////////
@@ -31,20 +33,28 @@ class FourSquareTableViewController: UIViewController {
         super.viewDidLoad()
         fourSquareTableView.delegate = self
         fourSquareTableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(venueAnnotationSelected), name: CollegeMapViewController.venueAnnotationSelected, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchWithSectionSelected()
+        NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
     }
     
     // Fetch Venues by sectionSelected by user on previous menu
     func fetchWithSectionSelected() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        GeneralVenueController.exploreVenues(location: (40.761834,-111.89049069999999),
-                                             radius: 1000,
+        guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
+        
+        GeneralVenueController.exploreVenues(location: (selectedCollege.locationLat,selectedCollege.locationLon),
+                                             radius: 10000,
                                              section: self.sectionSelected,
                                              limit: 20, price: "1,2,3,4")
         { (groupItems) in
             guard let groupItems = groupItems else { return }
             self.fetchedVenues = groupItems
-            
+            NotificationCenter.default.post(name: FourSquareTableViewController.venueTopicSelectedNotification, object: nil)
             DispatchQueue.main.async {
                 self.fourSquareTableView.reloadData()
             }
@@ -52,7 +62,9 @@ class FourSquareTableViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
-
+    @objc func venueAnnotationSelected(){
+        self.performSegue(withIdentifier: "mapSegue", sender: self)
+    }
 
     
     
@@ -71,6 +83,15 @@ class FourSquareTableViewController: UIViewController {
                     
                     guard let venueDetails = venuedetails else { return }
                     
+                    venueDetailVC.fetchedVenueDetail = venueDetails
+                }
+            }
+        }else if segue.identifier == "mapSegue" {
+            
+            if let venueDetailVC = segue.destination as? VenueDetailViewController,
+                let venueDetailID = GeneralVenueController.shared.selectedVenue?.fetchedRecommendedVenue?.venueId {
+                GeneralVenueController.fetchVenueDetails(with: venueDetailID) { (venuedetails) in
+                    guard let venueDetails = venuedetails else { return }
                     venueDetailVC.fetchedVenueDetail = venueDetails
                 }
             }

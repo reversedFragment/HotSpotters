@@ -18,7 +18,7 @@ struct Venue: Codable {
     let venueID: String /// A unique string identifier for this venue.
     let name: String? /// The best known name for this venue.
     let location: Location?
-    let venueCategories: [venueCategory]?
+    let venueCategories: [VenueCagtegory]?
     
     enum CodingKeys: String, CodingKey {
         case venueID = "id"
@@ -67,7 +67,7 @@ struct Location: Codable {
 // Mark: - Venue Categories
 ////////////////////////////////////////////////////////////////
 
-struct venueCategory: Codable {
+struct VenueCagtegory: Codable {
     /// An array, possibly empty, of categories that have been applied to this venue. One of the categories will have a primary field indicating that it is the primary category for the venue.
     let id: String? /// A unique identifier for this category.
     let name: String?
