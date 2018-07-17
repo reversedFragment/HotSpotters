@@ -216,17 +216,17 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             
         }
         
-        if let venueAnnotation = annotation as? CustomVenueAnnotation,
-            let category = venueAnnotation.venue?.fetchedRecommendedVenue?.categories?[0],
-            let reuseIdentifier =  category.name {
-            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
-                return annotationImage
-            } else {
-                let image = UIImage(named: "\(category.name ?? "default")")
-                let venueAnnotationImage = MGLAnnotationImage(image: image!, reuseIdentifier: category.name ?? "default")
-                return venueAnnotationImage
-            }
-        }
+//        if let venueAnnotation = annotation as? CustomVenueAnnotation,
+//            let category = venueAnnotation.venue?.fetchedRecommendedVenue?.categories?[0],
+//            let reuseIdentifier =  category.name {
+//            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
+//                return annotationImage
+//            } else {
+//                let image = UIImage(named: "\(category.name ?? "default")")
+//                let venueAnnotationImage = MGLAnnotationImage(image: image!, reuseIdentifier: category.name ?? "default")
+//                return venueAnnotationImage
+//            }
+//        }
         
         return nil
     }
@@ -261,13 +261,15 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     @objc func dropVenueAnnotaions(){
+        collegeMap.removeAnnotations(venueAnnotations)
+        venueAnnotations = []
         guard let selectedVenues = GeneralVenueController.shared.selectedVenues else {return}
         for venue in selectedVenues {
             let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
             guard let subtitle = subtitleArray?.first else { return }
             let annotation = (CustomVenueAnnotation.init(coordinate: CLLocationCoordinate2D(latitude: (venue.fetchedRecommendedVenue?.location.lat)!, longitude: (venue.fetchedRecommendedVenue?.location.lng)!), title: venue.fetchedRecommendedVenue?.name, subtitle: subtitle, address: venue.fetchedRecommendedVenue?.location.address, venue: venue))
             venueAnnotations.append(annotation)
-            collegeMap.addAnnotation(annotation)
+            collegeMap.addAnnotations(venueAnnotations)
         }
     }
     
