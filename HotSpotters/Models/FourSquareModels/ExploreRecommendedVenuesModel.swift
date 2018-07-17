@@ -8,6 +8,10 @@
 
 import Foundation
 
+
+/// Mark: - This is a sub-struct of 'groupItem'
+/// This is specific to venues pulled in exploreVenues()
+
 struct RecommendedVenue: Codable {
     let venueId: String
     let name: String?
@@ -17,9 +21,9 @@ struct RecommendedVenue: Codable {
     
     enum CodingKeys: String, CodingKey {
         case venueId = "id"
-        case name = "name"
-        case location = "location"
-        case categories = "categories"
+        case name
+        case location
+        case categories 
     }
 }
 

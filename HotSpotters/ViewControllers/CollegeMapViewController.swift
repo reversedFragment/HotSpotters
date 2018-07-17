@@ -51,7 +51,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         dropDownContainerView.isHidden = true
         drawerContainerView.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueTopicSelectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueSectionSelectedNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -128,13 +128,11 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
-        // Hide the callout view.
-        mapView.deselectAnnotation(annotation, animated: false)
         
-        // Show an alert containing the annotation's details
-        let alert = UIAlertController(title: annotation.title!!, message: "Welcome to the University of Utah", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        if let venueAnnotation = annotation as? CustomVenueAnnotation{
+            VenueController.shared.selectedVenue = venueAnnotation.venue
+            NotificationCenter.default.post(name: CollegeMapViewController.venueAnnotationSelected, object: nil)
+        }
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
@@ -152,9 +150,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                 self.moveDrawer(to: self.drawerFrame, completion: nil)
                 self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
             }
-        } else if let venueAnnotation = annotation as? CustomVenueAnnotation{
-            VenueController.shared.selectedVenue = venueAnnotation.venue
-            NotificationCenter.default.post(name: CollegeMapViewController.venueAnnotationSelected, object: nil)
         }
         
         //        // Pop-up the callout view.

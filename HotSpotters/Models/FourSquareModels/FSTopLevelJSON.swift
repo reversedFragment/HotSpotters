@@ -14,7 +14,7 @@ import Foundation
 
 struct TopLevelData: Codable {
     let response: Response
-    let warning: Warning?
+    let warning: Warning? /// Specific to exploreVenue() calls which return 0 venues
     
 }
 
@@ -23,7 +23,7 @@ struct TopLevelData: Codable {
 ////////////////////////////////////////////////////////////////
 
 
-// Mark: - All possible fields for Response regardless of fetch func
+// All possible fields for 'response' regardless of fetch func used
 
 // All fetches have a response struct
 struct Response: Codable {
@@ -57,8 +57,8 @@ struct Warning: Codable {
 
 
 ////////////////////////////////////////////////////////////////
-// Mark: - Geocode data from general venue search function when
-//        passed in 'near' query instead of coordinates
+// Mark: - Geocode data from fetchVenues() function when
+//        passed in 'near' query instead of 'll' coordinates
 ////////////////////////////////////////////////////////////////
 
 struct Geocode: Codable {
@@ -86,61 +86,33 @@ struct Feature: Codable {
     let longID: String?
     let geometry: Geometry?
 
-    enum CodingKeys: String, CodingKey {
-        case cc = "cc"
-        case name = "name"
-        case displayName = "displayName"
-        case matchedName = "matchedName"
-        case highlightedName = "highlightedName"
-        case woeType = "woeType"
-        case slug = "slug"
-        case id = "id"
-        case longID = "longId"
-        case geometry = "geometry"
-        
-    }
 }
 
 struct Geometry: Codable {
     let center: Center?
     let bounds: Bounds?
 
-    enum CodingKeys: String, CodingKey {
-        case center = "center"
-        case bounds = "bounds"
-    }
 }
 
 struct Bounds: Codable {
     let ne: Center
     let sw: Center
 
-    enum CodingKeys: String, CodingKey {
-        case ne = "ne"
-        case sw = "sw"
-    }
 }
 
 struct Center: Codable {
     let lat: Double
     let lng: Double
 
-    enum CodingKeys: String, CodingKey {
-        case lat = "lat"
-        case lng = "lng"
-    }
 }
 
 ////////////////////////////////////////////////////////////////
-// Mark: - exploreVenues() data that comes back inside 'response' JSON
+// Mark: - exploreVenues() specific data within 'response' JSON
 ////////////////////////////////////////////////////////////////
 
 struct Group: Codable {
     let items: [GroupItem]?
     
-    enum CodingKeys: String, CodingKey {
-        case items = "items"
-    }
 }
 
 struct GroupItem: Codable {

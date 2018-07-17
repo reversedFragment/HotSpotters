@@ -38,25 +38,25 @@ struct VenueDetails: Codable {
 
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case contact = "contact"
+        case id
+        case name
+        case contact
         case locationDetails = "location"
-        case canonicalURL = "canonicalUrl"
+        case canonicalURL
         case venueCategories = "categories"
-        case stats = "stats"
-        case url = "url"
-        case price = "price"
-        case likes = "likes"
-        case rating = "rating"
-        case ratingColor = "ratingColor"
-        case ratingSignals = "ratingSignals"
-        case page = "page"
-        case tips = "tips"
-        case listed = "listed"
-        case hours = "hours"
-        case bestPhoto = "bestPhoto"
-        case photos = "photos"
+        case stats
+        case url
+        case price
+        case likes
+        case rating
+        case ratingColor
+        case ratingSignals
+        case page
+        case tips
+        case listed
+        case hours
+        case bestPhoto
+        case photos
     }
 }
 
@@ -109,14 +109,14 @@ struct BestPhoto: Codable {
     let visibility: String?
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case createdAt = "createdAt"
-        case source = "source"
+        case id
+        case createdAt
+        case source
         case bestPhotoPrefix = "prefix"
-        case suffix = "suffix"
-        case width = "width"
-        case height = "height"
-        case visibility = "visibility"
+        case suffix
+        case width
+        case height
+        case visibility
     }
 }
 
