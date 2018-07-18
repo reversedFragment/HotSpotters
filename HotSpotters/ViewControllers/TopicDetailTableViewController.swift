@@ -42,6 +42,7 @@ class TopicDetailTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
+        NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
     }
     
     // MARK: - Table view data source

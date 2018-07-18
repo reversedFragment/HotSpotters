@@ -13,6 +13,7 @@ class FourSquareTableViewController: UIViewController {
     
     // Notification Center Info
     static let venueSectionSelectedNotification = Notification.Name("Venue Topic Selected")
+    static let removeAnnotationsNotification = Notification.Name("Please remove all Venue Annotations")
     
 ////////////////////////////////////////////////////////////////
 // Mark: - Properties
@@ -46,8 +47,13 @@ class FourSquareTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchWithSectionSelected()
+        navigationController?.navigationBar.isHidden = false
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
 ////////////////////////////////////////////////////////////////

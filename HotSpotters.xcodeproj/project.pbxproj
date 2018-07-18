@@ -43,6 +43,8 @@
 		69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */; };
 		69B0695F20F00E6100915CC0 /* TopicCellBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */; };
 		69B0696120F01F4900915CC0 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0696020F01F4900915CC0 /* ProfileImageView.swift */; };
+		69B6EA4120FFB64F00C459A3 /* EventAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6EA4020FFB64F00C459A3 /* EventAnnotations.swift */; };
+		69B6EA4320FFBC5C00C459A3 /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6EA4220FFBC5C00C459A3 /* UIVIewExtension.swift */; };
 		69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574120F52D17006F79A2 /* EventsTableViewController.swift */; };
 		69BF574420F530EA006F79A2 /* EventCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */; };
 		69BF574620F531A2006F79A2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574520F531A2006F79A2 /* Category.swift */; };
@@ -105,6 +107,8 @@
 		69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailTableViewCell.swift; sourceTree = "<group>"; };
 		69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCellBackgroundView.swift; sourceTree = "<group>"; };
 		69B0696020F01F4900915CC0 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		69B6EA4020FFB64F00C459A3 /* EventAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotations.swift; sourceTree = "<group>"; };
+		69B6EA4220FFBC5C00C459A3 /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
 		69BF574120F52D17006F79A2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		69BF574520F531A2006F79A2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			children = (
 				168C4D8720F6B90000F0CC03 /* UIColor + HexColor.swift */,
 				6D541C5320F8FE1A00D404FD /* StyleKit.swift */,
+				69B6EA4220FFBC5C00C459A3 /* UIVIewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				6D381C0320E426DE0075D7F9 /* Event.swift */,
 				6D381C0220E426DE0075D7F9 /* Post.swift */,
 				69BF574520F531A2006F79A2 /* Category.swift */,
+				69B6EA4020FFB64F00C459A3 /* EventAnnotations.swift */,
 			);
 			path = EventbriteModels;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				69B0695D20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift in Sources */,
 				16406E2C20F41FF80058E499 /* CustomVenueAnnotationModel.swift in Sources */,
 				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
+				69B6EA4120FFB64F00C459A3 /* EventAnnotations.swift in Sources */,
 				69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */,
 				69BF574A20F55EFC006F79A2 /* CategoryTableViewCell.swift in Sources */,
 				693D3E7620F3DA14004BBED5 /* TrendTableViewCell.swift in Sources */,
@@ -517,6 +524,7 @@
 				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
 				693D3E7420F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift in Sources */,
 				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
+				69B6EA4320FFBC5C00C459A3 /* UIVIewExtension.swift in Sources */,
 				693D3E7A20F3FD3E004BBED5 /* CustomCellImageView.swift in Sources */,
 				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
 				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,

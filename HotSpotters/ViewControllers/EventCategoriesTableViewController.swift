@@ -19,6 +19,7 @@ class EventCategoriesTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.post(name: TogglerViewController.showTypeTogglerNotification, object: nil)
+        NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
     }
     
     // MARK: - Table view data source

@@ -18,16 +18,19 @@ class EventsTableViewController: UITableViewController {
     
     var nearbyEvents: [EventElement] = []
     
+    static let dropEventAnnotationsNotification = Notification.Name(rawValue: "Please Drop the Proper Event Annotations")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
         setNearbyEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        updateView()
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
+        NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
     }
     
     // MARK: - Table view data source
@@ -85,8 +88,10 @@ class EventsTableViewController: UITableViewController {
             EventBriteController.search(term: nil, sortDescriptor: .best, radius: 10, location: address, categories: self.category!, completion: { (events) in
                 guard let events = events else {return}
                 self.nearbyEvents = events
+                EventBriteController.shared.myEvents = events
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    NotificationCenter.default.post(name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
                 }
             })
         }

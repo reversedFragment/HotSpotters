@@ -21,6 +21,7 @@ enum Position {
 
 class TogglerViewController: UIViewController {
     
+    @IBOutlet weak var containerViewTopContraint: NSLayoutConstraint!
     @IBOutlet weak var typeToggle: UISegmentedControl!
     @IBOutlet weak var typeTogglerView: UIView!
     @IBOutlet weak var eventsContainerView: UIView!
@@ -30,6 +31,8 @@ class TogglerViewController: UIViewController {
     
     weak var delegate: TogglerViewControllerDelegate?
     var mapVC: CollegeMapViewController!
+    var topContraint: NSLayoutConstraint?
+    
     static let hideTypeTogglerNotification = Notification.Name(rawValue: "Hide the Type Toggler")
     static let showTypeTogglerNotification = Notification.Name(rawValue: "Show the Type Toggler")
     
@@ -73,9 +76,9 @@ class TogglerViewController: UIViewController {
     
     func getDrawerFrameWithPosition(_ position: Position) -> CGRect {
         
-        let bottomPosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (mapVC.view.frame.size.height / 8), width: self.view.frame.size.width, height: self.view.frame.size.height)
+        let bottomPosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (24), width: self.view.frame.size.width, height: self.view.frame.size.height)
         let middlePosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (mapVC.view.frame.size.height / 2), width: self.view.frame.size.width, height: self.view.frame.size.height)
-        let topPosition = CGRect(x: 0, y: (mapVC.view.bounds.minY) + (80), width: self.view.frame.size.width, height: (mapVC.view.frame.size.height - 80))
+        let topPosition = CGRect(x: 0, y: (mapVC.view.bounds.minY + 32), width: self.view.frame.size.width, height: (mapVC.view.frame.size.height - 32))
         
         switch position{
         case .bottom:
@@ -162,16 +165,44 @@ class TogglerViewController: UIViewController {
     }
     
     @objc func hideTypeToggler(){
-        typeTogglerView.isHidden = true
-        self.twitterContainerView.needsUpdateConstraints()
-        self.twitterContainerView.setNeedsLayout()
-        self.twitterContainerView.setNeedsDisplay()
+//        typeTogglerView.isHidden = true
+//        self.twitterContainerView.needsUpdateConstraints()
+//        self.twitterContainerView.setNeedsLayout()
+//        self.twitterContainerView.setNeedsDisplay()
+//        resizeContainerViewOverSegmentSelector()
     }
     
     @objc func showTypeToggler(){
-        typeTogglerView.isHidden = false
-        self.twitterContainerView.needsUpdateConstraints()
-        self.twitterContainerView.setNeedsLayout()
-        self.twitterContainerView.setNeedsDisplay()
+//        typeTogglerView.isHidden = false
+//        self.twitterContainerView.needsUpdateConstraints()
+//        self.twitterContainerView.setNeedsLayout()
+//        self.twitterContainerView.setNeedsDisplay()
+//        resizeContainerViewUnderSegmentSelector()
+    }
+    
+    func resizeContainerViewOverSegmentSelector(){
+        UIView.animate(withDuration: 0.2) {
+            
+            self.eventsContainerView.removeConstraint(self.containerViewTopContraint)
+            if let topContraint = self.topContraint{
+                self.eventsContainerView.removeConstraint(topContraint)
+            }
+            
+            self.eventsContainerView.topAnchor.constraint(equalTo: self.typeTogglerView.topAnchor, constant: 0).isActive = true
+            self.eventsContainerView.updateConstraints()
+        }
+    }
+    
+    func resizeContainerViewUnderSegmentSelector(){
+        UIView.animate(withDuration: 0.2) {
+            
+            if let topContraint = self.topContraint{
+              self.eventsContainerView.removeConstraint(topContraint)
+            }
+            
+            self.topContraint = self.eventsContainerView.topAnchor.constraint(equalTo: self.typeTogglerView.bottomAnchor, constant: 0)
+            self.topContraint?.isActive = true
+            self.eventsContainerView.updateConstraints()
+        }
     }
 }
