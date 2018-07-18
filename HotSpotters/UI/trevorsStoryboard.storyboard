@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3f-DJ-6Wq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3f-DJ-6Wq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -219,7 +216,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-hN-4md" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                        <rect key="frame" x="141" y="8" width="93.5" height="8"/>
+                                        <rect key="frame" x="140.5" y="8" width="94" height="8"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="7QR-UT-pWC"/>
@@ -276,13 +273,13 @@
                             <constraint firstItem="MHw-GV-jCb" firstAttribute="bottom" secondItem="LGF-Xn-NUJ" secondAttribute="bottom" id="DVd-d8-RZD"/>
                             <constraint firstItem="E3N-vO-lay" firstAttribute="trailing" secondItem="LGF-Xn-NUJ" secondAttribute="trailing" id="HBs-JZ-C2Z"/>
                             <constraint firstItem="MHw-GV-jCb" firstAttribute="centerX" secondItem="bJL-5e-uWa" secondAttribute="centerX" id="JoA-os-KXp"/>
-                            <constraint firstItem="9nJ-5H-z7j" firstAttribute="height" secondItem="MHw-GV-jCb" secondAttribute="height" id="O4h-lD-kQA"/>
+                            <constraint firstItem="9nJ-5H-z7j" firstAttribute="height" secondItem="MHw-GV-jCb" secondAttribute="height" priority="999" id="O4h-lD-kQA"/>
                             <constraint firstItem="MHw-GV-jCb" firstAttribute="top" secondItem="CWO-xS-jm8" secondAttribute="bottom" constant="8" id="S8x-En-DcS"/>
                             <constraint firstItem="9nJ-5H-z7j" firstAttribute="width" secondItem="MHw-GV-jCb" secondAttribute="width" id="TQu-pp-1F6"/>
                             <constraint firstItem="CWO-xS-jm8" firstAttribute="trailing" secondItem="LGF-Xn-NUJ" secondAttribute="trailing" id="UBJ-Vz-eT4"/>
                             <constraint firstItem="CWO-xS-jm8" firstAttribute="centerX" secondItem="bJL-5e-uWa" secondAttribute="centerX" id="UM0-bD-mHI"/>
                             <constraint firstItem="MHw-GV-jCb" firstAttribute="leading" secondItem="LGF-Xn-NUJ" secondAttribute="leading" id="WrV-U0-WMD"/>
-                            <constraint firstItem="HXx-0f-QLb" firstAttribute="height" secondItem="9nJ-5H-z7j" secondAttribute="height" id="gHn-W3-dFL"/>
+                            <constraint firstItem="HXx-0f-QLb" firstAttribute="height" secondItem="9nJ-5H-z7j" secondAttribute="height" priority="999" id="gHn-W3-dFL"/>
                             <constraint firstItem="HXx-0f-QLb" firstAttribute="width" secondItem="9nJ-5H-z7j" secondAttribute="width" id="h9e-LE-OLt"/>
                             <constraint firstItem="HXx-0f-QLb" firstAttribute="centerY" secondItem="9nJ-5H-z7j" secondAttribute="centerY" id="rGj-Wp-TNO"/>
                             <constraint firstItem="CWO-xS-jm8" firstAttribute="leading" secondItem="LGF-Xn-NUJ" secondAttribute="leading" id="sXA-uy-4SA"/>
@@ -293,6 +290,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cgH-HK-DMj"/>
                     <connections>
+                        <outlet property="containerViewTopContraint" destination="S8x-En-DcS" id="LmX-lC-Nm0"/>
                         <outlet property="eventsContainerView" destination="MHw-GV-jCb" id="Ka6-we-cGM"/>
                         <outlet property="fourSquareContainerView" destination="HXx-0f-QLb" id="tOK-DT-5Cr"/>
                         <outlet property="panGuestureRecognizer" destination="qeM-nx-m4r" id="RCP-39-a0l"/>
@@ -308,7 +306,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2198" y="212"/>
+            <point key="canvasLocation" x="2197.5999999999999" y="211.84407796101951"/>
         </scene>
         <!--Event Categories Table View Controller-->
         <scene sceneID="Fg2-DA-jdx">
@@ -403,12 +401,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="jFQ-h2-6qk">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="malte-wingen-381988-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="UsG-eK-Yre" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="128"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="3840"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="15"/>
@@ -428,7 +426,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="128"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="3840"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -437,7 +435,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-VE-fAI">
-                                    <rect key="frame" x="32" y="61" width="83" height="38"/>
+                                    <rect key="frame" x="32" y="1917" width="83" height="38"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -632,7 +630,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kq3-Ty-Zbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="1790"/>
+            <point key="canvasLocation" x="2198" y="1790"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="fJw-hZ-QTC">
@@ -682,12 +680,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Et0-xO-dlT">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterBackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-x9-0iU" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="118"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="418"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="20"/>
@@ -707,7 +705,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view clipsSubviews="YES" alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-Kc-Cj4" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="118"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="418"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -722,7 +720,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets For Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-A5-8u8">
-                                    <rect key="frame" x="32" y="56.5" width="319" height="37"/>
+                                    <rect key="frame" x="32" y="206.5" width="319" height="37"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -791,7 +789,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jY-8F-Ycb">
-                                                    <rect key="frame" x="0.0" y="60" width="60" height="21"/>
+                                                    <rect key="frame" x="0.0" y="60" width="58" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1014,7 +1012,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doW-ZJ-eL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3145" y="1345"/>
+            <point key="canvasLocation" x="3098" y="1364"/>
         </scene>
         <!--Four Square Table View Controller-->
         <scene sceneID="57S-UH-GDJ">
@@ -1036,7 +1034,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="7.5" width="341" height="109"/>
+                                                    <rect key="frame" x="17" y="6.5" width="341" height="109"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
                                                             <rect key="frame" x="77.5" y="7" width="245.5" height="95"/>
@@ -1153,7 +1151,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="3145" y="1790"/>
+            <point key="canvasLocation" x="3098" y="1809"/>
         </scene>
         <!--Venue Detail View Controller-->
         <scene sceneID="6Sc-Xx-EHs">
@@ -1182,7 +1180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(hours)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kan-KT-u6O" userLabel="Hours Label">
-                                <rect key="frame" x="16" y="208" width="264" height="24"/>
+                                <rect key="frame" x="16" y="207.5" width="264" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1322,7 +1320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TuZ-Uo-HQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144.8000000000002" y="2291.6041979010497"/>
+            <point key="canvasLocation" x="3098" y="2311"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eT0-Kz-mVt">
@@ -1340,7 +1338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9T-pi-W6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3306" y="850"/>
+            <point key="canvasLocation" x="3098" y="869"/>
         </scene>
     </scenes>
     <resources>

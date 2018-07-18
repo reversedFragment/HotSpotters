@@ -14,6 +14,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     var collegeMap: MGLMapView!
     var collegeBoundry: MGLOverlay?
     var venueAnnotations: [CustomVenueAnnotation] = []
+    var eventAnnotations: [MGLPointAnnotation] = []
     
     @IBOutlet weak var dropDownContainerView: UIView!
     @IBOutlet weak var drawerContainerView: UIView!
@@ -43,15 +44,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        togglerViewController = self.childViewControllers[1] as! TogglerViewController
-        setUpMap()
-        setUpSearchBar()
-        dropDownContainerView.superview?.bringSubview(toFront: dropDownContainerView)
-        drawerContainerView.superview?.bringSubview(toFront: drawerContainerView)
-        dropDownContainerView.isHidden = true
-        drawerContainerView.isHidden = true
-        NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueSectionSelectedNotification, object: nil)
+        setUpView()
+        addEventListeners()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,13 +91,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         
         collegeBoundry = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
         collegeMap.add(collegeBoundry!)
-    }
-    
-    func addAnnotation(college: College){
-        DispatchQueue.main.async {
-            let collegeAnnotation = CollegeAnnotation(college: college)
-            self.collegeMap.addAnnotation(collegeAnnotation)
-        }
     }
     
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
@@ -159,7 +146,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
-        if let collegeAnnotation = annotation as? CollegeAnnotation {
+        if annotation is CollegeAnnotation {
             searchBar.isHidden = false
             collegeMap.remove(collegeBoundry!)
             collegeBoundry = nil
@@ -186,7 +173,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                             CollegeController.shared.visibleColleges.append(college)
                             for college in colleges {
                                 CollegeController.shared.fetchImageFor(college: college, completion: { (success) in
-                                    self.addAnnotation(college: college)
+                                    self.addAnnotationFor(college: college)
                                 })
                             }
                         }
@@ -256,8 +243,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     @objc func dropVenueAnnotaions(){
-        collegeMap.removeAnnotations(venueAnnotations)
-        venueAnnotations = []
+        removeVenueAnnotations()
         guard let selectedVenues = VenueController.shared.selectedVenues else {return}
         for venue in selectedVenues {
             let subtitleArray = venue.fetchedRecommendedVenue?.categories?.compactMap({$0.name})
@@ -266,6 +252,40 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             venueAnnotations.append(annotation)
             collegeMap.addAnnotations(venueAnnotations)
         }
+    }
+    
+    @objc func dropEventAnnotations(){
+        guard let events = EventBriteController.shared.myEvents else {return}
+        for event in events {
+
+        }
+    }
+    
+    func addAnnotationFor(college: College){
+            let collegeAnnotation = CollegeAnnotation(college: college)
+            self.collegeMap.addAnnotation(collegeAnnotation)
+    }
+    
+    @objc func removeVenueAnnotations(){
+        collegeMap.removeAnnotations(venueAnnotations)
+        venueAnnotations = []
+    }
+    
+    func addEventListeners(){
+        NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueSectionSelectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeVenueAnnotations), name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dropEventAnnotations), name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
+    }
+    
+    func setUpView(){
+        togglerViewController = self.childViewControllers[1] as! TogglerViewController
+        setUpMap()
+        setUpSearchBar()
+        dropDownContainerView.superview?.bringSubview(toFront: dropDownContainerView)
+        drawerContainerView.superview?.bringSubview(toFront: drawerContainerView)
+        dropDownContainerView.isHidden = true
+        drawerContainerView.isHidden = true
     }
     
 }
