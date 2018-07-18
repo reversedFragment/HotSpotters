@@ -17,6 +17,11 @@ struct Events {
     let location: CLLocationCoordinate2D
     let posts: [Post]
     let category: CategoryType
+    let venue: EBVenue?
+    
+}
+
+struct EBVenue {
     
 }
 

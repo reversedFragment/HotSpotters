@@ -518,7 +518,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="SpP-d8-B4R">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-2s-5lz">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-2s-5lz">
                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="26c-HM-pFp"/>
@@ -547,7 +547,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-U5-xQ9">
                                                     <rect key="frame" x="0.0" y="42" width="320" height="18"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qX7-M7-EX0">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin Icon" translatesAutoresizingMaskIntoConstraints="NO" id="qX7-M7-EX0">
                                                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="qX7-M7-EX0" secondAttribute="height" multiplier="1:1" id="6co-3h-cFA"/>
@@ -565,7 +565,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Ym-B0-pQz">
                                                     <rect key="frame" x="0.0" y="62" width="320" height="19"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-Gl-d0s">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paid_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-Gl-d0s">
                                                             <rect key="frame" x="0.0" y="0.0" width="19" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="eSe-Gl-d0s" secondAttribute="height" multiplier="1:1" id="FuG-cN-8Em"/>
@@ -583,7 +583,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="XMH-Oi-igd"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button">
+                                                            <state key="normal" title="Register">
                                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
@@ -613,6 +613,7 @@
                                     <outlet property="eventButton" destination="VuO-Cn-kia" id="da1-tz-lVY"/>
                                     <outlet property="eventImageView" destination="J86-aW-GkO" id="Qan-dj-2GG"/>
                                     <outlet property="eventTitleLabel" destination="VYK-Rb-B9C" id="BY7-Z8-XRz"/>
+                                    <outlet property="placeLabel" destination="PIy-O2-Z3a" id="Shu-Ur-jwp"/>
                                     <outlet property="ticketPriceLabel" destination="8DL-LK-1Vo" id="RFs-qX-edu"/>
                                     <outlet property="timeLabel" destination="sch-Xp-7x1" id="tvO-Sh-RI7"/>
                                 </connections>
@@ -1342,7 +1343,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DevMountainSimpleSwift" width="325" height="325"/>
+        <image name="Calendar_Icon" width="14" height="15"/>
+        <image name="DevMountainSimpleSwift" width="156" height="156"/>
+        <image name="Paid_Icon" width="11" height="15"/>
+        <image name="Pin Icon" width="12" height="15"/>
         <image name="lebron" width="1890" height="1063"/>
         <image name="locationIcon" width="47" height="61"/>
         <image name="malte-wingen-381988-unsplash" width="5760" height="3840"/>

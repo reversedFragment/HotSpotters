@@ -18,6 +18,8 @@ class EventsTableViewController: UITableViewController {
     
     var nearbyEvents: [EventElement] = []
     
+    var venueDetails: [EBVenue] = []
+    
     static let dropEventAnnotationsNotification = Notification.Name(rawValue: "Please Drop the Proper Event Annotations")
     
     override func viewDidLoad() {
@@ -54,6 +56,15 @@ class EventsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
         let event = nearbyEvents[indexPath.row]
         
+        if event.venueID != nil {
+            guard let venue = event.venueID else { return UITableViewCell() }
+            EventBriteController.getVenue(from: venue) { (venueDetails) in
+                DispatchQueue.main.async {
+                    cell.placeLabel.text = venueDetails?.name
+                }
+            }
+        }
+        
         if event.logo?.url == nil {
             let nilLogo = event.logo?.url
             let logoURL = nullToNil(value: nilLogo)
@@ -85,7 +96,7 @@ class EventsTableViewController: UITableViewController {
         guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
         getAddressForCollege(selectedCollege) { (address) in
             guard let address = address else {return}
-            EventBriteController.search(term: nil, sortDescriptor: .best, radius: 10, location: address, categories: self.category!, completion: { (events) in
+            EventBriteController.search(term: nil, sortDescriptor: .date, radius: 10, location: address, categories: self.category!, completion: { (events) in
                 guard let events = events else {return}
                 self.nearbyEvents = events
                 EventBriteController.shared.myEvents = events

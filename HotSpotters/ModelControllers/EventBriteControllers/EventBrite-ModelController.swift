@@ -99,12 +99,12 @@ class EventBriteController {
     static func fetchImage(withUrlString: String, completion: @escaping((UIImage?) -> Void)) {
         guard let url = URL(string: withUrlString) else { completion(nil); return }
         print("\(url.absoluteString)")
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.httpBody = nil
-        
-        
+
+
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print("There was an error fetching Image: \(#function) \(error) \(error.localizedDescription)")
@@ -115,8 +115,46 @@ class EventBriteController {
                 let image = UIImage(data: data) else  { completion(nil) ; return }
             completion(image)
         }.resume()
-        
+
     }
+    
+    static func getVenue(from id: String, completion: @escaping((EventBriteVenue?) -> Void)) {
+        guard var url = baseURL else { return }
+        url.appendPathComponent("venues")
+        url.appendPathComponent("\(id)")
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let query = URLQueryItem(name: "token", value: apiToken)
+        components?.queryItems = [query]
+        
+        guard let request = components?.url else { completion(nil) ; return }
+
+        print("\(url.absoluteString)")
+        
+        var requestID = URLRequest(url: url)
+        requestID.httpMethod = "GET"
+        requestID.httpBody = nil
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("There was an error fetching Image: \(#function) \(error) \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else { completion(nil) ; return }
+            
+            let jsonDecoder = JSONDecoder()
+            do {
+                let venue = try jsonDecoder.decode(EventBriteVenue.self, from: data)
+                completion(venue)
+            } catch let error {
+                print("There was an error decoding Events: \(#function) \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            }.resume()
+    }
+    
     
     enum SortDescriptors: String {
         case date
