@@ -64,7 +64,6 @@
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
 		6D381C0520E426DE0075D7F9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0320E426DE0075D7F9 /* Event.swift */; };
 		6D541C5420F8FE1A00D404FD /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D541C5320F8FE1A00D404FD /* StyleKit.swift */; };
-		6D97C74A20EEB66200F72972 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97C74920EEB66200F72972 /* ContentViewController.swift */; };
 		6DC92FDF20F7D47300EB0975 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC92FDE20F7D47300EB0975 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +127,6 @@
 		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6D381C0320E426DE0075D7F9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6D541C5320F8FE1A00D404FD /* StyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
-		6D97C74920EEB66200F72972 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		6DC92FDE20F7D47300EB0975 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
