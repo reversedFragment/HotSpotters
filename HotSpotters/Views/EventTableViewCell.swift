@@ -17,6 +17,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var ticketPriceLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
     
     var websiteURL: String = ""
     
@@ -73,10 +74,12 @@ class EventTableViewCell: UITableViewCell {
             eventImageView.image = image
         }
         
+        
         if let website = event.vanityURL{
             eventButton.backgroundColor = buyButtonColor
             eventButton.titleLabel?.text = "Register"
             websiteURL = website
+
             
         } else {
             eventButton.backgroundColor = buyButtonColor
