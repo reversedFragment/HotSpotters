@@ -128,13 +128,13 @@ class EventBriteController {
         
         guard let request = components?.url else { completion(nil) ; return }
 
-        print("\(url.absoluteString)")
+        print("\(request.absoluteString)")
         
-        var requestID = URLRequest(url: url)
+        var requestID = URLRequest(url: request)
         requestID.httpMethod = "GET"
         requestID.httpBody = nil
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: requestID) { (data, _, error) in
             if let error = error {
                 print("There was an error fetching Image: \(#function) \(error) \(error.localizedDescription)")
                 completion(nil)
@@ -148,7 +148,7 @@ class EventBriteController {
                 let venue = try jsonDecoder.decode(EventBriteVenue.self, from: data)
                 completion(venue)
             } catch let error {
-                print("There was an error decoding Events: \(#function) \(error.localizedDescription)")
+                print("There was an error decoding Events: \(#function) \(error) \(error.localizedDescription)")
                 completion(nil)
                 return
             }

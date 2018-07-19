@@ -6,7 +6,7 @@ import UIKit
         let events: [EventElement]
     }
     
-    struct EventElement: Codable {
+    class EventElement: Codable {
         let name, description: Description
         let id, url: String?
         let vanityURL: String?
@@ -17,6 +17,7 @@ import UIKit
         let resourceURI: String?
         let categoryID, subcategoryID: String?
         var image: UIImage? = UIImage()
+        var venue: EventBriteVenue? = nil
         
         enum CodingKeys: String, CodingKey {
             case name, description, id, url
@@ -30,10 +31,6 @@ import UIKit
             case resourceURI = "resource_uri"
             case categoryID = "category_id"
             case subcategoryID = "subcategory_id"
-        }
-        
-        mutating func setImage(_ image: UIImage){
-            self.image = image
         }
     }
 

@@ -14,7 +14,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     var collegeMap: MGLMapView!
     var collegeBoundry: MGLOverlay?
     var venueAnnotations: [CustomVenueAnnotation] = []
-    var eventAnnotations: [MGLPointAnnotation] = []
+    var eventAnnotations: [EventAnnotation] = []
     
     @IBOutlet weak var dropDownContainerView: UIView!
     @IBOutlet weak var drawerContainerView: UIView!
@@ -25,6 +25,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     static let searchBarUpdated = Notification.Name(rawValue: "Search Bar Updated")
     static let collegeAnnotationSelected = Notification.Name(rawValue: "College Sected")
     static let venueAnnotationSelected = Notification.Name(rawValue: "Venue Selected")
+    static let removeEventAnnotations = Notification.Name(rawValue: "Remove Venue Annotations Please")
     
     var togglerViewController: TogglerViewController!
     
@@ -140,11 +141,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                 self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
             }
         }
-        
-        //        // Pop-up the callout view.
-        //        collegeMap.selectAnnotation(annotation, animated: true)
-        //        // Center the map on the annotation.
-        //        collegeMap.setCenter(annotation.coordinate, zoomLevel: 12.5, animated: true)
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
@@ -214,24 +210,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         
         return nil
     }
-    
-    //     This delegate method is where you tell the map to load a view for a specific annotation. To load a static MGLAnnotationImage, you would use `-mapView:imageForAnnotation:`.
-    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        
-        guard let annotation = annotation as? SelectedCollegeAnnotation,
-            let college = annotation.college else { return nil }
-        
-        // For better performance, always try to reuse existing annotations. To use multiple different annotation views, change the reuse identifier for each.
-        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "\(college.id)RadiusView" ) {
-            return annotationView
-        } else {
-            let size = mapView.zoomLevel/10
-            print("🧐")
-            print(mapView.zoomLevel)
-            return CollegeRadiusAnnotationView(reuseIdentifier: "\(college.id)RadiusView", size: CGFloat(size))
-            
-        }
-    }
+
     
     @objc func flyToSelectedCollege(){
         guard let college = CollegeController.shared.selectedCollege else {return}
@@ -257,9 +236,16 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     @objc func dropEventAnnotations(){
+        removeEventAnnotations()
         guard let events = EventBriteController.shared.myEvents else {return}
         for event in events {
-            
+            guard let venue = event.venue,
+                let latitude = Double(venue.latitude),
+                let longitude = Double(venue.longitude) else {return}
+            let coordiantes = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let eventAnnotation = EventAnnotation(coordinate: coordiantes, title: event.name.text, venueName: venue.name, address: venue.address.address1)
+            eventAnnotations.append(eventAnnotation)
+            collegeMap.addAnnotation(eventAnnotation)
         }
     }
     
@@ -270,7 +256,12 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     @objc func removeVenueAnnotations(){
         collegeMap.removeAnnotations(venueAnnotations)
-        venueAnnotations = []
+        venueAnnotations.removeAll()
+    }
+    
+    @objc func removeEventAnnotations(){
+        collegeMap.removeAnnotations(eventAnnotations)
+        eventAnnotations.removeAll()
     }
     
     func addEventListeners(){
@@ -278,6 +269,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueSectionSelectedNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeVenueAnnotations), name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dropEventAnnotations), name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeEventAnnotations), name: CollegeMapViewController.removeEventAnnotations, object: nil)
     }
     
     func setUpView(){

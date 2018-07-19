@@ -28,10 +28,13 @@ class TogglerViewController: UIViewController {
     @IBOutlet weak var twitterContainerView: UIView!
     @IBOutlet weak var fourSquareContainerView: UIView!
     @IBOutlet var panGuestureRecognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var universityLabel: UILabel!
+    @IBOutlet weak var closeDrawerButton: UIButton!
     
     weak var delegate: TogglerViewControllerDelegate?
     var mapVC: CollegeMapViewController!
     var topContraint: NSLayoutConstraint?
+    var selectedCollege: College?
     
     static let hideTypeTogglerNotification = Notification.Name(rawValue: "Hide the Type Toggler")
     static let showTypeTogglerNotification = Notification.Name(rawValue: "Show the Type Toggler")
@@ -40,9 +43,7 @@ class TogglerViewController: UIViewController {
         super.viewDidLoad()
         
         dataTypeToggled()
-        typeToggle.addTarget(self, action: #selector(dataTypeToggled), for: .valueChanged)
-        NotificationCenter.default.addObserver(self, selector: #selector(hideTypeToggler), name: TogglerViewController.hideTypeTogglerNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showTypeToggler), name: TogglerViewController.showTypeTogglerNotification, object: nil)
+        addEventListeners()
          //Do any additional setup after loading the view.
     }
     
@@ -76,8 +77,8 @@ class TogglerViewController: UIViewController {
     
     func getDrawerFrameWithPosition(_ position: Position) -> CGRect {
         
-        let bottomPosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (24), width: self.view.frame.size.width, height: self.view.frame.size.height)
-        let middlePosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (mapVC.view.frame.size.height / 2), width: self.view.frame.size.width, height: self.view.frame.size.height)
+        let bottomPosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (40), width: self.view.frame.size.width, height: self.view.frame.size.height)
+        let middlePosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (mapVC.view.frame.size.height / 2), width: self.view.frame.size.width, height: mapVC.view.frame.size.height / 2)
         let topPosition = CGRect(x: 0, y: (mapVC.view.bounds.minY + 32), width: self.view.frame.size.width, height: (mapVC.view.frame.size.height - 32))
         
         switch position{
@@ -99,11 +100,6 @@ class TogglerViewController: UIViewController {
         //guard let parentView = parent as? MapViewController else { return }
 
         let touchPoint = panGestureRecognizer.location(in: mapVC.view?.window)
-        
-//        let bottomPosition = CGRect(x: 0, y: super.view.bounds.maxY - (super.view.frame.size.height / 8), width: self.view.frame.size.width, height: self.view.frame.size.height)
-//        let middlePosition = CGRect(x: 0, y: super.view.bounds.maxY - (super.view.frame.size.height / 2), width: self.view.frame.size.width, height: self.view.frame.size.height)
-//        let topPosition = CGRect(x: 0, y: super.view.bounds.minY + (80), width: self.view.frame.size.width, height: self.view.frame.size.height)
-//        let touchPoint = sender.location(in: super.view?.window)
         
         let touchDistance = touchPoint.y - initialTouchPoint.y
         panGuestureRecognizer.minimumNumberOfTouches = 1
@@ -204,5 +200,33 @@ class TogglerViewController: UIViewController {
             self.topContraint?.isActive = true
             self.eventsContainerView.updateConstraints()
         }
+    }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        CollegeController.shared.selectedCollege = nil
+        universityLabel.text = ""
+        let bottomFrame = getDrawerFrameWithPosition(.bottom)
+        delegate?.moveDrawer(to: bottomFrame, completion: nil)
+        closeDrawerButton.isHidden = true
+        removeEventAndVenueAnnotations()
+    }
+    
+    @objc func updateCollege(){
+        selectedCollege = CollegeController.shared.selectedCollege
+        universityLabel.text = selectedCollege?.schoolName
+        closeDrawerButton.isHidden = false
+        removeEventAndVenueAnnotations()
+    }
+    
+    func addEventListeners(){
+        typeToggle.addTarget(self, action: #selector(dataTypeToggled), for: .valueChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideTypeToggler), name: TogglerViewController.hideTypeTogglerNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showTypeToggler), name: TogglerViewController.showTypeTogglerNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCollege), name: CollegeMapViewController.collegeAnnotationSelected, object: nil)
+    }
+    
+    func removeEventAndVenueAnnotations(){
+        NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+        NotificationCenter.default.post(name: CollegeMapViewController.removeEventAnnotations, object: nil)
     }
 }

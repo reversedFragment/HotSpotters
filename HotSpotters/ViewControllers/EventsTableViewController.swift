@@ -11,28 +11,25 @@ import Mapbox
 
 class EventsTableViewController: UITableViewController {
     
-    @IBOutlet weak var categoryImageView: CustomCellImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
     var category: Category?
-    
-    var nearbyEvents: [EventElement] = []
-    
-    var venueDetails: [EBVenue] = []
+
+    let dispatchGroup = DispatchGroup()
     
     static let dropEventAnnotationsNotification = Notification.Name(rawValue: "Please Drop the Proper Event Annotations")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNearbyEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
-        updateView()
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
         NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+        setNearbyEvents()
+        updateView()
     }
     
     // MARK: - Table view data source
@@ -40,7 +37,8 @@ class EventsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return nearbyEvents.count
+        guard let events = EventBriteController.shared.myEvents else {return 0}
+        return events.count
     }
     
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,17 +51,9 @@ class EventsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
-        let event = nearbyEvents[indexPath.row]
-        
-        if event.venueID != nil {
-            guard let venue = event.venueID else { return UITableViewCell() }
-            EventBriteController.getVenue(from: venue) { (venueDetails) in
-                DispatchQueue.main.async {
-                    cell.placeLabel.text = venueDetails?.name
-                }
-            }
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell,
+        let events = EventBriteController.shared.myEvents else { return UITableViewCell() }
+        let event = events[indexPath.row]
         
         if event.logo?.url == nil {
             let nilLogo = event.logo?.url
@@ -93,17 +83,24 @@ class EventsTableViewController: UITableViewController {
     }
     
     func setNearbyEvents(){
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
         getAddressForCollege(selectedCollege) { (address) in
             guard let address = address else {return}
+            
+            //Fetch all Nearby events for a given category
             EventBriteController.search(term: nil, sortDescriptor: .date, radius: 10, location: address, categories: self.category!, completion: { (events) in
                 guard let events = events else {return}
-                self.nearbyEvents = events
-                EventBriteController.shared.myEvents = events
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    NotificationCenter.default.post(name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
-                }
+                self.fetchVenueDetails(for: events)
+                
+                self.dispatchGroup.notify(queue: .main, execute: {
+                    EventBriteController.shared.myEvents = events
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        NotificationCenter.default.post(name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    }
+                })
             })
         }
     }
@@ -111,25 +108,20 @@ class EventsTableViewController: UITableViewController {
     func updateView(){
         guard let category = category else {return}
         categoryLabel.text = category.name
-        categoryImageView.image = category.image
     }
     
-//    func fetchImagesForEvents(_ events: [EventElement], completion: @escaping () -> Void){
-//        for event in events{
-//            var event = event
-//            if event.logo?.url == nil {
-////                let nilLogo = event.logo?.url
-////                let logoURL = EventBriteController.nullToNil(value: nilLogo)
-//            } else {
-//                let nilLogo = event.logo?.url
-//                let logoURL = EventBriteController.nullToNil(value: nilLogo) as! String
-//                EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
-//                    guard let image = image else {return}
-//                    event.setImage(image)
-//                }
-//            }
-//        }
-//    }
+    func fetchVenueDetails(for events: [EventElement]){
+        for event in events {
+            dispatchGroup.enter()
+            if let venueID = event.venueID{
+                EventBriteController.getVenue(from: venueID) { (venueDetails) in
+                    guard let venue = venueDetails else {return}
+                    event.venue = venue
+                    self.dispatchGroup.leave()
+                }
+            }
+        }
+    }
     
     func nullToNil(value: String?) -> String? {
         if value is NSNull {

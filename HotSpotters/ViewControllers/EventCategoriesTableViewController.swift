@@ -20,6 +20,7 @@ class EventCategoriesTableViewController: UITableViewController {
         navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.post(name: TogglerViewController.showTypeTogglerNotification, object: nil)
         NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+        NotificationCenter.default.post(name: CollegeMapViewController.removeEventAnnotations, object: nil)
     }
     
     // MARK: - Table view data source
@@ -35,7 +36,7 @@ class EventCategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 112
     }
 
     // MARK: - Navigation

@@ -119,22 +119,19 @@
             <objects>
                 <tableViewController id="LxR-oq-erC" customClass="TrendingTopicsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FBu-Mx-DOV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trendCell" rowHeight="147" id="eYa-dr-Bgk" customClass="TrendTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="147"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trendCell" rowHeight="112" id="eYa-dr-Bgk" customClass="TrendTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eYa-dr-Bgk" id="uK0-T2-fQ2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="146.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterBackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="JYH-kR-58k" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="16" width="343" height="112"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="112" id="bv3-og-jCM"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eaters-collective-132772-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="JYH-kR-58k" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="16" width="343" height="79.5"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="20"/>
@@ -153,8 +150,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-21-STj" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="16" width="343" height="112"/>
+                                        <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-21-STj" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="16" width="343" height="79.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -169,8 +166,8 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-aI-6dg">
-                                            <rect key="frame" x="32" y="53.5" width="319" height="37"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                            <rect key="frame" x="32" y="39" width="319" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,10 +184,8 @@
                                         <constraint firstItem="fjb-21-STj" firstAttribute="width" secondItem="JYH-kR-58k" secondAttribute="width" id="PK8-Rd-FpX"/>
                                         <constraint firstItem="eWP-aI-6dg" firstAttribute="centerY" secondItem="uK0-T2-fQ2" secondAttribute="centerY" id="Rd8-AC-7I7"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="eWP-aI-6dg" secondAttribute="trailing" constant="8" id="Sge-Zi-WOw"/>
-                                        <constraint firstItem="JYH-kR-58k" firstAttribute="centerY" secondItem="uK0-T2-fQ2" secondAttribute="centerY" id="WXA-OK-FSM"/>
                                         <constraint firstItem="JYH-kR-58k" firstAttribute="leading" secondItem="uK0-T2-fQ2" secondAttribute="leading" constant="16" id="YMD-kO-d3A"/>
                                         <constraint firstItem="JYH-kR-58k" firstAttribute="top" secondItem="uK0-T2-fQ2" secondAttribute="top" constant="16" id="vjL-5K-AIW"/>
-                                        <constraint firstItem="JYH-kR-58k" firstAttribute="centerX" secondItem="uK0-T2-fQ2" secondAttribute="centerX" id="xpA-uJ-l68"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -220,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-xS-jm8">
-                                <rect key="frame" x="0.0" y="24" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="30"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vul-YT-Cia">
                                         <rect key="frame" x="8" y="1" width="359" height="29"/>
@@ -229,7 +224,7 @@
                                             <segment title="Events"/>
                                             <segment title="Places"/>
                                         </segments>
-                                        <color key="tintColor" red="0.48627450979999998" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.94117647059999998" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -243,13 +238,13 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-GV-jCb" userLabel="Events Container View">
-                                <rect key="frame" x="0.0" y="62" width="375" height="327"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="303"/>
                                 <connections>
                                     <segue destination="is1-FJ-iH3" kind="embed" id="Fsp-y9-GHt"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3N-vO-lay">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-hN-4md" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
                                         <rect key="frame" x="140.5" y="8" width="94" height="8"/>
@@ -272,14 +267,37 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University of Utah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udJ-xw-HIP">
+                                        <rect key="frame" x="50" y="20" width="269" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.94117647059999998" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="1" height="-1"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u3-al-03Y">
+                                        <rect key="frame" x="14" y="14" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4u3-al-03Y" secondAttribute="height" multiplier="1:1" id="QsG-2C-sn5"/>
+                                        </constraints>
+                                        <state key="normal" image="Close Icon"/>
+                                        <connections>
+                                            <action selector="closeButtonTapped:" destination="5lO-tk-fcf" eventType="touchUpInside" id="fgW-v2-1fv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="y8c-hN-4md" firstAttribute="centerY" secondItem="E3N-vO-lay" secondAttribute="centerY" id="AHz-vH-Oku"/>
-                                    <constraint firstAttribute="height" constant="24" id="MqO-l0-PTe"/>
+                                    <constraint firstItem="4u3-al-03Y" firstAttribute="leading" secondItem="E3N-vO-lay" secondAttribute="leading" constant="14" id="117-5x-0GB"/>
+                                    <constraint firstItem="udJ-xw-HIP" firstAttribute="leading" secondItem="4u3-al-03Y" secondAttribute="trailing" constant="16" id="Cbb-cI-WMk"/>
+                                    <constraint firstAttribute="height" constant="48" id="MqO-l0-PTe"/>
+                                    <constraint firstItem="udJ-xw-HIP" firstAttribute="top" secondItem="y8c-hN-4md" secondAttribute="bottom" constant="4" id="TDV-hC-iew"/>
                                     <constraint firstItem="y8c-hN-4md" firstAttribute="centerX" secondItem="E3N-vO-lay" secondAttribute="centerX" id="YYx-oL-51R"/>
+                                    <constraint firstAttribute="bottom" secondItem="udJ-xw-HIP" secondAttribute="bottom" constant="4" id="aTL-XL-3mi"/>
+                                    <constraint firstAttribute="trailing" secondItem="udJ-xw-HIP" secondAttribute="trailing" constant="56" id="iWa-dY-S6R"/>
                                     <constraint firstItem="y8c-hN-4md" firstAttribute="width" secondItem="E3N-vO-lay" secondAttribute="width" multiplier="0.25" id="lSu-5m-cEd"/>
+                                    <constraint firstItem="4u3-al-03Y" firstAttribute="top" secondItem="E3N-vO-lay" secondAttribute="top" constant="14" id="pGS-GV-sqx"/>
+                                    <constraint firstAttribute="bottom" secondItem="4u3-al-03Y" secondAttribute="bottom" constant="14" id="uLV-sy-VqO"/>
                                     <constraint firstItem="y8c-hN-4md" firstAttribute="top" secondItem="E3N-vO-lay" secondAttribute="topMargin" id="xld-Jw-mw6"/>
                                 </constraints>
                                 <connections>
@@ -287,13 +305,13 @@
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-5H-z7j" userLabel="Twitter Container View">
-                                <rect key="frame" x="0.0" y="62" width="375" height="327"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="303"/>
                                 <connections>
                                     <segue destination="KBK-Nz-O1A" kind="embed" id="vIu-gG-LZh"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXx-0f-QLb" userLabel="fourSquare Container View">
-                                <rect key="frame" x="0.0" y="62" width="375" height="327"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="303"/>
                                 <connections>
                                     <segue destination="kJV-7P-Aac" kind="embed" id="m1t-zJ-IZo"/>
                                 </connections>
@@ -326,6 +344,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cgH-HK-DMj"/>
                     <connections>
+                        <outlet property="closeDrawerButton" destination="4u3-al-03Y" id="R9f-mU-XdB"/>
                         <outlet property="containerViewTopContraint" destination="S8x-En-DcS" id="LmX-lC-Nm0"/>
                         <outlet property="eventsContainerView" destination="MHw-GV-jCb" id="Ka6-we-cGM"/>
                         <outlet property="fourSquareContainerView" destination="HXx-0f-QLb" id="tOK-DT-5Cr"/>
@@ -333,6 +352,7 @@
                         <outlet property="twitterContainerView" destination="9nJ-5H-z7j" id="d1g-CR-qFD"/>
                         <outlet property="typeToggle" destination="Vul-YT-Cia" id="5MY-Zh-egd"/>
                         <outlet property="typeTogglerView" destination="CWO-xS-jm8" id="XFE-2F-y5G"/>
+                        <outlet property="universityLabel" destination="udJ-xw-HIP" id="515-Fd-VeS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFs-UM-HYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,7 +380,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoT-rC-wWo">
                                                 <rect key="frame" x="37.5" y="16" width="300" height="974"/>
-                                                <mutableString key="text">Privacy Notice
+                                                <string key="text">Privacy Notice
 
 This privacy notice discloses the privacy practices for (website address). This privacy notice applies solely to information collected by this website. It will notify you of the following:
 
@@ -389,7 +409,7 @@ We take precautions to protect your information. When you submit sensitive infor
 
 Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a lock icon in the address bar and looking for "https" at the beginning of the address of the Web page.
 
-While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.</mutableString>
+While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -432,19 +452,19 @@ While we use encryption to protect sensitive information transmitted online, we 
             <objects>
                 <tableViewController storyboardIdentifier="categoriesTVC" id="SzC-w2-qwi" customClass="EventCategoriesTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f5m-ne-5KW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="143" id="cyV-JE-Bwj" customClass="CategoryTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="143"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="112" id="cyV-JE-Bwj" customClass="CategoryTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyV-JE-Bwj" id="o54-xq-fMN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lebron" translatesAutoresizingMaskIntoConstraints="NO" id="TNW-7V-Peq" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="16" width="343" height="110.5"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="79.5"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="15"/>
@@ -464,7 +484,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-je-ZaR" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="16" width="343" height="110.5"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="79.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -473,8 +493,8 @@ While we use encryption to protect sensitive information transmitted online, we 
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-09-GLw">
-                                            <rect key="frame" x="32" y="52.5" width="76.5" height="38"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                            <rect key="frame" x="32" y="38.5" width="319" height="34.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -484,6 +504,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                     <constraints>
                                         <constraint firstItem="ttk-je-ZaR" firstAttribute="centerY" secondItem="TNW-7V-Peq" secondAttribute="centerY" id="6DN-XI-MRD"/>
                                         <constraint firstItem="l7T-09-GLw" firstAttribute="leading" secondItem="o54-xq-fMN" secondAttribute="leadingMargin" constant="16" id="IIJ-T7-4cL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="l7T-09-GLw" secondAttribute="trailing" constant="8" id="QFz-DX-6fU"/>
                                         <constraint firstItem="TNW-7V-Peq" firstAttribute="leading" secondItem="o54-xq-fMN" secondAttribute="leading" constant="16" id="SIc-xv-uw5"/>
                                         <constraint firstItem="l7T-09-GLw" firstAttribute="centerY" secondItem="o54-xq-fMN" secondAttribute="centerY" id="Z8y-xF-g1b"/>
                                         <constraint firstAttribute="bottom" secondItem="TNW-7V-Peq" secondAttribute="bottom" constant="16" id="agA-os-Kon"/>
@@ -517,68 +538,64 @@ While we use encryption to protect sensitive information transmitted online, we 
             <objects>
                 <tableViewController id="r47-6Q-y6j" customClass="EventsTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vzE-BP-1v9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="jFQ-h2-6qk">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="malte-wingen-381988-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="UsG-eK-Yre" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="3840"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="15"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                            <real key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                            <real key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                            <size key="value" width="2" height="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </imageView>
-                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="3840"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="15"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-VE-fAI">
-                                    <rect key="frame" x="32" y="1917" width="83" height="38"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <size key="shadowOffset" width="1" height="2"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-97-LKs">
+                                    <rect key="frame" x="16" y="16" width="343" height="64"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-VE-fAI">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="56"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="56" width="343" height="8"/>
+                                            <color key="backgroundColor" red="0.94117647059999998" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="geF-y2-HZO"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="0.0" height="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ph7-VE-fAI" firstAttribute="width" secondItem="PPM-oj-wDW" secondAttribute="width" id="43J-5i-xdk"/>
+                                    </constraints>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="PPM-oj-wDW" firstAttribute="leading" secondItem="UsG-eK-Yre" secondAttribute="leading" id="5oH-MD-iti"/>
-                                <constraint firstAttribute="trailing" secondItem="UsG-eK-Yre" secondAttribute="trailing" constant="16" id="Bkb-bN-Yjt"/>
-                                <constraint firstItem="PPM-oj-wDW" firstAttribute="top" secondItem="UsG-eK-Yre" secondAttribute="top" id="UMq-Px-T76"/>
-                                <constraint firstItem="UsG-eK-Yre" firstAttribute="leading" secondItem="jFQ-h2-6qk" secondAttribute="leading" constant="16" id="caI-qv-6Od"/>
-                                <constraint firstItem="PPM-oj-wDW" firstAttribute="trailing" secondItem="UsG-eK-Yre" secondAttribute="trailing" id="dDL-zC-Pxj"/>
-                                <constraint firstItem="PPM-oj-wDW" firstAttribute="bottom" secondItem="UsG-eK-Yre" secondAttribute="bottom" id="dYE-z7-c77"/>
-                                <constraint firstItem="Ph7-VE-fAI" firstAttribute="leading" secondItem="UsG-eK-Yre" secondAttribute="leading" constant="16" id="f95-ox-0L3"/>
-                                <constraint firstItem="UsG-eK-Yre" firstAttribute="top" secondItem="jFQ-h2-6qk" secondAttribute="top" constant="16" id="gqw-s9-uhm"/>
-                                <constraint firstItem="Ph7-VE-fAI" firstAttribute="centerY" secondItem="UsG-eK-Yre" secondAttribute="centerY" id="kW3-Q6-Q4P"/>
-                                <constraint firstAttribute="bottom" secondItem="UsG-eK-Yre" secondAttribute="bottom" constant="16" id="s1g-KL-vsh"/>
+                                <constraint firstAttribute="bottom" secondItem="PtO-97-LKs" secondAttribute="bottom" constant="16" id="4dN-a1-2X8"/>
+                                <constraint firstItem="PtO-97-LKs" firstAttribute="top" secondItem="jFQ-h2-6qk" secondAttribute="top" constant="16" id="DRN-qY-RXR"/>
+                                <constraint firstAttribute="trailing" secondItem="PtO-97-LKs" secondAttribute="trailing" constant="16" id="Uj3-Ce-Vci"/>
+                                <constraint firstItem="PtO-97-LKs" firstAttribute="leading" secondItem="jFQ-h2-6qk" secondAttribute="leading" constant="16" id="ZU7-ho-iOU"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="239" id="B92-Qo-1j3" customClass="EventTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="188" width="375" height="239"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="239"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B92-Qo-1j3" id="mca-zZ-Qr5">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="238.5"/>
@@ -619,7 +636,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                             </subviews>
                                         </stackView>
                                         <view alpha="0.29999999999999999" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-IR-W7K" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="27" y="27" width="319" height="69"/>
+                                            <rect key="frame" x="28" y="27" width="319" height="69"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="69" id="axV-DF-s8L"/>
@@ -717,14 +734,13 @@ While we use encryption to protect sensitive information transmitted online, we 
                                     <constraints>
                                         <constraint firstItem="19s-pI-20k" firstAttribute="top" secondItem="mca-zZ-Qr5" secondAttribute="topMargin" constant="16" id="0mo-d0-Ufa"/>
                                         <constraint firstItem="19s-pI-20k" firstAttribute="width" secondItem="mca-zZ-Qr5" secondAttribute="width" multiplier="0.85" id="20u-d7-sGj"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="u7k-IR-W7K" secondAttribute="trailing" constant="13" id="2Wm-w2-bya"/>
                                         <constraint firstItem="1hR-5E-3IZ" firstAttribute="centerX" secondItem="mca-zZ-Qr5" secondAttribute="centerX" id="Jh3-NP-geC"/>
                                         <constraint firstItem="1hR-5E-3IZ" firstAttribute="width" secondItem="mca-zZ-Qr5" secondAttribute="width" multiplier="0.85" constant="1" id="ScN-mv-e8a"/>
                                         <constraint firstItem="1hR-5E-3IZ" firstAttribute="centerX" secondItem="19s-pI-20k" secondAttribute="centerX" id="bEq-tL-Pqp"/>
                                         <constraint firstItem="u7k-IR-W7K" firstAttribute="top" secondItem="19s-pI-20k" secondAttribute="top" id="brk-WE-HBO"/>
-                                        <constraint firstItem="u7k-IR-W7K" firstAttribute="leading" secondItem="mca-zZ-Qr5" secondAttribute="leadingMargin" constant="11" id="fsh-eW-CHS"/>
                                         <constraint firstItem="1hR-5E-3IZ" firstAttribute="top" secondItem="u7k-IR-W7K" secondAttribute="bottom" constant="35" id="geK-tf-n1M"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="1hR-5E-3IZ" secondAttribute="bottom" constant="16" id="pT2-x8-ynw"/>
+                                        <constraint firstItem="u7k-IR-W7K" firstAttribute="centerX" secondItem="mca-zZ-Qr5" secondAttribute="centerX" id="ua4-Xh-zCc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -744,13 +760,12 @@ While we use encryption to protect sensitive information transmitted online, we 
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="categoryImageView" destination="UsG-eK-Yre" id="xi5-Aj-EZZ"/>
                         <outlet property="categoryLabel" destination="Ph7-VE-fAI" id="b15-5w-hdI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kq3-Ty-Zbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2198" y="1790"/>
+            <point key="canvasLocation" x="2198" y="1809"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="fJw-hZ-QTC">
@@ -797,15 +812,15 @@ While we use encryption to protect sensitive information transmitted online, we 
             <objects>
                 <tableViewController id="MYF-S8-TiX" customClass="TopicDetailTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AK5-1n-Cc3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Et0-xO-dlT">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterBackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-x9-0iU" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="418"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topPicks" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-x9-0iU" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="343" height="80"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="20"/>
@@ -824,8 +839,8 @@ While we use encryption to protect sensitive information transmitted online, we 
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <view clipsSubviews="YES" alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-Kc-Cj4" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="418"/>
+                                <view clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-Kc-Cj4" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="343" height="80"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -840,7 +855,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets For Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-A5-8u8">
-                                    <rect key="frame" x="32" y="206.5" width="319" height="37"/>
+                                    <rect key="frame" x="32" y="37.5" width="319" height="37"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -865,7 +880,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="135" id="5WF-94-1FH" customClass="TopicDetailTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="178" width="375" height="135"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5WF-94-1FH" id="mRy-ue-I3H">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
@@ -896,7 +911,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ked-jb-RAm">
                                             <rect key="frame" x="32" y="27" width="60" height="81"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="DevMountainSimpleSwift" translatesAutoresizingMaskIntoConstraints="NO" id="nWQ-EX-TTl" customClass="ProfileImageView" customModule="HotSpotters" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee" highlightedImage="DevMountainSimpleSwift" translatesAutoresizingMaskIntoConstraints="NO" id="nWQ-EX-TTl" customClass="ProfileImageView" customModule="HotSpotters" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="OyL-RU-KtJ"/>
@@ -908,9 +923,9 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jY-8F-Ycb">
-                                                    <rect key="frame" x="0.0" y="60" width="58" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jY-8F-Ycb">
+                                                    <rect key="frame" x="0.0" y="60" width="35.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -934,7 +949,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="n3K-DP-Wv9">
                                                             <rect key="frame" x="0.0" y="0.0" width="72.5" height="16"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upVoteIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0pL-Zb-Aea">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hearticon" translatesAutoresizingMaskIntoConstraints="NO" id="0pL-Zb-Aea">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="14J-VP-NHV"/>
@@ -952,7 +967,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B1j-bF-9cd">
                                                             <rect key="frame" x="96.5" y="0.0" width="73.5" height="16"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweetIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vYB-sH-SeZ">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweetIcon-1" translatesAutoresizingMaskIntoConstraints="NO" id="vYB-sH-SeZ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="BbH-IN-jXp"/>
@@ -1057,40 +1072,51 @@ While we use encryption to protect sensitive information transmitted online, we 
         <scene sceneID="i4b-a7-HyI">
             <objects>
                 <tableViewController id="j7d-i9-0S2" customClass="FourSquareSectionTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRA-dQ-1P3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="113" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRA-dQ-1P3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="100" indentationWidth="10" reuseIdentifier="sectionCell" rowHeight="160" id="Pdm-NY-kSk" customClass="FourSquareSectionTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="100" indentationWidth="10" reuseIdentifier="sectionCell" rowHeight="112" id="Pdm-NY-kSk" customClass="FourSquareSectionTableViewCell" customModule="HotSpotters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pdm-NY-kSk" id="hQ4-fy-W3L">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-se-VgI" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="19" y="12" width="337.5" height="136"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="80"/>
                                             <subviews>
+                                                <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXI-2H-3de" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(sectionLabel)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWf-jD-fZM">
-                                                    <rect key="frame" x="16" y="53.5" width="71.5" height="29"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.30169092469999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="16" y="24" width="319" height="32.5"/>
                                                     <color key="tintColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="0.8767925942" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="PXI-2H-3de" firstAttribute="centerY" secondItem="6lo-se-VgI" secondAttribute="centerY" id="6nY-K0-fd2"/>
                                                 <constraint firstItem="oWf-jD-fZM" firstAttribute="centerY" secondItem="6lo-se-VgI" secondAttribute="centerY" id="FaG-FK-zJg"/>
-                                                <constraint firstAttribute="trailing" secondItem="oWf-jD-fZM" secondAttribute="trailing" constant="250" id="Uvf-v2-15X"/>
+                                                <constraint firstItem="PXI-2H-3de" firstAttribute="width" secondItem="6lo-se-VgI" secondAttribute="width" id="Sbh-5h-gdA"/>
+                                                <constraint firstItem="PXI-2H-3de" firstAttribute="centerX" secondItem="6lo-se-VgI" secondAttribute="centerX" id="TWk-BO-LDu"/>
+                                                <constraint firstAttribute="trailing" secondItem="oWf-jD-fZM" secondAttribute="trailing" constant="8" id="af5-8G-18B"/>
                                                 <constraint firstItem="oWf-jD-fZM" firstAttribute="leading" secondItem="6lo-se-VgI" secondAttribute="leading" constant="16" id="ePO-uy-u1V"/>
+                                                <constraint firstItem="PXI-2H-3de" firstAttribute="height" secondItem="6lo-se-VgI" secondAttribute="height" id="opO-bB-f2P"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="20"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                     <real key="value" value="0.0"/>
@@ -1108,10 +1134,10 @@ While we use encryption to protect sensitive information transmitted online, we 
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="6lo-se-VgI" firstAttribute="height" secondItem="hQ4-fy-W3L" secondAttribute="height" multiplier="0.85" id="1CX-DV-hJ6"/>
-                                        <constraint firstItem="6lo-se-VgI" firstAttribute="width" secondItem="hQ4-fy-W3L" secondAttribute="width" multiplier="0.9" id="1id-1S-JOY"/>
-                                        <constraint firstItem="6lo-se-VgI" firstAttribute="centerY" secondItem="hQ4-fy-W3L" secondAttribute="centerY" id="Lhb-WP-zev"/>
-                                        <constraint firstItem="6lo-se-VgI" firstAttribute="centerX" secondItem="hQ4-fy-W3L" secondAttribute="centerX" id="Y17-i3-kBv"/>
+                                        <constraint firstAttribute="trailing" secondItem="6lo-se-VgI" secondAttribute="trailing" constant="16" id="3Dv-3o-dnZ"/>
+                                        <constraint firstItem="6lo-se-VgI" firstAttribute="top" secondItem="hQ4-fy-W3L" secondAttribute="top" constant="16" id="5B3-2a-WrY"/>
+                                        <constraint firstItem="6lo-se-VgI" firstAttribute="leading" secondItem="hQ4-fy-W3L" secondAttribute="leading" constant="16" id="WbW-Uw-TRG"/>
+                                        <constraint firstAttribute="bottom" secondItem="6lo-se-VgI" secondAttribute="bottom" constant="16" id="ly7-v5-aXB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1132,41 +1158,80 @@ While we use encryption to protect sensitive information transmitted online, we 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doW-ZJ-eL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3098" y="1364"/>
+            <point key="canvasLocation" x="3096.8000000000002" y="1363.2683658170915"/>
         </scene>
         <!--Four Square Table View Controller-->
         <scene sceneID="57S-UH-GDJ">
             <objects>
                 <viewController id="YQN-FY-M5m" customClass="FourSquareTableViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dam-YH-Tug">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-yL-qf9">
-                                <rect key="frame" x="0.0" y="44" width="375" height="283"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-yL-qf9">
+                                <rect key="frame" x="0.0" y="44" width="375" height="259"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="9sa-03-V0d">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="7zC-ao-KfT">
+                                            <rect key="frame" x="16" y="16" width="343" height="64"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE5-tH-zn4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="56"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoX-iK-O75" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="56" width="333" height="8"/>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="8" id="oOI-0A-P8u"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xE5-tH-zn4" firstAttribute="width" secondItem="WoX-iK-O75" secondAttribute="width" id="izP-iB-r7b"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="7zC-ao-KfT" secondAttribute="bottom" constant="16" id="YfH-xS-gRP"/>
+                                        <constraint firstAttribute="trailing" secondItem="7zC-ao-KfT" secondAttribute="trailing" constant="16" id="uwU-NR-OYN"/>
+                                        <constraint firstItem="7zC-ao-KfT" firstAttribute="leading" secondItem="9sa-03-V0d" secondAttribute="leading" constant="16" id="xc5-3q-V8R"/>
+                                        <constraint firstItem="7zC-ao-KfT" firstAttribute="top" secondItem="9sa-03-V0d" secondAttribute="top" constant="16" id="y1Y-GH-OZe"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="venueCellID" rowHeight="125" id="dmc-tD-OfT" customClass="FourSquareTableViewCell" customModule="HotSpotters" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="125"/>
+                                        <rect key="frame" x="0.0" y="124" width="375" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dmc-tD-OfT" id="JjM-u0-61v">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="6.5" width="341" height="109"/>
+                                                    <rect key="frame" x="17" y="6.5" width="341" height="109.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
-                                                            <rect key="frame" x="77.5" y="7" width="245.5" height="95"/>
+                                                            <rect key="frame" x="77.5" y="7" width="245.5" height="95.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-AC-9LJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="245.5" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="245.5" height="29.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-aC-UiY">
-                                                                    <rect key="frame" x="0.0" y="31" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="31.5" width="245.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="mgR-WL-Xfu"/>
                                                                     </constraints>
@@ -1175,7 +1240,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-FU-Vya">
-                                                                    <rect key="frame" x="0.0" y="53" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="53.5" width="245.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="eOh-P8-uWg"/>
                                                                     </constraints>
@@ -1184,7 +1249,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(distance)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loa-xL-aEc">
-                                                                    <rect key="frame" x="0.0" y="75" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="75.5" width="245.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="HLw-zm-o5n"/>
                                                                     </constraints>
@@ -1194,26 +1259,27 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cWF-FY-k17">
-                                                            <rect key="frame" x="19" y="24" width="48" height="61"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationLogoHollow" translatesAutoresizingMaskIntoConstraints="NO" id="cWF-FY-k17">
+                                                            <rect key="frame" x="8" y="24" width="48.5" height="61.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="cWF-FY-k17" secondAttribute="height" multiplier="48:61" id="66b-m5-4cs"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="width" secondItem="2ea-Pk-xPt" secondAttribute="height" multiplier="47:107" id="2Q1-id-JY0"/>
                                                         <constraint firstItem="XQi-nE-9vV" firstAttribute="top" secondItem="2ea-Pk-xPt" secondAttribute="top" constant="7" id="4TB-hJ-jok"/>
                                                         <constraint firstItem="cWF-FY-k17" firstAttribute="top" secondItem="2ea-Pk-xPt" secondAttribute="top" constant="24" id="4WV-1y-XnN"/>
                                                         <constraint firstAttribute="bottom" secondItem="XQi-nE-9vV" secondAttribute="bottom" constant="7" id="KSM-LX-YOU"/>
-                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="leading" secondItem="2ea-Pk-xPt" secondAttribute="leading" constant="19" id="P6m-99-Vnu"/>
+                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="leading" secondItem="2ea-Pk-xPt" secondAttribute="leading" constant="8" id="P6m-99-Vnu"/>
                                                         <constraint firstAttribute="trailing" secondItem="XQi-nE-9vV" secondAttribute="trailing" constant="18" id="XIU-5M-NET"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cWF-FY-k17" secondAttribute="trailing" constant="274" id="kJw-y6-zcp"/>
                                                         <constraint firstItem="XQi-nE-9vV" firstAttribute="width" secondItem="2ea-Pk-xPt" secondAttribute="width" multiplier="0.72" constant="-0.01999999999998181" id="vzh-vj-MYu"/>
                                                         <constraint firstItem="cWF-FY-k17" firstAttribute="centerY" secondItem="2ea-Pk-xPt" secondAttribute="centerY" id="wL0-FS-G4f"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="10"/>
+                                                            <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                             <real key="value" value="3"/>
@@ -1222,10 +1288,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                             <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                            <size key="value" width="0.0" height="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="value" width="1" height="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -1259,6 +1322,8 @@ While we use encryption to protect sensitive information transmitted online, we 
                     </view>
                     <connections>
                         <outlet property="FourSquareTableView" destination="2Ua-yL-qf9" id="h2j-jy-6Wg"/>
+                        <outlet property="categoryLabel" destination="xE5-tH-zn4" id="zk7-sG-q7c"/>
+                        <outlet property="fourSquareTableView" destination="2Ua-yL-qf9" id="98U-hr-fG5"/>
                         <segue destination="iNb-0o-nOt" kind="show" identifier="mapSegue" id="qlZ-Al-CJH"/>
                     </connections>
                 </viewController>
@@ -1271,14 +1336,14 @@ While we use encryption to protect sensitive information transmitted online, we 
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="3098" y="1809"/>
+            <point key="canvasLocation" x="3096.8000000000002" y="1808.5457271364319"/>
         </scene>
         <!--Venue Detail View Controller-->
         <scene sceneID="6Sc-Xx-EHs">
             <objects>
                 <viewController id="iNb-0o-nOt" customClass="VenueDetailViewController" customModule="HotSpotters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAQ-su-yKA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkW-ka-VgL">
@@ -1710,20 +1775,22 @@ Crash reports are automatically reported back to us. Bug or feature requests sho
     </scenes>
     <resources>
         <image name="Calendar_Icon" width="14" height="15"/>
+        <image name="Close Icon" width="26" height="26"/>
         <image name="DevMountainSimpleSwift" width="325" height="325"/>
         <image name="Location Icon" width="20" height="19"/>
         <image name="Paid_Icon" width="11" height="15"/>
         <image name="Pin Icon" width="12" height="15"/>
+        <image name="coffee" width="4928" height="3264"/>
+        <image name="eaters-collective-132772-unsplash" width="3980" height="2909"/>
+        <image name="hearticon" width="33" height="33"/>
         <image name="lebron" width="1890" height="1063"/>
-        <image name="locationIcon" width="47" height="61"/>
-        <image name="malte-wingen-381988-unsplash" width="5760" height="3840"/>
+        <image name="locationLogoHollow" width="156" height="192"/>
         <image name="peter-lewicki-411606-unsplash" width="4152" height="2768"/>
-        <image name="retweetIcon" width="200" height="200"/>
+        <image name="retweetIcon-1" width="33" height="33"/>
         <image name="sideArrowForSettings 2" width="8" height="13"/>
-        <image name="twitterBackDrop" width="800" height="418"/>
-        <image name="upVoteIcon" width="512" height="507"/>
+        <image name="topPicks" width="3360" height="2240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qlZ-Al-CJH"/>
+        <segue reference="Od4-NQ-5lG"/>
     </inferredMetricsTieBreakers>
 </document>

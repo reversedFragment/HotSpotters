@@ -25,6 +25,7 @@ class TrendingTopicsTableViewController: UITableViewController {
         navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.post(name: TogglerViewController.showTypeTogglerNotification, object: nil)
         NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+        NotificationCenter.default.post(name: CollegeMapViewController.removeEventAnnotations, object: nil)
     }
 
 
@@ -47,6 +48,10 @@ class TrendingTopicsTableViewController: UITableViewController {
         cell?.trendImage = image
         cell?.trend = trend
         return cell ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 112
     }
 
     // MARK: - Navigation
