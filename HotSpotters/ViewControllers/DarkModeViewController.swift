@@ -53,11 +53,13 @@ class DarkModeViewController: UIViewController {
             SettingsController.shared.mode = Mode.dark
             darkModeLabel.text = "Initiate Light Mode"
             darkModeLabel.textColor = .white
+            navigationController?.navigationBar.barStyle = .blackTranslucent
         } else {
             self.view.backgroundColor = .white
             SettingsController.shared.mode = Mode.light
             darkModeLabel.text = "Initiate Dark Mode"
             darkModeLabel.textColor = .black
+            navigationController?.navigationBar.barStyle = .default
         }
     }
 }

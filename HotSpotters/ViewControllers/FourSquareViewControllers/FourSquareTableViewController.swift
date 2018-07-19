@@ -21,6 +21,7 @@ class FourSquareTableViewController: UIViewController {
 
     // Outlets
     @IBOutlet weak var fourSquareTableView: UITableView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     // Mark: - Sources of Truth
     var sectionSelected: String = ""
@@ -47,6 +48,7 @@ class FourSquareTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchWithSectionSelected()
+        updateView()
         navigationController?.navigationBar.isHidden = false
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
         
@@ -109,6 +111,10 @@ class FourSquareTableViewController: UIViewController {
         self.performSegue(withIdentifier: "mapSegue", sender: self)
     }
 
+    func updateView(){
+        categoryLabel.text = sectionSelected
+    }
+
     
     
 ////////////////////////////////////////////////////////////////
@@ -166,7 +172,7 @@ extension FourSquareTableViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 112
     }
     
 }

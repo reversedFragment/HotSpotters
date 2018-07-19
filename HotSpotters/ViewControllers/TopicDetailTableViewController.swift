@@ -43,6 +43,7 @@ class TopicDetailTableViewController: UITableViewController {
         navigationController?.navigationBar.isHidden = false
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
         NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+        NotificationCenter.default.post(name: CollegeMapViewController.removeEventAnnotations, object: nil)
     }
     
     // MARK: - Table view data source
@@ -69,6 +70,10 @@ class TopicDetailTableViewController: UITableViewController {
             }
             cell?.tweet = tweet
             return cell ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 112
     }
 
     func updateView(){

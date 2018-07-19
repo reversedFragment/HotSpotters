@@ -11,30 +11,25 @@ import Foundation
 struct EventBriteVenue: Codable {
     let address: Address
     let resourceURI, id: String
-    let ageRestriction, capacity: JSONNull?
     let name, latitude, longitude: String
     
     enum CodingKeys: String, CodingKey {
         case address
         case resourceURI = "resource_uri"
         case id
-        case ageRestriction = "age_restriction"
-        case capacity, name, latitude, longitude
+        case name, latitude, longitude
     }
 }
 
 struct Address: Codable {
-    let address1: String
-    let address2: JSONNull?
-    let city, region, postalCode, country: String
-    let latitude, longitude, localizedAddressDisplay, localizedAreaDisplay: String
-    let localizedMultiLineAddressDisplay: [String]
+    let address1: String?
+    let city, region, country: String?
+    let latitude, longitude, localizedAddressDisplay, localizedAreaDisplay: String?
+    let localizedMultiLineAddressDisplay: [String]?
     
     enum CodingKeys: String, CodingKey {
         case address1 = "address_1"
-        case address2 = "address_2"
         case city, region
-        case postalCode = "postal_code"
         case country, latitude, longitude
         case localizedAddressDisplay = "localized_address_display"
         case localizedAreaDisplay = "localized_area_display"
