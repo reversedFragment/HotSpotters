@@ -14,5 +14,10 @@ class SettingsController{
     
     //Settings
     var mode: Mode = Mode.light
-    
+    var notificationsEnabled: Bool = false
+}
+
+enum Mode: String{
+    case light = "Light"
+    case dark = "Dark"
 }

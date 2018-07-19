@@ -61,8 +61,3 @@ class DarkModeViewController: UIViewController {
         }
     }
 }
-
-enum Mode{
-    case light
-    case dark
-}

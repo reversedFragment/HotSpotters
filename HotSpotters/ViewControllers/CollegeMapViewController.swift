@@ -20,6 +20,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var drawerContainerView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var settingsFloater: TopicBackgroundView!
+    
     static let searchBarUpdated = Notification.Name(rawValue: "Search Bar Updated")
     static let collegeAnnotationSelected = Notification.Name(rawValue: "College Sected")
     static let venueAnnotationSelected = Notification.Name(rawValue: "Venue Selected")
@@ -257,7 +259,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     @objc func dropEventAnnotations(){
         guard let events = EventBriteController.shared.myEvents else {return}
         for event in events {
-
+            
         }
     }
     
@@ -284,8 +286,13 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         setUpSearchBar()
         dropDownContainerView.superview?.bringSubview(toFront: dropDownContainerView)
         drawerContainerView.superview?.bringSubview(toFront: drawerContainerView)
+        settingsFloater.superview?.bringSubview(toFront: settingsFloater)
         dropDownContainerView.isHidden = true
         drawerContainerView.isHidden = true
+    }
+    
+    @IBAction func locateButtonTapped(_ sender: UIButton) {
+        
     }
     
 }

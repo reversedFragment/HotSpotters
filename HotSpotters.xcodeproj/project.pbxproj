@@ -45,6 +45,7 @@
 		69B0696120F01F4900915CC0 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0696020F01F4900915CC0 /* ProfileImageView.swift */; };
 		69B6EA4120FFB64F00C459A3 /* EventAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6EA4020FFB64F00C459A3 /* EventAnnotations.swift */; };
 		69B6EA4320FFBC5C00C459A3 /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6EA4220FFBC5C00C459A3 /* UIVIewExtension.swift */; };
+		69B6EA45210011A700C459A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6EA44210011A700C459A3 /* SettingsViewController.swift */; };
 		69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574120F52D17006F79A2 /* EventsTableViewController.swift */; };
 		69BF574420F530EA006F79A2 /* EventCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */; };
 		69BF574620F531A2006F79A2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF574520F531A2006F79A2 /* Category.swift */; };
@@ -110,6 +111,7 @@
 		69B0696020F01F4900915CC0 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		69B6EA4020FFB64F00C459A3 /* EventAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotations.swift; sourceTree = "<group>"; };
 		69B6EA4220FFBC5C00C459A3 /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
+		69B6EA44210011A700C459A3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		69BF574120F52D17006F79A2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		69BF574520F531A2006F79A2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */,
 				69BF574120F52D17006F79A2 /* EventsTableViewController.swift */,
 				69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */,
+				69B6EA44210011A700C459A3 /* SettingsViewController.swift */,
 				69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -501,6 +504,7 @@
 				69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
+				69B6EA45210011A700C459A3 /* SettingsViewController.swift in Sources */,
 				69FBC1D520F6A7D70003C410 /* CollegeRadiusAnnotationView.swift in Sources */,
 				69BF574220F52D17006F79A2 /* EventsTableViewController.swift in Sources */,
 				69ECA71020F90C5600F0004D /* DarkModeViewController.swift in Sources */,
