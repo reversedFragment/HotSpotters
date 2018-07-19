@@ -200,17 +200,17 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             
         }
         
-//        if let venueAnnotation = annotation as? CustomVenueAnnotation,
-//            let category = venueAnnotation.venue?.fetchedRecommendedVenue?.categories?[0],
-//            let reuseIdentifier =  category.name {
-//            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
-//                return annotationImage
-//            } else {
-//                let image = UIImage(named: "\(category.name ?? "default")")
-//                let venueAnnotationImage = MGLAnnotationImage(image: image!, reuseIdentifier: category.name ?? "default")
-//                return venueAnnotationImage
-//            }
-//        }
+        //        if let venueAnnotation = annotation as? CustomVenueAnnotation,
+        //            let category = venueAnnotation.venue?.fetchedRecommendedVenue?.categories?[0],
+        //            let reuseIdentifier =  category.name {
+        //            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
+        //                return annotationImage
+        //            } else {
+        //                let image = UIImage(named: "\(category.name ?? "default")")
+        //                let venueAnnotationImage = MGLAnnotationImage(image: image!, reuseIdentifier: category.name ?? "default")
+        //                return venueAnnotationImage
+        //            }
+        //        }
         
         return nil
     }
@@ -264,8 +264,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func addAnnotationFor(college: College){
-            let collegeAnnotation = CollegeAnnotation(college: college)
-            self.collegeMap.addAnnotation(collegeAnnotation)
+        let collegeAnnotation = CollegeAnnotation(college: college)
+        self.collegeMap.addAnnotation(collegeAnnotation)
     }
     
     @objc func removeVenueAnnotations(){
@@ -295,78 +295,87 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         
     }
     
-}
-
-
-extension CollegeMapViewController: UISearchBarDelegate{
+    //Present Authorization for CLLocation
+    func presentLocationAuthorization(){
+        let ac = UIAlertController(title: "Invalid Location", message: "Cannot reset to location. User location is required", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Enable", style: .default) { (alert) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                // If general location settings are enabled then open location settings for the app
+                UIApplication.shared.openURL(url)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(settingsAction)
+        ac.addAction(cancelAction)
+        present(ac, animated: true)
+    }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == "" {
-            dropDownContainerView.isHidden = true
-            searchBar.placeholder = "Search a College"
-        } else {
-            dropDownContainerView.isHidden = false
-            CollegeController.shared.fetchCollegesBy(schoolName: searchText) { (colleges) in
-                guard let colleges = colleges else {return}
-                CollegeController.shared.filteredColleges = colleges
-                NotificationCenter.default.post(name: CollegeMapViewController.searchBarUpdated, object: nil)
-                DispatchQueue.main.async {
-                    self.dropDownContainerView.isHidden = false
+    let authStatus = CLAuthorizationStatus.RawValue()
+    
+    //Center view to user location
+    @IBAction func centerToUserLocation(_ sender: Any) {
+        print("\(authStatus)🇱🇷")
+        switch authStatus {
+        case 0:
+            presentLocationAuthorization()
+        case 1:
+            presentLocationAuthorization()
+        case 2:
+            presentLocationAuthorization()
+        case 3:
+            updateUserLocation()
+        case 4:
+            updateUserLocation()
+        default:
+            presentLocationAuthorization()
+        }
+    }
+    
+    func updateUserLocation(){
+        let location = MGLUserLocation().coordinate
+        if CLLocationCoordinate2DIsValid(location) {
+            DispatchQueue.main.async {
+                self.collegeMap.setCenter(location, zoomLevel: 10, animated: true)
+            }
+        }
+
+    }
+}
+    
+    
+    extension CollegeMapViewController: UISearchBarDelegate{
+        
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            if searchBar.text == "" {
+                dropDownContainerView.isHidden = true
+                searchBar.placeholder = "Search a College"
+            } else {
+                dropDownContainerView.isHidden = false
+                CollegeController.shared.fetchCollegesBy(schoolName: searchText) { (colleges) in
+                    guard let colleges = colleges else {return}
+                    CollegeController.shared.filteredColleges = colleges
+                    NotificationCenter.default.post(name: CollegeMapViewController.searchBarUpdated, object: nil)
+                    DispatchQueue.main.async {
+                        self.dropDownContainerView.isHidden = false
+                    }
                 }
             }
         }
+        
     }
     
-}
-
-//Drawer Controlls
-extension CollegeMapViewController: TogglerViewControllerDelegate{
-    
-    func moveDrawer(to frame: CGRect, completion: (() -> Void)?) {
-        UIView.animate(withDuration: 0.3) {
-            self.drawerContainerView.frame = frame
-            self.drawerContainerView.needsUpdateConstraints()
-            self.drawerContainerView.setNeedsLayout()
-            self.drawerContainerView.setNeedsDisplay()
-            if let completion = completion {
-                completion()
+    //Drawer Controlls
+    extension CollegeMapViewController: TogglerViewControllerDelegate{
+        
+        func moveDrawer(to frame: CGRect, completion: (() -> Void)?) {
+            UIView.animate(withDuration: 0.3) {
+                self.drawerContainerView.frame = frame
+                self.drawerContainerView.needsUpdateConstraints()
+                self.drawerContainerView.setNeedsLayout()
+                self.drawerContainerView.setNeedsDisplay()
+                if let completion = completion {
+                    completion()
+                }
             }
         }
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
