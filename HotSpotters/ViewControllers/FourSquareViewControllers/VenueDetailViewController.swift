@@ -12,7 +12,6 @@ class VenueDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateViews()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     

@@ -36,6 +36,7 @@ class FourSquareTableViewController: UIViewController {
         super.viewDidLoad()
         fourSquareTableView.delegate = self
         fourSquareTableView.dataSource = self
+        fetchWithSectionSelected()
         
         // Notification Observers
         NotificationCenter.default.addObserver(self, selector: #selector(venueAnnotationSelected), name: CollegeMapViewController.venueAnnotationSelected, object: nil)
@@ -45,7 +46,6 @@ class FourSquareTableViewController: UIViewController {
     ///
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchWithSectionSelected()
         NotificationCenter.default.post(name: TogglerViewController.hideTypeTogglerNotification, object: nil)
         
     }
