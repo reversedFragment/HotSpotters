@@ -29,7 +29,6 @@
 		16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCD20E6A6880061A3DA /* TwitterUser.swift */; };
 		16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */; };
 		16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
-		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
 		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
 		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
 		693D3E7420F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */; };
@@ -53,7 +52,6 @@
 		69ECA71020F90C5600F0004D /* DarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */; };
 		69ECA71220F9106A00F0004D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECA71120F9106A00F0004D /* SettingsController.swift */; };
 		69F8CB5820EC0FA3009256F4 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */; };
-		69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
 		69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
 		69F8CB5C20EC3401009256F4 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5B20EC3401009256F4 /* College.swift */; };
 		69F8CB5E20EC340D009256F4 /* CollegeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8CB5D20EC340D009256F4 /* CollegeController.swift */; };
@@ -64,7 +62,6 @@
 		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
 		6D381C0520E426DE0075D7F9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0320E426DE0075D7F9 /* Event.swift */; };
 		6D541C5420F8FE1A00D404FD /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D541C5320F8FE1A00D404FD /* StyleKit.swift */; };
-		6D97C74A20EEB66200F72972 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97C74920EEB66200F72972 /* ContentViewController.swift */; };
 		6DC92FDF20F7D47300EB0975 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC92FDE20F7D47300EB0975 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,8 +110,6 @@
 		69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		69BF574F20F5CDBD006F79A2 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
-		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
-		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
 		69ECA70D20F7025700F0004D /* SelectedCollegeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCollegeAnnotation.swift; sourceTree = "<group>"; };
 		69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewController.swift; sourceTree = "<group>"; };
 		69ECA71120F9106A00F0004D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -128,7 +123,6 @@
 		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6D381C0320E426DE0075D7F9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6D541C5320F8FE1A00D404FD /* StyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
-		6D97C74920EEB66200F72972 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		6DC92FDE20F7D47300EB0975 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				161BC14620E2B22700F88745 /* HotSpotters */,
-				168C4D8620F6B8DD00F0CC03 /* Extensions */,
 				161BC14520E2B22700F88745 /* Products */,
 				16E48D9E20E7A1D000ABFC4F /* Frameworks */,
 			);
@@ -171,6 +164,7 @@
 				69DC9F4520E2BD7600EB03E8 /* Views */,
 				69DC9F4020E2BD3E00EB03E8 /* UI */,
 				69DC9F4120E2BD4E00EB03E8 /* Resources */,
+				168C4D8620F6B8DD00F0CC03 /* Extensions + Helpers */,
 			);
 			path = HotSpotters;
 			sourceTree = "<group>";
@@ -185,13 +179,16 @@
 			path = FourSquareViewControllers;
 			sourceTree = "<group>";
 		};
-		168C4D8620F6B8DD00F0CC03 /* Extensions */ = {
+		168C4D8620F6B8DD00F0CC03 /* Extensions + Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				168C4D8720F6B90000F0CC03 /* UIColor + HexColor.swift */,
 				6D541C5320F8FE1A00D404FD /* StyleKit.swift */,
+				69B0695820EFC82F00915CC0 /* ImageHelper.swift */,
+				6DC92FDE20F7D47300EB0975 /* DateHelper.swift */,
+				69BF574F20F5CDBD006F79A2 /* UIHelper.swift */,
 			);
-			path = Extensions;
+			path = "Extensions + Helpers";
 			sourceTree = "<group>";
 		};
 		16C77BB920E69F550061A3DA /* FourSquareModels */ = {
@@ -233,6 +230,63 @@
 				16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */,
 			);
 			path = TwitterControllers;
+			sourceTree = "<group>";
+		};
+		16D08B6A2101633500097807 /* Map and UI ViewControllersr */ = {
+			isa = PBXGroup;
+			children = (
+				69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */,
+				693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */,
+				69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */,
+				69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */,
+			);
+			path = "Map and UI ViewControllersr";
+			sourceTree = "<group>";
+		};
+		16D08B6B2101636000097807 /* TwitterViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				69B0695A20EFE37900915CC0 /* TopicDetailTableViewController.swift */,
+				693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */,
+			);
+			path = TwitterViewControllers;
+			sourceTree = "<group>";
+		};
+		16D08B6C2101636900097807 /* EventBriteViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				69BF574120F52D17006F79A2 /* EventsTableViewController.swift */,
+				69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */,
+			);
+			path = EventBriteViewControllers;
+			sourceTree = "<group>";
+		};
+		16D08B6D2101639900097807 /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */,
+				69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */,
+				69B0696020F01F4900915CC0 /* ProfileImageView.swift */,
+			);
+			path = IBDesignables;
+			sourceTree = "<group>";
+		};
+		16D08B6E210163E500097807 /* TwitterViews */ = {
+			isa = PBXGroup;
+			children = (
+				69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */,
+				693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */,
+			);
+			path = TwitterViews;
+			sourceTree = "<group>";
+		};
+		16D08B6F210163F800097807 /* EventBriteViews */ = {
+			isa = PBXGroup;
+			children = (
+				69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */,
+				69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */,
+			);
+			path = EventBriteViews;
 			sourceTree = "<group>";
 		};
 		16E48D9E20E7A1D000ABFC4F /* Frameworks */ = {
@@ -293,11 +347,9 @@
 		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6D13BA4020E549C200658EAF /* Map.storyboard */,
-				69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */,
-				69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */,
-				69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */,
 				161BC15320E2B22800F88745 /* LaunchScreen.storyboard */,
+				6D13BA4020E549C200658EAF /* Map.storyboard */,
+				69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -309,9 +361,6 @@
 				161BC15120E2B22800F88745 /* Assets.xcassets */,
 				161BC15620E2B22800F88745 /* Info.plist */,
 				161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */,
-				69B0695820EFC82F00915CC0 /* ImageHelper.swift */,
-				6DC92FDE20F7D47300EB0975 /* DateHelper.swift */,
-				69BF574F20F5CDBD006F79A2 /* UIHelper.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -343,14 +392,9 @@
 			isa = PBXGroup;
 			children = (
 				163B6F5D20E6DE6100982A59 /* FourSquareViewControllers */,
-				69F8CB5720EC0FA3009256F4 /* CollegeMapViewController.swift */,
-				69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */,
-				69B0695A20EFE37900915CC0 /* TopicDetailTableViewController.swift */,
-				693D3E7320F3D3E6004BBED5 /* TrendingTopicsTableViewController.swift */,
-				693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */,
-				69BF574120F52D17006F79A2 /* EventsTableViewController.swift */,
-				69BF574320F530EA006F79A2 /* EventCategoriesTableViewController.swift */,
-				69ECA70F20F90C5600F0004D /* DarkModeViewController.swift */,
+				16D08B6A2101633500097807 /* Map and UI ViewControllersr */,
+				16D08B6B2101636000097807 /* TwitterViewControllers */,
+				16D08B6C2101636900097807 /* EventBriteViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -358,14 +402,10 @@
 		69DC9F4520E2BD7600EB03E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				16D08B6E210163E500097807 /* TwitterViews */,
+				16D08B6F210163F800097807 /* EventBriteViews */,
 				16E48DAC20E7A8C500ABFC4F /* FourSquareViews */,
-				69B0695C20EFE3CA00915CC0 /* TopicDetailTableViewCell.swift */,
-				69B0695E20F00E6100915CC0 /* TopicCellBackgroundView.swift */,
-				69B0696020F01F4900915CC0 /* ProfileImageView.swift */,
-				693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */,
-				693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */,
-				69BF574920F55EFC006F79A2 /* CategoryTableViewCell.swift */,
-				69BF574D20F57AF4006F79A2 /* EventTableViewCell.swift */,
+				16D08B6D2101639900097807 /* IBDesignables */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,10 +489,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F8CB5F20EC39C4009256F4 /* Assets.xcassets in Resources */,
-				69F8CB5920EC1120009256F4 /* mattsStoryboard.storyboard in Resources */,
 				69F8CB5A20EC1120009256F4 /* trevorsStoryboard.storyboard in Resources */,
 				16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */,
-				16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */,
 				16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
