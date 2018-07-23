@@ -9,18 +9,16 @@
 import UIKit
 
 class FourSquareSectionTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var sectionImage: CustomCellImageView!
-    @IBOutlet weak var sectionLabel: UILabel!
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
-    
+	
+	@IBOutlet weak var sectionImage: CustomCellImageView!
+	@IBOutlet weak var sectionLabel: UILabel!
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+	}
+	
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+	}
+	
 }

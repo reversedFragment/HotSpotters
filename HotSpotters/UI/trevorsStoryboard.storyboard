@@ -65,22 +65,6 @@
             </objects>
             <point key="canvasLocation" x="440.80000000000001" y="-7.6461769115442282"/>
         </scene>
-        <!--bensStoryboard-->
-        <scene sceneID="hqo-pp-lNg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="bensStoryboard" id="8Ly-un-Dpl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jhb-zP-Vmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1918" y="-1010"/>
-        </scene>
-        <!--mattsStoryboard-->
-        <scene sceneID="oEh-cY-r4k">
-            <objects>
-                <viewControllerPlaceholder storyboardName="mattsStoryboard" id="yWe-Ey-J0E" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Igi-Og-7fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1410" y="-1193"/>
-        </scene>
         <!--Trending Topics Table View Controller-->
         <scene sceneID="Mhl-GQ-CEB">
             <objects>
@@ -403,12 +387,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="jFQ-h2-6qk">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="malte-wingen-381988-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="UsG-eK-Yre" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="3840"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="128"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="15"/>
@@ -428,7 +412,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="3840"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="128"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -437,7 +421,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-VE-fAI">
-                                    <rect key="frame" x="32" y="1917" width="83" height="38"/>
+                                    <rect key="frame" x="32" y="61" width="83" height="38"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -1036,7 +1020,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="8" width="341" height="109"/>
+                                                    <rect key="frame" x="17" y="7" width="341" height="109"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
                                                             <rect key="frame" x="77.5" y="7" width="245.5" height="95"/>

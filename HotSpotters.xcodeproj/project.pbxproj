@@ -194,11 +194,11 @@
 		16C77BB920E69F550061A3DA /* FourSquareModels */ = {
 			isa = PBXGroup;
 			children = (
-				16406E2B20F41FF80058E499 /* CustomVenueAnnotationModel.swift */,
 				16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */,
 				16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */,
 				16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */,
 				16C77BAF20E69E650061A3DA /* VenueModel.swift */,
+				16406E2B20F41FF80058E499 /* CustomVenueAnnotationModel.swift */,
 			);
 			path = FourSquareModels;
 			sourceTree = "<group>";
