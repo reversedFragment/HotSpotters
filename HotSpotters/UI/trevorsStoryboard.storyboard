@@ -542,22 +542,22 @@ While we use encryption to protect sensitive information transmitted online, we 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="jFQ-h2-6qk">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="jFQ-h2-6qk">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-97-LKs">
-                                    <rect key="frame" x="16" y="16" width="343" height="64"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-97-LKs">
+                                    <rect key="frame" x="16" y="16" width="343" height="83.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-VE-fAI">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="56" width="343" height="8"/>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-oj-wDW" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="33.5" width="343" height="50"/>
                                             <color key="backgroundColor" red="0.94117647059999998" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="geF-y2-HZO"/>
@@ -636,7 +636,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <view alpha="0.29999999999999999" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-IR-W7K" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
+                                        <view hidden="YES" alpha="0.0" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-IR-W7K" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
                                             <rect key="frame" x="28" y="27" width="319" height="69"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -816,12 +816,12 @@ While we use encryption to protect sensitive information transmitted online, we 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Et0-xO-dlT">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Et0-xO-dlT">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topPicks" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-x9-0iU" customClass="CustomCellImageView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="80"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="2240"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="20"/>
@@ -841,7 +841,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-Kc-Cj4" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="16" width="343" height="80"/>
+                                    <rect key="frame" x="16" y="16" width="343" height="2240"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -856,7 +856,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets For Trend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-A5-8u8">
-                                    <rect key="frame" x="32" y="37.5" width="319" height="37"/>
+                                    <rect key="frame" x="32" y="1117.5" width="319" height="37"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -1220,19 +1220,19 @@ While we use encryption to protect sensitive information transmitted online, we 
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="6.5" width="341" height="109.5"/>
+                                                    <rect key="frame" x="17" y="6.5" width="341" height="109"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
-                                                            <rect key="frame" x="77.5" y="7" width="245.5" height="95.5"/>
+                                                            <rect key="frame" x="77.5" y="7" width="245.5" height="95"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-AC-9LJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="245.5" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="245.5" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-aC-UiY">
-                                                                    <rect key="frame" x="0.0" y="31.5" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="31" width="245.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="mgR-WL-Xfu"/>
                                                                     </constraints>
@@ -1241,7 +1241,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-FU-Vya">
-                                                                    <rect key="frame" x="0.0" y="53.5" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="53" width="245.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="eOh-P8-uWg"/>
                                                                     </constraints>
@@ -1250,7 +1250,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(distance)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loa-xL-aEc">
-                                                                    <rect key="frame" x="0.0" y="75.5" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="75" width="245.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="HLw-zm-o5n"/>
                                                                     </constraints>
@@ -1261,7 +1261,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationLogoHollow" translatesAutoresizingMaskIntoConstraints="NO" id="cWF-FY-k17">
-                                                            <rect key="frame" x="8" y="24" width="48.5" height="61.5"/>
+                                                            <rect key="frame" x="8" y="24" width="48" height="61"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="cWF-FY-k17" secondAttribute="height" multiplier="48:61" id="66b-m5-4cs"/>
                                                             </constraints>
@@ -1777,7 +1777,7 @@ Crash reports are automatically reported back to us. Bug or feature requests sho
     <resources>
         <image name="Calendar_Icon" width="14" height="15"/>
         <image name="Close Icon" width="26" height="26"/>
-        <image name="DevMountainSimpleSwift" width="325" height="325"/>
+        <image name="DevMountainSimpleSwift" width="156" height="156"/>
         <image name="Location Icon" width="20" height="19"/>
         <image name="Paid_Icon" width="11" height="15"/>
         <image name="Pin Icon" width="12" height="15"/>

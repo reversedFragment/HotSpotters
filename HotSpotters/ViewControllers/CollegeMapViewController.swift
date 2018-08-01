@@ -302,29 +302,13 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         present(ac, animated: true)
     }
     
-    let authStatus = CLAuthorizationStatus.RawValue()
-    
     //Center view to user location
     @IBAction func centerToUserLocation(_ sender: Any) {
-        print("\(authStatus)🇱🇷")
-        switch authStatus {
-        case 0:
-            presentLocationAuthorization()
-        case 1:
-            presentLocationAuthorization()
-        case 2:
-            presentLocationAuthorization()
-        case 3:
-            updateUserLocation()
-        case 4:
-            updateUserLocation()
-        default:
-            presentLocationAuthorization()
-        }
+        updateUserLocation()
     }
     
     func updateUserLocation(){
-        let location = MGLUserLocation().coordinate
+        guard let location = collegeMap.userLocation?.coordinate else { return }
         if CLLocationCoordinate2DIsValid(location) {
             DispatchQueue.main.async {
                 self.collegeMap.setCenter(location, zoomLevel: 10, animated: true)

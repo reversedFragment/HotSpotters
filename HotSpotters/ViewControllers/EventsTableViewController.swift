@@ -13,9 +13,13 @@ class EventsTableViewController: UITableViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
+    
     var category: Category?
-
+    
     let dispatchGroup = DispatchGroup()
+    
+    let eventIndicator = UIActivityIndicatorView()
+    var eventIndex = 0
     
     static let dropEventAnnotationsNotification = Notification.Name(rawValue: "Please Drop the Proper Event Annotations")
     
@@ -41,18 +45,18 @@ class EventsTableViewController: UITableViewController {
         return events.count
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell
-//        let event = nearbyEvents[indexPath.row]
-//        cell?.event = event
-//
-//        return cell ?? UITableViewCell()
-//    }
+    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell
+    //        let event = nearbyEvents[indexPath.row]
+    //        cell?.event = event
+    //
+    //        return cell ?? UITableViewCell()
+    //    }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell,
-        let events = EventBriteController.shared.myEvents else { return UITableViewCell() }
+            let events = EventBriteController.shared.myEvents else { return UITableViewCell() }
         let event = events[indexPath.row]
         
         if event.logo?.url == nil {
@@ -74,6 +78,8 @@ class EventsTableViewController: UITableViewController {
                 }
             }
         }
+        cell.prepareForReuse()
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -145,3 +151,19 @@ class EventsTableViewController: UITableViewController {
     }
     
 }
+
+
+//extension EventsTableViewController: UITableViewDataSourcePrefetching {
+//
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//
+//        for indexPath in indexPaths {
+//            if eventIndex == 8 {
+//                eventIndex = 0
+//            }
+//            guard let event = EventBriteController.shared.myEvents![indexPath.row] else { return }
+//            print("Prefetching For \(event.name)")
+//        }
+//    }
+//
+//}

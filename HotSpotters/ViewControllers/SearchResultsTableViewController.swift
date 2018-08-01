@@ -15,6 +15,7 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: CollegeMapViewController.searchBarUpdated, object: nil)
+//        tableView.prefetchDataSource = self as! UITableViewDataSourcePrefetching
     }
 
     // MARK: - Table view data source
