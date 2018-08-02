@@ -61,7 +61,7 @@ class FourSquareSectionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 112
+        return 120
     }
     
     // MARK: - Navigation

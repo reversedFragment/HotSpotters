@@ -112,7 +112,7 @@ class FourSquareTableViewController: UIViewController {
     }
 
     func updateView(){
-        categoryLabel.text = sectionSelected
+        categoryLabel.text = sectionSelected.uppercased()
     }
 
     

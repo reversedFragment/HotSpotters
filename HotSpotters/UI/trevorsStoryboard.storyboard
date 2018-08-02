@@ -1223,19 +1223,20 @@ While we use encryption to protect sensitive information transmitted online, we 
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Pk-xPt" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="6.5" width="341" height="109"/>
+                                                    <rect key="frame" x="17" y="6.5" width="341" height="109.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
-                                                            <rect key="frame" x="77.5" y="7" width="245.5" height="95"/>
+                                                        <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XQi-nE-9vV">
+                                                            <rect key="frame" x="78" y="7" width="238.5" height="95.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-AC-9LJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="245.5" height="29"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-AC-9LJ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="238.5" height="35.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-aC-UiY">
-                                                                    <rect key="frame" x="0.0" y="31" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="35.5" width="238.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="mgR-WL-Xfu"/>
                                                                     </constraints>
@@ -1244,7 +1245,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-FU-Vya">
-                                                                    <rect key="frame" x="0.0" y="53" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="55.5" width="238.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="eOh-P8-uWg"/>
                                                                     </constraints>
@@ -1253,7 +1254,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(distance)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loa-xL-aEc">
-                                                                    <rect key="frame" x="0.0" y="75" width="245.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="75.5" width="238.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="HLw-zm-o5n"/>
                                                                     </constraints>
@@ -1263,23 +1264,21 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationLogoHollow" translatesAutoresizingMaskIntoConstraints="NO" id="cWF-FY-k17">
-                                                            <rect key="frame" x="8" y="24" width="48" height="61"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="cWF-FY-k17" secondAttribute="height" multiplier="48:61" id="66b-m5-4cs"/>
-                                                            </constraints>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationLogoHollow" translatesAutoresizingMaskIntoConstraints="NO" id="cWF-FY-k17">
+                                                            <rect key="frame" x="9" y="19" width="61" height="72"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="top" secondItem="2ea-Pk-xPt" secondAttribute="top" constant="7" id="4TB-hJ-jok"/>
-                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="top" secondItem="2ea-Pk-xPt" secondAttribute="top" constant="24" id="4WV-1y-XnN"/>
-                                                        <constraint firstAttribute="bottom" secondItem="XQi-nE-9vV" secondAttribute="bottom" constant="7" id="KSM-LX-YOU"/>
-                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="leading" secondItem="2ea-Pk-xPt" secondAttribute="leading" constant="8" id="P6m-99-Vnu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="XQi-nE-9vV" secondAttribute="trailing" constant="18" id="XIU-5M-NET"/>
-                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="width" secondItem="2ea-Pk-xPt" secondAttribute="width" multiplier="0.72" constant="-0.01999999999998181" id="vzh-vj-MYu"/>
-                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="centerY" secondItem="2ea-Pk-xPt" secondAttribute="centerY" id="wL0-FS-G4f"/>
+                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="top" secondItem="2ea-Pk-xPt" secondAttribute="top" constant="19" id="Fxd-Od-aIX"/>
+                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="leading" secondItem="2ea-Pk-xPt" secondAttribute="leading" constant="9" id="RU1-nB-dew"/>
+                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="leading" secondItem="2ea-Pk-xPt" secondAttribute="leading" constant="78" id="bke-Dz-NYL"/>
+                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="centerY" secondItem="2ea-Pk-xPt" secondAttribute="centerY" id="hkE-yL-8Ed"/>
+                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="leading" secondItem="cWF-FY-k17" secondAttribute="trailing" constant="8" id="kXj-0e-uEV"/>
+                                                        <constraint firstItem="cWF-FY-k17" firstAttribute="centerY" secondItem="XQi-nE-9vV" secondAttribute="centerY" id="lGw-oW-3P6"/>
+                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="width" secondItem="2ea-Pk-xPt" secondAttribute="width" multiplier="0.7" id="lix-1G-NoD"/>
+                                                        <constraint firstItem="XQi-nE-9vV" firstAttribute="top" secondItem="2ea-Pk-xPt" secondAttribute="top" constant="7" id="w5J-L0-l9L"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1325,7 +1324,6 @@ While we use encryption to protect sensitive information transmitted online, we 
                         <viewLayoutGuide key="safeArea" id="1zb-Sz-NyP"/>
                     </view>
                     <connections>
-                        <outlet property="FourSquareTableView" destination="2Ua-yL-qf9" id="h2j-jy-6Wg"/>
                         <outlet property="categoryLabel" destination="xE5-tH-zn4" id="zk7-sG-q7c"/>
                         <outlet property="fourSquareTableView" destination="2Ua-yL-qf9" id="98U-hr-fG5"/>
                         <segue destination="iNb-0o-nOt" kind="show" identifier="mapSegue" id="qlZ-Al-CJH"/>
@@ -1780,7 +1778,7 @@ Crash reports are automatically reported back to us. Bug or feature requests sho
     <resources>
         <image name="Calendar_Icon" width="14" height="15"/>
         <image name="Close Icon" width="26" height="26"/>
-        <image name="DevMountainSimpleSwift" width="325" height="325"/>
+        <image name="DevMountainSimpleSwift" width="156" height="156"/>
         <image name="Location Icon" width="20" height="19"/>
         <image name="Paid_Icon" width="11" height="15"/>
         <image name="Pin Icon" width="12" height="15"/>
