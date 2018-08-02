@@ -36,7 +36,7 @@
                             </containerView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-cV-zi7">
                                 <rect key="frame" x="0.0" y="20" width="299" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97Y-lI-cBU" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
                                 <rect key="frame" x="307" y="33" width="60" height="30"/>
@@ -1780,7 +1780,7 @@ Crash reports are automatically reported back to us. Bug or feature requests sho
     <resources>
         <image name="Calendar_Icon" width="14" height="15"/>
         <image name="Close Icon" width="26" height="26"/>
-        <image name="DevMountainSimpleSwift" width="156" height="156"/>
+        <image name="DevMountainSimpleSwift" width="325" height="325"/>
         <image name="Location Icon" width="20" height="19"/>
         <image name="Paid_Icon" width="11" height="15"/>
         <image name="Pin Icon" width="12" height="15"/>
