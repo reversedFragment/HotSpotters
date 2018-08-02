@@ -58,22 +58,25 @@ class EventsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell,
             let events = EventBriteController.shared.myEvents else { return UITableViewCell() }
         let event = events[indexPath.row]
-        
-        if event.logo?.url == nil {
-            let nilLogo = event.logo?.url
-            let logoURL = nullToNil(value: nilLogo)
+        if events.count <= 0 {
+            cell.eventTitleLabel.text = "No Events"
         } else {
-            let nilLogo = event.logo?.url
-            let logoURL = nullToNil(value: nilLogo)
-            EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
-                DispatchQueue.main.async {
-                    cell.event = event
-                    if let currentIndexPath = self.tableView?.indexPath(for: cell),
-                        currentIndexPath == indexPath {
-                        cell.eventImage = image
-                    } else {
-                        print("Didn't get image")
-                        return
+            if event.logo?.url == nil {
+                let nilLogo = event.logo?.url
+                let logoURL = nullToNil(value: nilLogo)
+            } else {
+                let nilLogo = event.logo?.url
+                let logoURL = nullToNil(value: nilLogo)
+                EventBriteController.fetchImage(withUrlString: logoURL ?? "") { (image) in
+                    DispatchQueue.main.async {
+                        cell.event = event
+                        if let currentIndexPath = self.tableView?.indexPath(for: cell),
+                            currentIndexPath == indexPath {
+                            cell.eventImage = image
+                        } else {
+                            print("Didn't get image")
+                            return
+                        }
                     }
                 }
             }
@@ -152,17 +155,18 @@ class EventsTableViewController: UITableViewController {
 }
 
 
-//extension EventsTableViewController: UITableViewDataSourcePrefetching {
-//
-//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//
-//        for indexPath in indexPaths {
-//            if eventIndex == 8 {
-//                eventIndex = 0
-//            }
-//            guard let event = EventBriteController.shared.myEvents![indexPath.row] else { return }
-//            print("Prefetching For \(event.name)")
-//        }
-//    }
-//
-//}
+extension EventsTableViewController: UITableViewDataSourcePrefetching {
+
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+
+        for indexPath in indexPaths {
+            if eventIndex == 8 {
+                eventIndex = 0
+            }
+            guard let events = EventBriteController.shared.myEvents else { return }
+            let event = events[indexPath.row]
+            print("Prefetching For \(event.name)")
+        }
+    }
+
+}
