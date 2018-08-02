@@ -115,13 +115,16 @@ struct Group: Codable {
     
 }
 
-struct GroupItem: Codable {
+struct GroupItem: Codable, Equatable {
     let fetchedRecommendedVenue: RecommendedVenue?
     
     enum CodingKeys: String, CodingKey {
         case fetchedRecommendedVenue = "venue"
     }
     
+    static func ==(lhs: GroupItem, rhs: GroupItem) -> Bool{
+        return lhs.fetchedRecommendedVenue! == rhs.fetchedRecommendedVenue!
+    }
 }
 
 ////////////////////////////////////////////////////////////////

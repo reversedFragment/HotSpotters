@@ -36,6 +36,7 @@
 		693D3E7620F3DA14004BBED5 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */; };
 		693D3E7820F3DE7F004BBED5 /* TogglerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */; };
 		693D3E7A20F3FD3E004BBED5 /* CustomCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */; };
+		697E88B021138E680075E48F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E88AF21138E680075E48F /* UIViewControllerExtension.swift */; };
 		69B0695520EEA32700915CC0 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */; };
 		69B0695720EEB84E00915CC0 /* CollegeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */; };
 		69B0695920EFC82F00915CC0 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0695820EFC82F00915CC0 /* ImageHelper.swift */; };
@@ -102,6 +103,7 @@
 		693D3E7520F3DA14004BBED5 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		693D3E7720F3DE7F004BBED5 /* TogglerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglerViewController.swift; sourceTree = "<group>"; };
 		693D3E7920F3FD3E004BBED5 /* CustomCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellImageView.swift; sourceTree = "<group>"; };
+		697E88AF21138E680075E48F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		69B0695420EEA32700915CC0 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		69B0695620EEB84E00915CC0 /* CollegeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeAnnotation.swift; sourceTree = "<group>"; };
 		69B0695820EFC82F00915CC0 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				168C4D8720F6B90000F0CC03 /* UIColor + HexColor.swift */,
 				6D541C5320F8FE1A00D404FD /* StyleKit.swift */,
 				69B6EA4220FFBC5C00C459A3 /* UIVIewExtension.swift */,
+				697E88AF21138E680075E48F /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
 				69BF574E20F57AF4006F79A2 /* EventTableViewCell.swift in Sources */,
 				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
+				697E88B021138E680075E48F /* UIViewControllerExtension.swift in Sources */,
 				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
 				69B6EA45210011A700C459A3 /* SettingsViewController.swift in Sources */,
 				69FBC1D520F6A7D70003C410 /* CollegeRadiusAnnotationView.swift in Sources */,
@@ -692,7 +696,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MattSchweppe.HotSpotters;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorAdcock.HotSpotters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -715,7 +719,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MattSchweppe.HotSpotters;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorAdcock.HotSpotters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
