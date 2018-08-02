@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3f-DJ-6Wq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3f-DJ-6Wq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -370,11 +370,11 @@
             <objects>
                 <viewController id="tUN-xf-8RH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zas-J7-muz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGS-qq-bgP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWF-Ds-izq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
@@ -443,10 +443,11 @@ While we use encryption to protect sensitive information transmitted online, we 
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jWl-Ka-jNs"/>
                     </view>
+                    <size key="freeformSize" width="375" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdl-L3-c5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3244" y="-383"/>
+            <point key="canvasLocation" x="3244" y="-47"/>
         </scene>
         <!--Event Categories Table View Controller-->
         <scene sceneID="Fg2-DA-jdx">
@@ -583,6 +584,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ph7-VE-fAI" firstAttribute="width" secondItem="PPM-oj-wDW" secondAttribute="width" id="43J-5i-xdk"/>
+                                        <constraint firstItem="PPM-oj-wDW" firstAttribute="width" secondItem="PtO-97-LKs" secondAttribute="width" id="bkR-qh-ffr"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
@@ -1180,13 +1182,13 @@ While we use encryption to protect sensitive information transmitted online, we 
                                             <rect key="frame" x="16" y="16" width="343" height="64"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE5-tH-zn4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="56"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="56"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoX-iK-O75" customClass="TopicBackgroundView" customModule="HotSpotters" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="56" width="333" height="8"/>
+                                                    <rect key="frame" x="0.0" y="56" width="343" height="8"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.08235294118" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="8" id="oOI-0A-P8u"/>
@@ -1199,6 +1201,7 @@ While we use encryption to protect sensitive information transmitted online, we 
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="WoX-iK-O75" firstAttribute="width" secondItem="7zC-ao-KfT" secondAttribute="width" id="MZ9-gl-uFv"/>
                                                 <constraint firstItem="xE5-tH-zn4" firstAttribute="width" secondItem="WoX-iK-O75" secondAttribute="width" id="izP-iB-r7b"/>
                                             </constraints>
                                         </stackView>

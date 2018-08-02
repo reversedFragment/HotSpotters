@@ -54,7 +54,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // Draw the polygon after the map has initialized
         super.viewDidAppear(animated)
-        collegeMap.setCenter(utahCoordinates, zoomLevel: 11, animated: true)
+        updateUserLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -338,6 +338,9 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             }
         }
         
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            <#code#>
+        }
     }
     
     //Drawer Controlls

@@ -17,13 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch Screen" translatesAutoresizingMaskIntoConstraints="NO" id="Iik-WU-FLS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Iik-WU-FLS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xj2-kn-ldF"/>
+                            <constraint firstAttribute="bottom" secondItem="Iik-WU-FLS" secondAttribute="bottom" id="YnY-ax-PGs"/>
+                            <constraint firstItem="Iik-WU-FLS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aUZ-WU-luT"/>
+                            <constraint firstAttribute="trailing" secondItem="Iik-WU-FLS" secondAttribute="trailing" id="eiq-aw-G58"/>
+                            <constraint firstItem="Iik-WU-FLS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fvv-EN-dO9"/>
+                            <constraint firstItem="Iik-WU-FLS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="vqH-4z-RZV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch Screen" width="1125" height="2001"/>
+    </resources>
 </document>
