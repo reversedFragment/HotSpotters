@@ -10,6 +10,8 @@ import UIKit
 
 protocol TogglerViewControllerDelegate: class{
     func moveDrawer(to frame: CGRect, completion: (() -> Void)?)
+    
+    func deselectCollegeAnnotation()
 }
 
 enum Position {
@@ -209,6 +211,7 @@ class TogglerViewController: UIViewController {
         delegate?.moveDrawer(to: bottomFrame, completion: nil)
         closeDrawerButton.isHidden = true
         removeEventAndVenueAnnotations()
+        delegate?.deselectCollegeAnnotation()
     }
     
     @objc func updateCollege(){

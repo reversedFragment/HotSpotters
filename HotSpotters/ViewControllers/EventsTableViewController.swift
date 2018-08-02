@@ -12,7 +12,7 @@ import Mapbox
 class EventsTableViewController: UITableViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
-    
+    var spinner: UIView!
     
     var category: Category?
     
@@ -83,13 +83,12 @@ class EventsTableViewController: UITableViewController {
         return cell
     }
     
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 240
     }
     
     func setNearbyEvents(){
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        spinner = UIViewController.displaySpinner(onView: self.view)
         guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
         getAddressForCollege(selectedCollege) { (address) in
             guard let address = address else {return}
@@ -104,7 +103,7 @@ class EventsTableViewController: UITableViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                         NotificationCenter.default.post(name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        UIViewController.removeSpinner(spinner: self.spinner)
                     }
                 })
             })

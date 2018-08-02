@@ -12,7 +12,7 @@ import Foundation
 /// Mark: - This is a sub-struct of 'groupItem'
 /// This is specific to venues pulled in exploreVenues()
 
-struct RecommendedVenue: Codable {
+struct RecommendedVenue: Codable, Equatable {
     let venueId: String
     let name: String?
     let location: Location
@@ -24,6 +24,10 @@ struct RecommendedVenue: Codable {
         case name
         case location
         case categories 
+    }
+    
+    static func ==(lhs: RecommendedVenue, rhs: RecommendedVenue) -> Bool{
+        return lhs.venueId == rhs.venueId
     }
 }
 

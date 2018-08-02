@@ -14,6 +14,7 @@ class FourSquareTableViewController: UIViewController {
     // Notification Center Info
     static let venueSectionSelectedNotification = Notification.Name("Venue Topic Selected")
     static let removeAnnotationsNotification = Notification.Name("Please remove all Venue Annotations")
+    static let venueCellSelectedNotification = Notification.Name("Venue was selected in the TableView")
     
 ////////////////////////////////////////////////////////////////
 // Mark: - Properties
@@ -22,6 +23,7 @@ class FourSquareTableViewController: UIViewController {
     // Outlets
     @IBOutlet weak var fourSquareTableView: UITableView!
     @IBOutlet weak var categoryLabel: UILabel!
+    var spinner: UIView!
     
     // Mark: - Sources of Truth
     var sectionSelected: String = ""
@@ -63,9 +65,9 @@ class FourSquareTableViewController: UIViewController {
 ////////////////////////////////////////////////////////////////
     
     func fetchWithSectionSelected() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        spinner = UIViewController.displaySpinner(onView: self.view)
         
-        guard let selectedCollege = CollegeController.shared.selectedCollege else {return}
+        guard let selectedCollege = CollegeController.shared.selectedCollege else {UIViewController.removeSpinner(spinner: spinner) ; return}
         
         VenueController.exploreVenues(
                                 location:(selectedCollege.locationLat,
@@ -76,11 +78,12 @@ class FourSquareTableViewController: UIViewController {
                                    price: "1,2,3,4")
         { [unowned self] (groupItems) in
             
-            guard let groupItems = groupItems else { return }
+            guard let groupItems = groupItems else { UIViewController.removeSpinner(spinner: self.spinner) ;  return }
             
             self.fetchedVenues = groupItems /// groupItems are fetched venues
             
             if self.fetchedVenues.isEmpty { /// Alert if no results found
+                UIViewController.removeSpinner(spinner: self.spinner)
                 let alert = UIAlertController(title: "No Results Found",
                                               message: "Try Widening Your Search",
                                               preferredStyle: .alert)
@@ -88,21 +91,19 @@ class FourSquareTableViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Okay",
                                               style: .cancel,
                                               handler: nil))
-                
                 self.present(alert, animated: true)
-                return
                 
             } else {
                 DispatchQueue.main.async {
                     self.fourSquareTableView.reloadData()
-                    
                     NotificationCenter.default.post(name: FourSquareTableViewController.venueSectionSelectedNotification,
                                                     object: nil)
+                    UIViewController.removeSpinner(spinner: self.spinner)
                 }
             }
             
         }
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
     }
 
     
@@ -128,7 +129,8 @@ class FourSquareTableViewController: UIViewController {
 
             if let venueDetailVC = segue.destination as? VenueDetailViewController,
                 let selectedRow = fourSquareTableView.indexPathForSelectedRow?.row {
-                
+                VenueController.shared.selectedVenue = fetchedVenues[selectedRow]
+                NotificationCenter.default.post(name: FourSquareTableViewController.venueCellSelectedNotification, object: nil)
                 let venueDetailID = self.fetchedVenues[selectedRow].fetchedRecommendedVenue?.venueId
                 
                 VenueController.fetchVenueDetails(with: venueDetailID!) { (venuedetails) in

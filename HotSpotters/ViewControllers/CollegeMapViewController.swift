@@ -15,6 +15,9 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     var collegeBoundry: MGLOverlay?
     var venueAnnotations: [CustomVenueAnnotation] = []
     var eventAnnotations: [EventAnnotation] = []
+    var selectedCollegeAnnotation: CollegeAnnotation?
+    var selectedVenueAnnotation: CustomVenueAnnotation?
+    
     
     @IBOutlet weak var dropDownContainerView: UIView!
     @IBOutlet weak var drawerContainerView: UIView!
@@ -41,7 +44,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         return togglerViewController.getDrawerFrameWithPosition(togglerViewController.drawerPosition)
     }
     
-    let utahCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 40.7649, longitude: -111.8421)
     let radius = 1500
     var currentCollege: College?
     
@@ -113,21 +115,9 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         return true
     }
     
-    func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
-        return UIButton(type: .infoDark)
-    }
-    
-    func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
-        
-        if let venueAnnotation = annotation as? CustomVenueAnnotation{
-            VenueController.shared.selectedVenue = venueAnnotation.venue
-            NotificationCenter.default.post(name: CollegeMapViewController.venueAnnotationSelected, object: nil)
-        }
-    }
-    
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        
         if let collegeAnnotation = annotation as? CollegeAnnotation {
+            selectedCollegeAnnotation = collegeAnnotation
             guard let college = collegeAnnotation.college else {return}
             CollegeController.shared.selectedCollege = collegeAnnotation.college
             mapView.zoomLevel = 11.5
@@ -140,7 +130,13 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
                 self.moveDrawer(to: self.drawerFrame, completion: nil)
                 self.drawShape(schoolCoordinates: CLLocationCoordinate2D(latitude: college.locationLat, longitude: college.locationLon))
             }
+        } else if let venueAnnotation = annotation as? CustomVenueAnnotation {
+            guard VenueController.shared.annotationSelectedByUser == true else {VenueController.shared.annotationSelectedByUser = true ; return}
+            selectedVenueAnnotation = venueAnnotation
+            VenueController.shared.selectedVenue = venueAnnotation.venue
+            NotificationCenter.default.post(name: CollegeMapViewController.venueAnnotationSelected, object: nil)
         }
+        
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
@@ -149,6 +145,10 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
 //            collegeMap.remove(collegeBoundry!)
 //            collegeBoundry = nil
         }
+    }
+    
+    func deselectCollegeAnnotation(){
+            collegeMap.deselectAnnotation(selectedCollegeAnnotation, animated: true)
     }
     
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
@@ -195,19 +195,6 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
             }
             
         }
-        
-        //        if let venueAnnotation = annotation as? CustomVenueAnnotation,
-        //            let category = venueAnnotation.venue?.fetchedRecommendedVenue?.categories?[0],
-        //            let reuseIdentifier =  category.name {
-        //            if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier){
-        //                return annotationImage
-        //            } else {
-        //                let image = UIImage(named: "\(category.name ?? "default")")
-        //                let venueAnnotationImage = MGLAnnotationImage(image: image!, reuseIdentifier: category.name ?? "default")
-        //                return venueAnnotationImage
-        //            }
-        //        }
-        
         return nil
     }
 
@@ -264,6 +251,17 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         eventAnnotations.removeAll()
     }
     
+    @objc func selectVenueAnnotation(){
+        VenueController.shared.annotationSelectedByUser = false
+        let venue = VenueController.shared.selectedVenue
+        for annotation in venueAnnotations{
+            if annotation.venue == venue{
+                self.collegeMap.selectAnnotation(annotation, animated: true)
+                return
+            }
+        }
+    }
+    
     func addEventListeners(){
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(resignKeyboard), name: SearchResultsTableViewController.collegeSelected, object: nil)
@@ -271,6 +269,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(removeVenueAnnotations), name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dropEventAnnotations), name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeEventAnnotations), name: CollegeMapViewController.removeEventAnnotations, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(selectVenueAnnotation), name: FourSquareTableViewController.venueCellSelectedNotification, object: nil)
     }
     
     func setUpView(){

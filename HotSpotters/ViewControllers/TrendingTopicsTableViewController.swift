@@ -11,6 +11,7 @@ import UIKit
 class TrendingTopicsTableViewController: UITableViewController {
     
     var stockPhotoIndex = 0
+    var spinner: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,11 @@ class TrendingTopicsTableViewController: UITableViewController {
     }
     
     @objc func fetchTrends(){
-        
-        guard let currentCollege =  CollegeController.shared.selectedCollege else {return}
+        spinner = UIViewController.displaySpinner(onView: self.view)
+        guard let currentCollege =  CollegeController.shared.selectedCollege else {UIViewController.removeSpinner(spinner: self.spinner) ; return}
         
         TrendController.shared.getTrendingTopicsFor(latitude: currentCollege.locationLat, longitude: currentCollege.locationLon) { (trends) in
-            guard let trends = trends else {return}
+            guard let trends = trends else {UIViewController.removeSpinner(spinner: self.spinner) ; return}
             TrendController.shared.currentTrends = trends
             
             var i = 0
@@ -84,7 +85,7 @@ class TrendingTopicsTableViewController: UITableViewController {
                             trend.photo = image
                             if i == 3 {
                                 DispatchQueue.main.async {
-                                    self.tableView.reloadData()
+                                    UIViewController.removeSpinner(spinner: self.spinner)
                                 }
                             }
                         }

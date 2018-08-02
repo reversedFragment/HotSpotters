@@ -22,6 +22,7 @@ class VenueController {
     
     var selectedVenues: [GroupItem]?
     var selectedVenue: GroupItem?
+    var annotationSelectedByUser: Bool = false
     
     ////////////////////////////////////////////////////////////////
     // Mark: - fetchVenues() by 'll' geolocation or by 'near' search.

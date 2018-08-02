@@ -10,10 +10,12 @@ import UIKit
 
 class VenueDetailViewController: UIViewController {
     
+    var spinner: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        updateViews()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        spinner = UIViewController.displaySpinner(onView: self.view)
     }
     
     var fetchedVenueDetail: VenueDetails? {
@@ -21,7 +23,7 @@ class VenueDetailViewController: UIViewController {
             if isViewLoaded {
                 DispatchQueue.main.async {
                     self.updateViews()
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    UIViewController.removeSpinner(spinner: self.spinner)
                 }
             }
         }
