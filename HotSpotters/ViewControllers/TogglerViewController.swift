@@ -77,7 +77,7 @@ class TogglerViewController: UIViewController {
     
     func getDrawerFrameWithPosition(_ position: Position) -> CGRect {
         
-        let bottomPosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (40), width: self.view.frame.size.width, height: self.view.frame.size.height)
+        let bottomPosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (48), width: self.view.frame.size.width, height: self.view.frame.size.height)
         let middlePosition = CGRect(x: 0, y: (mapVC.view.bounds.maxY) - (mapVC.view.frame.size.height / 2), width: self.view.frame.size.width, height: mapVC.view.frame.size.height / 2)
         let topPosition = CGRect(x: 0, y: (mapVC.view.bounds.minY + 32), width: self.view.frame.size.width, height: (mapVC.view.frame.size.height - 32))
         

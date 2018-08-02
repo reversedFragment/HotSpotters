@@ -79,21 +79,21 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func drawShape(schoolCoordinates: CLLocationCoordinate2D) {
-        // Create a coordinates array to hold all of the coordinates for our shape.
-        let coordinates = [
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude - 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.02, longitude: schoolCoordinates.longitude),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude + 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude + 0.02),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude + 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.02, longitude: schoolCoordinates.longitude),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015),
-            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude - 0.02)
-        ]
-        
-        
-        collegeBoundry = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
-        collegeMap.add(collegeBoundry!)
+//        // Create a coordinates array to hold all of the coordinates for our shape.
+//        let coordinates = [
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude - 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.02, longitude: schoolCoordinates.longitude),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude + 0.015, longitude: schoolCoordinates.longitude + 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude + 0.02),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude + 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.02, longitude: schoolCoordinates.longitude),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude - 0.015, longitude: schoolCoordinates.longitude - 0.015),
+//            CLLocationCoordinate2D(latitude: schoolCoordinates.latitude, longitude: schoolCoordinates.longitude - 0.02)
+//        ]
+//
+//
+//        collegeBoundry = MGLPolygon(coordinates: coordinates, count: UInt(coordinates.count))
+//        collegeMap.add(collegeBoundry!)
     }
     
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
@@ -146,8 +146,8 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
         if annotation is CollegeAnnotation {
             searchBar.isHidden = false
-            collegeMap.remove(collegeBoundry!)
-            collegeBoundry = nil
+//            collegeMap.remove(collegeBoundry!)
+//            collegeBoundry = nil
         }
     }
     
@@ -266,6 +266,7 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
     
     func addEventListeners(){
         NotificationCenter.default.addObserver(self, selector: #selector(flyToSelectedCollege), name: SearchResultsTableViewController.collegeSelected, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(resignKeyboard), name: SearchResultsTableViewController.collegeSelected, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dropVenueAnnotaions), name: FourSquareTableViewController.venueSectionSelectedNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeVenueAnnotations), name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dropEventAnnotations), name: EventsTableViewController.dropEventAnnotationsNotification, object: nil)
@@ -339,7 +340,12 @@ class CollegeMapViewController: UIViewController, MGLMapViewDelegate {
         }
         
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            <#code#>
+            self.resignKeyboard()
+            searchBar.text = ""
+        }
+        
+        @objc func resignKeyboard(){
+            searchBar.resignFirstResponder()
         }
     }
     

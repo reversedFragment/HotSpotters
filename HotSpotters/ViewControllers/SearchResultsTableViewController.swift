@@ -11,6 +11,7 @@ import UIKit
 class SearchResultsTableViewController: UITableViewController {
     
     static let collegeSelected = Notification.Name(rawValue: "College Selected From Search")
+    static let searchButtonTapped = Notification.Name(rawValue: "Search Button Tapped")
     
     override func viewDidLoad() {
         super.viewDidLoad()
