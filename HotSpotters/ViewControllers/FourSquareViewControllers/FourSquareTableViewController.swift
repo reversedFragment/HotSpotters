@@ -74,7 +74,7 @@ class FourSquareTableViewController: UIViewController {
                                  section: self.sectionSelected,
                                    limit: 20,
                                    price: "1,2,3,4")
-        { [unowned self] (groupItems) in
+				{ (groupItems) in
             
             guard let groupItems = groupItems else { return }
             
