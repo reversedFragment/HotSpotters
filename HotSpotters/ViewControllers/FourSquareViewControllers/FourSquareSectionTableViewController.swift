@@ -25,7 +25,6 @@ class FourSquareSectionTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +32,7 @@ class FourSquareSectionTableViewController: UITableViewController {
         navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.post(name: TogglerViewController.showTypeTogglerNotification, object: nil)
         NotificationCenter.default.post(name: FourSquareTableViewController.removeAnnotationsNotification, object: nil)
+			
     }
     
     // MARK: - Table view data source
@@ -61,7 +61,7 @@ class FourSquareSectionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 112
     }
     
     // MARK: - Navigation
