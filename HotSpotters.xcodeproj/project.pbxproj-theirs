@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14720E2B22700F88745 /* AppDelegate.swift */; };
+		161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */; };
+		163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */; };
+		16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16717D7920EAEAA200DA1599 /* Mapbox.framework */; };
+		169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */; };
+		16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */; };
+		16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */; };
+		16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */; };
+		16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BAF20E69E650061A3DA /* VenueModel.swift */; };
+		16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */; };
+		16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBB20E6A6210061A3DA /* TrendController.swift */; };
+		16C77BC420E6A6220061A3DA /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBD20E6A6210061A3DA /* Trend.swift */; };
+		16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */; };
+		16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BC020E6A6220061A3DA /* TweetController.swift */; };
+		16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */; };
+		16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCB20E6A65F0061A3DA /* Tweet.swift */; };
+		16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C77BCD20E6A6880061A3DA /* TwitterUser.swift */; };
+		16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */; };
+		16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D13BA4020E549C200658EAF /* Map.storyboard */; };
+		16E48DA820E7A41200ABFC4F /* mattsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */; };
+		16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */; };
+		16E48DAA20E7A41200ABFC4F /* trevorsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */; };
+		16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161BC15320E2B22800F88745 /* LaunchScreen.storyboard */; };
+		16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */; };
+		6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */; };
+		6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */; };
+		6D381C0420E426DE0075D7F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0220E426DE0075D7F9 /* Post.swift */; };
+		6D381C0520E426DE0075D7F9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D381C0320E426DE0075D7F9 /* Event.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		161BC14420E2B22700F88745 /* HotSpotters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotSpotters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		161BC14720E2B22700F88745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		161BC14F20E2B22700F88745 /* HotSpotters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotSpotters.xcdatamodel; sourceTree = "<group>"; };
+		161BC15120E2B22800F88745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		161BC15420E2B22800F88745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		161BC15620E2B22800F88745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewController.swift; sourceTree = "<group>"; };
+		16717D7920EAEAA200DA1599 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
+		169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareTableViewCell.swift; sourceTree = "<group>"; };
+		16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRecommendedVenuesModel.swift; sourceTree = "<group>"; };
+		16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTopLevelJSON.swift; sourceTree = "<group>"; };
+		16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsModel.swift; sourceTree = "<group>"; };
+		16C77BAF20E69E650061A3DA /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
+		16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoriesMasterList.swift; sourceTree = "<group>"; };
+		16C77BBB20E6A6210061A3DA /* TrendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendController.swift; sourceTree = "<group>"; };
+		16C77BBD20E6A6210061A3DA /* Trend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
+		16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocation.swift; sourceTree = "<group>"; };
+		16C77BC020E6A6220061A3DA /* TweetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetController.swift; sourceTree = "<group>"; };
+		16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLocationController.swift; sourceTree = "<group>"; };
+		16C77BCB20E6A65F0061A3DA /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tweet.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/Tweet.swift; sourceTree = "<group>"; };
+		16C77BCD20E6A6880061A3DA /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwitterUser.swift; path = ../../../../../Downloads/HotSpotRecovery/HotSpotRecovery/TwitterUser.swift; sourceTree = "<group>"; };
+		16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVenueController.swift; sourceTree = "<group>"; };
+		16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotSpotters.entitlements; sourceTree = "<group>"; };
+		16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = trevorsStoryboard.storyboard; sourceTree = "<group>"; };
+		69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bensStoryboard.storyboard; sourceTree = "<group>"; };
+		69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mattsStoryboard.storyboard; sourceTree = "<group>"; };
+		6D13BA4020E549C200658EAF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-Model.swift"; sourceTree = "<group>"; };
+		6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventBrite-ModelController.swift"; sourceTree = "<group>"; };
+		6D381C0220E426DE0075D7F9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6D381C0320E426DE0075D7F9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		161BC14120E2B22700F88745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16717D7A20EAEAA200DA1599 /* Mapbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		161BC13B20E2B22700F88745 = {
+			isa = PBXGroup;
+			children = (
+				161BC14620E2B22700F88745 /* HotSpotters */,
+				161BC14520E2B22700F88745 /* Products */,
+				16E48D9E20E7A1D000ABFC4F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		161BC14520E2B22700F88745 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				161BC14420E2B22700F88745 /* HotSpotters.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		161BC14620E2B22700F88745 /* HotSpotters */ = {
+			isa = PBXGroup;
+			children = (
+				16E48DA320E7A1E000ABFC4F /* HotSpotters.entitlements */,
+				69DC9F4220E2BD5D00EB03E8 /* Models */,
+				69DC9F4320E2BD6200EB03E8 /* ModelControllers */,
+				69DC9F4420E2BD6900EB03E8 /* ViewControllers */,
+				69DC9F4520E2BD7600EB03E8 /* Views */,
+				69DC9F4020E2BD3E00EB03E8 /* UI */,
+				69DC9F4120E2BD4E00EB03E8 /* Resources */,
+			);
+			path = HotSpotters;
+			sourceTree = "<group>";
+		};
+		163B6F5D20E6DE6100982A59 /* APIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				163B6F5E20E6DEA300982A59 /* FourSquareTableViewController.swift */,
+			);
+			path = APIViewControllers;
+			sourceTree = "<group>";
+		};
+		16C77BB920E69F550061A3DA /* FourSquareModels */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BAD20E69E650061A3DA /* FSTopLevelJSON.swift */,
+				16C77BAF20E69E650061A3DA /* VenueModel.swift */,
+				16C77BAE20E69E650061A3DA /* VenueDetailsModel.swift */,
+				16A07C4320E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift */,
+				16C77BB020E69E650061A3DA /* VenueCategoriesMasterList.swift */,
+			);
+			path = FourSquareModels;
+			sourceTree = "<group>";
+		};
+		16C77BBA20E69F700061A3DA /* FourSquareControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16E48D9A20E748AB00ABFC4F /* GeneralVenueController.swift */,
+			);
+			path = FourSquareControllers;
+			sourceTree = "<group>";
+		};
+		16C77BC920E6A6410061A3DA /* TwitterModels */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BCB20E6A65F0061A3DA /* Tweet.swift */,
+				16C77BCD20E6A6880061A3DA /* TwitterUser.swift */,
+				16C77BBD20E6A6210061A3DA /* Trend.swift */,
+				16C77BBF20E6A6220061A3DA /* TwitterLocation.swift */,
+			);
+			name = TwitterModels;
+			sourceTree = "<group>";
+		};
+		16C77BCA20E6A6590061A3DA /* TwitterControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BC020E6A6220061A3DA /* TweetController.swift */,
+				16C77BBB20E6A6210061A3DA /* TrendController.swift */,
+				16C77BC120E6A6220061A3DA /* TwitterLocationController.swift */,
+			);
+			path = TwitterControllers;
+			sourceTree = "<group>";
+		};
+		16E48D9E20E7A1D000ABFC4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16717D7920EAEAA200DA1599 /* Mapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16E48DAC20E7A8C500ABFC4F /* FourSquareViews */ = {
+			isa = PBXGroup;
+			children = (
+				169CDF0220E6E51B00A804F8 /* FourSquareTableViewCell.swift */,
+				16E48DAF20E7AD7F00ABFC4F /* VenueDetailViewController.swift */,
+			);
+			path = FourSquareViews;
+			sourceTree = "<group>";
+		};
+		16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D381C0020E426D10075D7F9 /* EventBrite-ModelController.swift */,
+			);
+			path = EventBriteControllers;
+			sourceTree = "<group>";
+		};
+		16E48DAE20E7A92600ABFC4F /* EventbriteModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D381BFE20E426C40075D7F9 /* EventBrite-Model.swift */,
+				6D381C0320E426DE0075D7F9 /* Event.swift */,
+				6D381C0220E426DE0075D7F9 /* Post.swift */,
+			);
+			path = EventbriteModels;
+			sourceTree = "<group>";
+		};
+		69DC9F4020E2BD3E00EB03E8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6D13BA4020E549C200658EAF /* Map.storyboard */,
+				69DC9F3E20E2BD1700EB03E8 /* mattsStoryboard.storyboard */,
+				69DC9F3C20E2BD0800EB03E8 /* bensStoryboard.storyboard */,
+				69DC9F3A20E2BCDB00EB03E8 /* trevorsStoryboard.storyboard */,
+				161BC15320E2B22800F88745 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		69DC9F4120E2BD4E00EB03E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				161BC14720E2B22700F88745 /* AppDelegate.swift */,
+				161BC15120E2B22800F88745 /* Assets.xcassets */,
+				161BC15620E2B22800F88745 /* Info.plist */,
+				161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69DC9F4220E2BD5D00EB03E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BC920E6A6410061A3DA /* TwitterModels */,
+				16C77BB920E69F550061A3DA /* FourSquareModels */,
+				16E48DAE20E7A92600ABFC4F /* EventbriteModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69DC9F4320E2BD6200EB03E8 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16C77BCA20E6A6590061A3DA /* TwitterControllers */,
+				16C77BBA20E69F700061A3DA /* FourSquareControllers */,
+				16E48DAD20E7A8EF00ABFC4F /* EventBriteControllers */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		69DC9F4420E2BD6900EB03E8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				163B6F5D20E6DE6100982A59 /* APIViewControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		69DC9F4520E2BD7600EB03E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16E48DAC20E7A8C500ABFC4F /* FourSquareViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		161BC14320E2B22700F88745 /* HotSpotters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 161BC15920E2B22800F88745 /* Build configuration list for PBXNativeTarget "HotSpotters" */;
+			buildPhases = (
+				161BC14020E2B22700F88745 /* Sources */,
+				161BC14120E2B22700F88745 /* Frameworks */,
+				161BC14220E2B22700F88745 /* Resources */,
+				16717D7B20EAEAB700DA1599 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotSpotters;
+			productName = HotSpotters;
+			productReference = 161BC14420E2B22700F88745 /* HotSpotters.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		161BC13C20E2B22700F88745 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Ben Adams";
+				TargetAttributes = {
+					161BC14320E2B22700F88745 = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 161BC13F20E2B22700F88745 /* Build configuration list for PBXProject "HotSpotters" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 161BC13B20E2B22700F88745;
+			productRefGroup = 161BC14520E2B22700F88745 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				161BC14320E2B22700F88745 /* HotSpotters */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		161BC14220E2B22700F88745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E48DA520E7A41200ABFC4F /* Map.storyboard in Resources */,
+				16E48DA820E7A41200ABFC4F /* mattsStoryboard.storyboard in Resources */,
+				16E48DA920E7A41200ABFC4F /* bensStoryboard.storyboard in Resources */,
+				16E48DAA20E7A41200ABFC4F /* trevorsStoryboard.storyboard in Resources */,
+				16E48DAB20E7A41200ABFC4F /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16717D7B20EAEAB700DA1599 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		161BC14020E2B22700F88745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C77BC720E6A6220061A3DA /* TweetController.swift in Sources */,
+				16C77BB320E69E660061A3DA /* VenueModel.swift in Sources */,
+				16C77BCC20E6A65F0061A3DA /* Tweet.swift in Sources */,
+				16E48D9B20E748AB00ABFC4F /* GeneralVenueController.swift in Sources */,
+				16E48DB020E7AD7F00ABFC4F /* VenueDetailViewController.swift in Sources */,
+				16C77BC220E6A6220061A3DA /* TrendController.swift in Sources */,
+				161BC15020E2B22700F88745 /* HotSpotters.xcdatamodeld in Sources */,
+				16C77BC420E6A6220061A3DA /* Trend.swift in Sources */,
+				163B6F5F20E6DEA300982A59 /* FourSquareTableViewController.swift in Sources */,
+				16C77BC620E6A6220061A3DA /* TwitterLocation.swift in Sources */,
+				16C77BCE20E6A6880061A3DA /* TwitterUser.swift in Sources */,
+				6D381C0120E426D10075D7F9 /* EventBrite-ModelController.swift in Sources */,
+				16C77BB220E69E660061A3DA /* VenueDetailsModel.swift in Sources */,
+				161BC14820E2B22700F88745 /* AppDelegate.swift in Sources */,
+				16C77BB420E69E660061A3DA /* VenueCategoriesMasterList.swift in Sources */,
+				6D381C0520E426DE0075D7F9 /* Event.swift in Sources */,
+				16C77BB120E69E660061A3DA /* FSTopLevelJSON.swift in Sources */,
+				169CDF0320E6E51B00A804F8 /* FourSquareTableViewCell.swift in Sources */,
+				16A07C4420E89E5800E3D5A9 /* ExploreRecommendedVenuesModel.swift in Sources */,
+				6D381C0420E426DE0075D7F9 /* Post.swift in Sources */,
+				6D381BFF20E426C50075D7F9 /* EventBrite-Model.swift in Sources */,
+				16C77BC820E6A6220061A3DA /* TwitterLocationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		161BC15320E2B22800F88745 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				161BC15420E2B22800F88745 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		161BC15720E2B22800F88745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		161BC15820E2B22800F88745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		161BC15A20E2B22800F88745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CCUMQ33UK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BenAdams.HotSpotters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		161BC15B20E2B22800F88745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HotSpotters/HotSpotters.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CCUMQ33UK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/HotSpotters/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BenAdams.HotSpotters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		161BC13F20E2B22700F88745 /* Build configuration list for PBXProject "HotSpotters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				161BC15720E2B22800F88745 /* Debug */,
+				161BC15820E2B22800F88745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		161BC15920E2B22800F88745 /* Build configuration list for PBXNativeTarget "HotSpotters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				161BC15A20E2B22800F88745 /* Debug */,
+				161BC15B20E2B22800F88745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		161BC14E20E2B22700F88745 /* HotSpotters.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				161BC14F20E2B22700F88745 /* HotSpotters.xcdatamodel */,
+			);
+			currentVersion = 161BC14F20E2B22700F88745 /* HotSpotters.xcdatamodel */;
+			path = HotSpotters.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 161BC13C20E2B22700F88745 /* Project object */;
+}
